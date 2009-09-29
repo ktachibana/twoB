@@ -1,0 +1,124 @@
+body, html {
+	margin: 0.3em;
+	padding: 0;
+}
+
+.title {
+	border: 1px solid black;
+	margin: 0;
+	padding: 0.3em;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+#status {
+	margin: 60px auto 20px auto;
+	max-width: 350px;
+	padding: 5px;
+	font-size: 0.8em;
+	border: 1px dashed #999;
+	color: #666;
+	font-weight: bold;
+	text-align: center;
+}
+
+.res {
+	margin: 0;
+	padding: 0;
+}
+
+.res .header {
+	margin: 0;
+	font-size: 0.8em;
+}
+
+.res .body{
+	margin: 0;
+	padding: 0.3em;
+	font-size: 1em;
+	border-left: 1px dashed silver;
+}
+
+.res .number {
+	font-weight: bold;
+}
+
+.res .trip {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.res .new .number {
+	font-weight: bold;
+	color: #E63;
+}
+
+.res .name {
+	color: #369;
+	font-weight: bold;
+}
+
+.res .id
+.res .mesID {
+	text-decoration: underline;
+}
+
+.res .age .name{
+	color: orange;
+}
+
+
+.popup {
+	padding: 0.5em;
+	/*  -moz-outline: 2px solid #555;*/ /*  -moz-outline-radius: 8px;*/
+	/*  background: transparent url('popup-back.png');*/
+	color: infotext;
+	background-color: infobackground;
+	border: 1px solid black;
+	position: absolute;
+	font-size: small;
+}
+
+div.imagePopup {
+	padding: 0px;
+	border: 1px solid #555;
+/*	background: transparent url('popup-back.png');*/
+	position: absolute;
+	left: -1000px;
+	top: -1000px;
+}
+
+div.popup a:link,div.popup a:visited {
+	color: #76D6F9;
+	text-decoration: none;
+}
+
+div.popup span.resName {
+	color: #F6F6F6;
+}
+
+#prefForm {
+	font-size: 0.9em;
+	margin: 10px 10%;
+	padding: 10px 15px;
+	border: 2px solid #999;
+	background-color: #E9E9E9;
+}
+
+#prefForm fieldset {
+	margin-bottom: 15px;
+}
+
+#prefForm ul {
+	list-style: none;
+	margin: 0px;
+	padding: 2px;
+}
+
+#prefForm li {
+	padding-bottom: 2px;
+}
+
+#prefForm ul ul {
+	padding-left: 2em;
+}

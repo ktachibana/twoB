@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:bbs="urn:jsptagdir:/WEB-INF/tags/bbs">
+	<jsp:directive.page contentType="application/xhtml+xml; charset=UTF-8" session="false"/>
+	<![CDATA[<?xml version="1.0" encoding="UTF-8"?>]]>
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<title><c:out value="${thread.title}"/></title>
+		<link rel="stylesheet" type="text/css" href="/skin/default_skin/style.css" />
+		<script type="text/javascript" src="/skin/default_skin/popup.js"></script>
+		<script type="text/javascript; version=1.7" src="abone.js" charset="UTF-8" />
+		<script type="text/javascript">
+<![CDATA[
+			function jumpToNew(){
+				var firstNew = document.getElementById("firstNew");
+				if(firstNew != null){
+					window.scrollTo(0, firstNew.offsetTop);
+				}
+			}
+]]>
+		</script>
+	</head>
+
+	<body onload="javascript: b2rPopup.startup(); jumpToNew();">
+	
+	<div class="flow">
+		<h1 id="title" class="title"><c:out value="${thread.title}"/></h1>
+		
+		<ul id="menu">
+			<li><a href="../">スレッド一覧</a></li>
+			<li><a href="bbs2ch:post:${thread}">書き込み</a></li>
+			<li><a href="./">全件表示</a></li>
+			<li><a href="./l50">新着50件</a></li>
+			<li><a href="#firstNew">新着に移動</a></li>
+			<li><a href="l50" target="_blank">ブラウザ表示</a></li>
+		</ul>
+	</div>
+	
+	<c:forEach var="res" items="${thread.allRes}">
+		<c:if test="${thread.firstNewNumber == res.number}">
+			<hr id="firstNew" />
+		</c:if>
+		<jsp:element name="dl">
+			<jsp:attribute name="id">_${res.number}</jsp:attribute>
+			<jsp:attribute name="class">res <c:if test="${res.new}">new</c:if></jsp:attribute>
+			<jsp:attribute name="style"><c:if test="${!res.inRequestedRange}">display: none;</c:if></jsp:attribute>
+			<jsp:body>
+				<dt class="header">
+					<span class="number">${res.number}</span>
+					<span class="name"><c:out value="${res.name}"/><c:if test="${res.hasTrip}"> <span class="trip">◆<c:out value="${res.trip}"/></span></c:if> </span>
+					[<span class="mail"><c:out value="${res.mail}"></c:out></span>]
+					Date:<span class="date"><c:out value="${res.date}"/></span>
+					ID:<span class="id"><c:out value="${res.ID}"/></span>
+					Be:<span class="be"></span>
+				</dt>
+				<dd class="body">
+					<bbs:resBody value="${res.body}" anchorVar="anchor" linkVar="link">
+						<jsp:attribute name="onAnchor"><a href="\#_${anchor.topID}" class="anchor"><c:out value="${anchor}"/></a></jsp:attribute>
+						<jsp:attribute name="onLink">
+							<jsp:element name="a">
+								<jsp:attribute name="href"><c:out value="${link.URL}"/></jsp:attribute>
+								<jsp:attribute name="target">_blank</jsp:attribute>
+								<jsp:body><c:out value="${link}"/></jsp:body>
+							</jsp:element>
+						</jsp:attribute>
+					</bbs:resBody>
+				</dd>
+			</jsp:body>
+		</jsp:element>
+	</c:forEach>
+	<c:if test="${!thread.containsNew}">
+		<hr id="firstNew" />
+	</c:if>
+
+	<p id="status">${status} <!--
+			Size:<SIZE/>byte SizeKB:<SIZEKB/>KByte
+			Read:<GETRESCOUNT/> New:<NEWRESCOUNT/> All:<ALLRESCOUNT/>
+		--></p>
+
+	</body>
+	</html>
+</jsp:root>

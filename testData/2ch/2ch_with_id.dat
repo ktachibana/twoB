@@ -1,0 +1,586 @@
+login:Penguin<><>2008/01/07(月) 14:10:06 ID:T0OW3SHo<> KDE（K Desktop Environment）は、X Window Systemなどの上で動作するフリーソフトウェアのデスクトップ環境である・・・。 <br>  <br> バージョン4のリリースを控えたKDEの明日はどっちだ！ <br>  <br> 【本家】 <br> http://www.kde.org/ <br> 【日本KDEユーザ会】 <br> http://www.kde.gr.jp/ <br> 【GUIライブラリQt】 <br> http://www.trolltech.com/  <>KDE スレッド7
+login:Penguin<>sage<>2008/01/07(月) 14:21:16 ID:Y+mA6iwW<> 過去スレ <br>  <br> KDEスレ <br> http://pc.2ch.net/linux/kako/983/983412433.html <br> KDEスレ Part 2 <br> http://pc.2ch.net/linux/kako/1007/10073/1007375984.html <br> KDEスレ Part 3 <br> http://pc.2ch.net/test/read.cgi/linux/1042006351/ <br> KDEスレ Part 4 <br> http://pc5.2ch.net/test/read.cgi/linux/1063215522/ <br> KDEスレ Part 5 <br> http://pc8.2ch.net/test/read.cgi/linux/1088074467/  <br> KDEスレ　Part6 <br> http://pc11.2ch.net/test/read.cgi/linux/1126775147/ <>
+login:Penguin<>sage<>2008/01/07(月) 14:21:38 ID:Y+mA6iwW<> dat落ちしてたか… <br>  <br> <a href="../test/read.cgi/linux/1199682606/1" target="_blank">&gt;&gt;1</a>乙 <>
+login:Penguin<>sage<>2008/01/07(月) 17:58:06 ID:o/yJakwh<> KDE4ﾏﾀﾞｰｰ??? <>
+login:Penguin<>sage<>2008/01/08(火) 03:32:30 ID:/u+Ft+ql<> 気がつけば今月か。 <br>  <br> …今月か？ <>
+login:Penguin<>sage<>2008/01/08(火) 11:04:01 ID:KEd+Z+5q<> リリース目標は年内 <>
+login:Penguin<>sage<>2008/01/09(水) 16:47:20 ID:P4Gx3AM2<> とうとう明後日。ワクテカ <>
+login:Penguin<>sage<>2008/01/09(水) 22:06:21 ID:z9jdrAzD<> rc2++ <>
+login:Penguin<>sage<>2008/01/10(木) 08:05:23 ID:9Gu3tVnB<> あと2日♪ <>
+login:Penguin<>sage<>2008/01/10(木) 22:16:33 ID:p2JNzEHe<> その日って2chが停止する日じゃね？ <>
+login:Penguin<>sage<>2008/01/11(金) 00:54:54 ID:JbK4pF7Q<> kde4重い(´・ω・`) <>
+login:Penguin<>sage<>2008/01/11(金) 05:58:44 ID:BTxzd6pV<> <a href="../test/read.cgi/linux/1199682606/11" target="_blank">&gt;&gt;11</a> <br> VMにSUSE10.3入れてRC2入れたけど、そんなに重くないじゃん。 <br> つか使い勝手悪すぎ。本ちゃんはどうなるんでしょうか？ <br>  <br> あとAmarok2は、格好良くしたいのは分かるけど、すげぇ使いづらい。 <br> なんかListenの見栄えをよくした版みたいだ。 <br> あの方向性で進むとなると、ちょいと考えちゃうなぁ。(´･ω･`) <>
+login:Penguin<>sage<>2008/01/11(金) 10:25:59 ID:W9/RY1fz<> kde4.0・・・RC取れた。 <br>  <br> SUSEビルドサービス上のpkg。 <>
+login:Penguin<>sage<>2008/01/11(金) 10:31:32 ID:W9/RY1fz<> とりあえず、Kmenuを元にもどす方法は無いものか・・・ <br>  <>
+login:Penguin<><>2008/01/11(金) 11:03:44 ID:W9/RY1fz<> kde4.0 <br> http://usamimi.info/~linux/d/up/up0058.png <>
+login:Penguin<>sage<>2008/01/11(金) 15:49:52 ID:quEoM0cf<> Live CD torrentないのかよ・・・。あと6時間って・・・。 <>
+login:Penguin<>sage<>2008/01/11(金) 17:54:13 ID:r6bfRtYM<> きそう・・・ <br>  <br> イきそうです・・・ <>
+login:Penguin<>sage<>2008/01/11(金) 20:19:48 ID:aPnppvRf<> SUSEに4入れてみた。 <br> kontactが無いんでやんの(´･ω･`) <>
+login:Penguin<>sage<>2008/01/11(金) 20:24:41 ID:aPnppvRf<> パネルの時計のフォントサイズって小さくできないのかな？ <br> フォントは選べるのにサイズ選ぶ所が無い。文字デカっ(´･ω･`) <>
+login:Penguin<>sage<>2008/01/11(金) 20:29:30 ID:/htxLBb1<> やっと top が書き換わったな。 <>
+login:Penguin<>sage<>2008/01/11(金) 20:35:18 ID:Lwafeot+<> 結局ユーザからの本格的なフィードバックが得られるのはリリース後になるもんだよなぁ。 <br> RC2のLiveCDだけしか見てないが完成度はどんなもんかしらー。入れてみよう。 <>
+login:Penguin<>sage<>2008/01/11(金) 23:02:32 ID:knoUb0pl<> LiveCDの準備はKubuntuがはえーな。さすがだ。 <br>  <br> ttp://kubuntu.org/announcements/kde-4.0.php <>
+login:Penguin<>sage<>2008/01/11(金) 23:09:03 ID:G9kzgaSk<> 「KDE 4.0」が正式リリース（海上忍） <br> http://journal.mycom.co.jp/news/2008/01/11/025/index.html <>
+login:Penguin<>sage<>2008/01/11(金) 23:29:13 ID:cZge4vuH<> ftp://ftp.kde.org/pub/kde/stable/4.0.0/src <br> からは秒速1.5キロバイト程度。ダメダ明日にしよう。 <br>  <>
+login:Penguin<>sage<>2008/01/11(金) 23:37:59 ID:knoUb0pl<> kubuntu落としてるけど重ぇええ・・・ <br>  <br> Torrentで配らないのかなあ <>
+login:Penguin<>sage<>2008/01/12(土) 01:31:02 ID:VRZdQ5al<> ぬおおお、なぜ"quality feedback agent"の案を実装しなかったのだぁぁぁ <br> &rdquo;これコピペしてkde.orgに手動で送ってね&rdquo;とかじゃ日本人にゃ敷居が高いんじゃぁー <>
+login:Penguin<>sage<>2008/01/12(土) 02:05:23 ID:CakPvaBn<> torrentきたよー <br>  <br> http://home.kde.org/~binner/kde-four-live/KDE-Four-Live.i686-1.0.torrent <>
+login:Penguin<>sage<>2008/01/12(土) 02:27:36 ID:BFbn9s5Q<> 英語書けないから敷居高いって人はどちらにしろ関係ないんじゃない？ <>
+login:Penguin<>sage<>2008/01/12(土) 06:03:27 ID:Fc+14yPo<> KubuntuのKDE4版、落としはじめた。 <br> 現在2000kb/s 10分くらいで終了しそうだ。ﾜｸﾃｶ <>
+login:Penguin<>sage<>2008/01/12(土) 08:13:38 ID:CakPvaBn<> Kubuntu落とし終わって、とりあえずLiveで使ってみた。 <br>  <br> Konquerorでwww.google.comにアクセスしてKubuntuと打ち込んだら <br> いきなりクラッシュした(wwww。 <br> まあ、αじゃしょがねーかなと苦笑いしたが、これリリースなんだよな(www <br>  <br> もっかいやったら、今度は落ちなかったけどインスコするか悩むわ。 <>
+login:Penguin<>sage<>2008/01/12(土) 10:41:44 ID:FGFvA7w5<> 草いよﾊﾞｶ <>
+login:Penguin<>sage<>2008/01/12(土) 10:55:14 ID:Fc+14yPo<> <a href="../test/read.cgi/linux/1199682606/30" target="_blank">&gt;&gt;30</a> <br> なんか、やっつけ仕事って感じだよね、まあ昨日の今日だから仕方ないけど。＞kubuntu <br> とりあえVMでHDにインスコしてみたんだけど、すげぇ不安定でやんの。(´･ω･`) <br> パッケージマネージャ起動しようとしたらsmartが無いとか言われるしwww <br>  <br> suseの方がちゃんと日本語使えるし、こっちの方が今のところまとも。 <>
+login:Penguin<>sage<>2008/01/12(土) 12:30:47 ID:b4EZ2ix4<> Kubuntuは元々あまりよろしくない、UbuntuにKDE入れた方がマシ。 <>
+login:Penguin<>sage<>2008/01/12(土) 18:07:48 ID:K9ZaV0eT<> KDE4すげええ <br> 惚れた。もう夢中です。 <br> まだまだ荒削りだけど、これから磨けばどんどん良くなるよ。 <br>  <br> 粗探し得意な連中、どんどんダメ出ししてくれ。 <br> ガンガン直してやっからよ！ <>
+login:Penguin<>sage<>2008/01/12(土) 18:33:21 ID:T+N/c8MK<> んじゃまず16x16のアイコン整備してくれ <br> 22x22なんて使いたくないんだ <>
+login:Penguin<>sage<>2008/01/12(土) 19:33:48 ID:WDHW7hSC<> kdcopの代わりになるような <br> 簡単にKDEアプリを外から制御できる仕組みが <br> 見当たらないんだけども。 <br> qdbusはワケワカメ。 <>
+login:Penguin<>sage<>2008/01/12(土) 22:08:52 ID:Nz6ARfqW<> Kメニュー使いづれーよ <>
+login:Penguin<>sage<>2008/01/12(土) 22:16:51 ID:b+WOT3AV<> 確かに。 <br> で、Kメニュー削除して、もういっこのアプリケーションmenuを <br> 追加するとシンプルでよい。見た目Kmenuだしlogoutなんかも <br> ついてる。 <br>  <br> 追加方法は、ドラッグアンドドロップ。 <>
+login:Penguin<>sage<>2008/01/12(土) 22:47:14 ID:Nz6ARfqW<> デスクトップの"Add Widgets"からパネルにドラッグ&ドロップするのか <br>  <br> しかしコンテクストメニューがこんな貧弱でいいのかね <br> パネル上で右クリックしてもそれらしいメニューは出ないし迷っちゃったよ <>
+login:Penguin<>sage<>2008/01/12(土) 22:51:49 ID:T+N/c8MK<> KDE4.1では色々改善されてる事を願うぜ… <br> WebKit化されたKonquerorもだけど、4.1はなんか期待していい予感がする。 <>
+login:Penguin<>sage<>2008/01/12(土) 23:02:03 ID:LWTYNH3s<> コントロールセンターのアクセシビリティの奥にあった <br> マウスジェスチャー機能はどこへ行った？ <br> Webでもファイラでも効いたから便利だったのに。 <br>  <br> あと上にパネルが上に持ってこれない(&acute;・&omega;・`) <>
+login:Penguin<>sage<>2008/01/12(土) 23:03:22 ID:b+WOT3AV<> 今はコアがあるだけ <>
+login:Penguin<>sage<>2008/01/12(土) 23:07:22 ID:Taq6nMYf<> KDE4 will eat your children. <>
+login:Penguin<>sage<>2008/01/13(日) 00:42:58 ID:POZZPLEl<> KDE4をKbuntuで動かしてみたが、Dolphin使い易すぎて感動した。 <>
+login:Penguin<><>2008/01/13(日) 11:34:54 ID:bBvdUj6K<> KDE4入れてみたけど、なぜかパネルがでてこないんですが <br> どうやって出すんですか？ <>
+login:Penguin<>sage<>2008/01/13(日) 15:40:58 ID:XQpGyKHy<> <a href="../test/read.cgi/linux/1199682606/45" target="_blank">&gt;&gt;45</a> <br> plasmaがちゃんと起動されてるか確かめてみ <br> startkdeすれば勝手に起動してるはず <>
+login:Penguin<>sage<>2008/01/13(日) 20:47:40 ID:Q2vRELAZ<> あわせてamaroKが2.0になってるかと思ってサイト確認したけどまだだった。 <br> 俺にとっての興味はこれだけだな。 <>
+login:Penguin<>sage<>2008/01/14(月) 02:12:06 ID:px7my1he<> kubuntu-kde4.0-i386.iso 567,418KB 、約３時間＠emobileでDL完了（･∀･）ｂ <>
+48<>sage<>2008/01/14(月) 02:37:58 ID:px7my1he<> PentiumIII-S1.4＠1GのVMware/ISOイメージ経由だけど、デフォルトでも軽い。 <br>  <br> 表示の飾りを解除すればもっとﾃｷﾊﾟｷ、と表示をRedmondにしようとしたら <br> 3.5系に比べて、ﾘｿｰｽ・ｱｲｺﾝとかが変ｗ <br>  <br> なんにしても中の人たちGJ（･∀･）ｂ <br> RHEL5.2とかへの降臨はまだ先の先なんだろうなぁ。。。 <>
+login:Penguin<>sage<>2008/01/14(月) 10:32:16 ID:jJz8/KRA<> RHELはマイナーアップデートでは対応しない <br> 6を待て。 <>
+login:Penguin<>sage<>2008/01/14(月) 11:48:45 ID:KTvzUWw8<> kubuntu Live CDで試してみたが、俺は正直、がっかり。 <br>  <br> いや、これを気に入る人も多いと思うよ。見た目はクールになったし・・・ <br>  <br> でも、俺はもっとシンプルで痒いところに手が届くものが欲しかった。 <br> まぁ気落ちせず、ときどき触ってみることにはするが。 <br> いろいろ発見があれば評価も変わるかも知れん。 <br>  <br>  <>
+login:Penguin<>sage<>2008/01/14(月) 15:33:02 ID:YbXm4OJ1<> <a href="../test/read.cgi/linux/1199682606/49" target="_blank">&gt;&gt;49</a> <br> そのマシンとうちのPentium4 1.7GHz交換してくれ <>
+login:Penguin<>sage<>2008/01/14(月) 20:41:14 ID:myLyR4bL<> <a href="../test/read.cgi/linux/1199682606/51" target="_blank">&gt;&gt;51</a> <br> 何か俺には触れば触るほど粗が見えてくるだけだ <>
+login:Penguin<>sage<>2008/01/14(月) 22:43:57 ID:6FwhncqR<> KDE4.0は，実質&beta;版のようだ。 <br> KDE 4.0 Reviewer Reminders(OCN翻訳) <br> ttp://translate.ocn.ne.jp/LUCOCN/c3/hm_ex.cgi?SURL=http://www.kdedevelopers.org/node/3174&XTYPE=1&SEARCH=T&SLANG=en&TLANG=ja <>
+login:Penguin<>sage<>2008/01/14(月) 23:16:51 ID:ZgAB1Sgj<> いや、実質とか、言う前に、なんでリリースとか言っちゃったんだろう。 <br> ベータならベータでいいのに。無理しやがって・・・って感じだなあ。 <>
+login:Penguin<>sage<>2008/01/14(月) 23:30:07 ID:C7KsCjYk<> 4.0.1待つべ… <>
+login:Penguin<><>2008/01/15(火) 00:00:43 ID:tqsjNJcr<> 期待してまずここ見てみたのに、 <br> おまいらずいぶん盛りさがってるなw <>
+login:Penguin<>sage<>2008/01/15(火) 03:42:15 ID:yZf+by7O<> <a href="../test/read.cgi/linux/1199682606/55" target="_blank">&gt;&gt;55</a> <br> いやわかるな。早く出したい気持ち。 <br>  <br> ベータだと試用するだけでバグレポート出さない人が多いから。 <br> 実質ベータでもリリースしてたくさんの人で叩いた方が開発速度は向上する。 <>
+login:Penguin<>sage<>2008/01/15(火) 07:45:19 ID:gKj810PZ<> <a href="../test/read.cgi/linux/1199682606/58" target="_blank">&gt;&gt;58</a> <br> それってMS製品で何度も見たような <>
+login:Penguin<>sage<>2008/01/15(火) 14:18:56 ID:6WdJ1ocs<> これから使われて意見を受け入れて良くなっていくのなら構わんのだけど、 <br> リリースを急いだ印象は確かにあったな。延期もしたし。 <br>  <br> 今までのKDEじゃどうだったんだろ。リリース時の品質。 <br> これまでにドラスティックな変更が3回ほどあったって聞いたけど。 <br> 人も環境も入れ替わってくからあんま参考にならんかな。 <br>  <br> さて、ubuntuにアップデート来た来た。 <>
+login:Penguin<>sage<>2008/01/15(火) 18:38:56 ID:ZHXXGylZ<> おぉスゲェ…伸びてるｗｗ <br> KDEも徐々に人気を得てきたんだな <>
+login:Penguin<><>2008/01/15(火) 20:53:02 ID:FROgcX83<> こんなにここのスレが盛り上がってる!? <>
+login:Penguin<>sage<>2008/01/15(火) 21:39:02 ID:SDBs1LqU<> <a href="../test/read.cgi/linux/1199682606/62" target="_blank">&gt;&gt;62</a> <br> 前スレがdat落ちしたことを考えたら.. <>
+login:Penguin<>sage<>2008/01/15(火) 22:01:04 ID:4aJNfW0w<> うんにゃ、愚痴の盛り上がりだな。ここは。 <br>  <>
+login:Penguin<>age<>2008/01/15(火) 22:09:07 ID:Gdu+PV3v<> ぃぬ使いでKDE使いの２ちゃんねらっておまいら7人だけなのか・・・ <br> 寂しいもんだぜ・・・ <br>  <br>  <br> あげてやる <>
+login:Penguin<>sage<>2008/01/15(火) 22:11:16 ID:4aJNfW0w<> 7人て・・・ <br>  <br>  <br>  <br> 誰と誰なんだろう？？？ <br>  <br>  <br>  <br>  <>
+login:Penguin<>sage<>2008/01/15(火) 22:40:23 ID:C16PYiPs<> まず、俺とぉ、・・・ <>
+login:Penguin<>sage<>2008/01/15(火) 22:49:38 ID:SDBs1LqU<> おれも仲間だっ！(・ω・) <>
+login:Penguin<>sage<>2008/01/15(火) 22:56:03 ID:mdjQbMs1<> ROMってたけど、おれもいるぜ！！ <>
+login:Penguin<>sage<>2008/01/15(火) 22:57:27 ID:MlpUFMAy<> ﾓﾚ(`･д･´)KDEﾕｰｻﾞｰﾀﾞ <>
+login:Penguin<>sage<>2008/01/15(火) 22:59:48 ID:5o5OY/1W<> 俺だよ、俺俺 <>
+login:Penguin<>sage<>2008/01/15(火) 23:00:52 ID:gKj810PZ<> 6 <>
+login:Penguin<>sage<>2008/01/15(火) 23:05:30 ID:l3AGkfxO<> 俺も俺も <>
+login:Penguin<>sage<>2008/01/15(火) 23:21:23 ID:58jkjbTM<> (=ﾟωﾟ)ﾉ ぃょぅ! <br>  <>
+login:Penguin<>sage<>2008/01/15(火) 23:21:22 ID:snVLyxTG<> 8 <>
+login:Penguin<>sage<>2008/01/15(火) 23:24:36 ID:CD22DFHp<> 俺も～ <>
+login:Penguin<>sage<>2008/01/15(火) 23:25:58 ID:gF5EwVqw<> 俺 <>
+login:Penguin<>sage<>2008/01/15(火) 23:36:08 ID:8mf/tb6n<> ノ <>
+login:Penguin<>sage<>2008/01/16(水) 00:09:39 ID:6419JsHx<> 流れを無視してすまんが、 <br> パネル？を上に持っていくことはできないのでしょうか？ <br> KDE4です。 <>
+login:Penguin<>sage<>2008/01/16(水) 01:32:17 ID:cojRfG7m<> <a href="../test/read.cgi/linux/1199682606/79" target="_blank">&gt;&gt;79</a> <br> 今の時点ではできない。 <br> 諸々の設定は随時整備されていくと思うけど <br> いつになるかわからないね。 <>
+login:Penguin<>sage<>2008/01/16(水) 10:30:26 ID:bsdHntnK<> 思ったよりもいい出来で満足だわ <br> 早く日本のディストロでも採用してください＜KDE4 <>
+login:Penguin<>sage<>2008/01/16(水) 18:06:18 ID:eayqz393<> いやまてそれはまだ早い <br>  <br> みんなKDE4で、ちょっとは良いと思った場所はあるかい？　不満はとりあえず置いといて。 <br> 俺はウィンドウを最大化するとフレームが消えてくれる点が嬉しかった。 <br> あと一応Konquerorで今までまったく動かなかったFlashが動いた。二つあると止まるけどw <>
+login:Penguin<>sage<>2008/01/16(水) 18:22:54 ID:lp8JGcc2<> <a href="../test/read.cgi/linux/1199682606/81" target="_blank">&gt;&gt;81</a> <br> Vineの事か？ <>
+login:Penguin<>sage<>2008/01/16(水) 19:14:33 ID:77AulzAw<> <a href="../test/read.cgi/linux/1199682606/83" target="_blank">&gt;&gt;83</a> <br> あとはTurboくらい？ <br> １２Ｄがでる（予定の）タイミングが微妙 <>
+login:Penguin<>sage<>2008/01/16(水) 19:44:06 ID:s8IsyF5W<> VineとかのKDEってグズグズだから、採用されてもKDEの評判落とすだけ。 <>
+login:Penguin<>sage<>2008/01/16(水) 20:11:37 ID:lp8JGcc2<> <a href="../test/read.cgi/linux/1199682606/84" target="_blank">&gt;&gt;84</a> <br> だよね <br> 日本のディストリと言えばVine,Turbo,Omoikaneくらいしか思いつかない <br> 早く採用して欲しいと思ったらKDEを標準のDEに採用してる鳥じゃないのかな？ <br> なんで日本の鳥が出てくるのか不思議だな。 <>
+login:Penguin<>sage<>2008/01/16(水) 20:26:39 ID:dLO9aOY0<> <a href="../test/read.cgi/linux/1199682606/82" target="_blank">&gt;&gt;82</a> <br> flashは多分、KDE4.1になってWebKitなKonquerorになると完動するようになると思う。 <br> AdobeもWebKit使ってるし、親和性が大幅に上がるんじゃないかな、多分。 <br> 希望的観測ですが <>
+login:Penguin<>sage<>2008/01/16(水) 20:26:40 ID:zikbnaLb<> Momonga、Plamoを忘れちゃいけない <br>  <>
+login:Penguin<>sage<>2008/01/16(水) 20:42:36 ID:7Jo1oDO5<> KDEデフォな日本鳥ってあったっけ? <br> Knoppix-JP系以外は全部GNOMEだったような <>
+login:Penguin<>sage<>2008/01/16(水) 20:43:00 ID:oj6Vlwtu<> TurboはKDEが標準だよ <>
+login:Penguin<>sage<>2008/01/16(水) 21:30:32 ID:Ml4k2lGr<> turboスレによれば、次のturbolinuxから中身がMandriva Linuxに変わるらしい。 <br> なのでKDE搭載されて、結構まともになるだろう。 <>
+login:Penguin<>sage<>2008/01/16(水) 21:57:33 ID:M4BlWN0w<> <a href="../test/read.cgi/linux/1199682606/91" target="_blank">&gt;&gt;91</a> <br> Turbo = Mandriva日本語版ってこと？ <br> それ良さそう <>
+login:Penguin<>sage<>2008/01/16(水) 22:47:23 ID:s8IsyF5W<> VineもSUSEベースにしたらいいのに。 <>
+login:Penguin<>sage<>2008/01/16(水) 23:50:27 ID:BcTwko/Z<> <a href="../test/read.cgi/linux/1199682606/82" target="_blank">&gt;&gt;82</a> <br> かっこよくなった <>
+login:Penguin<>sage<>2008/01/17(木) 04:42:58 ID:N+0eBnOh<> flash平気で動いてるんだが。 <br>  <br> KDE3のKonquerorにて <>
+login:Penguin<>sage<>2008/01/17(木) 07:08:07 ID:zK9glwuZ<> うちもflash動いてるぞ。kde3.5.8 <>
+login:Penguin<>sage<>2008/01/17(木) 07:08:53 ID:zK9glwuZ<> <a href="../test/read.cgi/linux/1199682606/87" target="_blank">&gt;&gt;87</a> <br> どこの鳥使ってるんだ？ <>
+login:Penguin<>sage<>2008/01/17(木) 15:27:23 ID:cFj89cOT<> MEPISからPCLOSに変えたらぜんぜんコンカラ～落ちねー！ <br> scimがエラー吐いて落ちまくってたんだけどその症状もなし <br> 単に実装がよろしくないのか、あるいは俺がダメだったのか <br> やっと落ちないKDE環境にであったよ <>
+login:Penguin<>sage<>2008/01/17(木) 23:27:21 ID:S6ZhCrla<> セキュリティホールのある古いflashプラグインだとKDE3のKonquerorでも動作するけど、最新版だと動作しない。 <br>  <br> http://my.opera.com/csant/blog/2007/12/04/linux-opera-flash-and-plugins <>
+79<>sage<>2008/01/17(木) 23:49:55 ID:0L61TDtH<> <a href="../test/read.cgi/linux/1199682606/80" target="_blank">&gt;&gt;80</a> <br> ありがとう。 <br> 残念だけど、すっきりしました。 <br> 気長に待ちます。 <>
+login:Penguin<>sage<>2008/01/18(金) 02:30:01 ID:51eAoDo5<> <a href="../test/read.cgi/linux/1199682606/98" target="_blank">&gt;&gt;98</a> <br> &gt;単に実装がよろしくないのか <br> KDE関係のスレやKDEの話題の時にこういうレスをよく見かけるんだけど <br> 「実装が～」ってどういう意味？ <br> ビルドオプションの事？ <br> それとも鳥ごとに独自のパッチ当ててるって意味かな？ <br>  <>
+login:Penguin<>sage<>2008/01/18(金) 03:13:03 ID:12aBnOBC<> Ubuntu使ってるんだけど、PPAのKDE4入れて大丈夫？なーんか不安だ。 <br> 勇気を振り絞って、KDE4メタパッケージ(kde4)を入れようとしたらパッケージが不足して <br> るみたいで駄目だった。kde4-coreを入れればいいみたいなんだけど怖いわ。 <>
+login:Penguin<>sage<>2008/01/18(金) 03:13:29 ID:i77NX/01<> <a href="../test/read.cgi/linux/1199682606/101" target="_blank">&gt;&gt;101</a> <br> 両方あると思う。 <br> 例えばskimとかでも、鳥によってはKDEが起動中にDCOPエラー起こすとかあるし。 <br> SUSEとかMandrivaなんかのビルド番号とか見ると、リリースした時点で既に30とか40とか、 <br> ものすごい数字になってる。 <br> もちろんセキュリティ関連のパッチもあるけど、こまかく微調整しているんだろうな。 <br>  <>
+login:Penguin<>sage<>2008/01/18(金) 03:23:40 ID:51eAoDo5<> <a href="../test/read.cgi/linux/1199682606/103" target="_blank">&gt;&gt;103</a> <br> なるほどね。 <br> 「実装」という言葉のイメージで勝手に機能の追加とか想像しちゃってたもんだから。 <br> 新しい○○の機能を実装しました。とか <br> 聞いてみてよかった、ありがとう。 <>
+login:Penguin<>sage<>2008/01/18(金) 03:44:34 ID:i77NX/01<> <a href="../test/read.cgi/linux/1199682606/104" target="_blank">&gt;&gt;104</a> <br> 機能の追加も鳥独自のカスタマイズも結構あるよ。 <br> SUSEのコンカラとかファイルマネージャの検索窓でbeagleのメタ検索と通常の検索を切り替えられるように <br> なってたりしてる。 <br> MandrivaとかだとKメニューがKDEとか違う項目分けになってて、KDEオリジナルと切り替えできたりしてるし <br> 今回のKDE4のKメニュー（kickoff）は、もともとSUSE10.2で実装されてた奴だったりする。 <br> kubuntuなんかも、かなりカスタマイズしてるんじゃないの？ <br>  <>
+login:Penguin<>sage<>2008/01/18(金) 06:57:26 ID:SnXinWN3<> 散々Vistaを貶してた癖ににまんまVistaのパクりじゃないか・・・。 <br> どの口でM$叩いてんだろうなOSSの連中は。 <br>  <br> (・´ω`・) <>
+login:Penguin<><>2008/01/18(金) 11:26:34 ID:YkINm7Of<> てかいい加減GNOMEの奴らと統合するなりしてwindowsとかmacに <br> 対抗できるものを作ってくれ <br>  <>
+login:Penguin<>sage<>2008/01/18(金) 11:31:38 ID:Qzv3Yi5g<> 統合なんてできるわけないじゃん。ｗ <>
+login:Penguin<>sage<>2008/01/18(金) 11:42:42 ID:WsPfANwi<> <a href="../test/read.cgi/linux/1199682606/107" target="_blank">&gt;&gt;107</a> <br> Macとはむしろ協力体制にある <>
+login:Penguin<>sage<>2008/01/18(金) 12:01:31 ID:saQ/u1cZ<> というかGnomeだろうがFluxboxだろうが <br> KDEのアプリケーションは呼び出せるわけで逆もまた然り <br> 逆にWinとは違って色々選べる…と <>
+login:Penguin<>sage<>2008/01/18(金) 12:03:59 ID:DjCss0b2<> <a href="../test/read.cgi/linux/1199682606/60" target="_blank">&gt;&gt;60</a> <br> KDE2からKDE3に変わったときに比べれば月とスッポン。 <br> 機能が足りないのは仕方がないけど、あの時は機能が足りないだけじゃなく <br> クラッシュが頻発してて、ほどなくして3.1が出たから。 <br> それが2002年の話で、3.x系はそこから5年以上かけてブラッシュアップして <br> 熟成したものだから、それとポッと出の4.x系を比べるのは酷な話じゃないかと <br> 思います。 <br>  <>
+login:Penguin<>sage<>2008/01/18(金) 16:26:58 ID:ineFgDXg<> RedHat7.3に入ってたKDE3.0.1は7.2の2.2.?より <br> ずいぶんましに見えたもんだけどな。 <br> その時期のGNOMEが1.4でnautilusがうんこだったんで <br> 余計ましに見えたのかも試練が。 <>
+login:Penguin<>sage<>2008/01/18(金) 16:29:22 ID:dCclU67e<> kde4 のできは、kde3 の時と比べ、いまいちであることは確かだ。 <>
+login:Penguin<>sage<>2008/01/18(金) 16:47:34 ID:1cZlIQrr<> <a href="../test/read.cgi/linux/1199682606/112" target="_blank">&gt;&gt;112</a> <br> GNOME1はgmcが鉄板だったでしょ。 <br> ノーチラスは実験段階だったし、モノにならんと思ってた。 <>
+login:Penguin<><>2008/01/18(金) 17:27:43 ID:SZbNs1gp<> 俺もいますが? <>
+login:Penguin<>sage<>2008/01/18(金) 20:29:48 ID:ineFgDXg<> <a href="../test/read.cgi/linux/1199682606/114" target="_blank">&gt;&gt;114</a> <br> デフォルトではnautilusだったよ。 <br> んなもん使わずgmc起動しとけ、ていうのがFAQだった。 <br>  <br> けどよくよく考えるとKDE2から3への変化は <br> 3から4ほど大変化じゃなかった。比較にならないな、やっぱり <>
+login:Penguin<>sage<>2008/01/18(金) 20:31:29 ID:12aBnOBC<> <a href="../test/read.cgi/linux/1199682606/106" target="_blank">&gt;&gt;106</a> <br> KDE4のどこがVistaのパクリなんだよ <br> OSXの丸パクリの間違いだろ。M$にデザインというものは存在しない。 <br>  <br> AppleはOSSからいろいろパクってるからデザインをパクるぐらいいんだよ。 <br> 実装を盗んだわけじゃないし。 <>
+login:Penguin<><>2008/01/18(金) 21:09:49 ID:oviGHU9X<> <a href="../test/read.cgi/linux/1199682606/117" target="_blank">&gt;&gt;117</a>　俺の目にはどう見たってKDE4はVistaのパクリだがな。 <br> Kメニューにしろ、デフォルトのテーマにしろ。 <br>  <br> OSXを意識しているのは、むしろGNOMEだな。 <br>  <>
+login:Penguin<>sage<>2008/01/18(金) 21:12:59 ID:dCclU67e<> パクリかどうかは知らんが、あの Kmenu はいただけない。 <>
+login:Penguin<>sage<>2008/01/18(金) 21:28:05 ID:WQMqdztJ<> KDE3は未来をパクっていたのか… <>
+login:Penguin<>sage<>2008/01/18(金) 23:28:27 ID:PUlzej8b<> まぁ、VistaもOS Xをパクりまくってるわけだが <br> spotlightからdashboardからexposeまで・・・ <>
+login:Penguin<>sage<>2008/01/19(土) 00:42:25 ID:HDLRhiVR<> 俺はOSXっぽい、と思ったけどそんなことはどうでもいいな <br> 現状の完成度は今ひとつなのでこれからに期待 <br> とにかくあの使いづらいKメニューはなんとかして欲しい <br>  <br> とりあえず、今の間にKDE4のソースを読んでおこう <>
+login:Penguin<>sage<>2008/01/19(土) 01:35:08 ID:mbeIFoHf<> openSUSE10.3でKickoff使ってるけど <br> 普通に使いやすいし、見た目的にも良いので気に入ってる。 <br>  <br> でもKDE4のKickoffはなんか変。 <>
+login:Penguin<>sage<>2008/01/19(土) 01:59:56 ID:aKG+/8kR<> 一昨年SUSE10.2で初めてkickoff触ったときは、使いづらいと思ったけどもう慣れた。 <br> KDE4のkickoffは、アイコンのデザインというかバランスがぐちゃぐちゃで変。 <>
+login:Penguin<>sage<>2008/01/19(土) 02:10:08 ID:BEBHQ3/r<> まあSpotlightなんてBeOS/BeFSのパクリじゃん。とかいいたくなるけどな。開発者一緒だけどさ。 <br> Vistaはパクリというより初出が古いのに完成まで時間がかかりすぎて他に追い越された感じ。まあ完成してもアレな出来映えだけど。 <br>  <br> kickoffは要調整だよなぁ。 <br>  <br> <a href="../test/read.cgi/linux/1199682606/92" target="_blank">&gt;&gt;92</a> <br> ttp://www.turbolinux.co.jp/cgi-bin/newsrelease/index.cgi?date2=20080016130936&mode=syosai <>
+login:Penguin<>sage<>2008/01/19(土) 09:34:24 ID:IRXdsLwC<> <a href="../test/read.cgi/linux/1199682606/121" target="_blank">&gt;&gt;121</a> <br>  <br> いや、Tigerは、はっきりいって、Vistaのパクリだよ(www。 <br> かなり昔からVistaで、こういうの出すというプレゼンしてたのが、 <br> 発売延期している間に、あっという間にAppleがTigerに盛り込んで <br> 先に発売した。それでいて <br>  <br> 「コピーの準備はできたか?」 <br>  <br> なんて煽り文句を出したAppleには呆れたが。 <>
+login:Penguin<>sage<>2008/01/19(土) 09:40:01 ID:Xpvfqj3s<> 洗脳って怖いな <br>  <>
+login:Penguin<>sage<>2008/01/19(土) 10:52:34 ID:hr4FFI5B<> <a href="../test/read.cgi/linux/1199682606/126" target="_blank">&gt;&gt;126</a> <br> プレゼンしても実際に形に出来なきゃ、技術力がないって言ってるのと同じじゃん。 <br> それにパクリどうのこうのより、時代の要求に応える形でOS開発していけば、 <br> 必然とOSXやVistaみたいになるって事なんじゃね？ <>
+login:Penguin<>sage<>2008/01/19(土) 10:57:58 ID:ZkeoceVl<> <a href="../test/read.cgi/linux/1199682606/126" target="_blank">&gt;&gt;126</a> <br> Mac（というかLisa)のデスクトップ自体がパクリだしな。 <br> あの会社はパクリ技術をもっともらしくプレゼンすることだけが得意。 <br> あの会社というよりは、あの人と言うべきかもしれんが… <>
+login:Penguin<><>2008/01/19(土) 11:15:44 ID:aKG+/8kR<> キチガイドザの襲来か？('A`)  <>
+login:Penguin<>sage<>2008/01/19(土) 11:18:56 ID:Z80tyyF8<> ここはKDEスレだよな？ <>
+login:Penguin<>sage<>2008/01/19(土) 11:20:47 ID:ZkeoceVl<> MacOSもWindowsもKDEもパクリ。 <br> パクリ同士でどっちが本家かなんて失笑ものだよ。 <>
+login:Penguin<>sage<>2008/01/19(土) 12:30:00 ID:emZL4iRT<> KDEスレでMacだのWindowsだのと延々と言ってること自体が失笑ものだがな。 <>
+login:Penguin<>sage<>2008/01/19(土) 13:49:01 ID:pidqpAuM<> あのなーUIなんてお互いに影響与えつつ業界全体として育ててきたものなんだから <br> パクリだとかどうでもいいんだよタコ <>
+login:Penguin<>sage<>2008/01/19(土) 17:00:27 ID:6bHrxWvm<> そのUIをパクったといちゃもん付けた記憶に新しいヘルプアイコン事件 <>
+login:Penguin<><>2008/01/19(土) 17:56:43 ID:E7bB1xLF<>  <br> パクリ論争はもういいよ。やめい！ <br>  <br> んなことよりKDEの良さ／悪さについて論じあってくれよ。 <br>  <br>  <>
+login:Penguin<>sage<>2008/01/19(土) 18:40:12 ID:Cx4s83Um<> ボリュームに#が付いてDVDを入れると自動で立ち上がるKonquerorがエラーを吐くのは治ってるのかなぁ <br> eject時にも必ずエラーを吐くし。 <>
+login:Penguin<>sage<>2008/01/19(土) 18:45:59 ID:b1bq5XgN<> 他人の成果(海外の天才ﾃﾞﾍﾞﾛｯﾊﾟｰ)で商売させてもらってる癖してさも自分が偉いと本気で信じ込んでデカい面してる日本国内のOSS関係者は皆クソだよ。 <br> その点はリンゴマークの教祖様とそっくりだわな、あいつは他人の素晴らしいアイデアを聞くとまず貶して、次の日何事もなかったかのような顔をして今さっきとても良いことを思いついたんだとそのアイデアを語り始めるそうだｗｗｗ <br> そしてMSをよく知りもせず叩いてる信者共も同じ穴の狢だ。 <>
+login:Penguin<>sage<>2008/01/19(土) 18:48:32 ID:D4v4eyIh<> &gt;日本国内のOSS関係者 <br>  <br> それよりもKDEの話をだな <>
+login:Penguin<>sage<>2008/01/19(土) 18:49:53 ID:Z80tyyF8<> みんなただの利用者なんだし、アツくなるなよ <>
+login:Penguin<>sage<>2008/01/19(土) 18:52:57 ID:9imKoGfA<> KDEを安定して使うって意味なら、MandrivaかPCLOSが一番安定してる説はどう？ <br> MEPISはscim-brigdeがないのでデブから流用or野良ビルドする必要があるし <br> SUSEは9.1以降つかってないのでわかんね <br> kubuntuは、まぁがんばって。 <>
+login:Penguin<>sage<>2008/01/19(土) 18:53:05 ID:ZkeoceVl<> KDEでもマルチバイトの扱いとか、日本のエンジニアの貢献は少なくないんだけどなあ。 <>
+login:Penguin<>sage<>2008/01/19(土) 18:57:55 ID:D4v4eyIh<> [ konqueror ] <br>  <br> 自分はこのソフトを使うためだけにkdeを入れているといっても過言ではない <br> ファイルブラウザ・Webブラウザ・FTPクライアント・SFTPクライアント <br> ペイン縦割り・横割り・何分割でも、さらにタブ付き… <br>  <br> 始めて触った際には驚愕した <>
+login:Penguin<>sage<>2008/01/19(土) 19:00:14 ID:9imKoGfA<> ぶっちゃけkonquerorさえあればあとはイラネ <>
+login:Penguin<>sage<>2008/01/19(土) 19:01:57 ID:H+BtM0iQ<> <a href="../test/read.cgi/linux/1199682606/143" target="_blank">&gt;&gt;143</a> <br> KDE3.1以降か。わりと新しいのから使ったのね。 <br> 私はKDE2.2ぐらいから使ってた。 <br>  <br> KDE3.1以降のkonqueror使ってからはgnomeには戻れん… <br> 強力すぐる <>
+login:Penguin<>sage<>2008/01/19(土) 19:22:57 ID:jlQ4ll1j<> Dolphin/Konquerorの二分化体制になったKDE4は、<a href="../test/read.cgi/linux/1199682606/143" target="_blank">&gt;&gt;143</a>にとっては微妙な気分ってとこかな？ <br> 私もなんかKonquerorの位置づけが微妙だなあと思ったのだけどもね。 <br> まだ4には触れてないのだが・・・。 <>
+login:Penguin<>sage<>2008/01/19(土) 19:31:22 ID:s0zH7PBP<> ブラウザとして中途半端。 <br> ファイルマネージャとしても使いづらいあんなのどこがいいんだか <>
+login:Penguin<>sage<>2008/01/20(日) 01:02:01 ID:ihiNyIiu<> どうもKonqueror周辺にケチつける人は <br> KDEに愛のないディストリを使ってるだけな気がする最近。 <br> あと重いと言うならKonquerorの設定から「パフォーマンス」の <br> 「プリローディング(常駐化)の設定」をいじってみれ。 <br> Firefox起動するのがアホらしくなる <>
+login:Penguin<>sage<>2008/01/20(日) 02:10:02 ID:HuPUJwvp<> コンカラはもうこれからsafariベースにしろ <>
+login:Penguin<>sage<>2008/01/20(日) 02:15:26 ID:FDCo/9vp<> ﾎﾟｶｰﾝ <>
+login:Penguin<>sage<>2008/01/20(日) 02:17:42 ID:+OwXxBoy<> <a href="../test/read.cgi/linux/1199682606/149" target="_blank">&gt;&gt;149</a> <br> 逆輸入か <>
+login:Penguin<>sage<>2008/01/20(日) 02:17:57 ID:ihiNyIiu<> 分かってて、構ってほしくて言ってんだろ。 <br> そっとしといてやれ。住み着かれちゃたまらん。 <>
+login:Penguin<><>2008/01/20(日) 05:01:53 ID:2RPRTHDr<> KDE4のコンカラからニコニコは問題なく書き込めますか <>
+login:Penguin<>sage<>2008/01/20(日) 08:03:11 ID:MdJu/hxG<> <a href="../test/read.cgi/linux/1199682606/149" target="_blank">&gt;&gt;149</a> <br> 心配しなくても4.1からWebKitベースになるはず <>
+login:Penguin<>sage<>2008/01/20(日) 12:03:56 ID:w4FtA3RL<> <a href="../test/read.cgi/linux/1199682606/153" target="_blank">&gt;&gt;153</a> <br> 書き込める <>
+login:Penguin<>sage<>2008/01/20(日) 15:55:47 ID:pnKKX6Xd<> <a href="../test/read.cgi/linux/1199682606/148" target="_blank">&gt;&gt;148</a> <br> ホントにアホらしくなった。感謝する。 <>
+login:Penguin<>sage<>2008/01/21(月) 11:08:46 ID:rh9W4xeY<> <a href="../test/read.cgi/linux/1199682606/146" target="_blank">&gt;&gt;146</a> <br> Dolphin 微妙にかゆいところに届かないんだよな… <br> 分割2つが限界だったり <br> 機能追加で最終的にkonquerorと等価になったりしてな <>
+login:Penguin<>sage<>2008/01/21(月) 16:49:02 ID:ml7lrYPu<> ぶっちゃけKDE4.0を体験するのに一番良い鳥はなに? SuSe? <br>  <>
+login:Penguin<><>2008/01/21(月) 17:26:02 ID:nV9aRb+b<> 九文通。 <>
+login:Penguin<>sage<>2008/01/21(月) 18:08:22 ID:9qDHU08t<> kubuntuも微妙。 <br> つかあれがKDE4だと思いたくなくて <br> SUSEのLiveCDをダウンロード中の俺ｶﾞｲﾙ <>
+login:Penguin<>sage<>2008/01/21(月) 18:36:13 ID:vB6zPbjH<> くぶんつはなあ… <br> やっぱりうぶんつはGnomeが一番かな、と再確認させるための鳥だからなあw <>
+login:Penguin<>sage<>2008/01/21(月) 19:37:24 ID:H/EGRhun<> <a href="../test/read.cgi/linux/1199682606/148" target="_blank">&gt;&gt;148</a> <br> 俺も有難う。笑うしかないわこれw <br> しかし拡張機能のおかげでfirefoxから離れられない&hellip;&hellip; <br> bbs2chreaderの代わりになるものないかしらん。 <br>  <br> あとKubuntuからopenSuseに変えたら挙動が全然違って俺涙目w <br> ちょっとyastに戸惑うけど。 <>
+login:Penguin<>sage<>2008/01/22(火) 00:47:59 ID:Q7zin5aw<> <a href="../test/read.cgi/linux/1199682606/160" target="_blank">&gt;&gt;160</a> <br> ほんとだぜんぜん違う!! <br> openSUSEなら使える・・・ <>
+login:Penguin<>sage<>2008/01/22(火) 08:03:18 ID:F8O2wjoM<> GUIフレームワーク「Qt」がGPLv3へ移行 <br> http://journal.mycom.co.jp/news/2008/01/21/001/ <>
+login:Penguin<>sage<>2008/01/22(火) 22:35:34 ID:3oR2WZoO<> KDE4をもうメインで使ってる人いる？ <>
+login:Penguin<>sage<>2008/01/23(水) 01:28:48 ID:ioKrmoqz<> KubuntuとopenSUSEでどう違うの? <br> どちらもちょっと試して，Kickoffが使いにくいのですぐにKDE3に戻った訳だが． <>
+login:Penguin<>sage<>2008/01/23(水) 11:30:11 ID:BWT3r601<> ubuntu gutsyにkde4をインスコ中だけど、これじゃダメなのか？openSUSEじゃなきゃだめなのか？ <>
+login:Penguin<>sage<>2008/01/23(水) 11:40:06 ID:0QJNQYD0<> まあKDEなら3でも4でもsuseのほうがいいと思うよ <>
+login:Penguin<>sage<>2008/01/23(水) 11:42:05 ID:qrPBRhx4<> どの辺が Suse 特有なハックがされているの？ <>
+login:Penguin<>sage<>2008/01/24(木) 00:46:41 ID:nD+ldtYa<> おいらが見た限り、apt-get install kde4しても <br> kioslaveが最低限しか入らない。 <br> D&Dできなかったりsmb:/なURIを読み込まなかったり。 <br> おまけにリポジトリがイカレるから <br> 常用はしないでねと言われてるようなもの。 <>
+login:Penguin<>sage<>2008/01/24(木) 00:47:36 ID:nD+ldtYa<> て、SUSEのこと聞かれてたのか。 <br> すまん。<a href="../test/read.cgi/linux/1199682606/170" target="_blank">&gt;&gt;170</a>はubuntuの話 <>
+login:Penguin<>sage<>2008/01/24(木) 00:50:24 ID:rhlRnv+K<> まあKubuntuさんは、次のリリースまでﾜｸﾃｶしながら待つのが吉。 <>
+login:Penguin<>sage<>2008/01/24(木) 00:53:51 ID:jU0ADlUk<> ubuntu は、hardy にもまだ kde4 は来てないね。 <br>  <br> debian experimental で kde4 を試しているが、 <br> suse って、固有のハックがされているのかな、と。 <>
+login:Penguin<>sage<>2008/01/24(木) 01:00:12 ID:jU0ADlUk<> ちなみに debian は kde3 と kde4 のドットディレクトリを分け、 <br> 共存すべくハックがされているらしい。 <>
+login:Penguin<>sage<>2008/01/24(木) 01:26:54 ID:rhlRnv+K<> <a href="../test/read.cgi/linux/1199682606/174" target="_blank">&gt;&gt;174</a> <br> SUSEも共存出来るようにしてるよね。 <br> kdmでkde3とkde4切り替え出来るようになってる。 <br>  <br> <a href="../test/read.cgi/linux/1199682606/169" target="_blank">&gt;&gt;169</a> <br> SUSE特有というか、Novellがkdeチームのスポンサーやってたりしてるし、 <br> kdeの主要開発者はSUSEの人が大多数占めてたりしてる。 <br>  <>
+login:Penguin<>sage<>2008/01/24(木) 02:11:35 ID:exk1Es6g<> GNOMEが見かけショボいままだとKDEがシェア伸ばすかもな <br>  <br> んで、ubuntuがKubuntuになり、UbuntuがGubuntuなると・・・ <>
+login:Penguin<>sage<>2008/01/24(木) 08:31:45 ID:WnextQPp<> KDEのUIデザインにはセンスが感じられない <br> GNOMEはミニマムで美しい <>
+login:Penguin<>sage<>2008/01/24(木) 20:15:23 ID:1otr5Rkg<> GNOMEが美しいって、ダンゴムシが美しいという様なものだな。 <>
+login:Penguin<>sage<>2008/01/24(木) 20:19:47 ID:1otr5Rkg<> GNOMEでもMintだったら、なかなかイイと思うけどね。 <>
+login:Penguin<>sage<>2008/01/24(木) 20:34:29 ID:dmNOoi8Q<> GNOMEは上下にバーがある時点で嫌 <>
+login:Penguin<>sage<>2008/01/24(木) 22:35:08 ID:Z64zlv7x<> <a href="../test/read.cgi/linux/1199682606/180" target="_blank">&gt;&gt;180</a> <br> それは自分でなんとかすればいいだろ。。。 <br>  <>
+login:Penguin<>sage<>2008/01/24(木) 22:42:51 ID:j9rQEsGR<> <a href="../test/read.cgi/linux/1199682606/180" target="_blank">&gt;&gt;180</a> <br> こういう人っているよな。 <br> 何でもデフォルト状態で考える人。 <br> カスタマイズ性に優れてるソフト等を全否定したりする。 <>
+login:Penguin<>sage<>2008/01/24(木) 22:49:09 ID:QCiOVj1p<> こっちでやってくれよ <br> Gnome vs KDE <br> http://pc11.2ch.net/test/read.cgi/linux/1185851003/ <>
+login:Penguin<>sage<>2008/01/24(木) 23:15:18 ID:sCuRVZxh<> Digg - KDE goes cross-platform with Windows, Mac OS X support <br> http://digg.com/linux_unix/KDE_goes_cross_platform_with_Windows_Mac_OS_X_support <>
+login:Penguin<>sage<>2008/01/25(金) 02:40:02 ID:hX3b4SMD<> GNOMEのUIのどこがミニマムなのか小一時間問い詰めたい <>
+login:Penguin<>sage<>2008/01/25(金) 16:18:16 ID:sCfDD2OB<> SuSEのKDE four Liveで遊んでるんだけど、Konqueror4.0.0R5.1で <br> SCIM-Anthyの日本語入力するにはなんかおまじないが必要なの? <br>  <br> エラーログも吐かないし、何度も再インスコして、小一時間試行錯誤して <br> Firefox入れたら、ちゃんと動いてたよorz。 <br>  <>
+login:Penguin<>sage<>2008/01/25(金) 17:15:36 ID:9naKBiix<> <a href="../test/read.cgi/linux/1199682606/184" target="_blank">&gt;&gt;184</a> <br> えええええ!?Σ(゜Д゜;≡;゜д゜) <>
+login:Penguin<>sage<>2008/01/25(金) 17:17:56 ID:sg3F8jf5<> <a href="../test/read.cgi/linux/1199682606/187" target="_blank">&gt;&gt;187</a> <br> OSXだと、かなり前からKDE動いてたよ。 <>
+login:Penguin<>sage<>2008/01/25(金) 17:21:07 ID:9naKBiix<> <a href="../test/read.cgi/linux/1199682606/188" target="_blank">&gt;&gt;188</a> <br> マジすか・・・知らなかった('A`) <>
+login:Penguin<>sage<>2008/01/25(金) 17:28:00 ID:sg3F8jf5<> でもWindowsってのは新鮮だなー <>
+login:Penguin<>sage<>2008/01/25(金) 20:53:56 ID:qJ5jjgZt<> &gt;184 <br> Aqua＠OSXだとウィンドウの右下角でしか拡大縮小できないとか <br> 枠がごん太なのが押し付けがましくて嫌だったけど、 <br> KDE＠OSXなら無問題。嬉しいなぁ。 <>
+login:Penguin<><>2008/01/25(金) 21:00:45 ID:P//QlqVY<> <a href="../test/read.cgi/linux/1199682606/186" target="_blank">&gt;&gt;186</a> <br> おまじない <br> QT_IM_MODULE=scim XIM_PROGRAM="scim -d" XMODIFIERS=@im=SCIM /usr/bin/konqueror <br> 正しいやり方かどうかはしらん。 <br> SUSEの10.3だとKDE4でセッション開始するとデフォで日本語入力可だけど、 <br> KDE3セッションでKDE4のkonqueror起動するときにはおまじないしないとダメ。 <br>  <>
+login:Penguin<>sage<>2008/01/26(土) 00:54:12 ID:IB/QnLui<> QtのIM軽視はあいかわらずだな～。KDE派だけどそこだけはいつもイラつく。 <>
+login:Penguin<>sage<>2008/01/26(土) 02:31:07 ID:ZDZngBJJ<> 日本語の記事も来た。 <br>  <br> KDEアプリがWindows、Macに移植 － ＠IT <br> http://www.atmarkit.co.jp/news/200801/25/kde.html <br>  <br>  <br> Korganizerは魅力的だな。できればKontact丸ごと移植してほしいが。 <br> Thunderbirdがあんまり魅力的に感じなかったもんで。 <br>  <br> あとはやっぱりAmarokだな。 <br> KonquerorはレンダリングエンジンだけFirefoxで切り替えできるようになってほしい。 <>
+login:Penguin<>sage<>2008/01/26(土) 02:36:50 ID:RCmJo0Do<> 以前Windows上でQtチュートリアルやってたら <br> 同じ例題でもLinux上とWindows上では <br> 格段に後者の方が軽かった。 <br> Buttonひとつのダイアログだけでもはっきり分かるくらい。 <br>  <br> なので結構期待してしまうな。 <>
+login:Penguin<>sage<>2008/01/26(土) 03:37:11 ID:3ozu9YVW<> Winでコンカラ使えると… <br> Explorerいらんな <>
+login:Penguin<>sage<>2008/01/26(土) 11:41:29 ID:Yxi7boPG<> これは、あれかな。 <br> KDEはLinuxでは標準DEにはなれないと考えた、ってことなのかな。 <>
+login:Penguin<>sage<>2008/01/26(土) 12:00:59 ID:LEfTHNbU<> っつーか開発者ならより多くの人々に自らの成果物を手にとって欲しいと考えるのはおかしなことか？ <br> 今となってはWindowsはそれほど魅力的な市場なんだよ、Linuxのお寒い状況がかわったか？これからかわるのか？ <br> MSが強すぎるんだよ、また増収増益だし、お荷物だったゲーム事業も遂に黒字化。 <br> MSが通ったあとはぺんぺん草も残らない。 <>
+login:Penguin<>sage<>2008/01/26(土) 12:03:52 ID:uURAaDWA<> KDEがWindowsを含めてクロスプラットフォームになるのは賛成 <br> アプリだけでも <>
+login:Penguin<>sage<>2008/01/26(土) 12:06:42 ID:IB/QnLui<> KDEそのものがWindowsで動いてもぜんぜんうれしくないが <br> Kate for Windowsはあったらうれしい。 <>
+login:Penguin<>sage<>2008/01/26(土) 12:15:15 ID:6ISJIdwa<> QTってWin版はライセンス違うんじゃなかった? <>
+login:Penguin<>sage<>2008/01/26(土) 13:34:13 ID:tDLc9/CT<> 98系には対応しているのかな？ <>
+login:Penguin<>sage<>2008/01/26(土) 14:56:30 ID:Yxi7boPG<> ふーむ、KDEはLinux(だけじゃないけどX環境)で動いてこそ価値があると思うがな。 <br> ユーザ数や規模が大きいからってWindowsにおもねっても、呑み込まれて食い荒らされて設計思想が分裂して存在感を失ないそうだ。 <>
+login:Penguin<>sage<>2008/01/26(土) 15:34:58 ID:IB/QnLui<> <a href="../test/read.cgi/linux/1199682606/201" target="_blank">&gt;&gt;201</a> <br> GPL <>
+login:Penguin<>sage<>2008/01/26(土) 15:46:17 ID:S8P8aPZ1<> というか既に迷走してる感が <>
+login:Penguin<>sage<>2008/01/26(土) 16:22:48 ID:RCmJo0Do<> Trolltechは前からそういう方向でやってたよ。 <br> qtがBorland C++ compilerで使えたりするし。 <br> つかさんざんクロスプラットフォームなMozilla周辺使っといて <br> 何をいまさら。 <>
+login:Penguin<>sage<>2008/01/26(土) 19:51:02 ID:PF+Pqqz5<> kubuntuでkde4試してるんだけど， <br> ログインの度にデスクトップ上に <br> ~/Desktop下のファイル/ディレクトリが追加されるんですが， <br> これはどうやったら抑止できるんでしょうか． <br>  <br> 同じファイル名のアイコンが起動するたびに増えてくので <br> 邪魔で仕方ないです． <>
+login:Penguin<>sage<>2008/01/26(土) 21:55:49 ID:pLAMoiwI<> KDE4をインスコする前の、GNOMEかKDE3のデスクトップに何かのフォルダ置いてないか？？ <>
+login:Penguin<>sage<>2008/01/27(日) 01:03:35 ID:ykj223sp<> KDE4ってMacのパクリみたいな気がする <>
+login:Penguin<>sage<>2008/01/27(日) 02:17:37 ID:5RCyHEin<> VistaのパクリだったりMacのパクリだったり <br> まー大変忙しいこって。 <br>  <br> とにかくそういうつまんない話は巣でどうぞ。 <>
+login:Penguin<>sage<>2008/01/27(日) 03:31:24 ID:yRLpERYl<> qtがBorland C++ compilerで使えたりするし。 <>
+login:Penguin<>sage<>2008/01/27(日) 20:03:13 ID:Mo0wf4cf<> まだ、portsに入ってこないんだけど。 <>
+login:Penguin<><>2008/01/27(日) 21:44:20 ID:eIstSAOu<> KDEforWINって、自分でmakeすんの？ <br>  <br> windowsアプリのクセに？ <>
+login:Penguin<>sage<>2008/01/27(日) 22:14:18 ID:IIPgCiGj<> <a href="../test/read.cgi/linux/1199682606/213" target="_blank">&gt;&gt;213</a> <br>  <br> インストーラーが自動でダウンロードしてインストールしてくれる。 <>
+login:Penguin<>sage<>2008/01/28(月) 13:58:05 ID:Jcvwpd7n<> P4 3Gに7200rpmのHDD、2GBのXPマシンで、Windows用KDEをemergeしてみたんだが、 <br> 一時間以上かかっても終わらん(www. <br>  <>
+login:Penguin<>sage<>2008/01/28(月) 14:59:10 ID:apnADrgI<> 483 ：login:Penguin [↓] ：2008/01/28(月) 11:01:37 ID:U7mmY2SJ <br> <a href="../test/read.cgi/linux/1199682606/482" target="_blank">&gt;&gt;482</a> <br> そのでっかいブツの中に<a href="../test/read.cgi/linux/1199682606/479" target="_blank">&gt;&gt;479</a>の期待する物があるんだろ? <br> 出してごらんよ。 <br> 484 ：login:Penguin [↓] ：2008/01/28(月) 11:23:27 ID:2slUlQH9 <br> まあ、大きなファイルサイズのエロ動画をいくつも捨てることがあるなら <br> そのくらい大きなゴミ箱が必要だよね <br> 485 ：login:Penguin [↓] ：2008/01/28(月) 12:41:59 ID:mjYF/zhH <br> 俺、ubuntuデフォルトの大きさの <br> GNOMEパネルのゴミ箱にエロ動画詰め込んでる… <br> やっぱ、このままだと溢れ出てくる？ <br> 486 ：login:Penguin [↓] ：2008/01/28(月) 12:45:27 ID:oBb84OgG <br> 種類によるな。 <br> 巨乳・制服系はとくにやばいと聞いているから、ちょっと検証するために <br> うpしてくれないか。GNOMEのためにも。 <br> 487 ：login:Penguin [↓] ：2008/01/28(月) 13:02:26 ID:oJzX1Yx2 <br> 「饅頭怖い」かよ <br> 488 ：login:Penguin [↓] ：2008/01/28(月) 13:02:49 ID:U7mmY2SJ <br> <a href="../test/read.cgi/linux/1199682606/487" target="_blank">&gt;&gt;487</a> <br> つるぺた怖い＞＜ <br>  <br> こんな内容で盛り上がるスレが一番勢いあるLinux板だもんな、パクリとかどうでもいいわなｗｗｗ <br>  <br> 日本のLinux使いってキモオタばっかだね。 <>
+login:Penguin<>sage<>2008/01/28(月) 16:01:57 ID:oJzX1Yx2<> 冗談もわからんとは・・・余裕ないのね。可哀想。 <>
+login:Penguin<>sage<>2008/01/28(月) 16:10:07 ID:cji0YkyX<> ところで<a href="../test/read.cgi/linux/1199682606/216" target="_blank">&gt;&gt;216</a>はOSは何を使っているのだろうか。 <>
+login:Penguin<>sage<>2008/01/28(月) 23:27:03 ID:/oQEVkY/<> qtの会社、nokiaがTOBするんだって <br> http://www.itmedia.co.jp/news/articles/0801/28/news096.html <>
+login:Penguin<>sage<>2008/01/29(火) 00:50:53 ID:VJmvhAjZ<> Qt/WebKitは携帯の標準になる可能性けっこうあるしね。 <br> 悪い買い物じゃないと思うよ。 <>
+login:Penguin<>sage<>2008/01/29(火) 02:05:27 ID:RsMLxRMm<> qtだと重くない？って思ってしまった俺はどうすればいいですか？ <>
+login:Penguin<>sage<>2008/01/29(火) 02:31:34 ID:lKQ5N4n7<> <a href="../test/read.cgi/linux/1199682606/216" target="_blank">&gt;&gt;216</a> <br> あそこはUbun厨の巣窟のスレだからな <>
+login:Penguin<>sage<>2008/01/29(火) 10:56:16 ID:QbcZVv68<> Windows版入れてみた。 <br>  <br> GUIインストラ何度もこけるので、悩んだが、 <br> いつも頼りのkddiがいまいちでレポジトリを山形大にしたら <br> 一発でうまくいった。 <br>  <br> Konqueror立ち上げて、環境設定しようとしたら、 <br> libkdeui.dllのエラーとやらでクラッシュ。 <br>  <br> KDE4+Windowsは、さすがにさらにチャレンジャーだな・・・。 <br> WindowsでサクサクKonqueror動けばいいのになあと期待したんだが。 <br>  <>
+login:Penguin<><>2008/01/30(水) 00:33:33 ID:JqfcKMAo<> 教えて下さい。 <br> KDEのワークスペースの情報を取得する方法はあるのでしょうか。 <br> 具体的には、CとMotifで作り込んだ画面を表示しているワークスペースの番号(?)と位置(ジオメトリ)を保存したいのです。 <br> 画面を閉じた後も、その情報に基づき、前に表示されていたワークスペースとジオメトリ情報に基づいて画面を再表示したいと思っています。 <br> 使用言語はC言語なのですが、どなたかご存知ないでしょうか。 <br>  <>
+login:Penguin<>sage<>2008/01/30(水) 03:16:10 ID:xEPxwYJI<> kdcop起動して見てみると <br> Kdesktop以下とkwin以下に <br> それっぽいメソッドがある。 <br> 「CやMotifで作った画面」なのか <br> 「作り込んだ画面」のデータをCやMotifで保存したいのかがわかんないけど。 <br> 単に再ログインした時ワークスペース内を同じ状態にしたいなら <br> よく知らないがセッションとかなかったっけ？ <>
+login:Penguin<>sage<>2008/01/30(水) 14:37:47 ID:LbMvRWgX<> KWinはNetWMっていうfreedesktopの規格準拠のはず。詳しくはぐぐれ。 <>
+login:Penguin<>sage<>2008/01/31(木) 12:53:45 ID:o+0TY/Fo<> Ａｍａｒｏｋ使いたさに、KDE for windows入れてみたが敷居は高いなあ。 <br> せめて、Windows上のGTKアプリ程度には手軽になって欲しい。 <>
+login:Penguin<>sage<>2008/01/31(木) 17:50:39 ID:w5fq8GoI<> KDE 4で変わるデスクトップ環境 <br> ttp://opentechpress.jp/opensource/article.pl?sid=08/01/17/0141244 <br> Xfceに匹敵する速さってほんと？ <>
+login:Penguin<>sage<>2008/01/31(木) 17:52:56 ID:w5fq8GoI<> パネルを画面下から移動できないのか… <>
+login:Penguin<>sage<>2008/01/31(木) 20:35:35 ID:rSsIVfsd<> <a href="../test/read.cgi/linux/1199682606/228" target="_blank">&gt;&gt;228</a> <br> 今のところめちゃくちゃ重い <>
+login:Penguin<>sage<>2008/01/31(木) 20:48:43 ID:Tb1BOFU1<> dragon player良いね <>
+login:Penguin<>sage<>2008/01/31(木) 21:14:30 ID:ld+lMZAg<> <a href="../test/read.cgi/linux/1199682606/228" target="_blank">&gt;&gt;228</a> <br> そもそも最近のXfceは、そんなに軽いわけではないのだが。 <br> PCLinuxOSで比較した限りでは、3より若干軽くなった感じ。 <>
+login:Penguin<>sage<>2008/01/31(木) 22:41:34 ID:eKttwAOm<>    <br> 　　♪　∧__,∧.∩  <br> 　　　 ｒ（ ＾ω＾ ）ﾉ _  <br> 　　　└‐、　　　ﾚ´｀ヽ　  <br> 　　　　　 ヽ　　 _ノ´｀　  <br> 　　　　　　（ .(´　　♪  <br> 　　　　　　 ｀ー  <br> 　♪　　∩ ∧__,∧  <br> 　　　 ._ ヽ（ ＾ω＾ ）7  <br> 　　　/｀ヽJ　　　,‐┘　  <br> 　　　 ´｀ヽ､_　 ノ　　　　  <br> 　　　　　　　｀) ）　♪   <br>  <>
+login:Penguin<>sage<>2008/02/01(金) 04:43:48 ID:6lQV46Pq<> なんか３の頃よりもKDE俺ルールを強要するような感じで気にいらんなぁ。 <br> 実験的で野心的なのはいいが、押しつけるなと。 <>
+login:Penguin<>sage<>2008/02/01(金) 05:58:47 ID:vs78P7mu<> ビルドオプションにsse2使用とかあるんで <br> 最適化もなんぼか効いてくるのかもしれん。 <br> <a href="../test/read.cgi/linux/1199682606/234" target="_blank">&gt;&gt;234</a> <br> なんつーか、GNOMEのダメなところを見習ったような <br> 気がするな。 <br> システム管理ひととおりの作業がGUIでできるのが <br> おもしろかったんだが。 <>
+login:Penguin<>sage<>2008/02/01(金) 16:22:43 ID:uWqKoQ5O<> 今は設定可能な項目が極端に少ない <br> それは開発が遅れているから <br> 次のバージョンでは増える <br> その次のバージョンではもっと増える <br> 時間が問題を解決する <>
+login:Penguin<><>2008/02/04(月) 17:00:53 ID:4GnZefrU<> <a href="../test/read.cgi/linux/1199682606/225" target="_blank">&gt;&gt;225</a> <br>  <br> 「CやMotifで作った画面」です。 <br> この画面に「閉じる」ボタンがついているのですが、このボタンが押された際に、 <br> 現在のワークスペースの番号やジオメトリを取得してファイルに保存、 <br> 次回起動時のその内容に基づき自分を配置するといったことをやりたいのです。 <>
+login:Penguin<>sage<>2008/02/05(火) 00:04:38 ID:qdm4wJ1l<> &gt;237 <br> ttp://tronche.com/gui/x/xlib/ <br> ttp://standards.freedesktop.org/wm-spec/latest/ <>
+login:Penguin<>sage<>2008/02/06(水) 11:41:51 ID:JekKunwT<> KDE 4.0.1 Changelog <br> ttp://www.kde.org/announcements/changelogs/changelog4_0to4_0_1.php <>
+login:Penguin<>sage<>2008/02/06(水) 12:24:24 ID:BgI5Txca<> KDE4のkmailってまだ無いの？ <>
+login:Penguin<>sage<>2008/02/07(木) 04:38:58 ID:qtYA+Hp6<> konquerorとdolphin以外まともなアプリは一つもありません <>
+login:Penguin<>sage<>2008/02/07(木) 10:32:39 ID:s8gQKPEI<> konsole4は悪くないぜ！ <>
+login:Penguin<>sage<>2008/02/07(木) 18:28:37 ID:RHcYOaqX<> knetwalkも捨てがたい。 <>
+login:Penguin<>sage<>2008/02/08(金) 23:44:17 ID:eIJjiNUZ<> kaffeineも悪くない。 <>
+login:Penguin<>sage<>2008/02/09(土) 01:58:00 ID:bsB3G2BQ<> Gwenviewも…て <br> これKDE4のものじゃないな <>
+login:Penguin<>sage<>2008/02/09(土) 06:24:47 ID:pO1BoNPP<> 4.0.1来たね。 <br>  <br> SuSE11A2とりあえず落としてみる。 <>
+246<>sage<>2008/02/09(土) 07:40:08 ID:pO1BoNPP<> ぐぉKDE control centerで落ちる(www。 <br> ちょっとこれは試用する気にもならんわ・・・。 <>
+login:Penguin<>sage<>2008/02/09(土) 09:38:51 ID:1f3nZ4qP<> <a href="../test/read.cgi/linux/1199682606/242" target="_blank">&gt;&gt;242</a> <br> KDEならYaKuakeだろ、常考。 <>
+login:Penguin<>sage<>2008/02/09(土) 12:51:22 ID:EuzClQt2<> kde4.1　か kde4.2でfreebsdのportsに入るらしい。 <br> いつごろﾘﾘｰｽ？ <>
+login:Penguin<>sage<>2008/02/09(土) 13:15:30 ID:KwwSiYzn<> 4.1は2008Q2/Q3だったような <>
+login:Penguin<>sage<>2008/02/09(土) 15:03:42 ID:WVl/sABn<> SUSE 11A2 KDE4.0.1 グズグズだわ。こりゃあかん。 <br> KDE4がまともに使えるようになるには、まだまだ長い道のりが必要ですな。 <>
+login:Penguin<>sage<>2008/02/09(土) 21:16:17 ID:75i9cbfS<> なんだよぐだグダってwwwwww <br> 普通に いろはにほへと とか あいう とか AaBb とかでいいだろwww <br>  <>
+login:Penguin<>sage<>2008/02/09(土) 21:31:30 ID:muRGm/uP<> <a href="../test/read.cgi/linux/1199682606/252" target="_blank">&gt;&gt;252</a> <br> みんな、注目 <>
+login:Penguin<>sage<>2008/02/09(土) 21:40:04 ID:F5WEwFVh<> グダグダのグダなんだろうなwwww <>
+login:Penguin<>sage<>2008/02/10(日) 18:03:46 ID:cfaqLPSk<>  <br> 　っ kateﾀﾝ <br>  <>
+login:Penguin<>sage<>2008/02/12(火) 17:33:15 ID:ULFQdPGS<> KDE4ためしてみたけど <br> Macぽい <>
+login:Penguin<>sage<>2008/02/12(火) 22:35:51 ID:IUFtSseh<>  <br> 　,、,、,、 <br>  <>
+login:Penguin<><>2008/02/13(水) 01:33:32 ID:CHd2W0Ly<> 無理しなくてもGnomeみたいに3系でまったりしてよ <br> KDE3.xは出来が良くて困る <>
+login:Penguin<>sage<>2008/02/13(水) 01:35:47 ID:N8sc8JVE<> KDE4無理しすぎだよなあ <br> Linuxですら安定性皆無なのにWin/OSXでも動かすって方向性を <br> 誤ってるようにしか思えん <>
+login:Penguin<><>2008/02/13(水) 04:51:46 ID:MHjqiTL3<> そもそもWinやOS Xで動く必要性がない <br> 4なんて開発やめて3をブラッシュアップしろ <br> Pentiumにしても「4」は鬼門だなw <>
+login:Penguin<>sage<>2008/02/13(水) 06:19:08 ID:b/9z53uy<> どなたさまかしらねーけど偉そうな要望はこっちにやろうや。 <br> ttp://trolltech.com/contact <br>  <>
+login:Penguin<>sage<>2008/02/13(水) 11:44:24 ID:uwOBpJN5<> KDEの文句をtrolltechによこしてどうしようっていうんだよ <>
+login:Penguin<>sage<>2008/02/13(水) 11:59:56 ID:b/9z53uy<> クロスプラットフォームが方針の会社だから。 <br> ただのツールキットなら不必要なものがQtにはさんざん含まれているし <br> それらがKDEの設計にも大きく作用してる。 <br> そういうのの成果を見たくなったんだろうよ。 <br> もともとGUI環境のOSにまた別なデスクトップ環境なんて「実用」志向ではなかろ。 <br> あくまで「使えるデスクトップ」を他環境に移植したかったなら3系統で行ったろうし <>
+login:Penguin<>sage<>2008/02/14(木) 07:26:40 ID:TC4zovR0<> KDE-WindowsでKonqueror動かしてみたけど、こりゃダメだ。 <br> レンダリング結果がLinuxと違うなんてあり得ない。 <br> CSSの解釈が甘いようだが、そもそも同じソースのはずなのになんで違いが出るんだ？ <>
+login:Penguin<>sage<>2008/02/14(木) 07:52:56 ID:xo+eKYVm<> 出来損ないを駄目だのと言うのは、どうなんだろ？ <br> 駄目で当たり前だろ。 <>
+login:Penguin<><>2008/02/14(木) 09:20:28 ID:1dtBaqFF<> 出来損ないなら出すなよ <>
+login:Penguin<>sage<>2008/02/14(木) 13:04:01 ID:iuf6WIr2<> まだ出てないわけだが <>
+login:Penguin<>sage<>2008/02/14(木) 16:33:21 ID:Zdic+TfA<> どんだけだ <>
+login:Penguin<>sage<>2008/02/15(金) 22:37:51 ID:Gi99SEuc<> 荒れてますね。 <br> KDE4 はまだ産まれたばかりの赤ちゃんだから <br> もう少し暖く見守ってあげましょう。 <>
+login:Penguin<>sage<>2008/02/16(土) 00:20:23 ID:HjF8JoXG<> <a href="../test/read.cgi/linux/1199682606/263" target="_blank">&gt;&gt;263</a> <br> さあはやくQtのリファクタリング作業に戻るんだ <>
+login:Penguin<>sage<>2008/02/17(日) 21:58:36 ID:sVSJaMB+<> Winのコンカラ試したが…まだまだだな <br> Linuxの方が軽いし、使いやすい <>
+login:Penguin<><>2008/02/20(水) 02:45:07 ID:yqe27aAY<> 非rootユーザのため、ホームディレクトリにコンパイルしたバイナリやらライブラリを保存して、 <br> LD_LIBRARY_PATHなどを設定してそれらを使えるようにしています。kdeを起動する前に <br> ウインドウマネージャが走っていない状態で例えば acroread とコンソールで入力すると <br> 正常にAcrobat Readerが起動するのですが、同じコンソールでstartkde を実行して <br> kde内のアイコンからacroread を実行すると、 <br>  <br> /home/username/linux32/usr/local/Adobe/Reader8/Reader/intellinux/bin/acroread: error while loading shared libraries: libgdk_pixbuf_xlib-2.0.so.0: cannot open shared object file: No such file or directory <br>  <br> と表示され起動しません。startkde を実行することで、ライブラリが正常にロードされない <br> ようになってしまっているようなのですが、どなたか解決法をご存知でしょうか? <br>  <>
+login:Penguin<>sage<>2008/02/20(水) 06:33:29 ID:zhwne67f<> おまいさんの言うとおりLD_LIBRARY_PATHの問題じゃないか？ <br> KDEは大体/usr/kde/3.5/libみたいにインスコされるから <br> 起動時にLD_LIBRARY_PATHはいじってるはず。 <br> 環境いじりたくなければacroreadを <br> LD_LIBRARY_PATH=/path/to/lib acroread <br> みたいなaliasにするとか <>
+login:Penguin<>sage<>2008/02/20(水) 13:16:56 ID:mVPyWbiP<> KDE 3.5.9 Changelog  <br> http://www.kde.org/announcements/changelogs/changelog3_5_8to3_5_9.php <>
+login:Penguin<>sage<>2008/02/20(水) 17:44:45 ID:Hd6kVdIi<> 3.5.9のkmailが進化してる。 <br> お気に入りフォルダなんてのがついた。(・ω・) <>
+login:Penguin<>sage<>2008/02/20(水) 18:45:50 ID:txinlK4f<> konquerorをwebブラウザとして使っています（3.5.8 on Gentoo）。 <br> HTMLの表示について質問なのですが、 <br> リンクにデフォルトで下線を表示させたいと思っています。 <br> 適切な設定箇所が見つけられなかったので、 <br> もし可能でしたら教えていただけないでしょうか？ <br> よろしくお願いします。 <>
+276<>sage<>2008/02/20(水) 18:51:46 ID:txinlK4f<> すみません、よくみたらちゃんとありました。 <br> "Unkerline links: Only on Hover"になってました。 <br> すれよごしスマソ。 <>
+login:Penguin<><>2008/02/21(木) 11:38:02 ID:551SOrVy<> <a href="../test/read.cgi/linux/1199682606/273" target="_blank">&gt;&gt;273</a> <br> ありがとうございます。 <br> 結局、引数のコマンドを単に実行するスクリプトを作りました。 <br> launch acroread <br> とやると、launchが実行される時点でシェルの起動スクリプトが読み込まれるのでその時点でLD_LIBRARY_PATHが追加されて無事プログラムが起動するようになりました。 <>
+login:Penguin<><>2008/02/22(金) 17:04:35 ID:BRpYfqmj<> KDE3.5みたいに日本語をボールド表示する方法ありますか？ <br> gentoo <br> libXft-2.1.12 <br> freetype-2.3.5 <br> qt-4.3.3でKDE4.0.1 <br>  <>
+login:Penguin<><>2008/02/29(金) 22:28:51 ID:omRpaUV+<> 気持ちいい！ <br> はい！ <br>  <br> ボールド！ <>
+login:Penguin<><>2008/03/03(月) 18:00:31 ID:HOPUoutI<> 本命KDE4.1のスケジュール <br> http://techbase.kde.org/index.php?title=Schedules/KDE4/4.1_Release_Schedule <br>  <br> アルファ1：4月29日 <br> ベータ1：5月27日 <br> ベータ2：6月24日 <br> RC1：7月15日 <br> 本リリース：7月29日 <>
+login:Penguin<>sage<>2008/03/03(月) 18:21:18 ID:hHGpNOLC<> 実際のリリース日は年末だな <>
+login:Penguin<>sage<>2008/03/04(火) 11:17:29 ID:Ii7ayfFS<> 3のままで行くか… <>
+login:Penguin<>sage<>2008/03/04(火) 18:18:42 ID:UcEBlaxu<> &gt;281 <br> RHELもその頃？ <>
+login:Penguin<>sage<>2008/03/06(木) 13:16:11 ID:hfvkAiTg<> KDE 4.0.2 Release Announcement <br> http://www.kde.org/announcements/announce-4.0.2.php <br>  <br> KDE 4.0.2 Changelog <br> http://www.kde.org/announcements/changelogs/changelog4_0_1to4_0_2.php <>
+login:Penguin<>sage<>2008/03/06(木) 20:48:01 ID:pNlml5tN<> RHEL6はFedora9の半年くらい後だろ <>
+login:Penguin<>sage<>2008/03/07(金) 11:04:18 ID:4zkKq09R<> kde4のメモリ使用量が気になってちょっとググってみた。 <br> kde3.5の40%減ってのが見つかったけど、現状、kde4使って <br> おられる方どんなもんですか？ <br>  <br> 貧弱ノートPCの場合、kde4に移行するメリットってありそうですかね。 <br> http://linux.slashdot.org/article.pl?sid=07/12/13/2314206 <br> http://www.pro-linux.de/NB2/images/indiv/kde3vs4de.jpg <>
+login:Penguin<>sage<>2008/03/07(金) 21:53:07 ID:TEyBxiIn<> そこのページ読んだの? <br> より精確なベンチマークとったらKDE4の方が <br> 3.5.8より110MB多くメモリ使ってたって結果出してるぞ <>
+287<>sage<>2008/03/07(金) 22:36:25 ID:4zkKq09R<> <a href="../test/read.cgi/linux/1199682606/288" target="_blank">&gt;&gt;288</a> <br> ごめん、ちゃんと読んでなかった。 <br> 確かに共有ライブラリも含めた、プロセスごとの実効的な <br> メモリ使用量を見積もると、KDE4の方がメモリ食うみたいね。 <>
+login:Penguin<>sage<>2008/03/14(金) 13:44:30 ID:N40MvDOA<> Gnome2.22か。GVFSてひょっとしてkioみたいな事が出来るようになったのか？ <>
+login:Penguin<>sage<>2008/03/15(土) 00:10:55 ID:qp+EetXc<> <a href="../test/read.cgi/linux/1199682606/289" target="_blank">&gt;&gt;289</a> <br> また重くなるのか orz <br> Vistaと同じ運命を辿らなければいいが。 <>
+login:Penguin<>sage<>2008/03/16(日) 04:15:04 ID:WNsuy/B4<> <a href="../test/read.cgi/linux/1199682606/291" target="_blank">&gt;&gt;291</a> <br> サブマシンにKDE4入れてみたけどたしかに重い <br> どっちかというとメモリよりCPUのほうが食ってる感じ <br> でもデスクトップ周りは結構良くなってる <br> Vistaと比べたらKDEのほうが軍配上がる <>
+login:Penguin<>sage<>2008/03/16(日) 05:51:10 ID:V7kHaCdp<> kde4はnVidiaのドライバーとか入れると、めちゃ快適になるよ。 <br> compizいらずのけなげな子。 <br>  <br> ちなみに3.5.xでcompiz-fusion使ってたんだけど、kwin+nVidiaドライバーだけにすると <br> すげぇ快適になるのに気がついた。 <br>  <br>  <>
+login:Penguin<>sage<>2008/03/16(日) 15:34:39 ID:Vv4nmRpz<> <a href="../test/read.cgi/linux/1199682606/293" target="_blank">&gt;&gt;293</a> <br> 質問なんですが <br> xf86-video-amd-2.7.7.2 <br> を導入したいのですが <br> どうやればいいかわからず困っています <br> 環境はDebianです <br>  <>
+login:Penguin<>sage<>2008/03/16(日) 17:02:19 ID:EKm4O6cX<> http://lwn.net/Articles/250223/ <br> こっから落としてきて、解凍してそれをインストールしたらよいのでは？ <>
+login:Penguin<>sage<>2008/03/18(火) 00:14:09 ID:kpwu5Omm<> KDE4のDolphinでflvなどの動画のサムネイルが作成されませんがこれはこの先もこういうものですか？ <br> あとカーソルのマウスオーバーでmp3の再生とか。gnomeでnautilusでは出来る様なんですが。 <>
+login:Penguin<>sage<>2008/03/18(火) 13:10:53 ID:T/nt48MI<> suse10.3に4.0.2(stable)を入れて週末いじくってたんだけど <br> konsoleの挙動と設定がモロgnome-terminalになっちまってるのが悲しい。 <br> あとnvidiaのドライバー活かせるというので、デスクトップエフェクト入れてみたんだけど、 <br> すげぇ不安定＆超重たい。うーむコレはαレベル・・・(´･ω･`)  <br> デスクトップエフェクト入れた状態でopenoffice立ち上げたら、デスクトップのプラズマ君たちがヒカヒカ点滅w <br> その後パネルが吹っ飛んで画面真っ黒（死）。 <br> デスクトップエフェクトのグラスって奴オンにしたとたん、画面フリーズ。 <br>  <br> デスクトップにファイルを置くとファイルなのにプラズマ君になって、そこから直にドルフィンやコンカラに <br> ドラックしてもファイルを移動してくれないんだね。めんどくさ。 <>
+login:Penguin<>sage<>2008/03/18(火) 13:27:22 ID:sQDQWuxB<> カーネルソースのパッケージ入れて、インストーラをsudo sh NVIDIA-ほげ <br> するだけでふつうはうまくいくと思うよ。 <br>  <>
+login:Penguin<>sage<>2008/03/18(火) 13:43:36 ID:T/nt48MI<> <a href="../test/read.cgi/linux/1199682606/298" target="_blank">&gt;&gt;298</a> <br> んー？オレへのレスなのかな？ <br> nVidiaのドライバはインスコ済みで生きた状態ですよ。 <br> じゃないとデスクトップエフェクトは使えないすよ。 <br>  <br> さっき、4.0.2のアップデートがごっそり来てたんで入れたら、画面真っ黒でプラズマうんぬんが・・って <br> クラッシュハンドラがお月様のようにぽかーんって浮かんでた(´･ω･`)  <br>  <br> デスクトップエフェクト入れた状態でfirefox+mplayer pluginで動画再生すると <br> 変な場所に半透明の空のウインドウが亡霊のように出現。 <>
+login:Penguin<>sage<>2008/03/18(火) 17:16:21 ID:sQDQWuxB<> あ、いや、294に。 <br>  <>
+login:Penguin<>sage<>2008/03/23(日) 23:50:59 ID:Y3V6J9T1<> kubuntu8.04 beta試してみたけど、&beta;版というより&alpha;版って感じの出来だし、 <br> firefox-2が重いことにも変りがない。 <br> 個人的には相変わらずPCLOSから乗り換えようという気にならない。 <>
+login:Penguin<>sage<>2008/03/24(月) 00:15:25 ID:8IWwHF3w<> <a href="../test/read.cgi/linux/1199682606/301" target="_blank">&gt;&gt;301</a> <br> KDE使うならPCLOSでいいじゃん <br> 乗り換える必要なし <br> Kubuntuはヽ( ･∀･)ﾉ●ｳﾝｺｰ <>
+login:Penguin<>sage<>2008/03/24(月) 00:23:31 ID:zp0UEZR0<> KubuntuはGnomeから乗り換えを検討したユーザーに <br> Gnomeは良かったなー、やっぱりGnomeがいいやーと思わせるためのもの <>
+login:Penguin<>sage<>2008/03/24(月) 00:44:55 ID:XAuB/jxD<> TeXで日本語が簡単に通るディストリって何があるか教えて頂けませんか <>
+login:Penguin<>sage<>2008/03/24(月) 01:25:57 ID:kpN6U8tI<> <a href="../test/read.cgi/linux/1199682606/304" target="_blank">&gt;&gt;304</a> <br> Vine <br> kdeスレ的にはVineなんか使わずにKile使えよ。って言っておく。 <br> Vineのkdeって最低な出来だし。 <br>  <>
+login:Penguin<>sage<>2008/03/24(月) 03:19:40 ID:kpN6U8tI<> そういえばKDE4のフォントのサンプル文字の「ぐだぐだ」って・・ｸｿﾜﾛﾀ <>
+login:Penguin<>sage<>2008/03/24(月) 03:28:14 ID:zJdjgZ1H<> <a href="../test/read.cgi/linux/1199682606/303" target="_blank">&gt;&gt;303</a> <br> 4.0は3.5ユーザーに <br> 3.5はよかったなー、やっぱり3.5がいいやーと思わせるためのもの <>
+login:Penguin<>sage<>2008/03/26(水) 20:36:48 ID:q2MJ2yiM<> 結局のところ、kde4はまだ待った方がいいのかなぁ？？ <br> 自分の使ってるディストリは、デスクトップがいまいちだから、入れてみたい気がするが・・・ <>
+login:Penguin<>sage<>2008/03/26(水) 21:59:25 ID:WILC2uxy<> デスクトップがいまいちなディストリがKDE4をバッチリ用意出来てるとは思えないけど。 <br> そもそも何か後退してる部分もある様な。 <>
+login:Penguin<>sage<>2008/03/27(木) 07:56:38 ID:a9LKLh2H<> <a href="../test/read.cgi/linux/1199682606/308" target="_blank">&gt;&gt;308</a> <br> 悪いことは言わないから，止めとけ． <>
+login:Penguin<>sage<>2008/03/27(木) 12:25:40 ID:s5WeM3WK<> いまんところKDE4はlivecdで試すものだな。4.1がでないうちは常用なんか無理じゃない？ <>
+login:Penguin<>sage<>2008/03/27(木) 13:27:25 ID:q30i4K7e<> いや、KDE4のデコレーションを楽しみながら、 <br> 日常作業は、emacs や terminalの中で行っている人なら <br> 大丈夫じゃないか？ <>
+login:Penguin<>sage<>2008/03/27(木) 16:45:16 ID:7i86f3e+<> デスクトップが立ち上がりはするものの、ツールバーが無反応で使い物にならん… <br> 早くなおれー <br>  <br> 4.1には期待してる <br> というかqt-4.4に期待してる <>
+login:Penguin<>sage<>2008/04/11(金) 12:40:22 ID:8m2f1SQG<> konqueror 上でファイルアイコンを右クリックした時に表示されるコンテキス <br> トメニューをカスタマイズするにはどこを弄ればいいのですか？ <br>  <br> 具体的には、xml ファイルを右クリックして表示される『akregator にフィー <br> ドを追加』というのを、削除または別のアグリゲータに追加するように変更し <br> たいと思っています。 <br>  <>
+login:Penguin<>sage<>2008/04/13(日) 06:05:32 ID:I3+hAjGV<> kde4は何故にKdepim(Kontact)出さないんだろう？ <>
+login:Penguin<>sage<>2008/04/14(月) 11:06:47 ID:sNArmtLs<> <a href="../test/read.cgi/linux/1199682606/315" target="_blank">&gt;&gt;315</a> <br> Thunderbirdに任せるつもりかな？ <br> 現状ではKontactのほうが多機能で優秀だと感じるんだけど。 <>
+login:Penguin<>sage<>2008/04/19(土) 19:58:00 ID:fv2cx6jG<> &gt;&gt; 315-316 <br>  <br> kdepim は kde-4.1 で入るよ。 <br>  <br> http://techbase.kde.org/index.php?title=Schedules/KDE4/4.1_Release_Goals <br> http://techbase.kde.org/index.php?title=Schedules/KDE4/4.1_Feature_Plan <br>  <br>  <br> kde4 は kde-4.0.x でライブラリなど基本的な部分をこさえて <br> 4.1.x でアプリケーションの拡充を考えてるみたい。 <>
+login:Penguin<>sage<>2008/04/21(月) 19:53:18 ID:EdF1c+z9<> 初歩的な質問ですみません。 <br> KDEでテーマを変えたいと思い、 <br> KDE-Look.orgでテーマをダウンロードして <br> コントロールセンターのテーママネージャで新規テーマのインストールをしようと思ってもできないです。 <br> 自分なりにいろいろ調べてはみたつもりなのですが <br> 自分の環境に微妙に当てはまらないものが多く解決できません。 <br> どなたか教えていただけませんか？ <br> 私のOSはUbuntu7.10、KDEのバージョンは3.5.8です。 <>
+login:Penguin<>sage<>2008/04/21(月) 20:54:52 ID:8KWnJqYr<> 拡張子がkthとかのだよな？ <>
+login:Penguin<>sage<>2008/04/21(月) 21:56:57 ID:EdF1c+z9<> <a href="../test/read.cgi/linux/1199682606/319" target="_blank">&gt;&gt;319</a> <br> レスありがとうございます。おかげで少し自己解決いたしました。 <br> コントロールセンターのテーママネージャで新規テーマをインストールするには <br> 拡張子が.kthであるファイルをダウンロードしなければならないのですね。 <br> KDE-LOOK.orgの左のメニューでThemes/Stylesを選択した際に <br> Theme-Managerの項目を見落としていたことに気づきました。 <br>  <br> ですが、拡張子が.tar.gzのファイルの利用方法がまだ理解できません。 <br> どこかで.tar.gzや.tar.bz2のファイルを指定してやればそのファイルをまるごと取り込んで、 <br> インストールして環境に反映してくれる機能があると勝手に勘違いしていたのですが、 <br> そういうものではないのでしょうか？ <br>  <>
+login:Penguin<>sage<>2008/04/21(月) 22:46:55 ID:XiQf2Wk5<> <a href="../test/read.cgi/linux/1199682606/320" target="_blank">&gt;&gt;320</a> <br> KDEテーマのインストール <br> ttp://d.hatena.ne.jp/dokumori/20061022/1161551941 <br>  <br> KDEのテーマを変える <br> ttp://www.a-yu.com/wm/theme.html#kde <br>  <br> KDEにウィンドウ装飾を追加する <br> ttp://www.k5.dion.ne.jp/~r-f/sicklylife/memo/linux_ubuntu_710.html#kde_window_add <br>  <br> 真ん中のは古すぎる気もするが。 <br> .tar.gzや.tar.bz2のは基本的にコンパイルする必要があると思われ。 <br> とりあえず.tar.gzファイルを展開すると中にREADMEが入ってるだろうからそれ見てみ。 <>
+login:Penguin<>sage<>2008/04/22(火) 13:32:39 ID:DRUyJgxS<> Macを検討してみても良いのでは。a <>
+login:Penguin<>sage<>2008/04/24(木) 13:21:02 ID:faXvbcmZ<> すいません。 <br> KDEのログアウトか電源設定のことなんですけど、 <br> Windowsでいうスタンバイや休止の状態にするにはどうすればいいでしょうか？ <br> 「セッションをロック」や「ログアウト」のメニュー項目にはそれらが見当たらないんです。 <>
+login:Penguin<>sage<>2008/04/24(木) 18:47:30 ID:FKdVQVFu<> <a href="../test/read.cgi/linux/1199682606/323" target="_blank">&gt;&gt;323</a> <br>  <>
+login:Penguin<>sage<>2008/04/25(金) 08:37:55 ID:ybMpg2Gw<> konqueror 上でバックアップファイル(~で終わるファイル)を非表示にしたいのですが、 <br> どこを設定すればいいですか？ <br> 隠しファイルを表示しないというチェックでは、.(ドットで終わるファイル)しか非表示になりません。 <>
+login:Penguin<>sage<>2008/04/26(土) 18:07:31 ID:Y56CcuvU<> 数年ぶりにKDE入れてみた。 <br> システム++のスタイルが無くなってるが追加で入れることは出来る？ <br> KDEのバージョンは3.5.5 <>
+login:Penguin<>sage<>2008/04/27(日) 08:02:16 ID:eojINsLh<> KDE4.0.3入れたら核地雷でﾜﾛﾀ <br> KDE4.1まで待ってろってkde.orgに書いといてくれよな <>
+login:Penguin<>sage<>2008/04/27(日) 11:40:38 ID:r5az8IlG<> ログインする度にデスクトップにホームディレクトリのシンボリックが出てくる　KDE4使ってらんね <>
+login:Penguin<>sage<>2008/04/27(日) 12:57:13 ID:VSxWU51E<> Macを検討してみてもよいのでは。e <>
+login:Penguin<>sage<>2008/04/27(日) 14:05:46 ID:9cZkWGFM<> はい、触ったら負けでスルー推奨です <>
+login:Penguin<>sage<>2008/04/27(日) 15:20:33 ID:UosAccYT<> kubuntuの新しいの試してみたけど、やっぱkubuntuだったわw <br>  <br> <a href="../test/read.cgi/linux/1199682606/328" target="_blank">&gt;&gt;328</a> <br> suse11β1だと、それ直ってるよ。 <>
+login:Penguin<><>2008/04/30(水) 17:37:35 ID:yUWHSArE<> KDE4.1α1 <br> ｷﾀ━━━ヽ(ﾟヽ(ﾟ∀ヽ(ﾟ∀ﾟヽ(ﾟ∀ﾟ)ﾉﾟ∀ﾟ）ﾉ∀ﾟ)ﾉﾟ)ﾉ━━━!!!! <br> http://www.kde.org/announcements/announce-4.1-alpha1.php <br>  <>
+login:Penguin<><>2008/04/30(水) 21:04:30 ID:wvmocoD+<> 4.1のα版と4.0はどっちが安定しているのかと疑問に思ってしまう・・・ <br>  <br>  <>
+login:Penguin<>sage<>2008/05/01(木) 03:14:49 ID:qRL7t5ic<> <a href="../test/read.cgi/linux/1199682606/333" target="_blank">&gt;&gt;333</a> <br> あんた、疑問ばかりで年老いていくんだな <>
+login:Penguin<>sage<>2008/05/01(木) 21:28:35 ID:jtm7ZP/s<> <a href="../test/read.cgi/linux/1199682606/333" target="_blank">&gt;&gt;333</a> <br> あなたは科学者に向いている気がします <>
+login:Penguin<>sage<>2008/05/02(金) 10:56:26 ID:XcH/RDPg<> いや批評家だな <br> 科学者は疑問から何かをうみ出すもの。批評家は批評するだけ <br> 疑問はゴールではなくスタート <>
+login:Penguin<>sage<>2008/05/02(金) 11:33:14 ID:yJKJzsnv<> でもさー4.0.3の次は4.0.4で、4.0.5・・4.0.6と、どんどん完成度上げて4.1リリーするもんだとばかり思っていたんで <br> なんか意表突かれてしまった感じやがな(´･ω･`) <br> 4.1がαなら、今の4.0.3はα以前って事か？なんてね。 <br> まあ実際今の4.0.xみるとαみたいな感じだけどね。 <br>  <>
+login:Penguin<>sage<>2008/05/02(金) 11:52:48 ID:oH49+Uq3<> KDE 4.1 alpha1 = KDE 4.0.71 じゃないのか <>
+login:Penguin<>sage<>2008/05/02(金) 16:49:14 ID:WGjRVAI0<> KDE4.0.72 <br> ttp://usamimi.info/~linux/d/up/up0182.png <>
+login:Penguin<>sage<>2008/05/03(土) 08:27:07 ID:u+02TjT6<> KDEが日本ではやらないのはマスコットのワニがキモいからだな思うよ。 <>
+login:Penguin<>sage<>2008/05/03(土) 09:13:50 ID:GTCPLhZf<> 俺的にはGNOMEの足跡の方がウザい。 <>
+login:Penguin<>sage<>2008/05/03(土) 09:32:51 ID:wtovjmae<> 確かに足跡はウザい <>
+login:Penguin<>sage<>2008/05/03(土) 12:29:35 ID:Vl1f5tpU<> ワニを可愛くするんだ <>
+login:Penguin<>sage<>2008/05/03(土) 12:51:47 ID:GDm2/1Wd<> この何気ない書き込みが、後に世界中を席巻するDEマスコット「KDEたん(KDE-tan)」の始まりだったという事は、まだ誰も知らなかった… <br> やがて「GNOMEたん」とシレツな争いを繰り広げるのも、また別の話。 <>
+login:Penguin<>sage<>2008/05/03(土) 13:51:23 ID:sitYJ+rw<> ワニ確かにキモイよねー。欧米の漫画に出てくるキャラぽい。 <br> スパイダーマンに出てくる敵キャラみたいだ。 <br> suseのギーコちゃんも日本ぽくなってかわいくなったけど、昔はあんな感じだったんだよな。 <>
+login:Penguin<>sage<>2008/05/03(土) 13:57:45 ID:sitYJ+rw<> ttp://www.novell.com/company/logo/img/viral_soccer.png <br> きもかった頃のギーコちゃん('A`)  <>
+login:Penguin<>sage<>2008/05/03(土) 22:30:31 ID:QU6YLd73<> これは酷いwww <>
+login:Penguin<>sage<>2008/05/03(土) 22:43:55 ID:wtovjmae<> いやかっこいいだろｗ <>
+login:Penguin<>sage<>2008/05/03(土) 23:36:31 ID:b+YYvvtr<> ttp://www.nintendo.co.jp/nom/0205/03/01/waninoko.gif <br> こんな感じなら愛されるとオモフ <>
+login:Penguin<>sage<>2008/05/04(日) 03:35:07 ID:0qg6l3aP<> <a href="../test/read.cgi/linux/1199682606/349" target="_blank">&gt;&gt;349</a> <br> 愛せない・・・ <br> 癖が強い気がする <>
+login:Penguin<>sage<>2008/05/04(日) 10:58:05 ID:onKd0TAB<> <a href="../test/read.cgi/linux/1199682606/349" target="_blank">&gt;&gt;349</a> <br> 小・中学生には大人気だなwww <>
+login:Penguin<><>2008/05/05(月) 21:20:15 ID:/2DmrlPE<> 最近KDE3.5系を使い始めたんですが、 <br> Konquerorでブラウジングするのに便利なプラグインって何かありますか？ <br> Flashプレイヤーとかはｲﾝｽｺしてるんですが、 <br> オンラインブックマークとかと連携できればうれしいです。 <>
+login:Penguin<>sage<>2008/05/05(月) 22:08:44 ID:4/0F+lGh<> <a href="../test/read.cgi/linux/1199682606/352" target="_blank">&gt;&gt;352</a> <br> &gt;オンラインブックマークとかと連携 <br> del.icio.usとかは標準で内蔵されてるよ。 <br> Google Browser Syncやfoxmarksみたいな奴は無いなぁ。 <>
+352<>sage<>2008/05/06(火) 00:15:55 ID:Q3Lfb6Ag<> <a href="../test/read.cgi/linux/1199682606/353" target="_blank">&gt;&gt;353</a> <br> del.icio.us標準搭載すげー！これだけ十分です。ありがとうございました。 <br> それにしてもこのブラウザ軽くてある程度の機能もあって便利ですね。 <br> （ただYahoo非対応という難点がありますが。。） <br>  <br>  <>
+login:Penguin<>sage<>2008/05/06(火) 00:57:00 ID:/i32bBRO<> <a href="../test/read.cgi/linux/1199682606/354" target="_blank">&gt;&gt;354</a> <br> Yahooとかはユーザーエージェント変えればOK。 <br> この機能も標準搭載されてるよ。 <>
+login:Penguin<>sage<>2008/05/06(火) 00:58:12 ID:j1PRk3lt<> 終了時のタブ位覚えててくれればいいのに。 <>
+login:Penguin<>sage<>2008/05/07(水) 01:33:39 ID:Wy6VElrI<> まあ、どれだけがんばってもコンカラの時代は来んから <>
+login:Penguin<>sage<>2008/05/07(水) 01:54:54 ID:f1J8m3c1<> kde4は、なんでノーチラスもどきのdolphinが標準なんだ？使い勝手悪すぎ！('A`)  <>
+login:Penguin<>sage<>2008/05/07(水) 02:35:54 ID:O3qDAzBl<> uxtermがあるから問題なし <>
+login:Penguin<><>2008/05/07(水) 20:41:45 ID:Ow6mmuKu<> 迷走しているようにしか思えないよなぁ。 <br> forkするか・・・ <br>  <>
+login:Penguin<>sage<>2008/05/07(水) 20:57:21 ID:q33U6DDP<> Ubuntu8.04を使用していて、GNOMEからKDEに切り替えました3.5.9です。 <br> Qtだけ自己ビルドしたらかなり調子がよくなったので結局arts,kdelibs,kdebaseその他もろもろ公式から <br> tar玉落として全部自己ビルドしちゃいました。 <br>  <br> するとまず、日本語入力で問題発生、これはKDMではなくGDMから起動することで無事anthy-scimが使えるように <br> なりしばらく使っていたのですが、メニューの編集がまったく効かないのです。 <br> メニューを右クリックして設定パネルは出るのですが、そこで追加や位置の移動をしてsaveしても反映されません。 <br> そういえば以前も自己ビルドでそんなことになったのですが、何か原因があるのでしょうか？GNOMEのメニューが <br> 絡んでいるとか。。。 <>
+login:Penguin<>sage<>2008/05/07(水) 22:00:27 ID:SoeAzoji<> <a href="../test/read.cgi/linux/1199682606/361" target="_blank">&gt;&gt;361</a> <br> そんな回りくどいことをしなくても，最初からKDEで出来のいい <br> PCLOS,MEPIS,SUSEあたりを使ってくれ。 <>
+login:Penguin<>sage<>2008/05/07(水) 22:07:51 ID:LwyPOEMU<> <a href="../test/read.cgi/linux/1199682606/357" target="_blank">&gt;&gt;357</a>が華麗にスルーされてる件 <>
+login:Penguin<><>2008/05/07(水) 22:13:34 ID:pa5F20Ne<> なるほど <>
+login:Penguin<>sage<>2008/05/07(水) 22:42:44 ID:q33U6DDP<> <a href="../test/read.cgi/linux/1199682606/362" target="_blank">&gt;&gt;362</a> <br> そっか＾＾；；；； <>
+login:Penguin<>sage<>2008/05/08(木) 04:08:57 ID:WK7zP3Sx<> <a href="../test/read.cgi/linux/1199682606/361" target="_blank">&gt;&gt;361</a> <br> 素直にkubuntu使えばいいじゃん。と言いたいところだが、あえてKubuntuは勧めずに362氏の意見に賛成。 <br> あとMandrivaのkdeも出来が良いよ。 <>
+login:Penguin<><>2008/05/08(木) 14:12:41 ID:l+7OhrEf<> <a href="../test/read.cgi/linux/1199682606/346" target="_blank">&gt;&gt;346</a> <br> タートルズを思い出した <br> しかもこないだアメで公開されたやつ <br>  <>
+login:Penguin<>sage<>2008/05/12(月) 02:23:29 ID:rlSzPqWB<> <a href="../test/read.cgi/linux/1199682606/361" target="_blank">&gt;&gt;361</a> <br> フォルダーのパーミッションとかじゃなかろうか。 <br> Mandriva だと　ディレクトリは、 ~/.local/share/applications/ <>
+login:Penguin<>sage<>2008/05/14(水) 00:20:33 ID:QVwjhuHt<> <a href="../test/read.cgi/linux/1199682606/368" target="_blank">&gt;&gt;368</a> <br> レスありがとう、ちょっと今メインをGNOMEにしてしまったのでKDEは基本しか入れてない。 <br> またメニューとか入れてみて実験してみますね。 <>
+login:Penguin<>sage<>2008/05/15(木) 18:59:00 ID:eqRfhwH0<> 古いノートに2日かけてソースから入れたKDEを削除中 <br> 削除するのにもかなりの時間がかかっている模様 <br> 使わないんだけど削除されていくコンソールメッセージ見てたら <br> 寂しくなってきて書き込みました。さようならKDE…… <br> やっぱりGNOMEに戻ります。 <>
+login:Penguin<>sage<>2008/05/15(木) 21:54:13 ID:ewHsWzIj<> <a href="../test/read.cgi/linux/1199682606/370" target="_blank">&gt;&gt;370</a> <br> 嫌がらせみたいじゃないか。 <>
+login:Penguin<>sage<>2008/05/15(木) 22:00:38 ID:/ZiW/WEN<> <a href="../test/read.cgi/linux/1199682606/370" target="_blank">&gt;&gt;370</a> <br> ふっ・・・俺には解る。ソースからわざわざ入れるようなマニアは又戻ってくるww <br> 実際俺は何度かKDE、GNOMEを行き来している。KDE3のmakeはとてもやりやすい。 <br>  <br> 4はわかんねww　いちいちmake用のユーザー作ってBASHのprofileから環境変数やらセットして。。。 <br> めんどくさ。 <br>  <>
+login:Penguin<><>2008/05/19(月) 01:30:00 ID:xERx/mDk<> kubuntuでKDE 4使ってます。 <br> パネルにある時計やアンテナが通常右にあるはずなのですが、左へ移動してしまいました。 <br> ググってもKDE 4でのパネルの設定に関しては書かれていないので、分かる方が居られましたら宜しくお願いいたします。 <>
+373<><>2008/05/19(月) 06:24:15 ID:xERx/mDk<> http://usamimi.info/~linux/u/ss/1211136260379.png <br> このように仮想デスクトップや時計が左側へ移動しています。 <br> ここで、ブラウザを立ち上げてもパネルにアイコンが表示されないので <br> 一度、仮想デスクトップや時計を消してみました。 <br> http://usamimi.info/~linux/u/ss/1211145420437.png <br> その状態でブラウザを立ち上げたところ、パネルに表示されないようです。 <br>  <br> どうか宜しくお願いいたしますm(＿)m <>
+login:Penguin<>sage<>2008/05/19(月) 07:36:12 ID:RqzvmMLt<> kubuntuのkde4なんて出来が悪いんだから捨てちゃいなさい。 <>
+login:Penguin<>sage<>2008/05/19(月) 10:08:40 ID:qS/NQTMT<> <a href="../test/read.cgi/linux/1199682606/374" target="_blank">&gt;&gt;374</a> <br> パネルの中で真ん中部分を占めるべきはずのTask Managerが何らかの理由で起動してないね。 <br> パネルのどこか空いた所で右クリックしてAdd Widgets選んで、ダイアログの中からTask Manager <br> 選んで追加してみたら。 <br> あと、パネル内での各ウィジェットの並べ替えが今はまだ出来ないから、順番変えたかったら一旦 <br> 全部消して順次追加するしかないね。 <br>  <br> 自分もkubuntuのkdeは出来が悪い説に同意。 <br> kde4.0系がまだまだ未熟てのが大きいけどね。 <br> 一般ユーザーが3.5系から乗り換えて常用する域にはまだ遠いかなと。 <>
+login:Penguin<>sage<>2008/05/19(月) 10:55:38 ID:Tvo7xdzO<> KubuntuはUbuntuとはまったくの別物 <br> もともとKDE3.x時代からKubuntuの出来は酷いものだった <br> 開発者メンバーも違うからOSの質は両者かなり違う <>
+login:Penguin<><>2008/05/19(月) 12:22:29 ID:KUNOyGEy<> <a href="../test/read.cgi/linux/1199682606/377" target="_blank">&gt;&gt;377</a> <br> 開発者も違うのかぁ～　知らんかった。俺はKDEでもGNOMEでもないFluxboxだけど <br> KDEに興味ある。KDEで使うなら何がいい？377決めて。ちなみに、今はdebianです。 <>
+アジェグ４倍 </b>◆4xAJeG.COM <b><>chage<>2008/05/19(月) 12:22:41 ID:YbV+PG5C<> 新しいKnoppixでKDEの4を見てみたが、 <br> なんとかビスタに似せようと必死だったようだ。 <br>  <>
+login:Penguin<>sage<>2008/05/19(月) 12:30:55 ID:SfbO9CAU<> KDEといえばSUSE、PCLOS、Mandriva、MEPISのどれかだろｊｋ <>
+login:Penguin<>sage<>2008/05/19(月) 18:22:58 ID:RqzvmMLt<> <a href="../test/read.cgi/linux/1199682606/380" target="_blank">&gt;&gt;380</a> <br> 同意なんだが、KDE4に関しては、今現在ならSUSEしかない。 <br> 他鳥は、SUSEのKDE4のリリースを受けて、ビルドし直してるような状態。 <>
+login:Penguin<>sage<>2008/05/19(月) 18:31:29 ID:RqzvmMLt<> そういえばfedora9がKDE4.0.3搭載したらしいが出来はどうなんだろう？ <br>  <br> 試す気も無いし、fedoraに興味すらわかないので他人事・・(´･ω･`) <>
+378<>sage<>2008/05/19(月) 19:11:32 ID:KUNOyGEy<> とりあえず全部落としてみたわけだがw さぁどれから・・w <>
+login:Penguin<>sage<>2008/05/19(月) 19:24:22 ID:RqzvmMLt<> <a href="../test/read.cgi/linux/1199682606/383" target="_blank">&gt;&gt;383</a> <br> KDE4目当てならSUSE11β3を第一候補に。 <br> 次はMandrva <br>  <br> PCLOS、Mepis,SUSE10.3でのKDE4はオススメしないよ。 <>
+login:Penguin<>sage<>2008/05/19(月) 19:29:13 ID:Wfpy2p1e<> KDE for Windowsに何か動きがあった模様？ <>
+373<><>2008/05/19(月) 20:25:34 ID:xERx/mDk<> <a href="../test/read.cgi/linux/1199682606/376" target="_blank">&gt;&gt;376</a> <br> ありがとうございます！！！おかげさまで無事直りました。。。感謝ですm(＿)m <>
+login:Penguin<>sage<>2008/05/19(月) 20:53:02 ID:0REvbNZi<> KDE4.0.4（openSUSE10.3)で普通に使えるようになったけど、 <br> 使いやすさは3.5のほうが上。 <>
+login:Penguin<>sage<>2008/05/19(月) 21:01:53 ID:/Waga8Mz<> バーのあれこれ実装も済んでないし、4.0はほんとqt4に移行しただけのバージョンでしかないお。 <br> まともに使おうと思ったら4.1以降 <br> 周辺アプリの以降もまだ済んでないしね。 <>
+login:Penguin<>sage<>2008/05/19(月) 22:01:00 ID:JLP1sPYZ<> <a href="../test/read.cgi/linux/1199682606/387" target="_blank">&gt;&gt;387</a> <br> KDE 4.0.4・・・？ <br>  <br> 404・・・？ <>
+login:Penguin<>sage<>2008/05/19(月) 22:17:05 ID:2Wh1WoUr<> not found <>
+login:Penguin<>sage<>2008/05/19(月) 22:35:58 ID:rxqFO08y<> <a href="../test/read.cgi/linux/1199682606/389" target="_blank">&gt;&gt;389</a> <br> KDE4.0.4が最新版。SUSEで使える。 <br>  <>
+login:Penguin<>sage<>2008/05/19(月) 23:29:07 ID:NvPGsLl9<> というか・・・ネタレス <>
+login:Penguin<>sage<>2008/05/19(月) 23:34:35 ID:muRelOP8<> http://dot.kde.org/1210150521/ <br> KDE 4.0.4 Out Now, Codenamed File-Not-Found <>
+login:Penguin<>sage<>2008/05/20(火) 00:02:42 ID:U35qtSa7<> 考えることはみんな同じか(ﾉ∀`) <>
+login:Penguin<>sage<>2008/05/20(火) 00:06:05 ID:0rN/Ftw9<> (´･ω･`) <>
+login:Penguin<>sage<>2008/05/20(火) 00:14:22 ID:C1b0Q0Tk<> &gt;Codenamed File-Not-Found <br> さすがに洒落が分かってるなwww  <>
+login:Penguin<>sage<>2008/05/20(火) 01:00:38 ID:MH1lsbU+<> そして、もれなくファイルを特定できまんせんというエラーがでるKDEであった <>
+login:Penguin<>sage<>2008/05/20(火) 05:15:44 ID:FZpOOkQn<> <a href="../test/read.cgi/linux/1199682606/382" target="_blank">&gt;&gt;382</a> <br> 使ってみたよ。そこそこいい。Pulseaudio と一応連携もしている。 <br> でもそこそこXごと落ちる。こともある。 <br> 細かいところで穴がある。右下の常駐アプレットの一部のアイコンが汚く崩れたり。 <br> きれいだた。 <>
+login:Penguin<>sage<>2008/05/20(火) 09:03:51 ID:wCFGhDD/<> <a href="../test/read.cgi/linux/1199682606/393" target="_blank">&gt;&gt;393</a> <br> なるほど。だから、俺はKDE 3.0.1以降GNOMEへMoved Permanentlyしたのか。 <>
+login:Penguin<>sage<>2008/05/21(水) 22:26:49 ID:RDk084wQ<> 不安定な物の方がおもしろいんだがね <>
+login:Penguin<>sage<>2008/05/22(木) 09:29:26 ID:itWQcnkn<> <a href="../test/read.cgi/linux/1199682606/396" target="_blank">&gt;&gt;396</a> <br> すまん、どこらへんがオモロイのかサパーリわからん <>
+login:Penguin<><>2008/05/23(金) 01:03:02 ID:tI5X8o7Y<> Kubuntu　KDE4です。 <br> Kメニューからアプリケーションの一覧を開くと、「デスクトップ検索」とプログラムの追加と削除/KDE3 <br> 以外のアイコンがすべて「？」のアイコンになっています。 <br> ↓このような感じです。 <br> http://usamimi.info/~linux/u/ss/1211472070315.jpg <br> これは正常なのでしょうか？ <br> もし、正常ではなく直し方があるのであれば宜しくお願いします。。。 <>
+login:Penguin<>sage<>2008/05/23(金) 03:44:17 ID:98qsYCxO<> <a href="../test/read.cgi/linux/1199682606/402" target="_blank">&gt;&gt;402</a> <br> <a href="../test/read.cgi/linux/1199682606/375" target="_blank">&gt;&gt;375</a>,376,377...... <br>  <br> このネタのループはいつ終わるのだろうかwwww <>
+login:Penguin<>sage<>2008/05/23(金) 10:30:19 ID:KRByb749<> 来週には4.1のβ1がリリースされる。 <br> いよいよだな。 <>
+login:Penguin<>sage<>2008/05/24(土) 01:26:58 ID:2F39uUOO<> いよいよと思ってる君の頭のめでたさに乾杯する人手ぇあげてー <>
+login:Penguin<>sage<>2008/05/24(土) 01:34:54 ID:mOEsD+st<> ノ <>
+login:Penguin<>sage<>2008/05/24(土) 02:32:41 ID:ipxBWWlW<> ※ここはニコではありません <>
+login:Penguin<>sage<>2008/05/26(月) 06:28:30 ID:78f667Oh<> Qt2.3.2と、KDE2.2.2を入れた <br> めちゃくちゃ軽いし、見た目も機能もそんなに悪くない <>
+login:Penguin<>sage<>2008/05/26(月) 07:09:59 ID:NwiVdCZh<> konquerorでタブが使えないのは痛くないかい？ <>
+login:Penguin<>age<>2008/05/26(月) 20:06:07 ID:78f667Oh<> KDE2.2.2を使っているのですが、 <br> ロカールをja_JP.utf8にしたら、文字化けするようになってしまいました <br> ja_JP.eucJPだと文字化けしません <br> UTF-8を使うにはどうしたらいいんでしょうか？ <>
+login:Penguin<>sage<>2008/05/28(水) 09:46:52 ID:awrccN/W<> 2の頃はUTF-8がこんなに当たり前になるなんて誰も思ってなかったから。 <br> 確かQtも対応できてないんじゃないか。 <br> LOCALEまで変えずエディタとかアプリケーション側で対応した方がいいと思う。 <br> GTK+にしろなんにしろでっかく重くなった一因にUTF-8があったわけだし。 <>
+login:Penguin<>sage<>2008/05/28(水) 11:18:56 ID:ad2vBY7N<> KDE 4.1 Beta1 <br> http://www.kde.org/announcements/announce-4.1-beta1.php <>
+login:Penguin<>sage<>2008/05/29(木) 20:48:26 ID:q7TDAUeI<> 4.1になったらインスコしてやってもいい <>
+login:Penguin<>sage<>2008/05/29(木) 23:44:24 ID:quMCI/Un<> おいらはkaffeineが対応するまで松 <>
+login:Penguin<><>2008/05/30(金) 00:16:57 ID:n+Ao33wX<> KDE4ってKonstructが無いでしょ? どうやってインストしてるの? <>
+login:Penguin<>sage<>2008/05/30(金) 00:35:12 ID:kTYnysKx<> <a href="../test/read.cgi/linux/1199682606/415" target="_blank">&gt;&gt;415</a> <br> ディストリが用意してくれてるパッケージ <>
+login:Penguin<>sage<>2008/05/30(金) 04:38:54 ID:gAYF2fLF<> Kubuntuの4はバグ取りが好きな人以外はあまりおすすめしない。Kubuntuがまともっぽくなったのは <br> 3.5.8あたりの気がしたなあ。。。 <br>  <br> <a href="../test/read.cgi/linux/1199682606/415" target="_blank">&gt;&gt;415</a> <br> それ簡単な方法が有ったら知りたい。KDE3の時はqt,arts,kdelibs,kdebaseの順にmake installしていくだけで <br> 後は好きなのを適当に入れればOKだったのが、KDE4はビルド専用のユーザーを作って、そのユーザーの <br> シェルの環境変数をセットしてとか色々面倒な事が書いてあるし、makeもGNU makeじゃないのでビルド <br> するでしょう。なんか簡単な方法ないのかな。 <>
+login:Penguin<>sage<>2008/06/01(日) 01:56:05 ID:SYSpXrwQ<> 4.1beta1試してみた。Virtualbox使ってだけど。 <br> なかなかいい感じで正式版が楽しみ。 <>
+login:Penguin<><>2008/06/02(月) 12:51:24 ID:+Zw11b/A<> おお <br>  <br>  <br> い、いや騙されないぞ！　どうせまたパネルを何も設定できなかったり、 <br> デスクトップにアイコンが何重にも表示されたりするんだろう！ <>
+418<>sage<>2008/06/03(火) 04:09:30 ID:dMWkE3C0<> <a href="../test/read.cgi/linux/1199682606/419" target="_blank">&gt;&gt;419</a> <br> (´・ω・`) <>
+login:Penguin<>sage<>2008/06/03(火) 10:24:10 ID:4Pbd1l7b<> <a href="../test/read.cgi/linux/1199682606/419" target="_blank">&gt;&gt;419</a> <br> kubuntuぢゃないんだから(´･ω･`) <>
+login:Penguin<>sage<>2008/06/06(金) 20:24:06 ID:etqhutUL<> KDE4.0.81 <br> http://usamimi.info/~linux/u/ss/1212750943385.png <>
+login:Penguin<>sage<>2008/06/07(土) 00:27:41 ID:KCMsFN3E<> すごく重そう <br> そして見た目が変わっただけで機能はあまり変わってなさそう <>
+login:Penguin<>sage<>2008/06/07(土) 02:36:42 ID:GpiahpfF<> 顔は妙に垢抜けていないが、 <br>  <br> 料理そこそこ上手 <br> 洗濯は干しと取り込みまできちんとやる <br> 掃除もまぁまぁやってくれる <br>  <br> そんな女が整形して堀北真希のようになったら・・・ <>
+login:Penguin<>sage<>2008/06/07(土) 23:32:49 ID:4qQMizwQ<> 軽いんだなこれが <>
+login:Penguin<>sage<>2008/06/08(日) 01:34:05 ID:9a00KhIb<> kde4は、各動作速度でkde3.5.9と変わらず <br> アプリ起動速度でkde3.5.9より速い気がする。 <br>  <br> 細かい作り込みまで完了して無いみたいだから <br> 実用するには、もう少し様子見かな。 <br> 安定したら最高のwmになると思う。 <>
+login:Penguin<>sage<>2008/06/08(日) 01:41:47 ID:yWs6B0gF<> Windows7のｽｸｼｮがKDEにそっくりで吹いた <>
+login:Penguin<>sage<>2008/06/08(日) 03:48:42 ID:ySPlo5TN<> <a href="../test/read.cgi/linux/1199682606/427" target="_blank">&gt;&gt;427</a> <br> それKDEだろ <>
+login:Penguin<>sage<>2008/06/08(日) 03:51:19 ID:SW1Kkuio<> <a href="../test/read.cgi/linux/1199682606/423" target="_blank">&gt;&gt;423</a> <br> お前は「そう」しか言えないのか？ <>
+login:Penguin<>sage<>2008/06/08(日) 08:58:13 ID:QjPcjTo2<> 「そう」しか言えなさそう <>
+login:Penguin<>sage<>2008/06/08(日) 23:31:01 ID:37k4l7iZ<> そういうことか <>
+login:Penguin<>sage<>2008/06/10(火) 01:01:49 ID:wovhRij4<> そうそう <>
+login:Penguin<>sage<>2008/06/10(火) 01:19:44 ID:TvmUSMx+<> so <>
+login:Penguin<>sage<>2008/06/10(火) 01:38:29 ID:aCVC5EId<> 創価 <>
+login:Penguin<>sage<>2008/06/10(火) 01:51:11 ID:HBW7JRYY<> ぃぬ作('A`) <br>  <>
+login:Penguin<>sage<>2008/06/10(火) 11:15:31 ID:bgqEL4mi<> WinでキチンとしたKonqueror使いたいね、ファイラーとしてやっぱ最強だわ。 <br> Dolphinでもいいけど、Win版Konqueror重すぎだぜ。 <>
+login:Penguin<>sage<>2008/06/10(火) 11:19:08 ID:DaJpaMFW<> ファイラーが必要な時ってどんな時よ？ <>
+login:Penguin<>sage<>2008/06/10(火) 11:25:11 ID:bgqEL4mi<> <a href="../test/read.cgi/linux/1199682606/437" target="_blank">&gt;&gt;437</a> <br> ┏　　C:\ 　　 ┯　FTP:hoge.com ┯ SFTP:hage.com ┓ <br> ┃　　a.txt　　┃　　　a.txt　　　　 ┃　　　　a.txt　　　　┃ <br> ┃　　b.txt　　┃　　　b.txt　　　　 ┃　　　　c.txt　　　　┃ <br>  <br> 「なんでc.txtが居るんだ？ここb.txt入れとかないと止まる」 <br> みたいな時、便利。 <>
+login:Penguin<>sage<>2008/06/10(火) 13:00:16 ID:DaJpaMFW<> diffでいいような気がするが……。 <>
+login:Penguin<>sage<>2008/06/11(水) 00:07:10 ID:WvAD0lj9<> どうしても必要無い事にしたいんですね、わかります <>
+login:Penguin<>sage<>2008/06/11(水) 18:12:51 ID:ctuYSiYw<> Konquerorでもいいような気がします＾＾ <>
+login:Penguin<>sage<>2008/06/12(木) 12:17:32 ID:/4bP8Kya<> KDE4.0.82 <br> http://usamimi.info/~linux/d/up/up0215.png <>
+login:Penguin<>sage<>2008/06/12(木) 14:43:31 ID:kPFkNEQb<> KDEに限らずLinuxのフォントの綺麗さは異常w <>
+login:Penguin<>sage<>2008/06/12(木) 22:23:48 ID:RjqHk0Td<> 誰かフォントでヒラギノ使ってる人いない？ <br> QT4のアプリ全般でめちゃくちゃ汚く表示される。 <br> QT3では異常ないんだけど。 <>
+442<>sage<>2008/06/12(木) 23:01:25 ID:/4bP8Kya<> スプラッシュスクリーン <br> http://usamimi.info/~linux/d/up/up0216.png <>
+login:Penguin<>sage<>2008/06/13(金) 00:14:56 ID:3WlsUnTQ<> <a href="../test/read.cgi/linux/1199682606/443" target="_blank">&gt;&gt;443</a> <br> 　Linux入門してから、何となくLinuxの見た目へのこだわりは、CUIだCUIだと <br> WinやMacからいじめられつづけた開発者の怨念が生み出したような気がしてならないw <br>  <br> 　逆に開き直ったらAwesomeとかRatpoisonになるような・・・ <>
+login:Penguin<>sage<>2008/06/16(月) 19:07:32 ID:0NtRIu7b<> システムモニタのタブがだんだん増えるのだが、嫌がらせか <>
+login:Penguin<><>2008/06/24(火) 03:32:41 ID:rqu1ipD2<> はたから見ててだけどKDEの開発速度があがることは不可能じゃないかな <br> 開発者が悪いわけでもなくC++の仕様としか <br> 今のたいけいならQt5がでた時また同じような開発の遅れがでるのは確実かな <br> どっちも大規模になれば大規模になるほど難しいと思うお <br> だから真面目には期待しないほうがいいお <>
+login:Penguin<>sage<>2008/06/24(火) 05:43:31 ID:Ljs0tHzf<> C++の仕様のために開発が遅いなんて議論初めて聞いたわ <br>  <br> 単に開発者の数が足りてないだけだろ <>
+login:Penguin<><>2008/06/24(火) 07:19:41 ID:Nphnocum<> C++と何を比べて開発が遅いなどと世迷い言を言っているのか気になってきた。 <>
+login:Penguin<>sage<>2008/06/24(火) 19:09:47 ID:RdeKTnCQ<> オブジェクト指向だけはなぁ。。。。大規模になればなるほど、カオスになるからなぁ。 <>
+login:Penguin<>sage<>2008/06/24(火) 23:08:19 ID:5cYkRxTV<> KDE 4.1 Beta 2 <br> http://www.kde.org/announcements/announce-4.1-beta2.php <>
+login:Penguin<>sage<>2008/06/24(火) 23:08:21 ID:i65hStqs<> 逆だろ <br> 大規模になればなるほどOOじゃないとやっとられなくなる <br>  <br> 問題はC++のOOがぶっ壊れてて依存をうまく <br> 閉じ込められないところにある。あとg++のコンパイルは <br> 遅いしね。 <>
+login:Penguin<>sage<>2008/06/25(水) 01:19:31 ID:/Q5PdymX<> と、java雄が申しております。どうでもいいですよぉ～。 <>
+login:Penguin<>sage<>2008/06/25(水) 01:26:02 ID:mtljK33g<> なんだかちょっとプログラムかじっただけの経験殆どない人が思い込みで書いてるだけとしか思えないレスがちらほら <>
+login:Penguin<>sage<>2008/06/25(水) 06:51:44 ID:Jpjx/eLa<> <a href="../test/read.cgi/linux/1199682606/453" target="_blank">&gt;&gt;453</a> <br> ooプログラミングしか知らないんちゃう?関数型やってる立場からみると <br> 不思議な意見なんだが。 <>
+login:Penguin<>sage<>2008/06/29(日) 07:59:21 ID:hAiTS5s+<> ここ数日 Debian experimental の KDE4 をいじくっているんだけど、 <br> いくつかの Plasmoid をコンパイルするときに必要な <br>  <br>   /usr/include/plasma/layouts/ <br>  <br> 以下のヘッダファイル (layout.h とか layoutitem.h) が、 <br> どの dev パッケージに入っているか知ってる人います? <br> *kde*-dev.deb は一通り入れたけど見当らん。 <br>  <>
+login:Penguin<>sage<>2008/07/01(火) 11:50:27 ID:NajXyd+W<> <a href="../test/read.cgi/linux/1199682606/457" target="_blank">&gt;&gt;457</a> <br> どこかのパッケージに移動させるのを忘れたのかわからないけど <br> 消えているみたいなのでBTSにGo! <br> http://svn.debian.org/viewsvn/pkg-kde/branches/kde4/packages/kdebase-workspace/debian/libplasma-dev.install?rev=10356&r1=10056&r2=10356 <br> http://packages.qa.debian.org/k/kdebase-workspace.html <>
+457<>sage<>2008/07/02(水) 20:07:36 ID:GroqmB5b<> <a href="../test/read.cgi/linux/1199682606/458" target="_blank">&gt;&gt;458</a> <br> ありがとう。BTS しときました。 <br>  <>
+login:Penguin<>sage<>2008/07/16(水) 10:23:31 ID:u4CdjwVH<> KDE 4.1 RC1 (4.0.98) <br> http://www.kde.org/announcements/announce-4.1-rc1.php <>
+login:Penguin<>sage<>2008/07/16(水) 12:34:15 ID:esE7DreT<> 今のところは予定どおりか <>
+login:Penguin<><>2008/07/18(金) 12:24:24 ID:cr+NNRzn<> 4.0=alpha <br> 4.1=beta <br> 4.2=RC2 <br> 4.3=RC1 <br> 4.4=リリース <br> くらいだと認識  <br>  <br> 日常的に使いもんになるのは4.3くらいからか.. <br> 3.5.9 + amarok,k3b,kaffeine,digikam <br> がかなり洗練されているので, まだしばらくKDE3系列に留まるよ. <br>  <>
+login:Penguin<>sage<>2008/07/18(金) 21:54:01 ID:rM3vdNhY<> ttp://opentechpress.jp/opensource/article.pl?sid=08/07/18/0534209&pagenum=1 <br> なんか違った形で盛り上がってますな <>
+login:Penguin<>sage<>2008/07/18(金) 21:56:42 ID:rM3vdNhY<> <a href="../test/read.cgi/linux/1199682606/462" target="_blank">&gt;&gt;462</a> <br> 多分そんなかんじなんだろうね。 <br> 私的には、デスクトップに置いたファイルの扱いが3.5系と同じようにできるオプションがつかない状態のまま <br> 3.5系が終了したらkde使うのやめるかも。 <>
+login:Penguin<>sage<>2008/07/19(土) 00:59:06 ID:XSOvB7WB<> <a href="../test/read.cgi/linux/1199682606/464" target="_blank">&gt;&gt;464</a> <br> 4.1に含まれる「フォルダビュー」ウイジェットで、その辺がかなり改善されてますよ。 <br> 複数のフォルダをあたかも一つのデスクトップのように扱えるので、3.5系よりかえって便利かも。 <br> まだ日本語フォルダをフォルダビューから開くときに問題がありますが。 <>
+login:Penguin<>sage<>2008/07/19(土) 11:01:18 ID:BjpDumPh<> <a href="../test/read.cgi/linux/1199682606/465" target="_blank">&gt;&gt;465</a> <br> 見栄えとかランチャー的な感じなのは理解できるんだけど <br> デスクトップに置いたファイルを、コンカラとかにドラッグ＆ドロップして他のディレクトリに <br> 移動できるんですか？ <>
+login:Penguin<>sage<>2008/07/19(土) 13:04:23 ID:XSOvB7WB<> <a href="../test/read.cgi/linux/1199682606/466" target="_blank">&gt;&gt;466</a> <br> できます。 <br> コンカラやドルフィンと同じく右クリックメニューも使えます。 <br>  <br> 画像とかのプレビューアイコン表示は今のところできません。 <>
+login:Penguin<>sage<>2008/07/19(土) 15:13:33 ID:BjpDumPh<> <a href="../test/read.cgi/linux/1199682606/467" target="_blank">&gt;&gt;467</a> <br> よかった出来るんだ。ちょいと安心したよん。 <>
+login:Penguin<>sage<>2008/07/19(土) 16:57:20 ID:GLY/xSIE<> <a href="../test/read.cgi/linux/1199682606/463" target="_blank">&gt;&gt;463</a> <br> &gt;これは以前から何度も説明されているように開発者向けのリリースなのであって、 <br> &gt;一般のデスクトップユーザの使用を想定したリリースではないのである。 <br>  <br> 初めて聞いたわ <br> じゃあ「即座の有用性」とか「development cycleの終わり、KDE4時代の始まり」とか言うな <br> FedoraやSUSEのKDE担当は俺と同じマヌケだったみたいだな <>
+login:Penguin<>sage<>2008/07/19(土) 17:09:58 ID:ESm583mW<> 俺も初めて聞いた <br> それならGoogleのサービスのように永遠にBeta版名乗っておけと <>
+login:Penguin<>sage<>2008/07/19(土) 21:45:40 ID:/XPBfv36<> Googleのbeta版のほうが使える件について <>
+login:Penguin<>sage<>2008/07/20(日) 03:56:33 ID:eEqz9wEI<> &gt;開発者向けのリリース <br> ↓ <br> 開発者向けの「正規」リリース <br> ↓ <br> なぜか開発者向けより「正規リリース」が独り歩きを始めてしまい <br> 正規リリース(´･ω･`) となってしまった。。 <br>  <br> そもそも開発者向けリリースなのにβが取れたとか自ら宣伝しまくるから、 <br> こんなややこしいことになるんだよな。 <br> ttp://opentechpress.jp/opensource/article.pl?sid=08/01/17/0141244 <br> この記事書いている記者もそうだけど、だれも開発者向けのリリースって理解してなかったんじゃないの？ <>
+login:Penguin<>sage<>2008/07/20(日) 04:13:30 ID:eEqz9wEI<> 472も463もBruce-Byfieldって同じヤシが書いた記事じゃんか・・・(´･ω･`)  <br> 472の記事に何処にも「開発者向けリリース」なんて書いてねーぞ。 <br>  <>
+login:Penguin<>sage<>2008/07/20(日) 12:25:58 ID:zRwtH8eZ<> だから自戒も込めて<a href="../test/read.cgi/linux/1199682606/463" target="_blank">&gt;&gt;463</a>の記事になったんだべ？ <br>  <br> &gt; とどのつまりKDE 4に関してFOSS関連のマスメディアは、そうした責任を果たせなかったということになる。 <>
+login:Penguin<>sage<>2008/07/21(月) 08:23:00 ID:Khu50JyM<> <a href="../test/read.cgi/linux/1199682606/469" target="_blank">&gt;&gt;469</a> <br> Fedoraはプロジェクトの意義を考えると問題ないんでないの? <>
+login:Penguin<>sage<>2008/07/24(木) 16:28:53 ID:07gR7nDN<> <a href="../test/read.cgi/linux/1199682606/475" target="_blank">&gt;&gt;475</a> <br> 問題ないと思う。 <br> fedora-listで延々と愚痴ってるヤツのほうが問題じゃね。 <>
+login:Penguin<>sage<>2008/07/24(木) 16:31:57 ID:DW3VlEdg<> <a href="../test/read.cgi/linux/1199682606/475" target="_blank">&gt;&gt;475</a> <br> だね。Fedora9の途中でqt-4.4とkde-4.1突っ込んでくるくらいだし。 <>
+login:Penguin<><>2008/07/29(火) 23:45:26 ID:tcT9ZrBJ<> KDE 4.1  <br> http://www.kde.org/announcements/4.1/ <>
+login:Penguin<>sage<>2008/07/30(水) 00:07:01 ID:InosPzQI<> 予定通りにリリースされるなんて正直思っていませんでした <>
+login:Penguin<>sage<>2008/07/30(水) 01:29:09 ID:QOzHa4dE<> でも使いません <>
+login:Penguin<>sage<>2008/07/30(水) 02:49:55 ID:FIHJn029<> どうせ大して変わってないのに番号だけ4.1にしたんだろう。に一票。 <>
+login:Penguin<>sage<>2008/07/30(水) 03:05:39 ID:sE7Hyt0D<> まあ、レヴューはこれからあがってくるでしょう <>
+login:Penguin<>sage<>2008/07/30(水) 08:31:00 ID:eyVng7Sl<> 3.5.9から早速移行。 <br> おかしいところはまだ少し残ってるけど、4.0よか全然良くなっていると思うよ。 <>
+login:Penguin<>sage<>2008/07/30(水) 12:45:17 ID:aB9e4QUZ<> kde4って日本語は通るようになったの？ <>
+login:Penguin<>sage<>2008/07/30(水) 13:03:54 ID:JC5ChCSB<> <a href="../test/read.cgi/linux/1199682606/484" target="_blank">&gt;&gt;484</a> <br> ・・・ <>
+login:Penguin<><>2008/07/30(水) 17:32:52 ID:BYplj7+B<> また糞リリースか <>
+login:Penguin<>sage<>2008/07/30(水) 17:41:09 ID:DTqNG9HA<> kaffeineのKDE4対応はまだか <>
+login:Penguin<>sage<>2008/07/30(水) 20:02:25 ID:eyVng7Sl<> totemでええやん <>
+login:Penguin<>sage<>2008/07/30(水) 20:30:00 ID:M5PJcj8J<> <a href="../test/read.cgi/linux/1199682606/488" target="_blank">&gt;&gt;488</a> <br> Gnomeの動画プレイヤーをKDE4でつかえとな(´･ω･)  <br>  <br> <a href="../test/read.cgi/linux/1199682606/487" target="_blank">&gt;&gt;487</a> <br> smplayerとかでええやん。 <>
+login:Penguin<>sage<>2008/07/30(水) 20:30:52 ID:M5PJcj8J<> <a href="../test/read.cgi/linux/1199682606/484" target="_blank">&gt;&gt;484</a> <br> Kubuntuの方ですか？(´･ω･`)  <>
+login:Penguin<>sage<>2008/07/30(水) 21:51:07 ID:G91URXk+<> kaffeineは画質の良さでは図抜けているから，簡単には捨てられない。 <>
+login:Penguin<>sage<>2008/07/30(水) 21:56:35 ID:InosPzQI<> <a href="../test/read.cgi/linux/1199682606/491" target="_blank">&gt;&gt;491</a> <br> バックエンドが同じなら画質は一緒じゃないの？ <>
+login:Penguin<>sage<>2008/07/30(水) 22:23:57 ID:G91URXk+<> <a href="../test/read.cgi/linux/1199682606/492" target="_blank">&gt;&gt;492</a> <br> それはエンジンが同じならどの車でも走りは同じ，と言うくらい <br> 短絡的では。 <>
+login:Penguin<>sage<>2008/07/30(水) 22:28:06 ID:DTqNG9HA<> 私もkaffeineが他のxine対応playerに比べてどう優れてるのか分かりません。 <br> ただkdeベースなのは気に入ってますが… <>
+login:Penguin<>sage<>2008/07/30(水) 23:52:03 ID:sE7Hyt0D<> 技術的な考察をしないで、マンセーする奴がKDEヲタに多い <>
+login:Penguin<>sage<>2008/07/31(木) 01:30:09 ID:G1wuT5Il<> 根っからのKDEファンですが、自分もKaffeineだけは好きになれず <br> xineをそのまま使っています <>
+login:Penguin<>sage<>2008/07/31(木) 02:51:07 ID:vhwV5fC5<> KDE4には、XINEつかった、新しいメディアプレイヤーがあるじゃない <br> それ使えばよろしい、なんだっけ、思い出せない <br> 思い出した、DragonPlayer <>
+login:Penguin<>sage<>2008/07/31(木) 08:50:51 ID:1Ma36lS/<> インターフェースがプアすぎるだろ… <br> 代替なら最低kaffeineレベルは満たしてもらいたい <>
+login:Penguin<>sage<>2008/07/31(木) 09:29:13 ID:UI+Kmugi<> Kaffeineが凄くいいとは思わなくて、普段はsmplayerなんだが、なぜか <br> 録画したテレビを見るときだけはKaffeineが軽い割に綺麗にフィルタを <br> かけてくれるので気に入ってる。 <>
+login:Penguin<>sage<>2008/07/31(木) 18:30:10 ID:7PoKsCU3<> KDE4.1をVMに入れてみた。 <br> 相変わらずデスクトップ上のファイルの扱いが意味不明。 <br> SUSEのFirefoxのダウンロード先がデスクトップになってるのをうっかり忘れてダウンロードしたら <br> 落としたファイルが行方不明。4.1だと普通のファイルが見えない。 <br> dolphineとかKonquerorなどのファイルマネージャからだと見えるんだけど・・この辺のUIは、最終的に <br> どのようにしたいんだろう？ <br> .desktopファイルの扱いはあいかわらず以前のまま <br> パネルの時計もフォントは選べるのに、相変わらず文字の大きさを選べないし・・ <>
+login:Penguin<>sage<>2008/07/31(木) 18:35:56 ID:7PoKsCU3<> ウイジットにファイルビューアーなんてのがあって、通常のファイルマネージャを開かずに <br> ファイル操作ができる半透明な作業台みたいなモノがあるんだけど、 <br> ダッシュボード表示で、その手のが出てくるんなら便利なんだけど、常に表示しっぱなしじゃ、そんなんファイルマネージャ開けば事が足りるんで見栄えだけ・・(´･ω･`) <br>  <br> kde4.2以降に期待。 <>
+login:Penguin<>sage<>2008/07/31(木) 22:22:58 ID:y4Xti4KQ<> KDE4.0 デスクトップのアイコン→右クリック→削除 <br> が無い <>
+login:Penguin<>sage<>2008/08/02(土) 02:56:11 ID:hEmqEXZW<> デスクトップキューブが追加されてた。 <br> ttp://usamimi.info/~linux/d/up/up0229.png <>
+login:Penguin<><>2008/08/02(土) 22:17:35 ID:S7sceiEp<> fedora9のKDEを初めて入れてみたんだが <br> KDEクラッシュ？と出て左下の「f」ボタンが出なくなってしまった… <br> KDE初心者な質問で申し訳ないのだが、 <br> 誰か復活の仕方を教えてください… <>
+login:Penguin<>sage<>2008/08/02(土) 23:12:46 ID:MxLVyP4Q<> <a href="../test/read.cgi/linux/1199682606/504" target="_blank">&gt;&gt;504</a> <br> コンソールにkickerと打ち込むとよろしいかと。 <>
+login:Penguin<><>2008/08/03(日) 19:07:11 ID:2NqSHpSG<> <a href="../test/read.cgi/linux/1199682606/501" target="_blank">&gt;&gt;501</a> <br> Show Dashboard をすると Plasm Dashboard になって、 <br> File View にデスクトップやディレクトリがあるという考えらしい。 <>
+login:Penguin<><>2008/08/06(水) 20:11:18 ID:79jFUmwE<> VMware上にKubuntu-KDE4.1入れてみた。 <br> フルスクリーンにしても、壁紙とパネルは元のまま。 <br> けど、ウィンドウ動く領域はフルスクリーンになってる。 <br> 変なの&hellip; <br>  <br>  <>
+login:Penguin<>sage<>2008/08/08(金) 00:36:54 ID:cTDZe0PB<> 3.5系のサポートは何時までなの？ <>
+login:Penguin<>sage<>2008/08/08(金) 07:24:31 ID:4QDJxVu4<> さぁ？ 2.2.2は、まだメンテされてるね、 <br> http://download.kde.org/download.php?url=stable/2.2.2/ <>
+login:Penguin<>sage<>2008/08/08(金) 15:29:07 ID:iYInLklt<> QtベースのFirefox 3がテスト公開 <br> http://journal.mycom.co.jp/news/2008/08/08/012/index.html <br>  <br> こんなのあったんだね。 <br> 聞いてないよー <>
+login:Penguin<>sage<>2008/08/08(金) 18:48:57 ID:uN+WV+OO<> おお、なにげに面白そう。 <br>  <br> てなわけで、れっつとらーい。 <>
+login:Penguin<>sage<>2008/08/08(金) 19:33:19 ID:1x4gybmC<> うわぁ…qtベースのmozillaが公開された時の事を思い出すナリ… <br> 今度はちゃんと根付きますように <br>  <br> でもするとwebkitの方はどうすんだ？ <>
+login:Penguin<>sage<>2008/08/08(金) 22:59:01 ID:sLIOiE+6<> webkitなkonqとqt-firefoxだったら後者選んじゃうよね・・・ <>
+login:Penguin<>sage<>2008/08/09(土) 01:29:38 ID:BdOhUc1p<> firefox-qt ビルドできないorz <>
+login:Penguin<>sage<>2008/08/09(土) 17:28:30 ID:bMIe04Wu<> &gt;509 <br> kwsk <br>  <>
+login:Penguin<>sage<>2008/08/12(火) 18:26:33 ID:hdLiNvIv<> webkitなkonqってKDE3系にバックポートしてくれないのかな？ <>
+login:Penguin<>sage<>2008/08/17(日) 23:23:46 ID:DeHbfg/1<> ALT+F2を押して出てくる小ちゃいコマンドラインで <br> 計算とか単位の変換とかできるみたいなんだけど <br> どうやって使うの？ <>
+login:Penguin<><>2008/08/21(木) 01:07:50 ID:d0wupG3M<> KDE3.5 では、パネルで右クリックをして「アプリケーションをパネルに追加」→「KDE以外のアプリケーションを追加」 <br> を選ぶとfirefoxなどのアプリもパネルに追加できたのですが、 <br> KDE4 ではその機能は無くなったのでしょうか? <br> なにか方法があるのでしょうか? <>
+login:Penguin<>sage<>2008/08/21(木) 01:29:52 ID:EC6/liZ6<> <a href="../test/read.cgi/linux/1199682606/518" target="_blank">&gt;&gt;518</a> <br> メニューからお目当てのアプリまでカーソルを持っていき右クリック <br> "add to panel"を選択。 <br>  <br> パネル内のアイコンを移動させるには、パネル右端のボタン押して編集モードに <br> 入ってからアイコンをドラッグ。 <br>  <>
+login:Penguin<><>2008/08/21(木) 23:05:53 ID:d0wupG3M<> <a href="../test/read.cgi/linux/1199682606/519" target="_blank">&gt;&gt;519</a> <br> 追加できました。有難う御座います。 <>
+login:Penguin<>sage<>2008/08/27(水) 12:33:10 ID:YYcn7EOl<> 3.5.10 <br> 熟成された3.5系が好き！ <>
+login:Penguin<>sage<>2008/08/28(木) 10:04:48 ID:3U5KG5l8<> GnomeでMandrivaつかってる俺は負け組か・・・('A`) <>
+login:Penguin<>sage<>2008/08/28(木) 10:20:02 ID:K5f4XveD<> <a href="../test/read.cgi/linux/1199682606/522" target="_blank">&gt;&gt;522</a> <br> &gt;GnomeでMandrivaつかってる俺は負け組か・・・('A`)  <br> MandrivaでGnomeつかってる俺は負け組か・・・('A`)  <br> じゃねーの？ <>
+login:Penguin<>sage<>2008/08/28(木) 10:25:40 ID:3U5KG5l8<> <a href="../test/read.cgi/linux/1199682606/523" target="_blank">&gt;&gt;523</a> <br> そう、それだったw <br> もうおとなしくKDEに変えようかな・・・('A`) <>
+login:Penguin<>sage<>2008/08/28(木) 10:31:06 ID:YP9ZIrfT<> 慰めて欲しいならGnomeスレ池 <br> 日記は言うまでもなく・・ <>
+login:Penguin<><>2008/08/29(金) 19:56:18 ID:vnmo5cST<> KDE4系のフォルダービューっていいね、なんとなくディスクトップが <br> カッコよくなる。 <br> あと、立ち上がりが３．５より速くない? <br> QT4を使ってるから速くなったのかな? <>
+login:Penguin<>sage<>2008/08/29(金) 19:58:14 ID:OWthvgM0<> ディスクトップか。唐揚にふさわしい用法だw <>
+login:Penguin<>sage<>2008/08/31(日) 21:07:36 ID:/baXav9m<> KDE4.0だとデスクトップを右クリックしたらアイコンを水平なり垂直なりにならべるメヌーがでてきたじゃないですか <br>  <br> これって4.1で廃止されたんですか？同等の機能ってありますか？ <br>  <>
+login:Penguin<>sage<>2008/09/04(木) 22:50:32 ID:mNDnuZmL<> 4.1.1出てるな <>
+login:Penguin<>sage<>2008/10/06(月) 23:58:07 ID:s0/5L2lO<> KDE 4.1.2 released. <>
+login:Penguin<>sage<>2008/10/07(火) 00:51:25 ID:nSFZbL6G<> &gt; 次のメジャーアップデートとなる4.2の発表は、2009年1月の予定という。 <br> がんばれよー、応援してるぞー <>
+login:Penguin<><>2008/10/07(火) 20:25:05 ID:10rQtm2F<> KDE 4.1.2使ってます <br> けど間違えてパネル消しちゃった <br> 困り果てた <br> KDE3はずっと使ってたのに、何も分からない <br> 誰か助けて <>
+login:Penguin<>sage<>2008/10/07(火) 22:04:49 ID:0lTFve4z<> つ rm -rf ~/* <>
+login:Penguin<><>2008/10/07(火) 22:32:40 ID:9SJ2jsTA<> <a href="../test/read.cgi/linux/1199682606/532" target="_blank">&gt;&gt;532</a> <br> 事故解決しました <br> #init 3 <br> #rm .kde4/share/config/plasma-appletsrc <br>  <>
+login:Penguin<><>2008/10/07(火) 23:04:18 ID:TPm43gXB<> KDE4 に対応した kdevelop はまだ出てないですよね? <>
+login:Penguin<>sage<>2008/10/08(水) 06:40:31 ID:mcsKw2qS<> <a href="../test/read.cgi/linux/1199682606/533" target="_blank">&gt;&gt;533</a> <br> お前のほうが不幸になるぞ <>
+login:Penguin<>sage<>2008/10/22(水) 15:51:07 ID:/GX966Va<> ttp://www.atmarkit.co.jp/flinux/special/kde01/kde01a.html <br> 新たなユーザー体験をもたらすKDE 4.1（前編） <br> 　～ 見た目も中身もすごいんです ～ <>
+login:Penguin<>sage<>2008/10/22(水) 23:08:25 ID:VHwWOQA+<> 新たなユーザー体験=なに？この出来損ないが！('A`)って感じです。 <br> 見た目も中身もすごいんです=凄いけど使いづらい('A`)って感じです。 <>
+login:Penguin<>sage<>2008/10/22(水) 23:23:30 ID:KK07za4t<> kde3との操作の互換性を確保してくれれば手を出そうとも思えるんだけどね <>
+login:Penguin<>sage<>2008/10/22(水) 23:50:43 ID:YlE9KuLn<> 確かに安定性と使い易さを疎かにしている感があるな。 <br> なんだかんだいっても、ダサいGNOMEを使うよりはいいけどさ。 <>
+login:Penguin<>sage<>2008/10/23(木) 00:40:34 ID:9MD9GIVQ<> パネルアプレットの位置を変えるのに、今までは右クリック一発で動かせたのを <br> わざわざアプレットの編集用のおおげさな別パネルを出して・・とか、なんで別の行程踏ませるとか <br> 理解できないんだよね。 <br> デスクトップ置いたファイルを操作するのに、ファイルマネージャ使わなきゃいけないとか <br> わざわざアプレットのファイルビュー使うとか、もうアホかと。 <br> 5年もかけて、わざわざ使い勝手悪くするんだもんなぁ。 <>
+login:Penguin<>sage<>2008/10/23(木) 00:45:05 ID:9MD9GIVQ<> パネルの時計のフォントなんだけど、意地でもサイズ変更をさせないようにするつもりなんかな？ <br>  <br> 嫌がらせとしか思えない。 <>
+login:Penguin<>sage<>2008/10/23(木) 01:09:11 ID:b5OUrH1b<> kde-4.1.2 <br> パネルの移動ができないんだけど、パネルを上に表示させる方法って、 <br> 上にパネルを追加→メニュー等を追加→下のパネルを削除 <br> するしかないの？ <>
+login:Penguin<>sage<>2008/10/23(木) 01:13:14 ID:9MD9GIVQ<> <a href="../test/read.cgi/linux/1199682606/543" target="_blank">&gt;&gt;543</a> <br> 右下にパネル編集用の丸いボタンがあると思うんだけど、それを押すと <br> パネルの上部に調整用のパネルが出るんだけど、それが出た状態だと <br> パネルの位置を変えられるかと。 <br>  <br> ただ、この操作でクラッシュする可能性が・・・('A`) <>
+login:Penguin<>sage<>2008/10/23(木) 01:28:43 ID:b5OUrH1b<> <a href="../test/read.cgi/linux/1199682606/544" target="_blank">&gt;&gt;544</a> <br> ありがとう <br> でも試してみたらクラッシュしてパネルが全部消えた… <br> 一見さんを釣りたいのかどうか知らないけど、上っ面よりも <br> 基本的な部分を最初に作り込んでくれよ… <>
+login:Penguin<>sage<>2008/10/23(木) 01:32:28 ID:9MD9GIVQ<> <a href="../test/read.cgi/linux/1199682606/545" target="_blank">&gt;&gt;545</a> <br> あっ・・・やはりクラッシュしましたか('A`)。 <br> 変な情報書かなきゃよかったと反省してます。 <br> 本当にごめんね。 <>
+login:Penguin<>sage<>2008/10/23(木) 23:26:42 ID:7/El40sS<> 3.5.10が最高でしょう。4シリーズも4.5.*位になれば・・・ <>
+login:Penguin<>sage<>2008/10/24(金) 21:04:46 ID:fE5YXHjs<> <a href="../test/read.cgi/linux/1199682606/546" target="_blank">&gt;&gt;546</a> <br> 鳥によっちゃ細かく修正の入った4.1.2が更新され続けてるので <br> そのリポジトリ探せ。以前同様の操作でクラッシュしてた記憶があるが、 <br> 今試したら特に問題なかった。kmenuがパネルからよく消える現象 <br> もあったんだが、いつの間にか直ってる。 <>
+login:Penguin<>sage<>2008/10/25(土) 04:09:07 ID:2xiicG5a<> 鳥がないのなら自分で毎日コンパイルすればいいじゃない <>
+login:Penguin<>sage<>2008/10/25(土) 16:40:42 ID:yIKslvEJ<> こんな出来の悪い子に、そこまで情熱を傾けられない・・・ <>
+login:Penguin<>sage<>2008/10/25(土) 16:51:28 ID:TudAbMiL<> どうせディストリに資金をもらって開発をしているGNOMEと違って、KDEの4シリーズ <br> なんてのはまさに皆さんが育てて行っている物なんでしょうか。皆さんの地道なバグ報告で。 <>
+login:Penguin<>sage<>2008/10/25(土) 21:26:13 ID:a+QTF/JJ<> <a href="../test/read.cgi/linux/1199682606/551" target="_blank">&gt;&gt;551</a> <br> そんな事はどうでも良い <>
+login:Penguin<>sage<>2008/10/25(土) 23:47:22 ID:gzZvLOjW<> 4.1.7にしてみた。大分こなれてきた感じ。 <br> 4.2が安定してから、各アプリの開発が進むんじゃないかな？ <br>  <br> 当分KDE3.5.10の方がいいかな？ <>
+login:Penguin<>sage<>2008/11/02(日) 09:03:21 ID:wsvbBZj7<> 4.1.3ｸﾙｰ? <>
+login:Penguin<>sage<>2008/11/02(日) 14:41:27 ID:zLBEeoTM<> kubuntuも4に移行したことだし <br> そろそろ安定に向けて動き出した？ <>
+login:Penguin<>sage<>2008/11/02(日) 15:51:37 ID:u6YuQCa3<> <a href="../test/read.cgi/linux/1199682606/555" target="_blank">&gt;&gt;555</a> <br> まだまだ当分先だろ <br> 4.3まで待て <>
+login:Penguin<>sage<>2008/11/02(日) 17:54:49 ID:ZQse8wKq<> Ubuntu系でKDEの4を使う強者がいるとは・・・　バグ取りに貢献してますね＾＾ <>
+login:Penguin<>sage<>2008/11/02(日) 19:04:04 ID:N+Iintkl<> Linuxやっぱり使えねー、と悪態ついてWindowsユーザーが増えるヨカーンｗ &gt; Kubuntu <br>  <br> 俺はKDE4@openSUSEで比較的安定利用でございやす <br> 不安定といえば不安定だが、慣れるとVistaよりは使いやすいね <>
+login:Penguin<>sage<>2008/11/02(日) 19:06:20 ID:yZo02pWl<> Kubuntuなら最低で3.5.10にしといた方がw　まあそんな人だらけだと、明日のKubuntuにも <br> 支障が出るのだろうけど。 <>
+login:Penguin<>sage<>2008/11/02(日) 20:40:34 ID:BqUerjnx<> <a href="../test/read.cgi/linux/1199682606/559" target="_blank">&gt;&gt;559</a> <br> それが、8.10からは3.5はないの。さっそくVBにいれたけど、バグってバグってバグって… <br> しまいに何をしてもkdmからログインコンソールがでなくなって消してしまった。^^; <br> あのディスクトップの使い方は整理整頓が出来てなかなか良いなと思ったんだけどね。 <br> やはりKDEを使うならopenSuSEかな。年末までまつかぁ。 <>
+login:Penguin<>sage<>2008/11/02(日) 20:45:48 ID:q+nuo3OG<> <a href="../test/read.cgi/linux/1199682606/560" target="_blank">&gt;&gt;560</a> <br> うわw　早速乙です。カキコのバグの文字の回数が苦労を物語ってます＾＾； <br>  <br> 8.04は両方選べたんだけど8.10は4オンリーか。やってくれるなKubuntu・・・ <br>  <br> まあ、フリーウエアの先端は人柱みたいな物ですから＾＾；；；；； <br> 懲りずにいきましょう・・・　またいつの日か。 <>
+login:Penguin<>sage<>2008/11/02(日) 21:06:38 ID:x3+UsFSX<> <a href="../test/read.cgi/linux/1199682606/558" target="_blank">&gt;&gt;558</a> <br> 実際使えないし <>
+login:Penguin<>sage<>2008/11/02(日) 21:07:53 ID:87cCIzGd<> KDE5がリリースされたら起こしてくれ <>
+login:Penguin<>sage<>2008/11/02(日) 21:08:36 ID:q+nuo3OG<> <a href="../test/read.cgi/linux/1199682606/563" target="_blank">&gt;&gt;563</a> <br> ＾＾；；；；；； <>
+login:Penguin<>sage<>2008/11/02(日) 21:10:05 ID:q+nuo3OG<> てかマジで3シリーズは落ち着いているけど。でも動きはQT4の方がアプリなんかみてもいい感じ <br> かなあ。見栄えもいいしw <>
+login:Penguin<>sage<>2008/11/02(日) 21:52:06 ID:ztXgnCle<> <a href="../test/read.cgi/linux/1199682606/565" target="_blank">&gt;&gt;565</a> <br> &gt;QT4の方がアプリなんかみてもいい感じかなあ。 <br>  <br> 今のところ逆に劣化してるアプリが多数。 <br> amarokしかりkrenameしかりkontactしかりdigikamしかり・・・ <br> まだまだα版って感じ。まあ土台のkde4自体がしっかりしていないから仕方ないといえばそうだけど。 <br>  <br> 特に気にくわないのがamarokがiTunesからWMPぽく仕様変更されて辟易してる。 <br> まあ、これはあくまで僕の好みの問題だが・・ <>
+login:Penguin<>sage<>2008/11/02(日) 21:57:27 ID:ztXgnCle<> <a href="../test/read.cgi/linux/1199682606/560" target="_blank">&gt;&gt;560</a> <br> 年末に出るSUSE11.1は、KDE4.1.2が採用されるのかな？ <br>  <br> 今開発ブランチにあるkde4.1.7(Kde4.2の開発版)の方でデスクトップ関連で <br> 結構な仕様変更が入ってるのと、動作のキビキビ感が別物になってるんで <br> kde4.2を待った方がいいかも。 <br> 4.1.7はまだバグバグで使い物にならないけど、操作感だけはサクサクで使ってて <br> 気持ちが良い。 <>
+login:Penguin<><>2008/11/02(日) 22:03:33 ID:DirkIvOm<> 常に人柱状態のKdeユーザーかわいそ <>
+login:Penguin<>sage<>2008/11/02(日) 22:09:48 ID:ztXgnCle<> <a href="../test/read.cgi/linux/1199682606/568" target="_blank">&gt;&gt;568</a> <br> まともに使いたい人はKDE3.5.Xを使ってるから大丈夫。 <br> こっちは恐ろしいほど安定してて逆につまんない感じ。 <>
+login:Penguin<>sage<>2008/11/02(日) 22:14:17 ID:87cCIzGd<> 安定してるのが普通なんですよ <>
+login:Penguin<>sage<>2008/11/02(日) 23:16:48 ID:BqUerjnx<> <a href="../test/read.cgi/linux/1199682606/567" target="_blank">&gt;&gt;567</a> <br> なるほど来年になった頃が期待だなぁ。 <br>  <br> <a href="../test/read.cgi/linux/1199682606/568" target="_blank">&gt;&gt;568</a> <br> まあ、人柱と言っても仮想環境に入れて試してるくらいだから。まさか、メイン（仕事）に使うもの <br> を人柱にするなんて人は少ないでしょうし。 <br>  <br> PS. <br> ubuntu(GTK)も仮想環境で作ってみたけど、kubuntu(KDE)よりはアプリの起動が速い感じだっ <br> た。起動後は体感速度的に普通にサクサクでしたがKDEの方が軽いと聞いてたので意外でした。 <br>  <br> <a href="../test/read.cgi/linux/1199682606/566" target="_blank">&gt;&gt;566</a> <br> amarokがWMPっぽい？それは嫌な話だなぁ。MSな人を取り込もうとなるなら気持ちは理解でき <br> るけどwindows7なんてKDEのパクリか？と思ったくらいなので　笑 <br>  <br>  <>
+login:Penguin<>sage<>2008/11/02(日) 23:19:23 ID:Js/JV3iq<> 速度ならKDEmodおすすめ <>
+login:Penguin<><>2008/11/02(日) 23:22:56 ID:DirkIvOm<> Kdeには見えない”Beta”のマークがリリース後一年間付いてるってのが <br> 大人の常識なんですね <>
+login:Penguin<>sage<>2008/11/03(月) 00:12:45 ID:n1MVDnTA<> KDE4.x自体が試験的なプロダクトだというのが世界の常識だろ <br> なので、<a href="../test/read.cgi/linux/1199682606/570" target="_blank">&gt;&gt;570</a>の古典的なネタにワロタｗｗ <br>  <br>  <br> <a href="../test/read.cgi/linux/1199682606/567" target="_blank">&gt;&gt;567</a> <br> 良くも悪くも、KDE4.1.2が標準で乗ってくるな &gt; openSUSE11.1 <br> SUSEはDVDインストールなのでKDE3.5もセレクト出来るが <br> ttp://en.opensuse.org/Roadmap/11.1 <br>  <br> <a href="../test/read.cgi/linux/1199682606/571" target="_blank">&gt;&gt;571</a> <br> GTKとKDEの体感速度もアプリケーションによると思うが？ <br> FireFoxみたいなGTKアプリケーションはGTKをデフォで使ってるUbuntuの方が早いかもな <>
+login:Penguin<>sage<>2008/11/03(月) 08:31:51 ID:VqF6wm68<> <a href="../test/read.cgi/linux/1199682606/566" target="_blank">&gt;&gt;566</a> <br> KDE41にKDE3アプリを積んだMomongaは正解ってこと？ <>
+login:Penguin<>sage<>2008/11/03(月) 11:21:13 ID:ibVvX8B0<> KDE.orgのトップに出てるバナーが"Don't look back”なあたりに、何かヤケクソなものを感じて吹いてしまった <>
+login:Penguin<>sage<>2008/11/03(月) 11:47:06 ID:5PPvloS8<> おれはこのKDE4.xに対する批判が、結果的にいいものを生むと信じてる <br>  <br> だから今日もおれはKDE3.5.10を使うんだ <>
+login:Penguin<>sage<>2008/11/03(月) 11:56:15 ID:Mb+o0X42<> <a href="../test/read.cgi/linux/1199682606/577" target="_blank">&gt;&gt;577</a> <br> ちょwおまw　おれと同じ <>
+login:Penguin<>sage<>2008/11/03(月) 12:00:28 ID:3C9hiG46<> <a href="../test/read.cgi/linux/1199682606/575" target="_blank">&gt;&gt;575</a> <br> だったら、素直にKDE3.5.10にした方がいいじゃん。 <br> Momongaは不正解(´･ω･`) <>
+login:Penguin<>sage<>2008/11/03(月) 14:56:49 ID:VqF6wm68<> <a href="../test/read.cgi/linux/1199682606/579" target="_blank">&gt;&gt;579</a> <br> やっぱりそうか。 <br> けっこうな数KDE4アプリも入っていて選別した感じではあるけどね。 <br> 潔さがたらんかな。 <>
+login:Penguin<><>2008/11/05(水) 19:37:15 ID:EdDRfykY<> あれ？久々にKdeでも使って見ようかとubun8.10であそぶついでに <br> kubunいれて見たんだけどファイラーがDolphin？？ <br> Konquerorはどうしたの？ <>
+login:Penguin<>sage<>2008/11/05(水) 21:01:49 ID:t6jA3kJk<> 　　　　　　　　　＼　　　∩─ｰ､ 　　　==== <br> 　　　　　　　　　　 ＼／　●　､_ ｀ヽ 　　====== <br> 　　　　　　　　　　　/ ＼(　●　 ● |つ <br> 　　　　　　　　　　　|　　 X_入__ノ 　 ミ　　　そんな餌で俺様が釣られクマ―― <br> 　　　　　　　　　　　 ､　(＿／　　　ノ　/⌒l <br> 　　　　　　　　　　　 /＼＿＿＿ノﾞ＿/　 /　　===== <br> 　　　　　　　　　 　 〈　　　　　　　　 ＿_ノ　　==== <br> 　　　　　　　　　　　 ＼　＼＿　　　　＼ <br> 　　　　　　　　　　　　　＼＿__）　　　　　＼　　　======　　　(´⌒ <br> 　　　　　　　　　　　　　　　　＼　　 ＿＿_ ＼＿＿　　(´⌒;;(´⌒;; <br> 　　　　　　　　　　　　　　　　　 ＼＿＿＿）＿＿＿）(´;;⌒　 (´⌒;;　　ズザザザ  <>
+login:Penguin<>sage<>2008/11/05(水) 21:30:56 ID:oAvKuXGG<> <a href="../test/read.cgi/linux/1199682606/581" target="_blank">&gt;&gt;581</a> <br> KDEの中の人が変になったんだよ。(´･ω･`) <>
+login:Penguin<><>2008/11/05(水) 22:19:40 ID:EdDRfykY<> <a href="../test/read.cgi/linux/1199682606/582" target="_blank">&gt;&gt;582</a>　<a href="../test/read.cgi/linux/1199682606/582" target="_blank">&gt;&gt;582</a> <br> やっぱそういうことかw　子供が聞いちゃいけないことなんだね <>
+login:Penguin<>sage<>2008/11/07(金) 16:24:48 ID:Qq44c90C<> konqueror4.1.2で前回終了時のタブを復元とか出来ないですか？ <br> マウスジェスチャも欲しいんですけど。 <br> 右クリックで前のページに戻る設定にしても機能してないです。 <>
+login:Penguin<>sage<>2008/11/07(金) 19:56:36 ID:GxtZ7C3e<> フォルダビューのウイジットの大きさを変更しようとしたら、画面真っ白・・・('A`) <br> まだまだ使い物になんねー(´･ω･`)　@kde4.1.2 <>

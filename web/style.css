@@ -1,0 +1,28 @@
+body {
+	margin: 0.5em;
+}
+
+.flow {
+	text-align: right;
+	position: fixed;
+	top: 1px;
+	right: 1px;
+}
+
+.menu {
+	margin: 1px 0;
+	display: block;
+	font-size: 1em;
+	cursor: default;
+	list-style-type: none;
+}
+
+
+.menu .item {
+	margin: 2px;
+}
+
+.menu a:link, .menu a:visited {
+	color: buttontext;
+	font-size: 0.9em;
+}

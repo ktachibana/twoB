@@ -1,0 +1,45 @@
+<%#@ class_name: ResAnchorView %>
+<%#@ param: res_list %>
+<%#@ content_type: text/html; charset=UTF-8 %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="stylesheet" type="text/css" href="/twoB/web/style.css" />
+	<link rel="stylesheet" type="text/css" href="/twoB/web/thread.css" />
+	<script type="text/javascript" src="/twoB/web/popup.js"></script>
+</head>
+<body onload="javascript: b2rPopup.startup();">
+% res_list.each{|res|
+	<div id="_<%= res.number %>" class="res" style="<%= !res.visible? ? 'display: none;' : '' %>">
+		<dl class="<%= res.new? ? 'new' : '' %> <%=h res.age? ? 'age' : '' %>">
+			<dt class="header">
+				<span class="number"><%= res.number %></span>
+				<span class="name"><%= res.name %><% if res.has_trip? then %> <span class="trip">◆<%=h res.trip %></span><% end %></span>
+				[<span class="mail"><%=h res.mail %></span>]
+				Date:<span class="date"><%=h res.date %></span>
+				ID:<span class="id"><%=h res.id %></span>
+				<span class="bookmark">[<a href="<%= res.number %>/bookmark">栞</a>]</span>
+			</dt>
+			<dd class="body">
+%	res.body.each{|body|
+%		case body.body_type
+%		when :anchor
+<%				%><a href="#_<%= body.top_id %>" class="anchor" onmouseover="b2rPopup.resPopup.mouseOver(event, <%= body.top_id %>, <%= body.bottom_id %>, b2rPopup.resPopup.remote);"><%=h body %></a><% %>
+%		when :link
+<%				%><a href="<%=h body.url %>" class="<%= body.link_type %>" target="_blank"><%=h body %></a><% %>
+%		when :break_line
+<%				%><br/>
+%		else
+<%				%><%= body %><% %>
+%		end
+% 	}
+
+			</dd>
+		</dl>
+	</div>
+% }
+</body>
+</html>

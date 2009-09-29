@@ -1,0 +1,36 @@
+.threads {
+	border-collapse: collapse;
+}
+
+.threads td {
+	border: 1px solid silver;
+}
+
+.threads .body .title {
+	text-align: left;
+}
+
+.threads .body .no,
+.threads .body .count,
+.threads .body .read_count,
+.threads .body .new_count {
+	text-align: right;
+}
+
+.thread_link {
+	text-decoration: none;
+}
+
+.thread_link:link,
+.thread_link:visited {
+	color: blue;
+}
+
+.read .thread_link:link,
+.read .thread_link:visited {
+	color: purple;
+}
+
+.new {
+	background-color: silver;
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns="http://www.w3.org/1999/xhtml">
+	<jsp:directive.variable name-from-attribute="anchorVar" alias="anchor"/>
+	<jsp:directive.variable name-from-attribute="linkVar" alias="link"/>
+	<jsp:directive.tag body-content="scriptless" pageEncoding="UTF-8"/>
+	<jsp:directive.attribute name="value" required="true" rtexprvalue="true" type="java.util.Collection"/>
+	<jsp:directive.attribute name="onAnchor" fragment="true"/>
+	<jsp:directive.attribute name="onLink" fragment="true"/>
+	<jsp:directive.attribute name="anchorVar" rtexprvalue="false" required="true"/>
+	<jsp:directive.attribute name="linkVar" rtexprvalue="fase" required="true"/>
+	<jsp:body>
+		<c:forEach var="text" items="${value}">
+			<c:choose>
+				<c:when test="${text.type == 'anchor'}">
+					<c:set var="anchor" value="${text}"/>
+					<jsp:invoke fragment="onAnchor" />
+				</c:when>
+				<c:when test="${text.type == 'link'}">
+					<c:set var="link" value="${text}" />
+					<jsp:invoke fragment="onLink" />
+				</c:when>
+				<c:when test="${text.type == 'breakLine'}">
+					<br/>
+				</c:when>
+				<c:otherwise>
+					<c:out value="${text}" />
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+	</jsp:body>
+</jsp:root>

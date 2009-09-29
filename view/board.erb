@@ -1,0 +1,54 @@
+<%#@ class_name: BoardView %>
+<%#@ param: board %>
+<%#@ param: threads %>
+<%#@ content_type: application/xhtml+xml; charset=UTF-8 %>
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/>
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<link rel="stylesheet" type="text/css" href="/twoB/web/style.css" />
+	<link rel="stylesheet" type="text/css" href="/twoB/web/board.css" />
+	<title><%= board.url %></title>
+</head>
+<body>
+<div class="flow">
+	<ul class="menu">
+		<li><a href=".">Reload</a></li>
+		<li><a href="<%= board.url %>">Original</a></li>
+	</ul>
+</div>
+<table class="threads">
+	<thead class="header">
+		<tr>
+			<td class="no">No</td>
+			<td class="title">Title</td>
+			<td class="count">Count</td>
+			<td class="delete_cache">D</td>
+		</tr>
+	</thead>
+	<tbody class="body">
+%	threads.each{|thread|
+		<tr class="<%= thread.read? ? 'read' : '' %> <%= thread.has_new? ? 'new' : '' %>">
+			<td class="no"><%=h thread.order %></td>
+			<td class="title">
+				<a class="thread_link" href="<%= thread.number %>/l50#firstNew" target="_blank"><%=h thread.title %></a>
+			</td>
+			<td class="count">
+				<%= thread.read_count %> / <%= thread.res_count %>
+%		if thread.has_new?
+				(<%= thread.new_count %>)
+%		end
+			</td>
+			<td class="delete_cache">
+%		if thread.read?
+			<a class="delete_cache" href="<%= thread.number %>/delete_cache">D</a>
+%		end
+			</td>
+		</tr>
+%	}
+	</tbody>
+</table>
+</body>
+</html>
