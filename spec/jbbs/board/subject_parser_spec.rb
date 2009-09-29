@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 require 'pathname'
 require 'rexml/text'
 require 'source'
 require 'jbbs/board/subject_parser'
 
 describe JBBS::BoardSubjectParser do
-  it "バグっててもとりあえずparseはできる" do
+  it "subject-txtが壊れていてもとりあえずparseはできる" do
     file = Pathname.new("testData/jbbs/bug-subject.txt")
     
     parser = JBBS::BoardSubjectParser.new()

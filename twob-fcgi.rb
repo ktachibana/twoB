@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/ruby -Isrc -rubygems
+# -*- coding: utf-8 -*-
 $KCODE = "utf8"
 
 require 'twob/system'

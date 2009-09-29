@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'pathname'
 require 'spec_base'
 require 'source'

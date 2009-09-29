@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'twob/dat_body'
 
 module TwoB

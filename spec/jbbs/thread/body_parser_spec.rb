@@ -1,6 +1,6 @@
+# -*- coding: utf-8 -*-
 require 'spec'
 require 'twob/dat'
-$KCODE="u"
 
 describe TwoB::Dat do
   include TwoB::Dat

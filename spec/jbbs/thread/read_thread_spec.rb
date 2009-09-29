@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'spec'
 require 'source'
 require 'twob/configuration'

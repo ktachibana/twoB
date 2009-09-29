@@ -1,6 +1,7 @@
-#!/usr/bin/ruby -Isrc -Ispec
+#!/usr/bin/ruby -Ku -Isrc -Ispec
+# -*- coding: utf-8 -*-
 require 'rubygems'
-require 'spec'
+require 'spec/autorun'
 require 'pathname'
 
 Pathname.glob("spec/**/*.rb").each do |file|

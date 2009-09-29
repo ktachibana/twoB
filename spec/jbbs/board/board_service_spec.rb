@@ -1,4 +1,3 @@
-require 'spec'
 require 'jbbs/board/board_service'
 require 'spec_base'
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'twob/handler'
 require 'twob/system'
 require 'twob/configuration'

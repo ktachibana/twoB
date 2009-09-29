@@ -1,5 +1,5 @@
 #!/usr/bin/ruby -Isrc
-$KCODE = "utf8"
+# -*- coding: utf-8 -*-
 
 require 'twob/system'
 require 'twob/configuration'
