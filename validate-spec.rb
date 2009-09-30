@@ -1,5 +1,6 @@
-#!/usr/bin/ruby -Ku -Isrc -Ispec
+#!/usr/bin/ruby -Ku
 # -*- coding: utf-8 -*-
+require 'opt'
 require 'rubygems'
 require 'spec/autorun'
 require 'pathname'

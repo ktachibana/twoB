@@ -27,24 +27,29 @@ describe Pickers do
     it "emptyなCompositeも許容される" do
       composite = Composite.compose()
       composite.ranges.should == []
-      composite.empty?.should be_true    end
+      composite.empty?.should be_true
+    end
     
     describe "limitation" do
       composite = Composite.compose(1..1, 100..200)
       
       it "normal" do
-        composite.limitation(150).ranges.should == [1..1, 100..150]      end
+        composite.limitation(150).ranges.should == [1..1, 100..150]
+      end
       
       it "範囲外" do
-        composite.limitation(90).ranges.should == [1..1]      end
+        composite.limitation(90).ranges.should == [1..1]
+      end
       
       it "変化なし" do
-        composite.limitation(300).ranges.should == [1..1, 100..200]      end
+        composite.limitation(300).ranges.should == [1..1, 100..200]
+      end
       
       it "境界" do
         composite.limitation(200).ranges.should == [1..1, 100..200]
         composite.limitation(199).ranges.should == [1..1, 100..199]
-      end    end
+      end
+    end
   end
   
   describe Latest do
@@ -96,7 +101,8 @@ describe Pickers do
     
     it "include_range?" do
       All.instance.concretize(10).include_range?(1..10).should be_true
-      All.instance.concretize(10).include_range?(11..11).should be_false    end
+      All.instance.concretize(10).include_range?(11..11).should be_false
+    end
   end
   
   describe Only do
