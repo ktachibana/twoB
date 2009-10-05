@@ -40,4 +40,6 @@ describe "ResAnchor" do
     
     view = @thread.execute(@request, "res_anchor")
     view.should be_kind_of(ResAnchorView)
-    view.res_list.should be_kind_of(Array)  endend
+    view.res_list.should be_kind_of(Array)
+  end
+end

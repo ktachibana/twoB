@@ -14,4 +14,5 @@ describe JBBS::BoardSubjectParser do
     subjects.size.should == 193
     bug_line = subjects.find{|item| item.number == "1230355047" }
     bug_line.res_count == 605
-  endend
+  end
+end

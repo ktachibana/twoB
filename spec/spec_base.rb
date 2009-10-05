@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'pathname'
 require 'twob/system'
+require 'twob/configuration'
 
 class SpecSystem < TwoB::System
   def initialize()
