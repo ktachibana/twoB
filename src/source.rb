@@ -39,6 +39,10 @@ class TextFile
     @encoder = Encoder.by_name(encoding)
   end
   
+  def self.by_filename(filename, encoding)
+    self.new(Pathname.new(filename), encoding)
+  end
+  
   attr_reader :path, :encoder, :offset
 
   def open

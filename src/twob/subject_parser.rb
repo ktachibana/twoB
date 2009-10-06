@@ -12,13 +12,13 @@ module TwoB
         next if line.empty?
         match = @line_pattern.match(line)
         unless match
-          result << TwoB::ThreadSubjectItem.new(index + 1, "", "?")
+          result << ThreadSubject::Item.new(index + 1, "", "?")
           next
         end
         number = match[1]
         title = match[2]
         res_count = match[3].to_i
-        result << TwoB::ThreadSubjectItem.new(index + 1, number, title, res_count)
+        result << ThreadSubject::Item.new(index + 1, number, title, res_count)
       end
       result
     end

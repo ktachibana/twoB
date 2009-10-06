@@ -44,5 +44,5 @@ module ERB2View
 end
 
 if __FILE__ == $0
-  ERB2View.convert_io(ARGF, STDOUT)
+  ERB2View.convert_io($<, $>)
 end

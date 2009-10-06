@@ -1,7 +1,7 @@
 module TwoB
-  ThreadSubjectItem = Struct.new(:order, :number, :title, :res_count)
-  
   class ThreadSubject
+    Item = Struct.new(:order, :number, :title, :res_count)
+  
     def initialize(content, read_count)
       @content = content
       @read_count = read_count
