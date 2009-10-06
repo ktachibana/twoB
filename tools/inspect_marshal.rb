@@ -1,6 +1,7 @@
 #!/usr/bin/ruby -Isrc
 require 'jbbs/thread/index'
+require 'pp'
 
 file = ARGV.shift
-p Marshal.load(File.read(file))
+pp Marshal.load(File.read(file))
 
