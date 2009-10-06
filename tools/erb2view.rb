@@ -5,7 +5,7 @@ require 'erb'
 module ERB2View
   module_function
   
-  def convert(input, output)
+  def convert_io(input, output)
     erb_source = ""
     class_name = ""
     params = []
@@ -34,15 +34,15 @@ module ERB2View
     output.puts(ERB.new(script, nil, "%").result(binding))
   end
 
-  def convert_by_file(input_file, output_file)
+  def convert(input_file, output_file)
     File.open(input_file) do |input|
       File.open(output_file, "w") do |output|
-        convert(input, output)
+        convert_io(input, output)
       end
     end
   end
 end
 
-if __FILE__ == $0 
-  ERB2View.convert(ARGF, STDOUT)
+if __FILE__ == $0
+  ERB2View.convert_io(ARGF, STDOUT)
 end

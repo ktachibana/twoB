@@ -1,19 +1,25 @@
+# -*- coding: utf-8 -*-
 require 'rake'
 
-class Rake::FileList
-  def mapping
-    result = {}
-    self.each do |source|
-      result[source] = yield(source)
+module Rake
+  # 既存のFileListクラスにmapメソッドを追加
+  class FileList
+    def map(&convert_block)
+      FileMapping.new(self) do |source|
+          convert_block[source]
+      end
+    end
+  end
+
+  class FileMapping < Hash
+    def initialize(sources, &to_object_block)
+      sources.each do |source|
+        self[source] = to_object_block[source]
+      end
     end
     
-    def result.sources
-      self.keys
-    end
-    def result.objects
-      self.values
-    end
-    result
+    alias :each_mapping :each_pair
+    alias :sources :keys
+    alias :objects :values
   end
 end
-
