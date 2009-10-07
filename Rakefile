@@ -5,13 +5,13 @@ require 'spec/rake/spectask'
 converter = "tools/erb2view.rb"
 template = "tools/view_template.erb"
 
-view_file_mapping = FileList["view/*.erb"].map do |erb_file|
+view_file_mapping = FileList["view/*.erb"].mapping do |erb_file|
   erb_file.pathmap("%{^view,src}X_view.rb")
 end
 
 task :default => :convert_all_view
 
-desc "view/*.erb‚ğ‘S‚ÄViewƒNƒ‰ƒX‚ÌƒR[ƒh‚É•ÏŠ·‚·‚é"
+desc "view/*.erbã‚’å…¨ã¦Viewã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ¼ãƒ‰ã«å¤‰æ›ã™ã‚‹"
 task :convert_all_view => view_file_mapping.objects
 
 view_file_mapping.each_mapping do |erb_file, view_rb_file|
@@ -21,7 +21,7 @@ view_file_mapping.each_mapping do |erb_file, view_rb_file|
   end
 end
 
-desc "rspec‚ğÀs‚·‚é"
+desc "rspecã‚’å®Ÿè¡Œã™ã‚‹"
 Spec::Rake::SpecTask.new do |t|
   t.spec_files = FileList["spec/**/*_spec.rb"]
   t.spec_opts = %w(--format html:local/spec.html --format progress --color)
@@ -30,3 +30,4 @@ Spec::Rake::SpecTask.new do |t|
   t.rcov_dir = "local/coverage"
   t.rcov_opts << %w(--exclude ^spec --include-file ^src)
 end
+

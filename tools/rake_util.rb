@@ -2,9 +2,9 @@
 require 'rake'
 
 module Rake
-  # 既存のFileListクラスにmapメソッドを追加
+  # 既存のFileListクラスにmappingメソッドを追加
   class FileList
-    def map(&convert_block)
+    def mapping(&convert_block)
       FileMapping.new(self) do |source|
           convert_block[source]
       end
