@@ -15,7 +15,7 @@ module TwoB
     attr_reader :thread, :option
   
     def title
-      return @cache.title unless @cache.title
+      return @cache.title if @cache.title
       return @delta.title
     end
   
