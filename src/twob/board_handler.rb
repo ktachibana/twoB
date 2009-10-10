@@ -34,7 +34,7 @@ module TwoB
       subjects = get_subjects()
       index_map = index_manager.load()
       threads = subjects.collect do |subject_item|
-        TwoB::ThreadSubject.new(subject_item, index_map.fetch(subject.number, 0))
+        TwoB::ThreadSubject.new(subject_item, index_map.fetch(subject_item.number, 0))
       end
       threads.sort! do |a, b|
         result = 0

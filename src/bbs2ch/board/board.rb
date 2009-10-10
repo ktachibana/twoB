@@ -32,10 +32,6 @@ module BBS2ch
     
     include TwoB::BoardHandler
     
-    def subject_source
-      HTTPGetSource.new(host.name, "/#{id}/subject.txt", {}, subject_encoding, "\n")
-    end
-
     def original_url
       "http://#{host.name}/#{id}/"
     end
@@ -44,8 +40,12 @@ module BBS2ch
       "http://#{host.name}/#{id}/subject.txt"
     end
     
+    def subject_source
+      HTTPGetSource.new(host.name, "/#{id}/subject.txt", {}, subject_encoding, "\n")
+    end
+    
     def get_subject_parser()
-      TwoB::SubjectParser.new(/^(\d+)\.dat<>(.+)\((\d+)\)$/)
+      TwoB::SubjectParser.new(/^(\d+)\.dat<>(.+) \((\d+)\)$/)
     end
 
     def subject_encoding

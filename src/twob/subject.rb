@@ -1,3 +1,5 @@
+require 'equality'
+
 module TwoB
   class ThreadSubject
     Item = Struct.new(:order, :number, :title, :res_count)
@@ -7,6 +9,8 @@ module TwoB
       @read_count = read_count
     end
   
+    equality :@content, :@read_count
+    
     def order
       @content.order
     end
