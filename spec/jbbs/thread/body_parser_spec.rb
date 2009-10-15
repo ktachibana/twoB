@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'spec'
-require 'twob/dat'
+require 'twob/thread/dat'
 
 describe TwoB::Dat do
   include TwoB::Dat

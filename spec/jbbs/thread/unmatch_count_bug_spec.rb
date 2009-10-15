@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'spec'
-require 'source'
+require 'io/source'
 require 'jbbs/thread/dat_parser'
 
 describe '管理者削除などにより、行が消失する場合がある' do

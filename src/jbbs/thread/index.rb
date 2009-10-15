@@ -1,6 +1,6 @@
-require 'twob/marshaler'
-require 'twob/dat'
-require 'twob/picker'
+require 'marshaler'
+require 'twob/thread/dat'
+require 'twob/thread/picker'
 
 module JBBS
   class Index

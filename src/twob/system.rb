@@ -1,6 +1,7 @@
 require 'twob/handler'
 require 'bbs2ch/host'
 require 'jbbs/host'
+require 'twob/error_view'
 
 module TwoB
   class System
@@ -11,6 +12,17 @@ module TwoB
     end
     
     attr_reader :configuration
+    
+    def process
+      begin
+        request = get_request
+        response = apply(request, request.path_info)
+      rescue Exception => e
+        output(ErrorView.new(e))
+      else
+        output(response)
+      end
+    end
     
     def get_child(value)
       case value

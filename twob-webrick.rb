@@ -3,6 +3,7 @@
 
 require 'twob/system'
 require 'twob/configuration'
+require 'twob/request'
 require 'stringio'
 require 'webrick'
 require 'cgi'
@@ -14,39 +15,28 @@ class WEBrickSystem < TwoB::System
     @request = request
     @response = response
   end
+  
+  def get_request
+    TwoB::Request.new(@request.path_info, CGI.parse(@request.query_string ? @request.query_string : ""))
+  end
 
-  def output(view)
-    @response.status = view.status_code
-    view.headers.each{|key, value|
+  def output(response)
+    @response.status = response.status_code
+    response.headers.each do |key, value|
       @response[key] = value
-    }
+    end
     io = StringIO.new
-    view.write(io)
+    response.write_body(io)
     @response.body = io.string
-  end
-end
-
-class WEBrickRequest
-  def initialize(request)
-    @request = request
-  end
-  
-  def param
-    CGI.parse(@request.query_string)
-  end
-  
-  def path_info
-    @request.path_info
   end
 end
 
 $configuration = TwoB::Configuration.new(Pathname.new("2bcache").expand_path)
 
-server = WEBrick::HTTPServer.new({:DocumentRoot => '../', :Port => 8080})
+server = WEBrick::HTTPServer.new({:DocumentRoot => './', :Port => 8080})
 server.mount_proc("/twoB/test") do |request, response|
   system = WEBrickSystem.new($configuration, request, response)
-  view = system.apply(WEBrickRequest.new(request), request.path_info)
-  system.output(view)
+  system.process
 end
 [:INT, :TERM].each do |signal|
   trap(signal){ server.stop }

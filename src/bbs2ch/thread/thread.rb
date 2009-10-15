@@ -1,12 +1,14 @@
-require 'twob/thread_handler'
-require 'twob/marshaler'
+require 'time'
+require 'marshaler'
+require 'twob/thread/thread_view'
+require 'io/source'
+require 'io/http/http'
+require 'io/http/http_request'
+require 'twob/thread/thread_handler'
 require 'bbs2ch/thread/dat_parser'
 require 'bbs2ch/thread/res'
 require 'bbs2ch/thread/cache'
 require 'bbs2ch/thread/cache_manager'
-require 'thread_view'
-require 'source'
-require 'time'
 
 module BBS2ch
   class Thread
@@ -52,13 +54,15 @@ module BBS2ch
     end
     
     def load_new(cache)
-      source = HTTPGetSource.new(dat_host_name, dat_path, dat_header(cache), dat_encoding, "\n")
+      request = HTTPRequest.new(dat_host_name, dat_path, dat_header(cache))
+      source = HTTPGetSource.new(request, dat_encoding, "\n")
       parser = BBS2ch::DatParser.new(cache.dat_content.last_res_number + 1)
       parser.parse(source)
     end
     
     def load_new_data(cache)
-      HTTPGetInput.new(board.host.name, dat_path, cache.dat_header).read()
+      request = HTTPRequest.new(board.host.name, dat_path, cache.dat_header)
+      HTTPGetInput.new(request).read()
     end
 
     def original_url

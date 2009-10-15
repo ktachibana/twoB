@@ -1,17 +1,15 @@
-require 'twob/board_handler'
-require 'bbs2ch/board/board_stub'
+require 'twob/board/board_handler'
 require 'spec_base'
-require 'source'
-require 'board_view'
+require 'twob/board/board_view'
+require 'io/file'
 
 describe BBS2ch::Board, "list_thread" do
   include TwoB
   
   it "example" do
     FileUtils.rmtree("spec_cache")
-    @system = SpecSystem.new
-    @board = @system / "pc12.2ch.net" / "tech"
-    @board.subject_source = TextFile.by_filename("testData/2ch/subject.txt", "CP932")
+    @board = SpecSystem.new() / "pc12.2ch.net" / "tech"
+    @board.stub!(:subject_source).and_return(TextFile.by_filename("testData/2ch/subject.txt", "CP932"))
     
     view = @board.list_thread
     view.should be_kind_of(BoardView)

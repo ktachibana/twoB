@@ -1,10 +1,10 @@
 require 'bbs2ch/thread/thread'
 require 'twob/handler'
-require 'twob/subject_parser'
-require 'twob/board_handler'
+require 'twob/board/subject_parser'
+require 'twob/board/board_handler'
 require 'twob/read_counter'
-require 'board_view'
-require 'source'
+require 'twob/board/board_view'
+require 'io/source'
 require 'pathname'
 
 module BBS2ch
@@ -41,7 +41,8 @@ module BBS2ch
     end
     
     def subject_source
-      HTTPGetSource.new(host.name, "/#{id}/subject.txt", {}, subject_encoding, "\n")
+      request = HTTPRequest.new(host.name, "/#{id}/subject.txt", {})
+      HTTPGetSource.new(request, subject_encoding, "\n")
     end
     
     def get_subject_parser()

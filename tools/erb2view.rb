@@ -8,18 +8,23 @@ module ERB2View
   def convert_io(input, output)
     erb_source = ""
     class_name = ""
+    module_name = ""
     params = []
     content_type = ""
 
     input.each_line do |line|
-      if line.strip.match(/\<\%\#\@\s*(\w+)\s*:(.*)\%\>/)
-        case $1
+      if match = line.strip.match(/\<\%\#\@\s*(\w+)\s*:\s*(.*?)\s*\%\>/)
+        key = match[1]
+        value = match[2]
+        case key
         when "class_name"
-          class_name = $2.strip
+          class_name = value
+        when "module_name"
+          module_name = value
         when "param"
-          params << $2.strip
+          params << value
         when "content_type"
-          content_type = $2.strip
+          content_type = value
         end
       else
         erb_source << line

@@ -1,7 +1,7 @@
-require 'bbs2ch/thread/dat'
-require 'twob/dat_body'
 require 'time'
-require 'source'
+require 'io/source'
+require 'twob/thread/dat_body'
+require 'bbs2ch/thread/dat'
 
 module BBS2ch
   class Cache

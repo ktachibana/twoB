@@ -1,17 +1,19 @@
 # -*- coding: utf-8 -*-
-require 'twob/dat'
-require 'twob/dat_body'
+require 'twob/thread/dat'
+require 'twob/thread/dat_body'
+require 'twob/thread/bbs_thread'
+require 'twob/thread/thread_handler'
+require 'twob/thread/thread_view'
+require 'twob/thread/res_anchor_view'
 require 'twob/handler'
-require 'twob/bbs_thread'
-require 'twob/marshaler'
-require 'twob/thread_handler'
 require 'jbbs/thread/read_thread_action'
 require 'jbbs/thread/dat_parser'
 require 'jbbs/thread/res'
 require 'jbbs/thread/cache_manager'
-require 'thread_view'
-require 'res_anchor_view'
-require 'http'
+require 'io/http/http'
+require 'io/http/http_request'
+require 'io/file'
+require 'marshaler'
 
 module JBBS
   class ThreadService
@@ -83,7 +85,7 @@ module JBBS
     end
 
     def get_new_input(picker)
-      HTTPGetInput.new(host.name, get_dat_path(picker), {})
+      HTTPGetInput.new(HTTPRequest.new(host.name, get_dat_path(picker), {}))
     end
     
     def get_dat_parser()

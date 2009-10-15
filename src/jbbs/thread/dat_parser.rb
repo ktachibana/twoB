@@ -1,6 +1,6 @@
-require 'twob/dat_parser'
-require 'twob/dat_body'
-require 'twob/dat'
+require 'twob/thread/dat_parser'
+require 'twob/thread/dat_body'
+require 'twob/thread/dat'
 
 module JBBS
   class DatParser < TwoB::DatParser

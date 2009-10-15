@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 require 'pathname'
 require 'rexml/text'
-require 'source'
-require 'twob/subject'
-require 'twob/subject_parser'
+require 'io/source'
+require 'twob/board/subject'
+require 'twob/board/subject_parser'
 
 describe "JBBS SubjectParser" do
   before do

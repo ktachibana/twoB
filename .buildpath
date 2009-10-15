@@ -3,5 +3,6 @@
 	<buildpathentry kind="src" path="src"/>
 	<buildpathentry kind="src" path="tools"/>
 	<buildpathentry kind="src" path="spec"/>
+	<buildpathentry kind="src" path="lib"/>
 	<buildpathentry kind="con" path="org.eclipse.dltk.launching.INTERPRETER_CONTAINER"/>
 </buildpath>

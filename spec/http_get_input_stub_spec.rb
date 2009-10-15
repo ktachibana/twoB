@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'spec'
-require 'source'
-require 'http_request'
+require 'io/source'
+require 'io/http/http_request'
 require 'http_get_input_stub'
 
 describe HTTPGetInputStub do
@@ -9,7 +9,7 @@ describe HTTPGetInputStub do
     host = "www.spec-validation.com"
     path = "/construct"
     headers = {}
-    @request = TwoB::HTTPRequest.new(host, path, headers)
+    @request = HTTPRequest.new(host, path, headers)
     @http = HTTPGetInputStub.new(@request)
   end
   

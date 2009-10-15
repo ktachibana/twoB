@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-$: << "../src"
-require 'source'
+require 'io/source'
 
 class HTTPGetInputStub
   def initialize(request)

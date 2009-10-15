@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-require 'source'
-require 'thread_view'
-require 'twob/picker'
-require 'twob/bbs_thread'
+require 'io/source'
+require 'twob/thread/thread_view'
+require 'twob/thread/picker'
+require 'twob/thread/bbs_thread'
 require 'jbbs/thread/cache'
 require 'jbbs/thread/index'
 require 'jbbs/thread/delta'

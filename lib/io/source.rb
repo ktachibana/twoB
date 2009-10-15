@@ -3,7 +3,7 @@ require 'stringio'
 require 'open-uri'
 require 'enum_util'
 require 'encoder'
-
+require 'pathname'
 
 class IOReader
   def initialize(io, encoder)
@@ -28,59 +28,6 @@ class IOReader
       offset = offset + line.size
     end
     offset
-  end
-end
-
-class TextFile
-  include Enumerable
-
-  def initialize(path, encoding)
-    @path = path
-    @encoder = Encoder.by_name(encoding)
-  end
-  
-  def self.by_filename(filename, encoding)
-    self.new(Pathname.new(filename), encoding)
-  end
-  
-  attr_reader :path, :encoder, :offset
-
-  def open
-    File.open(@path) do |file|
-      yield IOReader.new(file, @encoder)
-    end
-  end
-  
-  def each
-    open do |reader|
-      reader.each do |line|
-        yield line
-      end
-    end
-  end
-
-  def size
-    begin
-      @path.size
-    rescue Errno::ENOENT
-      return 0
-    end
-  end
-  
-  def append(append_data)
-    @path.parent.mkpath
-    
-    File.open(@path, "a") do |io|
-      io.write(append_data)
-    end
-  end
-
-  def delete
-    begin
-      @path.delete
-    rescue Errno::ENOENT
-      return
-    end
   end
 end
 

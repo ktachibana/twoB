@@ -1,4 +1,4 @@
-require 'source'
+require 'io/source'
 require 'encoder'
 
 module JBBS

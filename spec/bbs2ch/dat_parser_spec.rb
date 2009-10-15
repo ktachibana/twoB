@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'bbs2ch/thread/dat_parser'
-require 'source'
+require 'io/file'
 
 describe BBS2ch::DatParser do
   it "parseできる" do

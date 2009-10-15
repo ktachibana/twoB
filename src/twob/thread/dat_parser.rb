@@ -1,4 +1,4 @@
-require 'twob/dat'
+require 'twob/thread/dat'
 
 module TwoB
   DatPart = Struct.new(:number_from, :offset_from, :number_to)
@@ -30,7 +30,8 @@ module TwoB
     def parse_with_index(seekable_source, index, ranges)
       parts = ranges.collect do |range|
         DatPart.new(range.begin, index[range.begin], range.end) if index.has?(range.begin)
-      end.compact
+      end
+      parts.compact!
       parse_parts(seekable_source, parts)
     end
 

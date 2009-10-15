@@ -1,6 +1,7 @@
-require "twob/subject"
-require 'twob/marshaler'
-require "board_view"
+# -*- coding: utf-8 -*-
+require "twob/board/subject"
+require "twob/board/board_view"
+require 'marshaler'
 
 module TwoB
   # = includeするクラスは以下のメソッドを提供すること

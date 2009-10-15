@@ -1,8 +1,7 @@
-require 'twob/picker'
-require 'twob/bbs_thread'
-require 'twob/marshaler'
-require 'thread_view'
-require 'source'
+require 'twob/thread/picker'
+require 'twob/thread/bbs_thread'
+require 'marshaler'
+require 'io/source'
 
 module TwoB
   # includeするクラスは以下のメソッドを提供すること

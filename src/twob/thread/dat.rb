@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'twob/dat_body'
+require 'twob/thread/dat_body'
 
 module TwoB
   class DatContent

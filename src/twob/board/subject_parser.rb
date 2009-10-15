@@ -1,4 +1,4 @@
-require 'twob/subject'
+require 'twob/board/subject'
 
 module TwoB
   class SubjectParser

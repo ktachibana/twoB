@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 require 'enum_util'
-require 'twob/picker'
+require 'twob/thread/picker'
 require 'forwardable'
 
 module TwoB

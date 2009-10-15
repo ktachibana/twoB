@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 require 'twob/system'
+require 'twob/request'
 require 'twob/configuration'
+require 'view_util'
 require 'pathname'
 require 'optparse'
 require 'cgi'
@@ -15,27 +17,23 @@ raise("missing path_info") unless path_info
 configuration = TwoB::Configuration.new(Pathname.new("2bcache").expand_path)
 
 class ConsoleSystem < TwoB::System
-  def initialize(configuration)
+  include ViewUtil
+  def initialize(configuration, path_info, param)
     super(configuration)
-  end
-  
-  def output(view)
-    $stdout.puts("<!-- Status: #{view.status_code} -->")
-    $stdout.puts("<!-- #{view.headers.inspect} -->")
-    view.write($stdout)
-  end
-end
-
-class ConsoleRequest
-  def initialize(path_info, param)
     @path_info = path_info
     @param = param
   end
-
-  attr_reader :path_info, :param
+  
+  def get_request
+    TwoB::Request.new(@path_info, @param)
+  end
+  
+  def output(response)
+    $stdout.puts("<!-- Status: #{response.status_code} -->")
+    $stdout.puts("<!-- #{h response.headers.inspect} -->")
+    response.write_body($stdout)
+  end
 end
 
-system = ConsoleSystem.new(configuration)
-request = ConsoleRequest.new(path_info, param)
-view = system.apply(request, path_info)
-system.output(view)
+system = ConsoleSystem.new(configuration, path_info, param)
+system.process

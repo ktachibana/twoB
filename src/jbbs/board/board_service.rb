@@ -1,10 +1,10 @@
-require 'twob/handler'
-require 'twob/subject'
-require 'jbbs/thread/thread_service'
-require 'twob/subject_parser'
-require 'twob/board_handler'
 require 'twob/read_counter'
-require 'board_view'
+require 'twob/handler'
+require 'twob/board/subject_parser'
+require 'twob/board/board_handler'
+require 'twob/board/subject'
+require 'jbbs/thread/thread_service'
+require 'twob/board/board_view'
 require 'forwardable'
 
 module JBBS
@@ -42,7 +42,8 @@ module JBBS
     end
     
     def subject_source
-      HTTPGetSource.new(host.name, "/#{category.name}/#{number}/subject.txt", {}, subject_encoder, "\n")
+      request = HTTPRequest.new(host.name, "/#{category.name}/#{number}/subject.txt", {})
+      HTTPGetSource.new(request, subject_encoder, "\n")
     end
 
     def subject_url

@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 require 'pathname'
 require 'spec_base'
-require 'source'
-require 'twob/bbs_thread'
-require 'twob/dat'
+require 'io/source'
+require 'twob/request'
+require 'twob/thread/bbs_thread'
+require 'twob/thread/dat'
 
 describe "ResAnchor" do
   before do
@@ -13,7 +14,7 @@ describe "ResAnchor" do
     @category = JBBS::Category.new(@host, "cat")
     @board = JBBS::BoardService.new(@category, "012")
     @thread = JBBS::ThreadService.new(@board, "345")
-    @request = SpecRequest.new({"range" => ["50"]}, @path_info)
+    @request = TwoB::Request.new(@path_info, {"range" => ["50"]})
   end
   
   class MarshalerStub

@@ -1,4 +1,4 @@
-require 'source'
+require 'io/source'
 require 'jbbs/thread/cache'
 require 'jbbs/thread/dat_parser'
 

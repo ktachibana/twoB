@@ -21,12 +21,10 @@ class ErrorView
     {"Content-Type" => content_type}
   end
 
-  def write(out)
-    out << error.inspect
-    out << "\r\n"
-    error.backtrace.each{|trace|
-      out << trace
-      out << "\r\n"
-    }
+  def write_body(out)
+    out.puts(error.inspect)
+    error.backtrace.each do|trace|
+      out.puts(trace)
+    end
   end
 end

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class PatternMap
   Pattern = Struct.new(:pattern, :create)
 

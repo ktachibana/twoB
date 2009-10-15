@@ -5,7 +5,7 @@ require 'spec/rake/spectask'
 converter = "tools/erb2view.rb"
 template = "tools/view_template.erb"
 
-view_file_mapping = FileList["view/*.erb"].mapping do |erb_file|
+view_file_mapping = FileList["view/**/*.erb"].mapping do |erb_file|
   erb_file.pathmap("%{^view,src}X_view.rb")
 end
 

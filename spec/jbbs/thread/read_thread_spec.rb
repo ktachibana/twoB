@@ -1,20 +1,26 @@
 # -*- coding: utf-8 -*-
-require 'spec'
-require 'source'
+require 'io/source'
 require 'twob/configuration'
 require 'jbbs/thread/thread_service'
 require 'spec_base'
+require 'pathname'
 
-describe JBBS::ThreadService do
+include JBBS
+
+describe ThreadService do
   before do
-    @system = SpecSystem.new()
-    @host = JBBS::Host.new(@system)
-    @category = JBBS::Category.new(@host, "cat")
-    @board = JBBS::BoardService.new(@category, "012")
-    @thread = JBBS::ThreadService.new(@board, "345")
+    @thread = SpecSystem.new() / Host::Name / "cat" / "012" / "345"
   end
   
   it do
     @thread.original_url.should == "http://jbbs.livedoor.jp/bbs/read.cgi/cat/012/345/"
+  end
+  
+  it "readのexample" do
+    @thread.stub!(:get_new_input).and_return(BinaryFile.by_filename("testData/jbbs/jbbs.dat"))
+    
+    view = @thread.read(Latest.new(50, true))
+    
+    view.thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
   end
 end

@@ -1,5 +1,5 @@
 require 'twob/handler'
-require 'redirect_response'
+require 'twob/redirect_response'
 
 module BBS2ch
   class Res

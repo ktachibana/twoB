@@ -1,9 +1,11 @@
 #!/usr/bin/ruby -Isrc -rubygems
 # -*- coding: utf-8 -*-
+
 $KCODE = "utf8"
 
 require 'twob/system'
 require 'twob/configuration'
+require 'twob/request'
 require 'fcgi'
 require 'cgi'
 require 'pathname'
@@ -16,38 +18,29 @@ module TwoB
       @fcgi = fcgi
     end
     
-    def output(view)
-      @fcgi.out.print("Status: #{view.status_code}\r\n")
-      view.headers.each{|key, value|
+    def get_request
+      path_info = @fcgi.env["PATH_INFO"]
+      query = @fcgi.env["QUERY_STRING"]
+      TwoB::Request.new(path_info, CGI.parse(query ? query : ""))
+    end
+    
+    def output(response)
+      @fcgi.out.print("Status: #{response.status_code}\r\n")
+      response.headers.each do |key, value|
         @fcgi.out.print("#{key}: #{value}\r\n")
-      }
+      end
       @fcgi.out.print("\r\n")
-      view.write(@fcgi.out)
+      response.write_body(@fcgi.out)
     end
-  end
-  
-  class FCGIRequest
-    def initialize(fcgi)
-      @param = CGI.parse(fcgi.env["QUERY_STRING"])
-      @path_info = fcgi.env["PATH_INFO"]
-    end
-
-    attr_reader :param, :path_info
   end
 end
+
 
 configuration = TwoB::Configuration.new(Pathname.new("2bcache").expand_path)
 
 FCGI.each do |fcgi|
-  begin
-    system = TwoB::FCGISystem.new(configuration, fcgi)
-    request = TwoB::FCGIRequest.new(fcgi)
-    view = system.apply(request, request.path_info)
-  rescue Exception => e
-    system.output(ErrorView.new(e))
-  else
-    system.output(view)
-  end
-  fcgi.finish()
+  system = TwoB::FCGISystem.new(configuration, fcgi)
+  system.process
+  fcgi.finish
 end
 

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 module TwoB
   class Text
     def initialize(text)

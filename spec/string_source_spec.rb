@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'source'
+require 'io/source'
 
 describe StringSource do
   before do

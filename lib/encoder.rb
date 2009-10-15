@@ -6,8 +6,8 @@ class Encoder
       "Literal"
     end
     
-    def self.encode(string)
-      string
+    def self.encode(string_bytes)
+      string_bytes
     end
   end
   
@@ -25,9 +25,9 @@ class Encoder
     @name
   end
 
-  def encode(string)
+  def encode(bytes)
     begin
-      return @converter.iconv(string)
+      return @converter.iconv(bytes)
     rescue Iconv::IllegalSequence => e
       if rest = e.failed[1..-1]
         return e.success + @alt_char + encode(rest)

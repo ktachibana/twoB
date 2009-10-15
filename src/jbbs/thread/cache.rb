@@ -1,4 +1,4 @@
-require 'twob/dat'
+require 'twob/thread/dat'
 
 module JBBS
   class Cache
