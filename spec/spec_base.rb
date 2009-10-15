@@ -5,7 +5,7 @@ require 'twob/configuration'
 
 class SpecSystem < TwoB::System
   def initialize(request = nil)
-    super(TwoB::Configuration.new(Pathname.new("spec_cache")))
+    super(TwoB::Configuration.new(Pathname.new("local/spec_cache")))
     @request = request
     @buf = StringIO.new
   end
