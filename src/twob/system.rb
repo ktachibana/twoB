@@ -18,10 +18,14 @@ module TwoB
         request = get_request
         response = apply(request, request.path_info)
       rescue Exception => e
-        output(ErrorView.new(e))
+        handle_error(e)
       else
         output(response)
       end
+    end
+    
+    def handle_error(e)
+      output(ErrorView.new(e))
     end
     
     def get_child(value)

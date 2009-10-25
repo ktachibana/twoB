@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'jbbs/board/board_service'
-require 'spec_base'
+require 'spec_system'
 
 describe JBBS::BoardService do
   before do

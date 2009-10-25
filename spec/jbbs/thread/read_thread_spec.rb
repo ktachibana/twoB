@@ -2,7 +2,7 @@
 require 'io/source'
 require 'twob/configuration'
 require 'jbbs/thread/thread_service'
-require 'spec_base'
+require 'spec_system'
 require 'pathname'
 
 include JBBS

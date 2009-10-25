@@ -9,7 +9,11 @@ module BBS2ch
     include TwoB::Dat
     DATE_PATTERN = /\A(.*?)( ID:(\S+))?( BE:(.*))?\z/
 
-    def initialize
+    def initialize(host_name, board_id, thread_id)
+      @host_name = host_name
+      @board_id = board_id
+      @thread_id = thread_id
+      
       @title = ""
       @caches = []
       @deltas = []
@@ -62,7 +66,7 @@ include BBS2ch
 
 describe ThreadBuilder do
   before do
-    @builder = BBS2ch::ThreadBuilder.new
+    @builder = BBS2ch::ThreadBuilder.new("host_name", "board_id", "thread_id")
     @dat_columns = [
       "login:Penguin",
       "",
@@ -90,6 +94,25 @@ describe ThreadBuilder do
   end
   
   it "build from cache" do
+    dat_columns2 = [
+      "login:Penguin",
+      "sage",
+      "2008/01/07(月) 14:21:16 ID:Y+mA6iwW",
+      " 過去スレ <br> " +
+        " <br> " +
+        "KDEスレ <br> " +
+        "http://pc.2ch.net/linux/kako/983/983412433.html <br> " +
+        "KDEスレ Part 2 <br> " +
+        "http://pc.2ch.net/linux/kako/1007/10073/1007375984.html <br> " +
+        "KDEスレ Part 3 <br> " +
+        "http://pc.2ch.net/test/read.cgi/linux/1042006351/ <br> " +
+        "KDEスレ Part 4 <br> " +
+        "http://pc5.2ch.net/test/read.cgi/linux/1063215522/ <br> " +
+        "KDEスレ Part 5 <br> " +
+        "http://pc8.2ch.net/test/read.cgi/linux/1088074467/  <br> " +
+        "KDEスレ　Part6 <br> " +
+        "http://pc11.2ch.net/test/read.cgi/linux/1126775147/ ",
+      ""]
     @builder.build_cache(*@dat_columns)
     thread = @builder.get_thread
     thread.title.should == "KDE スレッド7"

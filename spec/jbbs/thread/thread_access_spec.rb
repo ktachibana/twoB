@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'spec_base'
+require 'spec_system'
 require 'io/file'
 require 'twob/request'
 require 'jbbs/thread/thread_service'

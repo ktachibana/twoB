@@ -1,5 +1,5 @@
 require 'twob/board/board_handler'
-require 'spec_base'
+require 'spec_system'
 require 'twob/board/board_view'
 require 'io/file'
 

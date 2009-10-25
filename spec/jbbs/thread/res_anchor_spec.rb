@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'pathname'
-require 'spec_base'
+require 'spec_system'
 require 'io/source'
 require 'twob/request'
 require 'twob/thread/bbs_thread'

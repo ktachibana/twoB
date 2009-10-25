@@ -13,7 +13,7 @@ module TwoB
       Picker::From.new(@last_res_number + 1)
     end
     
-    def append(delta_index)
+    def append_index(delta_index)
       delta_index.each do |number, source_offset|
         @index[number] = @cache_file_size + source_offset
       end
