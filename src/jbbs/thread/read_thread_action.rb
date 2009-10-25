@@ -17,10 +17,16 @@ module JBBS
       @option_manager = @thread.option_manager
     end
 
+    def build_thread
+      metadata = @metadata_manager.load
+      @builder.set_title(metadata.title)
+      
+    end
+    
     def execute
       index = @index_manager.load()
       delta = load_delta(index)
-      cache_picker = @picker.concretize(delta.last_number).limitation(index.last_res_number).ranges
+      cache_picker = @picker.concretize(delta.last_number ? index.last_res_number : delta.last_number).limitation(index.last_res_number).ranges
       cache = @cache_manager.load(cache_picker, index)
       option = @option_manager.load()
       
@@ -39,8 +45,12 @@ module JBBS
     end
     
     def load_delta(index)
-      new_bytes = @thread.load_new(index.delta_picker)
-      Delta.new(@thread, index, new_bytes)
+      dat_parser = @thread.get_dat_parser
+      bytes = @thread.load_new(index.delta_picker)
+      source = BytesSource.new(bytes, Encoder.by_name(@thread.dat_encoding), "\n")
+
+      dat_content = dat_parser.parse(source)
+      Delta.new(dat_content, dat_parser.index)
     end
   end
 end

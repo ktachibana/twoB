@@ -13,7 +13,16 @@ module TwoB
     attr_accessor :thread_title, :res_list, :index
     
     def get_dat_content
-      TwoB::DatContent.new(thread_title, res_list)
+      TwoB::DatContent.new(@thread_title, @res_list)
+    end
+    
+    def each_line_with_index(source, index = nil)
+      source.open do |reader|
+        reader.each_with_offset do |line, offset|
+          next if line.empty?
+          yield(line.split("<>"), offset)
+        end
+      end
     end
     
     def parse(source)
@@ -23,8 +32,8 @@ module TwoB
           parse_line(line.split("<>"))
           @index[last_number] = offset
         end
-        get_dat_content
       end
+      get_dat_content
     end
     
     def parse_with_index(seekable_source, index, ranges)

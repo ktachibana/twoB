@@ -3,18 +3,15 @@ require 'encoder'
 
 module JBBS
   class Delta
-    def initialize(thread, thread_index, bytes)
-      @thread_index = thread_index
-      @bytes = bytes
-      source = BytesSource.new(bytes, Encoder.by_name(thread.dat_encoding), "\n")
-      @dat_parser = thread.get_dat_parser
-      @dat_content = @dat_parser.parse(source)
+    def initialize(dat_content, index)
+      @dat_content = dat_content
+      @index = index
     end
     
     attr_reader :bytes, :dat_content
     
     def index
-      @dat_parser.index
+      @index
     end
 
     def title
@@ -36,7 +33,7 @@ module JBBS
     end
     
     def last_number
-      empty? ? @thread_index.last_res_number : @dat_content.last_res_number
+      empty? ? nil : @dat_content.last_res_number
     end
     
     def range

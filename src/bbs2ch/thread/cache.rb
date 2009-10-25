@@ -5,9 +5,9 @@ require 'bbs2ch/thread/dat'
 
 module BBS2ch
   class Cache
-    def initialize(dat_content, dat_source)
+    def initialize(dat_content, dat_file)
       @dat_content = dat_content
-      @dat_source = dat_source
+      @dat_source = dat_file
     end
     
     attr_reader :dat_content, :dat_source
