@@ -39,7 +39,7 @@ module JBBS
       @index_manager.save(@index)
       @thread_key.read_counter.update(@thread_key.number, thread_content.last_res_number)
 
-      ::ThreadView.new(thread_content)
+      TwoB::ThreadView.new(thread_content)
     end
     
     def cache_picker

@@ -1,4 +1,4 @@
-#!/usr/bin/ruby -Isrc -rubygems
+#!/usr/bin/ruby -Isrc -Ilib -rubygems
 # -*- coding: utf-8 -*-
 
 $KCODE = "utf8"
@@ -9,7 +9,7 @@ require 'twob/request'
 require 'fcgi'
 require 'cgi'
 require 'pathname'
-require 'error_view'
+require 'twob/error_view'
 
 module TwoB
   class FCGISystem < System
