@@ -50,7 +50,7 @@ module BBS2ch
     end
 
     def subject_encoding
-      "MS932"
+      "Windows-31J"
     end
     
     def data_directory_path
