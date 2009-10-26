@@ -5,6 +5,7 @@ require 'twob/board/board_handler'
 require 'twob/read_counter'
 require 'twob/board/board_view'
 require 'io/source'
+require 'encoder'
 require 'pathname'
 
 module BBS2ch
@@ -42,7 +43,7 @@ module BBS2ch
     
     def subject_source
       request = HTTPRequest.new(host.name, "/#{id}/subject.txt", {})
-      HTTPGetSource.new(request, subject_encoding, "\n")
+      HTTPGetSource.new(request, Encoder.by_name(subject_encoding), "\n")
     end
     
     def get_subject_parser()
