@@ -1,10 +1,10 @@
 require 'time'
 require 'marshaler'
 require 'twob/thread/thread_view'
+require 'twob/thread/thread_handler'
 require 'io/source'
 require 'io/http/http'
 require 'io/http/http_request'
-require 'twob/thread/thread_handler'
 require 'bbs2ch/thread/dat_parser'
 require 'bbs2ch/thread/res'
 require 'bbs2ch/thread/cache'
@@ -42,7 +42,7 @@ module BBS2ch
       cache_manager.append(new_data)
       read_counter.update(number, thread_content.res_count)
       
-      ::ThreadView.new(thread_content)
+      TwoB::ThreadView.new(thread_content)
     end
     
     def cache_manager
@@ -94,7 +94,7 @@ module BBS2ch
     end
     
     def dat_encoding
-      Encoder.by_name("MS932")
+      Encoder.by_name("Windows-31J")
     end
     
     def get_dat_parser()
