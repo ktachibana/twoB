@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'view_util'
 
 module TwoB

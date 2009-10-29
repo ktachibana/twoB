@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 module TwoB
   # includeするクラスはTwoB::BoardHandlerをincludeすること
   module ReadCounter

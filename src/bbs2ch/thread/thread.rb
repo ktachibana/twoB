@@ -1,14 +1,9 @@
+# -*- coding: utf-8 -*-
 require 'time'
 require 'marshaler'
-require 'twob/thread/thread_view'
-require 'twob/thread/thread_handler'
-require 'io/source'
-require 'io/http/http'
-require 'io/http/http_request'
-require 'bbs2ch/thread/dat_parser'
-require 'bbs2ch/thread/res'
-require 'bbs2ch/thread/cache'
-require 'bbs2ch/thread/cache_manager'
+require 'io'
+require 'twob/thread'
+require 'bbs2ch/thread'
 
 module BBS2ch
   class Thread

@@ -1,5 +1,4 @@
-require 'twob/handler'
-require 'twob/redirect_response'
+require 'twob'
 
 module JBBS
   class Res

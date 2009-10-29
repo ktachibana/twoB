@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class RedirectResponse
   def initialize(location)
     @location = location

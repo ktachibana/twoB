@@ -1,5 +1,4 @@
-require 'twob/thread/dat_parser'
-require 'twob/thread/dat'
+require 'twob/thread'
 require 'jbbs/thread/delta'
 
 module JBBS

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'time'
 require 'io/source'
 require 'twob/thread/dat_body'

@@ -4,7 +4,6 @@ require 'io/file'
 require 'twob/request'
 require 'bbs2ch/thread/thread'
 require 'hpricot'
-require 'pp'
 
 describe "2chのスレッドを読む" do
   include BBS2ch

@@ -1,10 +1,5 @@
-require 'twob/read_counter'
-require 'twob/handler'
-require 'twob/board/subject_parser'
-require 'twob/board/board_handler'
-require 'twob/board/subject'
+require 'twob'
 require 'jbbs/thread/thread_service'
-require 'twob/board/board_view'
 require 'forwardable'
 
 module JBBS

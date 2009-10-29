@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+require 'opt'
 require 'tools/rake_util'
 require 'spec/rake/spectask'
 
@@ -9,7 +10,7 @@ view_file_mapping = FileList["view/**/*.erb"].mapping do |erb_file|
   erb_file.pathmap("%{^view,src}X_view.rb")
 end
 
-task :default => :convert_all_view
+task :default => :spec
 
 desc "view/*.erbを全てViewクラスのコードに変換する"
 task :convert_all_view => view_file_mapping.objects
@@ -22,7 +23,7 @@ view_file_mapping.each_mapping do |erb_file, view_rb_file|
 end
 
 desc "rspecを実行する"
-Spec::Rake::SpecTask.new do |t|
+Spec::Rake::SpecTask.new(:spec) do |t|
   t.spec_files = FileList["spec/**/*_spec.rb"]
   t.spec_opts = %w(--format html:local/spec.html --format progress --color)
   t.libs = %w[src lib spec]
@@ -30,4 +31,4 @@ Spec::Rake::SpecTask.new do |t|
   t.rcov_dir = "local/coverage"
   t.rcov_opts << %w(--exclude ^spec --include-file ^src)
 end
-
+task :spec => :convert_all_view

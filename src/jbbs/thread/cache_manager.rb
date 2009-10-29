@@ -1,6 +1,5 @@
 require 'io/source'
-require 'jbbs/thread/cache'
-require 'jbbs/thread/dat_parser'
+require 'jbbs/thread'
 
 module JBBS
   class CacheManager

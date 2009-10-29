@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 module BBS2ch
   class DatLine
     def initialize(number, name, trip, mail, date, id, be, body)

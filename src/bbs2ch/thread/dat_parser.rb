@@ -1,6 +1,6 @@
-require 'twob/thread/dat'
-require 'twob/thread/dat_body'
-require 'twob/thread/dat_parser'
+# -*- coding: utf-8 -*-
+
+require 'twob/thread'
 require 'bbs2ch/thread/dat_line'
 
 module BBS2ch

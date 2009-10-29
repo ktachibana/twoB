@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 module TwoB
   # includeするクラスは以下のメソッドを提供すること
   # * get_child(value:String) => Handler valueに対応する子ハンドラ

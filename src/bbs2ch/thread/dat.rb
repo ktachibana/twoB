@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 module BBS2ch
   class Dat
     def initialize(dat_lines)

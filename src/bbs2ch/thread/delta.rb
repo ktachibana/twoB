@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 module BBS2ch
   class Delta
     def initialize(data, dat_content)

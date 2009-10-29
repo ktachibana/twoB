@@ -1,1 +1,5 @@
-$LOAD_PATH << "src" << "spec"
+require 'rubygems'
+$LOAD_PATH << "src" << "lib"
+$LOAD_PATH << "spec'
+
+

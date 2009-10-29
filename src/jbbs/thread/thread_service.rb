@@ -1,18 +1,7 @@
 # -*- coding: utf-8 -*-
-require 'twob/thread/dat'
-require 'twob/thread/dat_body'
-require 'twob/thread/bbs_thread'
-require 'twob/thread/thread_handler'
-require 'twob/thread/thread_view'
-require 'twob/thread/res_anchor_view'
-require 'twob/handler'
-require 'jbbs/thread/read_thread_action'
-require 'jbbs/thread/dat_parser'
-require 'jbbs/thread/res'
-require 'jbbs/thread/cache_manager'
-require 'io/http/http'
-require 'io/http/http_request'
-require 'io/file'
+require 'twob'
+require 'jbbs/thread'
+require 'io'
 require 'marshaler'
 
 module JBBS

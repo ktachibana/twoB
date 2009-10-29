@@ -1,5 +1,5 @@
-require 'twob/thread/picker'
-require 'twob/thread/bbs_thread'
+# -*- coding: utf-8 -*-
+require 'twob/thread'
 require 'marshaler'
 require 'io/source'
 

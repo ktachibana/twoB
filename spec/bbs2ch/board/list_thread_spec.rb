@@ -1,6 +1,5 @@
-require 'twob/board/board_handler'
+require 'twob/board'
 require 'spec_system'
-require 'twob/board/board_view'
 require 'io/file'
 
 describe BBS2ch::Board, "list_thread" do

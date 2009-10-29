@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'io/source'
-require 'twob/thread/thread_view'
-require 'twob/thread/picker'
-require 'twob/thread/bbs_thread'
-require 'jbbs/thread/cache'
-require 'jbbs/thread/index'
-require 'jbbs/thread/delta'
+require 'twob/thread'
+require 'jbbs/thread'
 
 module JBBS
   class ReadThreadAction

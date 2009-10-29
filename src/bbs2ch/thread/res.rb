@@ -1,5 +1,6 @@
-require 'twob/handler'
-require 'twob/redirect_response'
+# -*- coding: utf-8 -*-
+
+require 'twob'
 
 module BBS2ch
   class Res

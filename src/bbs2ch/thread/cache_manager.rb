@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'bbs2ch/thread/cache'
 
 module BBS2ch
