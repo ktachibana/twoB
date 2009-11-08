@@ -43,6 +43,10 @@ describe "Equality" do
   it "クラスが違う" do
     (@a_book == @not_same_class).should be_false
   end
+  
+  it "nil同士" do
+    (Book.new(nil, nil) == Book.new(nil, nil)).should be_true
+  end
 
 
   class NoEqualityBook

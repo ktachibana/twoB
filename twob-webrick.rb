@@ -10,15 +10,13 @@ require 'cgi'
 require 'pathname'
 
 class WEBrickSystem < TwoB::System
-  def initialize(configuration, request, response)
+  def initialize(configuration, webrick_request, webrick_response)
     super(configuration)
-    @request = request
-    @response = response
+    @request = TwoB::Request.new(webrick_request.path_info, CGI.parse(webrick_request.query_string ? webrick_request.query_string : ""))
+    @response = webrick_response
   end
   
-  def get_request
-    TwoB::Request.new(@request.path_info, CGI.parse(@request.query_string ? @request.query_string : ""))
-  end
+  attr_reader :request
 
   def output(response)
     @response.status = response.status_code

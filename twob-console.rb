@@ -22,11 +22,10 @@ class ConsoleSystem < TwoB::System
     super(configuration)
     @path_info = path_info
     @param = param
+    @request = TwoB::Request.new(@path_info, @param)
   end
   
-  def get_request
-    TwoB::Request.new(@path_info, @param)
-  end
+  attr_reader :request
   
   def output(response)
     $stdout.puts("<!-- Status: #{response.status_code} -->")

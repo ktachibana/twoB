@@ -1,33 +1,32 @@
 # -*- coding: utf-8 -*-
 require 'pathname'
-require 'twob/system'
-require 'twob/configuration'
-require 'twob/error_view'
+require 'twob'
+require 'spec_response'
 
 class SpecSystem < TwoB::System
+  SpecConfiguration = TwoB::Configuration.new(Pathname.new("local/spec_cache"))
+  
   def initialize(request = nil)
-    super(TwoB::Configuration.new(Pathname.new("local/spec_cache")))
+    super(SpecConfiguration)
     @request = request
+    @response = :yet_to_be_processed
     @buffer = StringIO.new
   end
   
   attr_accessor :request, :response
   
+  def output(response)
+    @response = SpecResponse.new(response)
+    @response.write_body(@buffer)
+  end
+  
   def handle_error(e)
     super
     $stderr.puts(response_body)
   end
-  
-  def response_body
-    @buffer.string
-  end
-  
-  def get_request
-    @request
-  end
-  
-  def output(response)
-    @response = response
-    response.write_body(@buffer)
+
+  def self.clear_cache_dir
+    SpecConfiguration.data_directory.rmtree
   end
 end
+

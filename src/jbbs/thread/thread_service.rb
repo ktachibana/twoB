@@ -42,10 +42,10 @@ module JBBS
     end
     
     def cache_manager
-      CacheManager.new(cache_source, get_dat_parser())
+      CacheManager.new(cache_file, get_dat_parser())
     end
 
-    def cache_source
+    def cache_file
       TextFile.new(cache_file, dat_encoding)
     end
     

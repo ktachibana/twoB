@@ -15,7 +15,6 @@ module TwoB
     
     def process
       begin
-        request = get_request
         response = apply(request, request.path_info)
       rescue Exception => e
         handle_error(e)

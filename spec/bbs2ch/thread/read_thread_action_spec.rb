@@ -3,16 +3,19 @@ require 'spec_system'
 require 'io/file'
 require 'twob/request'
 require 'bbs2ch/thread/thread'
-require 'hpricot'
 
 describe "2chのスレッドを読む" do
   include BBS2ch
   
+  before(:all) do
+    SpecSystem.clear_cache_dir
+  end
+
   before do
     @system = SpecSystem.new(TwoB::Request.new("/pc11.2ch.net/board/123/l50#firstNew", {}))
   end
   
-  it "例" do
+  it "キャッシュなしの初読み込み" do
     class BBS2ch::Thread
       def load_new_data(cache)
         BinaryFile.by_filename("testData/2ch/2ch_with_id_short.dat").read
@@ -21,8 +24,8 @@ describe "2chのスレッドを読む" do
     
     @system.process
     @system.response.status_code.should == 200
-    html = Hpricot(@system.response_body)
-    html.search("title").text.should == "KDE スレッド7"
+    html = @system.response.document
+    html.title.should == "KDE スレッド7"
   end
   
   it "新着なしでキャッシュのみ" do
@@ -41,10 +44,11 @@ describe "2chのスレッドを読む" do
     end
     @system = SpecSystem.new(TwoB::Request.new("/pc11.2ch.net/board/123/l50#firstNew", {}))
     @system.process
-    @system.response.status_code.should == 200
     
-    html = Hpricot(@system.response_body)
-    html.search("title").text.should == "KDE スレッド7"
-    html.search("div.res dl.new").should be_empty
+    response = @system.response
+    response.status_code.should == 200
+    html = response.document
+    html.title.should == "KDE スレッド7"
+    html.should_not be_has_new
   end
 end

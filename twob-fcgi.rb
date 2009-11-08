@@ -16,13 +16,12 @@ module TwoB
     def initialize(configuration, fcgi)
       super(configuration)
       @fcgi = fcgi
-    end
-    
-    def get_request
       path_info = @fcgi.env["PATH_INFO"]
       query = @fcgi.env["QUERY_STRING"]
-      TwoB::Request.new(path_info, CGI.parse(query ? query : ""))
+      @request = TwoB::Request.new(path_info, CGI.parse(query ? query : ""))
     end
+    
+    attr_reader :request
     
     def output(response)
       @fcgi.out.print("Status: #{response.status_code}\r\n")
