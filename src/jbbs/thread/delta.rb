@@ -3,8 +3,9 @@ require 'encoder'
 
 module JBBS
   class Delta
-    def initialize(dat_content, index)
+    def initialize(dat_content, bytes, index)
       @dat_content = dat_content
+      @bytes = bytes
       @index = index
     end
     

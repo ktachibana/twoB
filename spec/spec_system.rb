@@ -22,7 +22,7 @@ class SpecSystem < TwoB::System
   
   def handle_error(e)
     super
-    $stderr.puts(response_body)
+    $stderr.puts(@buffer.string)
   end
 
   def self.clear_cache_dir

@@ -12,7 +12,7 @@ describe "JBBSのスレッドを読む" do
     SpecSystem.clear_cache_dir
     class ThreadService
       def get_new_input(picker)
-        BinaryFile.by_filename("testData/jbbs/example-1.dat")
+        BinaryFile.by_filename("testData/jbbs/example(1-216).dat")
       end
     end
 
@@ -33,9 +33,10 @@ describe "JBBSのスレッドを読む" do
   end
   
   it "追加読み込み" do
+    # TODO exampleの実行順序に依存しているので、順序を保障するか実行のし直しが必要
     class ThreadService
       def get_new_input(picker)
-        BinaryFile.by_filename("testData/jbbs/example-2.dat")
+        BinaryFile.by_filename("testData/jbbs/example(217-226).dat")
       end
     end
 
@@ -48,7 +49,9 @@ describe "JBBSのスレッドを読む" do
     thread = response.document
 
     thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
-    thread[1].should be_new
-    thread[217].should_not be_exist
+    thread[1].should_not be_new
+    thread[217].should be_exist
+    thread[226].should be_exist
+    thread[227].should_not be_exist
   end
 end

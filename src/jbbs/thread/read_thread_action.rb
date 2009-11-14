@@ -52,7 +52,7 @@ module JBBS
       source = BytesSource.new(bytes, Encoder.by_name(@thread_key.dat_encoding), "\n")
 
       dat_content = dat_parser.parse(source)
-      Delta.new(dat_content, dat_parser.index)
+      Delta.new(dat_content, bytes, dat_parser.index)
     end
   end
 end

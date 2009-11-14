@@ -15,9 +15,9 @@ class BinaryFile
   end
   
   def each_read
-    @path.open do |io|
+    @path.open("rb") do |io|
       buf = " " * @block_size
-      while bytes = io.read(@block_size, buf)
+      while bytes = io.read(buf.length, buf)
         yield bytes
       end
     end
@@ -25,7 +25,7 @@ class BinaryFile
 
   def append(append_data)
     @path.parent.mkpath
-    File.open(@path, "a") do |io|
+    @path.open("ab") do |io|
       io.write(append_data)
     end
   end
