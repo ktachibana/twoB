@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-require 'stringio'
 require 'io/input'
+require 'io/source'
 
 class StringInput
   include Input

@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+require 'stringio'
+require 'pathname'
 require 'enum_util'
 require 'encoder'
-require 'pathname'
 
 class IOReader
   def initialize(io, encoder)
