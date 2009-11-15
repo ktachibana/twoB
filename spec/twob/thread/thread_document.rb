@@ -20,18 +20,14 @@ class ThreadDocument
   end
   
   def [](n)
-    Res.new(res_node(n))
+    Res.new(@document.css("\#_#{n}"), n)
   end
- 
-  def res_node(n)
-    @document.css("\#_#{n}")
-  end
-  private :res_node
   
   
   class Res
-    def initialize(res_node)
+    def initialize(res_node, number)
       @res = res_node
+      @number = number
     end
     
     def exist?
@@ -39,6 +35,7 @@ class ThreadDocument
     end
     
     def new?
+      raise "res[#{@number}] not exist" unless exist?
       !@res.css(".new").empty?
     end
   end

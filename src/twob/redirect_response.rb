@@ -13,6 +13,6 @@ class RedirectResponse
     {"Location" => @location}
   end
   
-  def write(output)
+  def write_body(out)
   end
 end

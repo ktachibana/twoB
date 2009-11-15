@@ -3,7 +3,7 @@ require 'equality'
 
 module TwoB
   class Request
-    def initialize(path_info, param)
+    def initialize(path_info, param = {})
       @path_info = path_info
       @param = param
     end

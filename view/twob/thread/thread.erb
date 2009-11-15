@@ -20,10 +20,10 @@
 		<h1 id="title" class="title"><%=h thread.title %></h1>
 		<ul class="menu">
 			<li><a href="../">スレッド一覧</a></li>
-			<li><a href="write_res">書き込み</a></li>
 			<li><a href="./">全件表示</a></li>
-			<li><a href="./l50#firstNew">新着50件</a></li>
+			<li><a href="./l50">新着50件</a></li>
 			<li><a href="#firstNew">新着に移動</a></li>
+			<li><a href="./delete_cache">キャッシュを削除</a></li>
 			<li><a href="<%=h thread.original_url %>l50" target="_blank">ブラウザ表示</a></li>
 			<li><a id="view_dat_file" href="<%=h thread.dat_url %>" target="_blank">datファイル表示</a></li>
 % if thread.bookmarking?
