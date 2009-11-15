@@ -23,10 +23,11 @@ class SpecSystem < TwoB::System
   def handle_error(e)
     super
     $stderr.puts(@buffer.string)
+    $stderr.puts
   end
 
   def self.clear_cache_dir
-    SpecConfiguration.data_directory.rmtree
+    SpecConfiguration.data_directory.rmtree rescue nil
   end
 end
 

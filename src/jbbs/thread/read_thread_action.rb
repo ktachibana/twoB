@@ -43,7 +43,7 @@ module JBBS
     end
     
     def last_res_number
-      @delta.last_number ? @index.last_res_number : @delta.last_number
+      @delta.last_number ? @delta.last_number : @index.last_res_number
     end
     
     def load_delta(index)

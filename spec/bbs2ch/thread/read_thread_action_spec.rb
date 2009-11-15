@@ -6,16 +6,13 @@ require 'bbs2ch/thread/thread'
 
 describe "2chのスレッドを読む" do
   include BBS2ch
-  
-  before(:all) do
-    SpecSystem.clear_cache_dir
-  end
 
   before do
     @system = SpecSystem.new(TwoB::Request.new("/pc11.2ch.net/board/123/l50#firstNew", {}))
   end
   
   it "キャッシュなしの初読み込み" do
+    SpecSystem.clear_cache_dir
     class BBS2ch::Thread
       def load_new_data(cache)
         BinaryFile.by_filename("testData/2ch/2ch_with_id_short.dat").read
@@ -34,7 +31,7 @@ describe "2chのスレッドを読む" do
         BinaryFile.by_filename("testData/2ch/2ch_with_id_short.dat").read
       end
     end
-    @system.configuration.data_directory.rmtree
+    SpecSystem.clear_cache_dir
     @system.process
     
     class BBS2ch::Thread

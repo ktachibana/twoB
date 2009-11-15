@@ -25,15 +25,15 @@ class ThreadDocument
   
   class Res
     def initialize(res_node)
-      @node = res_node
+      @res = res_node
     end
     
     def exist?
-      !@node.empty?
+      !@res.empty?
     end
     
     def new?
-      !@node.css(".new").empty?
+      !@res.css(".new").empty?
     end
   end
 end

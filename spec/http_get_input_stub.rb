@@ -4,7 +4,7 @@ require 'io/source'
 class HTTPGetInputStub
   def initialize(request)
     @request = request
-    @response_source = StringSource.new
+    @response_source = StringSource.empty
   end
   attr :request
   attr_accessor :response_source

@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-require 'stringio'
-require 'open-uri'
 require 'enum_util'
 require 'encoder'
 require 'pathname'
@@ -109,13 +107,5 @@ class BytesSource
         yield @encoder.encode(line)
       end
     end
-  end
-end
-
-class StringSource < BytesSource
-  include Enumerable
-
-  def initialize(str = "")
-    super(str, Encoder::Literal, $/)
   end
 end
