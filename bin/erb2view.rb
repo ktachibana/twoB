@@ -34,7 +34,7 @@ module ERB2View
     src = ERB.new(erb_source, nil, "%>").src
     src.sub!(/_erbout = ''; /, "")
 
-    script = File.read("tools/view_template.erb")
+    script = File.read("bin/view_template.erb")
 
     output.puts(ERB.new(script, nil, "%").result(binding))
   end
