@@ -31,6 +31,7 @@ describe "JBBSのスレッドを読む" do
     valid_response
 
     thread = @response.document
+    thread.dat_link.attribute("href").text.should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/456/"
     thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
     thread[1].should be_exist
     thread[216].should be_new
@@ -46,6 +47,7 @@ describe "JBBSのスレッドを読む" do
     valid_response
 
     thread = @response.document
+    thread.dat_link.attribute("href").text.should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/456/"
     thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
     thread[1].should_not be_new
     thread[217].should be_exist
@@ -59,6 +61,7 @@ describe "JBBSのスレッドを読む" do
     valid_response
     
     thread = @response.document
+    thread.dat_link.attribute("href").text.should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/456/"
     thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
     thread[1].should_not be_new
     thread[226].should_not be_new

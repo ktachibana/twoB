@@ -68,6 +68,10 @@ module BBS2ch
       board.data_directory_path
     end
     
+    def get_dat_url(picker)
+      dat_url
+    end
+    
     def dat_url
       "http://#{dat_host_name}#{dat_path}"
     end

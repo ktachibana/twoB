@@ -5,8 +5,14 @@ class ThreadDocument
     @document = Nokogiri::HTML(html_string)
   end
   
+  attr_reader :document
+  
   def title
     @document.css("title").text
+  end
+  
+  def dat_link
+    @document.css("#view_dat_file")
   end
   
   def has_new?

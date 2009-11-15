@@ -23,6 +23,10 @@ module TwoB
     def original_url
       @thread.original_url
     end
+    
+    def dat_url
+      @thread.get_dat_url(Picker::All.instance)
+    end
   
     def each_all_res
       @cache.each_res do |res|
