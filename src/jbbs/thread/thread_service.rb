@@ -97,7 +97,7 @@ module JBBS
       cache.each_res do |res|
         anchor_res << TwoB::Res.as_cache(res)
       end
-      ::ResAnchorView.new(anchor_res)
+      TwoB::ResAnchorView.new(anchor_res)
     end
   end
 end

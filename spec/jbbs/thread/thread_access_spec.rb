@@ -72,6 +72,17 @@ describe "JBBSのスレッドを読む" do
     thread[227].should_not be_exist
   end
   
+  it "レスアンカー表示" do
+    @request = TwoB::Request.new("/jbbs.livedoor.jp/category/123/456/res_anchor", {"range"=> ["10-20"]})
+    @system = SpecSystem.new(@request)
+    @system.process
+    @response = @system.response
+    valid_response
+    anchor = @response.document
+    anchor[9].should_not be_exist
+    anchor[10].should be_exist
+  end
+  
   it "スレッドのキャッシュを削除" do
     board_dir = SpecSystem::SpecConfiguration.data_directory + "jbbs.livedoor.jp" + "category" + "123"
     (board_dir + "456.dat").should be_exist
