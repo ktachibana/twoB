@@ -1,4 +1,4 @@
-#!/usr/bin/ruby -Isrc -rubygems
+#!/usr/bin/ruby -Isrc -Ilib -rubygems
 # -*- coding: utf-8 -*-
 
 require 'twob/system'
