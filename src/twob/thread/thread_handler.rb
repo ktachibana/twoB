@@ -17,7 +17,7 @@ module TwoB
     def execute(request, value)
       case value
       when /^delete_cache$/
-        delete_cache()
+        delete_cache(request.param.has_key?("reload"))
       when /^delete_bookmark$/
         delete_bookmark()
       when /^res_anchor$/
@@ -49,11 +49,11 @@ module TwoB
       get_dat_parser(from).parse(get_dat_source(from))
     end
 
-    def delete_cache()
+    def delete_cache(reload)
       cache_manager.delete()
       index_manager.delete()
       read_counter.delete(number)
-      RedirectResponse.new("../")
+      RedirectResponse.new(reload ? "./" : "../")
     end
     
     def delete_bookmark()

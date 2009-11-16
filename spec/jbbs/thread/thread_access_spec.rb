@@ -97,4 +97,5 @@ describe "JBBSのスレッドを読む" do
     (board_dir + "456.dat").should_not be_exist
     (board_dir + "456.index.marshal").should_not be_exist
   end
+  
 end

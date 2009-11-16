@@ -49,7 +49,7 @@ module TwoB
       ; _erbout.concat "\t\t\t<li><a href=\"./\">\345\205\250\344\273\266\350\241\250\347\244\272</a></li>\n"
       ; _erbout.concat "\t\t\t<li><a href=\"./l50\">\346\226\260\347\235\20050\344\273\266</a></li>\n"
       ; _erbout.concat "\t\t\t<li><a href=\"#firstNew\">\346\226\260\347\235\200\343\201\253\347\247\273\345\213\225</a></li>\n"
-      ; _erbout.concat "\t\t\t<li><a href=\"./delete_cache\">\343\202\255\343\203\243\343\203\203\343\202\267\343\203\245\343\202\222\345\211\212\351\231\244</a></li>\n"
+      ; _erbout.concat "\t\t\t<li><a href=\"./delete_cache?reload\">\343\202\255\343\203\243\343\203\203\343\202\267\343\203\245\343\202\222\345\206\215\350\252\255\343\201\277\350\276\274\343\201\277</a></li>\n"
       ; _erbout.concat "\t\t\t<li><a href=\""; _erbout.concat((h thread.original_url ).to_s); _erbout.concat "l50\" target=\"_blank\">\343\203\226\343\203\251\343\202\246\343\202\266\350\241\250\347\244\272</a></li>\n"
       ; _erbout.concat "\t\t\t<li><a id=\"view_dat_file\" href=\""; _erbout.concat((h thread.dat_url ).to_s); _erbout.concat "\" target=\"_blank\">dat\343\203\225\343\202\241\343\202\244\343\203\253\350\241\250\347\244\272</a></li>\n"
       ;  if thread.bookmarking?
