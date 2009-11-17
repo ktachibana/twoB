@@ -2,8 +2,7 @@
 require 'time'
 require 'marshaler'
 require 'io'
-require 'twob/thread'
-require 'bbs2ch/thread'
+require 'twob'
 
 module BBS2ch
   class Thread
@@ -57,7 +56,11 @@ module BBS2ch
     
     def load_new_data(cache)
       request = HTTPRequest.new(board.host.name, dat_path, cache.dat_header)
-      HTTPGetInput.new(request).read()
+      get_new_input(request).read()
+    end
+    
+    def get_new_input(request)
+      HTTPGetInput.new(request)
     end
 
     def original_url
@@ -106,6 +109,9 @@ module BBS2ch
         
     def read_counter
       board
+    end
+    
+    def res_anchor(picker)
     end
   end
 end

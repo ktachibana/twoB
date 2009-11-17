@@ -25,8 +25,8 @@ end
 desc "rspecを実行する"
 Spec::Rake::SpecTask.new(:spec) do |t|
   t.spec_files = FileList["spec/**/*_spec.rb"]
-  t.spec_opts = %w(--format html:local/spec.html --format progress --color)
-  t.libs = %w[src lib spec]
+  t.spec_opts = %w(--format html:local/spec/unit.html --format progress --color)
+  t.libs = %w[src lib spec/unit]
   t.rcov = ENV.include? "rcov"
   t.rcov_dir = "local/coverage"
   t.rcov_opts << %w(--exclude ^spec --include-file ^src)

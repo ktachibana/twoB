@@ -1,4 +1,4 @@
 require 'rubygems'
 $LOAD_PATH << "src" << "lib"
-$LOAD_PATH << "spec"
+$LOAD_PATH << "spec/unit"
 

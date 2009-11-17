@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 require 'twob'
+require 'twob/handler'
 
 module BBS2ch
   class Res
