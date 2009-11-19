@@ -2,6 +2,7 @@
 require 'nokogiri'
 require 'io'
 require 'spec_system'
+require 'pp'
 
 require 'jbbs/thread'
 
@@ -131,7 +132,7 @@ describe "2chのスレッドを読む" do
     SpecSystem.clear_cache_dir
     
     view_thread(BinaryFile.by_filename("testData/2ch/example(1-80).dat"))
-    
+
     valid_response
 
     thread = @response.document

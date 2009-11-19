@@ -24,7 +24,7 @@ end
 
 desc "rspecを実行する"
 Spec::Rake::SpecTask.new(:spec) do |t|
-  t.spec_files = FileList["spec/**/*_spec.rb"]
+  t.spec_files = FileList["spec/unit/**/*_spec.rb"]
   t.spec_opts = %w(--format html:local/spec/unit.html --format progress --color)
   t.libs = %w[src lib spec/unit]
   t.rcov = ENV.include? "rcov"
@@ -32,3 +32,4 @@ Spec::Rake::SpecTask.new(:spec) do |t|
   t.rcov_opts << %w(--exclude ^spec --include-file ^src)
 end
 task :spec => :convert_all_view
+
