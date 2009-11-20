@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.dltk.ruby.testing.launchConfig">
+<stringAttribute key="bad_container_name" value="/twoB/.setting"/>
+<stringAttribute key="mainScript" value=""/>
+<stringAttribute key="nature" value="org.eclipse.dltk.ruby.core.nature"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/twoB"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.dltk.testing.CONTAINER" value="=twoB/spec\/unit"/>
+<stringAttribute key="org.eclipse.dltk.testing.engineId" value="org.eclipse.dltk.ruby.testing.rspec"/>
+<stringAttribute key="project" value="twoB"/>
+<stringAttribute key="workingDir" value="${workspace_loc:twoB}"/>
+</launchConfiguration>
