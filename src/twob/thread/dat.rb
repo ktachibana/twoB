@@ -68,7 +68,7 @@ module TwoB
   end
   
   module Dat
-    TRIP_PATTERN = /\A([^<]*)(<\/b> ◆(.*)<b>)?\z/
+    TRIP_PATTERN = /\A([^<]*)(<\/b>\s*◆(\S+)\s*<b>)?\z/
 
     URL_PATTERN = /(http|ttp|tp)(:\/\/[0-9a-zA-Z_\!-\&\+\-\.\/\:\;\=\?\@\[-\`\{-\~]+)/
     ANCHOR_PATTERN = /(<a .*?>)?((&gt;)?&gt;(\d+)(\-\d+)?)(<\/a>)?/
