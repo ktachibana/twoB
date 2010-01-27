@@ -24,6 +24,7 @@ end
 
 desc "rspecを実行する"
 Spec::Rake::SpecTask.new(:spec) do |t|
+  t.ruby_opts = %w(-r rubygems)
   t.spec_files = FileList["spec/unit/**/*_spec.rb"]
   t.spec_opts = %w(--format html:local/spec/unit.html --format progress --color)
   t.libs = %w[src lib spec/unit]
