@@ -14,8 +14,6 @@ module BBS2ch
       @number = initial_number
     end
     
-    attr_reader :index
-    
     def on_start_part(part)
       @number = part.number_from
     end

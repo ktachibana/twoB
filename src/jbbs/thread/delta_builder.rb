@@ -1,5 +1,5 @@
 require 'twob/thread'
-require 'jbbs/thread/delta'
+require 'twob/thread/delta'
 
 module JBBS
   class DeltaBuilder
@@ -26,11 +26,11 @@ module JBBS
         body_text = values.fetch(4, "")
         id = values.fetch(6, "")
         @thread_title = values[5] if values[5]
-
+        
         @res_list << TwoB::DatRes.new(number, name, trip, mail, date, id, parse_body(body_text))
         @index[number] = offset
       end
-      JBBS::Delta.new(DatContent.new(@thread_title, @res_list), @index)
+      TwoB::Delta.new(Dat::Content.new(@thread_title, @res_list), @index)
     end
   end
 end

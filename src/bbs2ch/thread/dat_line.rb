@@ -1,27 +1,13 @@
 # -*- coding: utf-8 -*-
+require 'twob/thread'
 
 module BBS2ch
-  class DatLine
+  class DatLine < TwoB::Dat::Line
     def initialize(number, name, trip, mail, date, id, be, body)
-      @number = number
-      @name = name
-      @trip = trip
-      @mail = mail
-      @date = date
-      @id = id
+      super(number, name, trip, mail, date, id, body)
       @be = be
-      @body = body
     end
     
-    attr_reader :number, :name, :trip, :mail, :date, :id, :be, :body
-    
-    def has_trip?
-      !trip.nil?
-    end
-
-    def age?()
-      !mail.include?("sage")
-    end
+    attr_reader :be
   end
-  
 end

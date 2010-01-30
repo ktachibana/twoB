@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 
-require 'twob/thread/bbs_thread'
+require 'twob/thread/thread'
+require 'twob/thread/cache'
 require 'twob/thread/dat'
 require 'twob/thread/dat_body'
 require 'twob/thread/dat_line'
 require 'twob/thread/dat_parser'
+require 'twob/thread/delta'
+require 'twob/thread/index'
 require 'twob/thread/metadata'
 require 'twob/thread/picker'
 require 'twob/thread/res_anchor_view'

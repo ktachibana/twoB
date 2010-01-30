@@ -7,7 +7,7 @@ describe BBS2ch::DatParser do
     it "parseできる" do
       source = TextFile.new("testData/2ch/2ch_with_id_short.dat", "CP932")
       parser = BBS2ch::DatParser.new
-      dat = parser.parse(source)
+      dat = parser.parse_delta(source)
       dat.res_list.size.should == 7
   
       res = dat.res_list.last
@@ -34,7 +34,7 @@ describe BBS2ch::DatParser do
   it "トリップ付きをparse" do
     parser = BBS2ch::DatParser.new()
     dat_file = TextFile.by_filename("testData/2ch/with-trip.dat", "Shift_JIS")
-    dat = parser.parse(dat_file)
+    dat = parser.parse_delta(dat_file)
     
     trip_res = dat.res_list[2]
     trip_res.body.to_s.should =~ /\AFedora12のKDE\(バージョン4\.3\.3\)なんですが、/

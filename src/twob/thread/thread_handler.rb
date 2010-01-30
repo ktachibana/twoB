@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'twob/thread'
-require 'marshaler'
+require 'yaml_marshaler'
 require 'io/source'
 
 module TwoB
@@ -38,11 +38,11 @@ module TwoB
     end
     
     def index_file
-      data_directory + "#{number}.index.marshal"
+      data_directory + "#{number}.index.yaml"
     end
     
     def option_file
-      data_directory + "#{number}.option.marshal"
+      data_directory + "#{number}.option.yaml"
     end
     
     def get_new(from)
@@ -62,7 +62,7 @@ module TwoB
     end
     
     def option_manager
-      TwoB::Marshaler.new(option_file, TwoB::ThreadOption.empty)
+      TwoB::YAMLMarshaler.new(option_file, TwoB::ThreadOption.empty)
     end
 
     def update_bookmark_number(bookmark_number)

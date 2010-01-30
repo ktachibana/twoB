@@ -1,4 +1,4 @@
-require 'twob/thread/dat'
+require 'twob/thread'
 
 module TwoB
   DatPart = Struct.new(:number_from, :offset_from, :number_to)
@@ -13,7 +13,7 @@ module TwoB
     attr_accessor :thread_title, :res_list, :index
     
     def get_dat_content
-      TwoB::DatContent.new(@thread_title, @res_list)
+      Dat::Content.new(@thread_title, @res_list)
     end
     
     def each_line_with_index(source, index = nil)
@@ -25,8 +25,8 @@ module TwoB
       end
     end
     
-    def parse(source)
-      source.open do |reader|
+    def parse_delta(input_source)
+      input_source.open do |reader|
         reader.each_with_offset do |line, offset|
           next if line.empty?
           parse_line(line.split("<>"))

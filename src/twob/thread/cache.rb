@@ -1,12 +1,12 @@
 require 'twob/thread/dat'
 
-module JBBS
+module TwoB
   class Cache
     def initialize(dat_content)
       @dat_content = dat_content
     end
     
-    Empty = self.new(TwoB::DatContent::Empty)
+    Empty = self.new(TwoB::Dat::Content::Empty)
     
     attr_reader :dat_content
 

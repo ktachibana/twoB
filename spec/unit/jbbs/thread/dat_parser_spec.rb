@@ -11,7 +11,7 @@ describe JBBS::DatParser do
   end
 
   def parse(dat_string)
-    @parser.parse(StringSource.new(dat_string))
+    @parser.parse_delta(StringSource.new(dat_string))
   end
 
   it "Struct ==" do

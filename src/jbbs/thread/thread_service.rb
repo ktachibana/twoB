@@ -2,18 +2,40 @@
 require 'twob'
 require 'jbbs/thread'
 require 'io'
-require 'marshaler'
+require 'yaml_marshaler'
 
 module JBBS
-  class ThreadService
-    extend Forwardable
-    
+  class ThreadKey
     def initialize(board, number)
       @board = board
       @number = number
     end
     
     attr_reader :board, :number
+    
+    def system
+      host.system
+    end
+    
+    def category
+      board.category
+    end
+    
+    def host
+      category.host
+    end
+  end
+
+  class ThreadService
+    extend Forwardable
+    
+    def initialize(board, number)
+      @board = board
+      @number = number
+      @key = ThreadKey.new(board, number)
+    end
+    
+    def_delegators :@key, :board, :number
     
     def category
       board.category
@@ -38,7 +60,7 @@ module JBBS
     end
     
     def index_manager
-      TwoB::Marshaler.new(index_file, Index.Empty)
+      TwoB::YAMLMarshaler.new(index_file, Index.Empty)
     end
     
     def cache_manager

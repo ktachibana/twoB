@@ -1,13 +1,27 @@
 # -*- coding: utf-8 -*-
 
 module TwoB
-  class DatLine
-    def initialize(values)
-      @values =  values
-    end
-    
-    def self.parse(dat_line_text)
-      new(dat_line_text.split("<>"))
+  module Dat
+    class Line
+      def initialize(number, name, trip, mail, date, id, body)
+        @number = number
+        @name = name
+        @trip = trip
+        @mail = mail
+        @date = date
+        @id = id
+        @body = body
+      end
+      
+      attr_reader :number, :name, :trip, :mail, :date, :id, :body
+      
+      def has_trip?
+        !trip.nil?
+      end
+  
+      def age?()
+        !mail.include?("sage")
+      end
     end
   end
 end

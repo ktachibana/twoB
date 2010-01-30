@@ -1,4 +1,4 @@
-require 'bbs2ch/thread/thread'
+require 'bbs2ch/thread'
 require 'twob'
 require 'io/source'
 require 'encoder'
@@ -19,7 +19,7 @@ module BBS2ch
     include TwoB::ReadCounter
     
     def get_child(value)
-      BBS2ch::Thread.new(self, value)
+      BBS2ch::ThreadService.new(self, value)
     end
     
     def execute(request, value)

@@ -3,8 +3,7 @@ require 'pathname'
 require 'spec_system'
 require 'io/source'
 require 'twob/request'
-require 'twob/thread/bbs_thread'
-require 'twob/thread/dat'
+require 'twob/thread'
 
 describe "ResAnchor" do
   before do
@@ -36,7 +35,7 @@ describe "ResAnchor" do
   end
   
   it do
-    dat_content = JBBS::DatParser.new().parse(TextFile.new(Pathname.new("testData/jbbs/jbbs.dat"), "EUC-JP"))
+    dat_content = JBBS::DatParser.new().parse_delta(TextFile.new(Pathname.new("testData/jbbs/jbbs.dat"), "EUC-JP"))
     res_list = dat_content.res_list.collect{|res| TwoB::Res.new(res, false, true) }
     
     view = @thread.execute(@request, "res_anchor")

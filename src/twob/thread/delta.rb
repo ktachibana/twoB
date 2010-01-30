@@ -1,7 +1,7 @@
 require 'io/source'
 require 'encoder'
 
-module JBBS
+module TwoB
   class Delta
     def initialize(dat_content, bytes, index)
       @dat_content = dat_content

@@ -11,9 +11,9 @@ module BBS2ch
     
     attr_reader :cache_file, :dat_parser, :empty
     
-    def load()
+    def load(index, ranges)
       begin
-        Cache.new(dat_parser.parse(cache_file), cache_file)
+        Cache.new(dat_parser.parse_with_index(cache_file, index, ranges), cache_file)
       rescue Errno::ENOENT
         return empty
       end      

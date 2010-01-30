@@ -19,7 +19,7 @@ module JBBS
       body_text = values.fetch(4, "")
       id = values.fetch(6, "")
       @thread_title = values.fetch(5, "") if number == 1
-      @res_list << TwoB::DatRes.new(number, name, trip, mail, date, id, parse_body(body_text))
+      @res_list << Line.new(number, name, trip, mail, date, id, parse_body(body_text))
     end
   end
 end

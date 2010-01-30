@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 require 'twob/thread'
 require 'marshaler'
 
-module JBBS
+module TwoB
   class Index
     def initialize(last_res_number, cache_file_size)
       @last_res_number = last_res_number
@@ -17,6 +18,12 @@ module JBBS
     
     def delta_picker
       TwoB::Picker::From.new(@last_res_number + 1)
+    end
+    
+    def update(delta)
+      append(delta.index)
+      @last_res_number = delta.last_number if delta.last_number
+      @cache_file_size += delta.bytes.size
     end
     
     def append(delta_index)

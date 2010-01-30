@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 require "twob/board/subject"
 require "twob/board/board_view"
-require 'marshaler'
+require 'yaml_marshaler'
 
 module TwoB
   # = includeするクラスは以下のメソッドを提供すること
@@ -19,11 +19,11 @@ module TwoB
     end
     
     def index_file
-      data_directory + data_directory_path + "index.marshal"
+      data_directory + data_directory_path + "index.yaml"
     end
     
     def index_manager
-      TwoB::Marshaler.new(index_file, Hash.new)
+      TwoB::YAMLMarshaler.new(index_file, Hash.new)
     end
     
     def data_directory

@@ -16,7 +16,7 @@ module JBBS
     
     def load(ranges, index)
       begin
-        return Cache.new(@dat_parser.parse_with_index(@cache_file, index, ranges))
+        return TwoB::Cache.new(@dat_parser.parse_with_index(@cache_file, index, ranges))
       rescue Errno::ENOENT
         return Cache::Empty
       end

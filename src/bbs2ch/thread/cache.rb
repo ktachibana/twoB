@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'time'
 require 'io/source'
-require 'twob/thread/dat_body'
-require 'bbs2ch/thread/dat'
+require 'twob/thread'
 
 module BBS2ch
   class Cache
@@ -13,7 +12,7 @@ module BBS2ch
     
     attr_reader :dat_content, :dat_source
     
-    Empty = self.new(BBS2ch::Dat.new([]), nil)
+    Empty = self.new(TwoB::Dat::Content::Empty, nil)
     
     def empty?
       dat_content.empty?

@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-require 'twob/thread/dat'
-require 'twob/thread/bbs_thread'
-require 'bbs2ch/thread/delta'
-require 'bbs2ch/thread/cache'
+require 'twob/thread'
+require 'bbs2ch/thread'
 
 module BBS2ch
   class ThreadBuilder

@@ -28,10 +28,7 @@ module JBBS
       
       @cache_manager.append(@delta)
 
-      @index.last_res_number = thread_content.last_res_number
-      @index.append(@delta.index)
-      @index.cache_file_size = @cache_manager.file_size
-
+      @index.update(@delta)
       @index_manager.save(@index)
       @thread_key.read_counter.update(@thread_key.number, thread_content.last_res_number)
 
@@ -51,7 +48,7 @@ module JBBS
       bytes = @thread_key.load_new(index.delta_picker)
       source = BytesSource.new(bytes, Encoder.by_name(@thread_key.dat_encoding), "\n")
 
-      dat_content = dat_parser.parse(source)
+      dat_content = dat_parser.parse_delta(source)
       Delta.new(dat_content, bytes, dat_parser.index)
     end
   end

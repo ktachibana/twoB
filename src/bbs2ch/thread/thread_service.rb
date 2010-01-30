@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
+require 'bbs2ch/thread/read_thread_action'
 require 'time'
-require 'marshaler'
+require 'yaml_marshaler'
 require 'io'
 require 'twob'
 
 module BBS2ch
-  class Thread
+  class ThreadService
     def initialize(board, number)
       @board = board
       @number = number
@@ -13,6 +14,9 @@ module BBS2ch
     
     attr_reader :board, :number
     
+    def host
+      @board.host
+    end
     
     include TwoB::Handler
     
@@ -23,20 +27,8 @@ module BBS2ch
     
     include TwoB::ThreadHandler
     
-    def read(requested_range)
-      # キャッシュをロードしてDatContent, last_modified, cache_file_sizeを取得
-      cache = cache_manager.load()
-      # キャッシュ情報から新しく取得すべきコンテンツのリクエスト(Net::HTTP::Get.new(get_dat_url))を生成する
-      new_data = load_new_data(cache)
-      dat_parser = BBS2ch::DatParser.new(cache.new_number)
-      new_dat_content = dat_parser.parse(BytesSource.new(new_data, dat_encoding, "\n"))
-      option = option_manager.load()
-      thread_content = TwoB::Thread.new(self, cache, new_dat_content, requested_range, option)
-
-      cache_manager.append(new_data)
-      read_counter.update(number, thread_content.res_count)
-      
-      TwoB::ThreadView.new(thread_content)
+    def read(requested_picker)
+      BBS2ch::ReadThreadAction.new(self, requested_picker).execute()
     end
     
     def cache_manager
@@ -44,11 +36,11 @@ module BBS2ch
     end
     
     def index_manager
-      TwoB::Marshaler.new(index_file, JBBS::Index.Empty)
+      TwoB::YAMLMarshaler.new(index_file, BBS2ch::Index.empty)
     end
     
     def load_new(cache)
-      request = HTTPRequest.new(dat_host_name, dat_path, dat_header(cache))
+      request = HTTPRequest.new(dat_host_name, dat_path, cache.dat_header)
       source = HTTPGetSource.new(request, dat_encoding, "\n")
       parser = BBS2ch::DatParser.new(cache.dat_content.last_res_number + 1)
       parser.parse(source)

@@ -1,5 +1,5 @@
 #!/usr/bin/ruby -Isrc
-require 'jbbs/thread/index'
+require 'twob/thread/index'
 require 'pp'
 
 file = ARGV.shift
