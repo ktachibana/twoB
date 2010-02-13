@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'twob/thread'
+require 'twob/handler'
 require 'yaml_marshaler'
 require 'io/source'
 
@@ -14,6 +14,8 @@ module TwoB
   # * [system] configuration,output(view)メソッドを提供するオブジェクト
   # * [read_counter => TwoB::ReadCounter] 
   module ThreadHandler
+    include TwoB::Handler
+    
     def execute(request, value)
       case value
       when /^delete_cache$/

@@ -46,14 +46,12 @@ module JBBS
     end
     
     
-    include TwoB::Handler
+    
+    include TwoB::ThreadHandler
     
     def get_child(value)
       Res.new(self, value.to_i)
     end
-    
-    
-    include TwoB::ThreadHandler
     
     def read(picker)
       ReadThreadAction.new(self, picker).execute()
@@ -64,7 +62,7 @@ module JBBS
     end
     
     def cache_manager
-      CacheManager.new(cache_source, get_dat_parser())
+      JBBS::CacheManager.new(cache_source, get_dat_parser())
     end
 
     def cache_source

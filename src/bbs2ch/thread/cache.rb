@@ -5,33 +5,16 @@ require 'twob/thread'
 
 module BBS2ch
   class Cache
-    def initialize(dat_content, dat_file)
+    def initialize(dat_content)
       @dat_content = dat_content
-      @dat_source = dat_file
     end
     
-    attr_reader :dat_content, :dat_source
+    attr_reader :dat_content
     
     Empty = self.new(TwoB::Dat::Content::Empty, nil)
     
     def empty?
       dat_content.empty?
-    end
-    
-    def dat_size
-      dat_source.path.size
-    end
-    
-    def last_modified
-      dat_source.path.mtime
-    end
-    
-    def dat_header
-      header = {}
-      return header if empty?
-      header["Range"] = "bytes=#{dat_size}-" unless dat_size.zero?
-      header["If-Modified-Since"] = last_modified.httpdate if last_modified
-      header
     end
     
     def append(new_dat_content, timestamp)

@@ -1,26 +1,26 @@
 # -*- coding: utf-8 -*-
 require 'bbs2ch/thread/cache'
+require 'source'
 
 module BBS2ch
-  class CacheManager
-    def initialize(cache_file, dat_parser, empty)
+  class CacheSource < TextFile
+    def initialize(cache_file, dat_parser)
       @cache_file = cache_file
       @dat_parser = dat_parser
-      @empty = empty
     end
     
-    attr_reader :cache_file, :dat_parser, :empty
+    attr_reader :cache_file, :dat_parser
     
-    def load(index, ranges)
+    def load(ranges, index)
       begin
-        Cache.new(dat_parser.parse_with_index(cache_file, index, ranges), cache_file)
+        Cache.new(dat_parser.parse_with_index(cache_file, index, ranges))
       rescue Errno::ENOENT
-        return empty
+        return Cache::Empty
       end      
     end
     
-    def append(new_data)
-      cache_file.append(new_data)
+    def append(delta_bytes)
+      cache_file.append(delta_bytes)
     end
 
     def delete()

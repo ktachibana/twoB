@@ -17,9 +17,10 @@ module JBBS
       category.host
     end
     
-    include TwoB::Handler
-    
     include TwoB::ReadCounter
+    
+    
+    include TwoB::BoardHandler
     
     def get_child(value)
       JBBS::ThreadService.new(self, value)
@@ -28,9 +29,6 @@ module JBBS
     def execute(request, value)
       list_thread()
     end
-    
-    
-    include TwoB::BoardHandler
     
     def original_url
       "http://#{host.name}/#{category.name}/#{number}/"

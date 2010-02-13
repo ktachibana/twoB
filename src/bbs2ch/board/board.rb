@@ -13,10 +13,9 @@ module BBS2ch
     
     attr_reader :host, :id
     
-    
-    include TwoB::Handler
-    
     include TwoB::ReadCounter
+    
+    include TwoB::BoardHandler
     
     def get_child(value)
       BBS2ch::ThreadService.new(self, value)
@@ -25,9 +24,6 @@ module BBS2ch
     def execute(request, value)
       list_thread()
     end
-    
-    
-    include TwoB::BoardHandler
     
     def original_url
       "http://#{host.name}/#{id}/"

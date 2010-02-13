@@ -16,15 +16,17 @@ end
 class HTTPGetInput
   include Input
   include Net
-  
+    
   def initialize(request)
     @request = request
   end
   
   def each_read
     HTTP.start(@request.host) do |http|
-      http.get(@request.path, @request.headers) do |data|
-        yield data
+      http.request_get(@request.path, @request.headers) do |response|
+        response.read_body do |data|
+          yield data
+        end
       end
     end
   end

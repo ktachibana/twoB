@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'io/source'
 require 'jbbs/thread'
 
@@ -22,8 +23,8 @@ module JBBS
       end
     end
     
-    def append(delta)
-      @cache_file.append(delta.bytes)
+    def append(delta_bytes)
+      @cache_file.append(delta_bytes)
     end
     
     def delete
