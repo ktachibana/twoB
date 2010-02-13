@@ -11,7 +11,7 @@ module BBS2ch
     
     attr_reader :dat_content
     
-    Empty = self.new(TwoB::Dat::Content::Empty, nil)
+    Empty = self.new(TwoB::Dat::Content::Empty)
     
     def empty?
       dat_content.empty?

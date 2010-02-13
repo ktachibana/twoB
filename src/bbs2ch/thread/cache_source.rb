@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'bbs2ch/thread/cache'
-require 'source'
+require 'io/file'
 
 module BBS2ch
   class CacheSource < TextFile
