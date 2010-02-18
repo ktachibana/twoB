@@ -12,12 +12,13 @@ describe "2chのスレッドを読む" do
   def view_thread(delta_input)
     @request = TwoB::Request.new("/server.2ch.net/board/123/l50#firstNew")
     @system = SpecSystem.new(@request)
-    BBS2ch::Thread.__send__(:define_method, :get_new_input) do |request|
+    BBS2ch::ThreadService.__send__(:define_method, :get_new_input) do |request|
       delta_input
     end
     @system.process
     @response = @system.response
     @thread = @response.document
+    @board_dir = SpecSystem::SpecConfiguration.data_directory + "server.2ch.net" + "board"
   end
   
   def valid_response
@@ -38,7 +39,6 @@ describe "2chのスレッドを読む" do
     
     thread = @response.document
     Nokogiri::HTML.parse(@response.string, nil)
-    puts @response.string
   end
 
   it "キャッシュなしの初回読み込み" do
@@ -55,14 +55,19 @@ describe "2chのスレッドを読む" do
     thread[81].should_not be_exist
     created_cache = SpecSystem::SpecConfiguration.data_directory + "server.2ch.net" + "board" + "123.dat"
     created_cache.size.should == 24832
+    created_index = @board_dir + "123.index.yaml"
+    index = YAML::load(File.read(created_index))
+    index.cache_file_size.should == 24832
+    index[80].should == 0x5fc0
   end
   
   it "追加読み込み" do
-    # TODO exampleの実行順序に依存しているので、順序を保障するか実行のし直しが必要
+    SpecSystem.clear_cache_dir
+    view_thread(BinaryFile.by_filename("testData/2ch/example(1-80).dat"))
     view_thread(BinaryFile.by_filename("testData/2ch/example(81-100).dat"))
 
     valid_response
-
+puts @response.string
     thread = @response.document
     valid_thread(thread)
     thread[1].should_not be_new
@@ -74,6 +79,8 @@ describe "2chのスレッドを読む" do
   end
   
   it "追加読み込みしたが新着が無かった" do
+    SpecSystem.clear_cache_dir
+    view_thread(BinaryFile.by_filename("testData/2ch/example(1-80).dat"))
     view_thread(StringInput.empty)
 
     valid_response
@@ -100,19 +107,21 @@ describe "2chのスレッドを読む" do
   end
   
   it "スレッドのキャッシュを削除" do
-    board_dir = SpecSystem::SpecConfiguration.data_directory + "server.2ch.net" + "board"
-    (board_dir + "123.dat").should be_exist
+    SpecSystem.clear_cache_dir
+    view_thread(BinaryFile.by_filename("testData/2ch/example(1-80).dat"))
 
-    pending("BBS2chはインデックス未対応")
-    (board_dir + "123.index.marshal").should be_exist
+    (@board_dir + "123.dat").should be_exist
+    (@board_dir + "123.index.yaml").should be_exist
+
     @request = TwoB::Request.new("/server.2ch.net/board/123/delete_cache")
     @system = SpecSystem.new(@request)
     @system.process
+
     @response = @system.response
     @response.status_code.should == 303
     @response.headers["Location"].should == "../"
-    (board_dir + "123.dat").should_not be_exist
-    (board_dir + "123.index.marshal").should_not be_exist
+    (@board_dir + "123.dat").should_not be_exist
+    (@board_dir + "123.index.marshal").should_not be_exist
   end
   
 end

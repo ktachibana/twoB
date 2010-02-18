@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'twob/handler'
-require "twob/board/subject"
-require "twob/board/board_view"
+require 'twob/board/subject'
+require 'twob/board/board_view'
 require 'yaml_marshaler'
 
 module TwoB
@@ -13,7 +13,7 @@ module TwoB
   # * [data_directory_path] Pathname データ保存用ディレクトリ(相対パス)
   # * [system] configuration,output(view)メソッドを提供するオブジェクト
   module BoardHandler
-    include TwoB::Handler
+    include Handler
     
     BoardInfo = Struct.new(:url)
     

@@ -2,7 +2,7 @@
 require 'spec'
 require 'twob/thread/dat'
 
-describe TwoB::Dat do
+describe TwoB::Dat, "body parser" do
   include TwoB::Dat
   
   it 'parse' do

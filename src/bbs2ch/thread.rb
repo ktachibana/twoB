@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-require 'bbs2ch/thread/cache'
-require 'bbs2ch/thread/cache_source'
+require 'bbs2ch/thread/cache_file'
 require 'bbs2ch/thread/index'
 require 'bbs2ch/thread/dat_line'
 require 'bbs2ch/thread/dat_parser'

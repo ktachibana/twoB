@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
+require 'twob/thread/dat/dat_body'
 require 'jbbs/thread/dat_parser'
-require 'twob/thread/dat'
-require 'twob/thread/dat_body'
 
 include TwoB
+include Dat
 
 describe JBBS::DatParser do
   before do
@@ -12,10 +12,6 @@ describe JBBS::DatParser do
 
   def parse(dat_string)
     @parser.parse_delta(StringSource.new(dat_string))
-  end
-
-  it "Struct ==" do
-    Text.new("a").should == Text.new("a")
   end
 
   it "parseできる" do
@@ -56,7 +52,8 @@ EOS
     body[2].to_s.should == "after"
   end
 
-  it "自動リンク" do
+  it "自動リンク認識" do
+
     dat_string = <<EOS
 1<>no name<>mail<>date<>ahttp://host.com/path<br>foo<><>idididid
 2<>no name<>mail<>date<>あttp://host2.com/path<><>idididid
@@ -65,20 +62,21 @@ EOS
 EOS
     res = parse(dat_string).res_list
     res[0].body.should ==
-      [Text.new("a"),
-       Link.new("http://host.com/path", "http://host.com/path"),
-       BreakLine.new, Text.new("foo")]
+    [Text.new("a"),
+      Link.new("http://host.com/path", "http://host.com/path"),
+      BreakLine.new,
+      Text.new("foo")]
     res[1].body.should ==
-      [Text.new("あ"),
-       Link.new("ttp://host2.com/path", "http://host2.com/path")]
+    [Text.new("あ"),
+      Link.new("ttp://host2.com/path", "http://host2.com/path")]
     res[2].body.should ==
-      [Link.new("tp://host3.com/path", "http://host3.com/path"),
-       Text.new(" "),
-       Link.new("tp://host3.com/path", "http://host3.com/path")]
+    [Link.new("tp://host3.com/path", "http://host3.com/path"),
+      Dat::Text.new(" "),
+      Link.new("tp://host3.com/path", "http://host3.com/path")]
     res[3].body.should ==
-      [Text.new("("), Link.new("ttp://host4.com/", "http://host4.com/"), Text.new(")")]
+    [Dat::Text.new("("), Link.new("ttp://host4.com/", "http://host4.com/"), Text.new(")")]
   end
-  
+
   it "'sage'だけでなく'sage'が含まれていればいいらしい" do
     dat = <<EOS
 1<>no name<>foo sage<>date<>ahttp://host.com/path<br>foo<><>idididid
@@ -90,7 +88,7 @@ EOS
     res[1].age?.should be_false
     res[2].age?.should be_true
   end
-  
+
   it "部分的parse" do
     parser = JBBS::DatParser.new
     dat_string = <<EOS
@@ -102,16 +100,16 @@ EOS
 
 EOS
     source = StringSource.new(dat_string)
-    parts = [DatPart.new(1, 0, 1), DatPart.new(3, dat_string.index("3<>"), 4)]
+    parts = [Dat::Part.new(1, 0, 1), Dat::Part.new(3, dat_string.index("3<>"), 4)]
     parser.parse_parts(source, parts)
     res_list = parser.get_dat_content.res_list
     res_list.collect{|res| res.name }.should == ["one", "three", "four"]
   end
-  
+
   it "ファイルの実物から部分的parse" do
     parser = JBBS::DatParser.new
     source = TextFile.new("testData/jbbs/jbbs.dat", "euc-jp")
-    parts = [DatPart.new(1, 0, 1), DatPart.new(100, 0x3773, 150)]
+    parts = [Dat::Part.new(1, 0, 1), Dat::Part.new(100, 0x3773, 150)]
     parser.parse_parts(source, parts)
     res_list = parser.get_dat_content.res_list
     res_list.size.should == 52

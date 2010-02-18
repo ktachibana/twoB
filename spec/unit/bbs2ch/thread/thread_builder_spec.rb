@@ -29,7 +29,7 @@ module BBS2ch
     
     def eval_dat_line(dat_columns, dat_lines)
       name_string = dat_columns.fetch(0, "")
-      name_match = TRIP_PATTERN.match(name_string)
+      name_match = DatParser::TRIP_PATTERN.match(name_string)
       name = name_match ? name_match[1] : name_string
       trip = name_match ? name_match[3] : nil
       mail = dat_columns.fetch(1, "")

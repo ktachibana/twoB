@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-require 'twob/thread/dat_body'
+require 'twob/thread/dat'
 
 describe "dat_body objects" do
   def anchor(range)
-    TwoB::Anchor.new(range)
+    TwoB::Dat::Anchor.new(range)
   end
   
   it do

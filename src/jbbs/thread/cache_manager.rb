@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 require 'io/source'
-require 'jbbs/thread'
+require 'twob/thread/cache'
 
 module JBBS
   class CacheManager
+    include TwoB
+    
     def initialize(cache_file, dat_parser)
       @cache_file = cache_file
       @dat_parser = dat_parser
@@ -17,7 +19,7 @@ module JBBS
     
     def load(ranges, index)
       begin
-        return TwoB::Cache.new(@dat_parser.parse_with_index(@cache_file, index, ranges))
+        return Cache.new(@dat_parser.parse_with_index(@cache_file, index, ranges))
       rescue Errno::ENOENT
         return Cache::Empty
       end

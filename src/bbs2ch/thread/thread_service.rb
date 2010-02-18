@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'bbs2ch/thread/read_thread_action'
-require 'bbs2ch/thread/cache_source'
+require 'bbs2ch/thread/cache_file'
 require 'bbs2ch/thread/res'
 require 'bbs2ch/thread/index'
 require 'time'
@@ -33,7 +33,7 @@ module BBS2ch
     end
     
     def cache_manager
-      BBS2ch::CacheSource.new(cache_source, get_dat_parser())
+      BBS2ch::CacheFile.new(cache_source, get_dat_parser())
     end
     
     def index_manager

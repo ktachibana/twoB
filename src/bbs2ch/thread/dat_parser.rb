@@ -4,10 +4,10 @@ require 'twob/thread'
 require 'bbs2ch/thread/dat_line'
 
 module BBS2ch
-  class DatParser < TwoB::DatParser
+  class DatParser < TwoB::Dat::DatParser
     include TwoB::Dat
     
-    DATE_PATTERN = /\A(.*?)( ID:(\S+))?( BE:(.*))?\z/
+    DATE_PATTERN = /\A(.*?)( ID:(\S+))?( BE:(.*))?\z/ # ex. "2008/08/18(月) 10:10:53 ID:sgrp3MC1 BE:1086480184-2BP(0)"
     
     def initialize(initial_number = 1)
       super()
@@ -19,6 +19,8 @@ module BBS2ch
     end
     
     def parse_line(values)
+      line = {:number => @number, :name => "", :trip => nil, :mail => "", :date => "", :id => nil, :be => nil, :body => []}
+      
       name_string = values.fetch(0, "")
       name_match = TRIP_PATTERN.match(name_string)
       name = name_match ? name_match[1] : name_string

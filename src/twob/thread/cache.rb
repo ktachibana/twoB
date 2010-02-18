@@ -1,4 +1,4 @@
-require 'twob/thread/dat'
+require 'twob/thread/dat/dat_content'
 
 module TwoB
   class Cache

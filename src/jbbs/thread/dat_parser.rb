@@ -1,7 +1,7 @@
 require 'twob/thread'
 
 module JBBS
-  class DatParser < TwoB::DatParser
+  class DatParser < TwoB::Dat::DatParser
     include TwoB::Dat
     
     def on_start_part(part)

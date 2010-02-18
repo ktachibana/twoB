@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
-require 'bbs2ch/thread/cache'
+require 'twob/thread/cache'
 require 'io/file'
+require 'delegate'
 
 module BBS2ch
-  class CacheSource < TextFile
+  class CacheFile < SimpleDelegator
+    include TwoB
+    
     def initialize(cache_file, dat_parser)
       @cache_file = cache_file
       @dat_parser = dat_parser
+      super(cache_file)
     end
     
     attr_reader :cache_file, :dat_parser
@@ -17,14 +21,6 @@ module BBS2ch
       rescue Errno::ENOENT
         return Cache::Empty
       end      
-    end
-    
-    def append(delta_bytes)
-      cache_file.append(delta_bytes)
-    end
-
-    def delete()
-      cache_file.delete()
     end
   end
 end

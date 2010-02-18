@@ -86,9 +86,11 @@ describe "JBBSのスレッドを読む" do
   end
   
   it "スレッドのキャッシュを削除" do
+    view_thread(BinaryFile.by_filename("testData/jbbs/example(1-216).dat"))
+    
     board_dir = SpecSystem::SpecConfiguration.data_directory + "jbbs.livedoor.jp" + "category" + "123"
     (board_dir + "456.dat").should be_exist
-    (board_dir + "456.index.marshal").should be_exist
+    (board_dir + "456.index.yaml").should be_exist
     @request = TwoB::Request.new("/jbbs.livedoor.jp/category/123/456/delete_cache")
     @system = SpecSystem.new(@request)
     @system.process

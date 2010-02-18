@@ -15,3 +15,11 @@ describe Array do
     @array[2].should be_nil
   end
 end
+
+describe Struct do
+  Test = Struct.new(:field)
+
+  it "Struct ==" do
+    Test.new("a").should == Test.new("a")
+  end
+end
