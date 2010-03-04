@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'enum_util'
+require 'util'
 require 'twob/thread/picker'
 require 'forwardable'
 

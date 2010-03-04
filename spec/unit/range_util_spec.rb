@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'range_util'
+require 'util/range'
 
 describe Range do
   it "adjacent_range?" do

@@ -1,4 +1,4 @@
-require 'view_util'
+require 'util/view'
 
 class DatView
   include ViewUtil

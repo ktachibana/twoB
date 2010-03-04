@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'view_util'
+require 'util'
 
 class ErrorView
   include ViewUtil

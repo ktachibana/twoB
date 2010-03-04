@@ -4,7 +4,7 @@
 require 'twob/system'
 require 'twob/request'
 require 'twob/configuration'
-require 'view_util'
+require 'util'
 require 'pathname'
 require 'optparse'
 require 'cgi'

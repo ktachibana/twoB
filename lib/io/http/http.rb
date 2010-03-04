@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'enum_util'
+require 'util'
 require 'io/source'
 require 'io/http/http_request'
 require 'io/input'

@@ -64,3 +64,4 @@ describe "Equality" do
     (no_equality_book == no_equality_book2).should be_true
   end
 end
+

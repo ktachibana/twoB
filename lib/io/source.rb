@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'stringio'
 require 'pathname'
-require 'enum_util'
+require 'util'
 require 'encoder'
 
 class IOReader

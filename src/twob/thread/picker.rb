@@ -1,7 +1,6 @@
 require 'singleton'
-require 'enum_util'
+require 'util'
 require 'pattern_map'
-require 'range_util'
 
 module TwoB
   Pickers = PatternMap.new
