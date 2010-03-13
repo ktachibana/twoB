@@ -49,9 +49,9 @@ describe "2chのスレッドを読む" do
 
     thread = @response.document
     valid_thread(thread)
-    thread[1].should be_exist
+    thread.res_ranges.should == [1..80]
+    thread[1].should be_new
     thread[80].should be_new
-    thread[81].should_not be_exist
     
     created_cache = @board_dir + "123.dat"
     created_cache.size.should == 24832
