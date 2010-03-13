@@ -23,6 +23,26 @@ class ThreadDocument
     Res.new(@document.css("\#_#{n}"), n)
   end
   
+  def res_ranges
+    numbers = @document.css(".res").collect do |res|
+      res["id"].delete("_").to_i
+    end
+    return [] if numbers.empty?
+    
+    result = []
+    i = 0
+    first = numbers[i]
+    while i + 1 < numbers.length
+      if numbers[i+1] - numbers[i] > 1
+        result << (first..numbers[i])
+        first = numbers[i+1]
+      end
+      i += 1
+    end
+    result << (first..numbers[i])
+    result
+  end
+  
   
   class Res
     def initialize(res_node, number)

@@ -55,7 +55,7 @@ class InputReader
         yield(@encoder.encode(line), offset)
 
         current = line_last + rs.length
-        offset = offset + current
+        offset += line.length + rs.length
       end
       buf = buf[current .. -1]
     end

@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
+require 'bbs2ch'
 require 'nokogiri'
 require 'io'
 require 'spec_system'
 require 'pp'
 
-
 describe "2chのスレッドを読む" do
-  require 'bbs2ch'
   include BBS2ch
   
   def view_thread(delta_input)
@@ -53,11 +52,16 @@ describe "2chのスレッドを読む" do
     thread[1].should be_exist
     thread[80].should be_new
     thread[81].should_not be_exist
-    created_cache = SpecSystem::SpecConfiguration.data_directory + "server.2ch.net" + "board" + "123.dat"
+    
+    created_cache = @board_dir + "123.dat"
     created_cache.size.should == 24832
+    
     created_index = @board_dir + "123.index.yaml"
     index = YAML::load(File.read(created_index))
     index.cache_file_size.should == 24832
+    index[1].should == 0
+    index[2].should == 0x265
+    index[3].should == 0x2fc
     index[80].should == 0x5fc0
   end
   
@@ -67,15 +71,14 @@ describe "2chのスレッドを読む" do
     view_thread(BinaryFile.by_filename("testData/2ch/example(81-100).dat"))
 
     valid_response
-puts @response.string
+
     thread = @response.document
     valid_thread(thread)
+    thread.res_ranges.should == [1..1, 51..100]
     thread[1].should_not be_new
-    thread[50].should_not be_exist
     thread[80].should_not be_new
     thread[81].should be_new
     thread[100].should be_new
-    thread[101].should_not be_exist
   end
   
   it "追加読み込みしたが新着が無かった" do
@@ -87,11 +90,7 @@ puts @response.string
     
     thread = @response.document
     valid_thread(thread)
-    thread[1].should_not be_new
-    thread[50].should_not be_exist
-    thread[51].should_not be_new
-    thread[100].should_not be_new
-    thread[101].should_not be_exist
+    thread.res_ranges.should == [1..1, 31..80]
   end
   
   it "レスアンカー表示" do
