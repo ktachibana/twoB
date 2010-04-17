@@ -1,6 +1,13 @@
+@charset 'UTF-8';
+
 body, html {
 	margin: 0.3em;
 	padding: 0;
+}
+
+.body {
+	font-family: "ＭＳ Ｐゴシック", "IPA モナー Pゴシック";
+	font-size: 16px;
 }
 
 .title {
