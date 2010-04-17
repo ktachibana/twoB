@@ -6,8 +6,7 @@ body, html {
 }
 
 .body {
-	font-family: "ＭＳ Ｐゴシック", "IPA モナー Pゴシック";
-	font-size: 16px;
+	font-family: "IPA モナー Pゴシック", "IPAMonaPGothic", "ＭＳ Ｐゴシック";
 }
 
 .title {
