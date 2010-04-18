@@ -76,6 +76,10 @@ module BBS2ch
       Encoder.by_name("Windows-31J")
     end
     
+    def get_new_input(request)
+      HTTPGetInput.new(request)
+    end
+    
     def get_dat_parser()
       BBS2ch::DatParser.new()
     end
