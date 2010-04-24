@@ -4,21 +4,10 @@ require 'nokogiri'
 require 'io'
 require 'spec_system'
 require 'pp'
+require 'bbs2ch/action'
 
 describe "2chのスレッドを読む" do
   include BBS2ch
-  
-  def view_thread(delta_input)
-    @request = TwoB::Request.new("/server.2ch.net/board/123/l50#firstNew")
-    @system = SpecSystem.new(@request)
-    BBS2ch::ThreadService.__send__(:define_method, :get_new_input) do |request|
-      delta_input
-    end
-    @system.process
-    @response = @system.response
-    @thread = @response.document
-    @board_dir = SpecSystem::SpecConfiguration.data_directory + "server.2ch.net" + "board"
-  end
   
   def valid_response
     @response.status_code.should == 200
@@ -91,18 +80,6 @@ describe "2chのスレッドを読む" do
     thread = @response.document
     valid_thread(thread)
     thread.res_ranges.should == [1..1, 31..80]
-  end
-  
-  it "レスアンカー表示" do
-    pending("2chのレスアンカー表示は未実装")
-    @request = TwoB::Request.new("/server.2ch.net/board/123/res_anchor", {"range"=> ["10-20"]})
-    @system = SpecSystem.new(@request)
-    @system.process
-    @response = @system.response
-    valid_response
-    anchor = @response.document
-    anchor[9].should_not be_exist
-    anchor[10].should be_exist
   end
   
   it "スレッドのキャッシュを削除" do

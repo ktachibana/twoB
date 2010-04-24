@@ -50,6 +50,14 @@ class ThreadDocument
       @number = number
     end
     
+    def date
+      @res.css(".date").text
+    end
+    
+    def id
+      @res.css(".id").text
+    end
+    
     def exist?
       !@res.empty?
     end
