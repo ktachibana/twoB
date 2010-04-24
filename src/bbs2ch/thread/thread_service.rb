@@ -87,12 +87,9 @@ module BBS2ch
     def system
       board.host.system
     end
-        
+    
     def read_counter
       board
-    end
-    
-    def res_anchor(picker)
     end
   end
 end

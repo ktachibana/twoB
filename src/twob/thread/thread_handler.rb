@@ -72,5 +72,16 @@ module TwoB
         option.bookmark_number = bookmark_number
       end
     end
+
+    def res_anchor(picker)
+      index = index_manager.load
+      ranges = picker.concretize(index.last_res_number).ranges
+      cache = cache_manager.load(ranges, index)
+      anchor_res = []
+      cache.each_res do |res|
+        anchor_res << TwoB::Res.as_cache(res)
+      end
+      TwoB::ResAnchorView.new(anchor_res)
+    end
   end
 end
