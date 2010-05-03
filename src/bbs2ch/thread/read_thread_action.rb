@@ -2,6 +2,7 @@
 require 'bbs2ch/thread/dat_parser'
 require 'twob/thread'
 require 'io/source'
+require 'encoder'
 
 module BBS2ch
   class ReadThreadAction
@@ -15,7 +16,7 @@ module BBS2ch
     
     def execute
       index = @index_manager.load()
-      delta = load_delta(index)
+      delta = @thread_key.load_delta(index)
       cache = @cache_manager.load(cache_picker(delta, index), index)
       option = @option_manager.load()
       
@@ -38,18 +39,5 @@ module BBS2ch
     def last_res_number(delta, index)
       delta.last_number ? delta.last_number : index.last_res_number
     end
-    
-    def load_delta(index)
-      delta_bytes = load_delta_bytes(index)
-      dat_parser = BBS2ch::DatParser.new(index.last_res_number + 1)
-      delta_content = dat_parser.parse_delta(InputSource.new(StringInput.new(delta_bytes), @thread_key.dat_encoding, "\n"))
-      TwoB::Delta.new(delta_content, delta_bytes, dat_parser.index)
-    end
-    
-    def load_delta_bytes(index)
-      request = HTTPRequest.new(@thread_key.host.name, @thread_key.dat_path, index.dat_header)
-      @thread_key.get_new_input(request).read()
-    end
-    
   end
 end

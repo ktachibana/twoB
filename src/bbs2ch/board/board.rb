@@ -21,10 +21,6 @@ module BBS2ch
       BBS2ch::ThreadService.new(self, value)
     end
     
-    def execute(request, value)
-      list_thread()
-    end
-    
     def original_url
       "http://#{host.name}/#{id}/"
     end

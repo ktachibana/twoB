@@ -12,12 +12,12 @@ describe "JBBSのスレッドを読む" do
   def view_thread(delta_input)
     @request = TwoB::Request.new("/jbbs.livedoor.jp/category/123/456/l50#firstNew")
     @system = SpecSystem.new(@request)
-    JBBS::ThreadService.__send__(:define_method, :get_new_input) do |picker|
+    JBBS::ThreadService.__send__(:define_method, :get_new_input) do |request|
       delta_input
     end
     @system.process
     @response = @system.response
-    @thread = @response.document
+    @thread = @response.as_thread
   end
   
   def valid_response
@@ -32,7 +32,7 @@ describe "JBBSのスレッドを読む" do
     
     valid_response
 
-    thread = @response.document
+    thread = @response.as_thread
     thread.dat_link.attribute("href").text.should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/456/"
     thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
     thread[1].should be_exist
@@ -48,7 +48,7 @@ describe "JBBSのスレッドを読む" do
 
     valid_response
 
-    thread = @response.document
+    thread = @response.as_thread
     thread.dat_link.attribute("href").text.should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/456/"
     thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
     thread[1].should_not be_new
@@ -64,7 +64,7 @@ describe "JBBSのスレッドを読む" do
 
     valid_response
     
-    thread = @response.document
+    thread = @response.as_thread
     thread.dat_link.attribute("href").text.should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/456/"
     thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
     thread[1].should_not be_new
@@ -80,7 +80,7 @@ describe "JBBSのスレッドを読む" do
     @system.process
     @response = @system.response
     valid_response
-    anchor = @response.document
+    anchor = @response.as_thread
     anchor[9].should_not be_exist
     anchor[10].should be_exist
   end

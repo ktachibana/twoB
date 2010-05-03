@@ -14,7 +14,7 @@ module JBBS
 
     def execute
       index = @index_manager.load()
-      delta = load_delta(index)
+      delta = @thread_key.load_delta(index)
       cache = @cache_manager.load(cache_picker(delta, index), index)
       option = @option_manager.load()
       
@@ -38,13 +38,5 @@ module JBBS
       delta.last_number ? delta.last_number : index.last_res_number
     end
     
-    def load_delta(index)
-      dat_parser = @thread_key.get_dat_parser
-      bytes = @thread_key.load_new(index.delta_picker)
-      source = BytesSource.new(bytes, Encoder.by_name(@thread_key.dat_encoding), "\n")
-
-      dat_content = dat_parser.parse_delta(source)
-      TwoB::Delta.new(dat_content, bytes, dat_parser.index)
-    end
   end
 end

@@ -37,12 +37,12 @@ class BinaryFile
   end
   
   def delete
-    maybe_noentry(nil) do
+    maybe_noentry do
       @path.delete
     end
   end
 
-  def maybe_noentry(alt_return)
+  def maybe_noentry(alt_return = nil)
     begin
       yield
     rescue Errno::ENOENT

@@ -54,7 +54,6 @@ describe TwoB::Handler do
   it "get thread" do
     thread = @system / "jbbs.livedoor.jp" / "category" / "123" / "12345"
     thread.should be_kind_of(JBBS::ThreadService)
-    thread.get_dat_url(TwoB::Picker::From.new(10)).should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/12345/10-"
   end
   
   it "get res anchor" do

@@ -7,7 +7,8 @@ module BBS2ch
   class DatParser < TwoB::Dat::DatParser
     include TwoB::Dat
     
-    DATE_PATTERN = /\A(.*?)( ID:(\S+))?( BE:(.*))?\z/ # ex. "2008/08/18(月) 10:10:53 ID:sgrp3MC1 BE:1086480184-2BP(0)"
+    # ex. "2008/08/18(月) 10:10:53 ID:sgrp3MC1 BE:1086480184-2BP(0)"
+    DATE_PATTERN = /\A(.*?)( ID:(\S+))?( BE:(.*))?\z/
     
     def initialize(initial_number = 1)
       super()

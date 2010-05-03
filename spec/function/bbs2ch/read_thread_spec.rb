@@ -9,9 +9,12 @@ require 'bbs2ch/action'
 describe "2chのスレッドを読む" do
   include BBS2ch
   
-  def valid_response
-    @response.status_code.should == 200
-    @response.content_type.should == "text/html; charset=UTF-8"
+  before do
+    SpecSystem.clear_cache_dir
+    @test_data_dir = Pathname.new("testData/2ch")
+    @example_1to80 = BinaryFile.new(@test_data_dir + "example(1-80).dat")
+    @example_80to100 = BinaryFile.new(@test_data_dir + "example(81-100).dat")
+    @example_subject = TextFile.new(@test_data_dir + "example-subject.txt", "Windows-31J")
   end
   
   def valid_thread(thread)
@@ -20,23 +23,20 @@ describe "2chのスレッドを読む" do
   end
   
   it "トリップ付きレスを表示" do
-    SpecSystem.clear_cache_dir
-    view_thread(BinaryFile.by_filename("testData/2ch/with-trip.dat"))
+    view_thread(BinaryFile.new(@test_data_dir + "with-trip.dat"))
     
     valid_response
     
-    thread = @response.document
-    Nokogiri::HTML.parse(@response.string, nil)
+    thread = @response.as_thread
+    thread.title.should == "KDEスレ Part 8"
   end
 
   it "キャッシュなしの初回読み込み" do
-    SpecSystem.clear_cache_dir
-    
-    view_thread(BinaryFile.by_filename("testData/2ch/example(1-80).dat"))
+    view_thread(@example_1to80)
 
     valid_response
 
-    thread = @response.document
+    thread = @response.as_thread
     valid_thread(thread)
     thread.res_ranges.should == [1..80]
     thread[1].should be_new
@@ -55,13 +55,12 @@ describe "2chのスレッドを読む" do
   end
   
   it "追加読み込み" do
-    SpecSystem.clear_cache_dir
-    view_thread(BinaryFile.by_filename("testData/2ch/example(1-80).dat"))
-    view_thread(BinaryFile.by_filename("testData/2ch/example(81-100).dat"))
+    view_thread(@example_1to80)
+    view_thread(@example_80to100)
 
     valid_response
 
-    thread = @response.document
+    thread = @response.as_thread
     valid_thread(thread)
     thread.res_ranges.should == [1..1, 51..100]
     thread[1].should_not be_new
@@ -71,20 +70,18 @@ describe "2chのスレッドを読む" do
   end
   
   it "追加読み込みしたが新着が無かった" do
-    SpecSystem.clear_cache_dir
-    view_thread(BinaryFile.by_filename("testData/2ch/example(1-80).dat"))
+    view_thread(@example_1to80)
     view_thread(StringInput.empty)
 
     valid_response
     
-    thread = @response.document
+    thread = @response.as_thread
     valid_thread(thread)
     thread.res_ranges.should == [1..1, 31..80]
   end
   
   it "スレッドのキャッシュを削除" do
-    SpecSystem.clear_cache_dir
-    view_thread(BinaryFile.by_filename("testData/2ch/example(1-80).dat"))
+    view_thread(@example_1to80)
 
     (@board_dir + "123.dat").should be_exist
     (@board_dir + "123.index.yaml").should be_exist
@@ -100,4 +97,16 @@ describe "2chのスレッドを読む" do
     (@board_dir + "123.index.marshal").should_not be_exist
   end
   
+  it "スレッドを読み込みで既読カウントが正しく更新される" do
+    view_thread(@example_1to80)
+    view_thread_list(@example_subject)
+
+    view_thread(@example_1to80, "-10")
+    view_thread_list(@example_subject)
+    
+    board = Nokogiri::XML(@response.string)
+    pending("error")
+    board.css(".body .count")[0].text.gsub(/\s+/, "").should == "80/80"
+  end
+    
 end

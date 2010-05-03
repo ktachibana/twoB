@@ -5,17 +5,14 @@ require 'twob/board/board_view'
 require 'yaml_marshaler'
 
 module TwoB
-  # = includeするクラスは以下のメソッドを提供すること
-  # * [original_url] String 板をブラウザで通常表示するためのURL
-  # * [subject_url] String subject.txtのURL
-  # * [get_subject_parser] TwoB::SubjectParser
-  # * [subject_encoding] String subject.txtのエンコーディング(iconv用)
-  # * [data_directory_path] Pathname データ保存用ディレクトリ(相対パス)
-  # * [system] configuration,output(view)メソッドを提供するオブジェクト
   module BoardHandler
     include Handler
     
     BoardInfo = Struct.new(:url)
+    
+    def execute(request, value)
+      list_thread()
+    end
     
     def get_subjects()
       get_subject_parser.parse(subject_source)

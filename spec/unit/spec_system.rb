@@ -11,6 +11,8 @@ class SpecSystem < TwoB::System
     @request = request
     @response = :yet_to_be_processed
     @buffer = StringIO.new
+    
+    @dat_delta_source = StringIO.new
   end
   
   attr_accessor :request, :response

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'bbs2ch/thread/read_thread_action'
 require 'bbs2ch/thread/cache_file'
-require 'bbs2ch/thread/res'
 require 'bbs2ch/thread/index'
 require 'time'
 require 'yaml_marshaler'
@@ -25,7 +24,7 @@ module BBS2ch
     include TwoB::ThreadHandler
     
     def get_child(value)
-      BBS2ch::Res.new(self, value.to_i)
+      TwoB::ResService.new(self, value.to_i)
     end
     
     def read(requested_picker)
@@ -33,7 +32,7 @@ module BBS2ch
     end
     
     def cache_manager
-      BBS2ch::CacheFile.new(cache_source, get_dat_parser())
+      BBS2ch::CacheFile.new(cache_source, BBS2ch::DatParser.new)
     end
     
     def index_manager
@@ -41,51 +40,36 @@ module BBS2ch
     end
     
     def original_url
-      "http://#{board.host.name}/test/read.cgi/#{board.id}/#{number}/"
-    end
-    
-    def data_directory_path
-      board.data_directory_path
-    end
-    
-    def get_dat_url(picker)
-      dat_url
+      "http://#{host.name}/test/read.cgi/#{board.id}/#{number}/"
     end
     
     def dat_url
-      "http://#{dat_host_name}#{dat_path}"
-    end
-    
-    def dat_host_name
-      board.host.name
+      "http://#{host.name}#{dat_path}"
     end
     
     def dat_path
       "/#{board.id}/dat/#{number}.dat"
     end
+    private :dat_path
     
-    def get_dat_url(from)
-      dat_url
+    def dat_encoding_name
+      "Windows-31J"
     end
     
-    def cache_source
-      TextFile.new(cache_file, dat_encoding.name)
+    def dat_line_delimiter
+      "\n"
     end
     
-    def dat_encoding
-      Encoder.by_name("Windows-31J")
+    def delta_request(index)
+      HTTPRequest.new(host.name, dat_path, index.dat_header)
     end
     
-    def get_new_input(request)
-      HTTPGetInput.new(request)
-    end
-    
-    def get_dat_parser()
-      BBS2ch::DatParser.new()
+    def get_delta_parser(initial_number)
+      BBS2ch::DatParser.new(initial_number)
     end
     
     def system
-      board.host.system
+      host.system
     end
     
     def read_counter

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'twob'
+require 'twob/thread/thread_handler'
+require 'twob/thread/res_service'
 require 'jbbs/thread/thread_key'
 require 'jbbs/thread/cache_manager'
 require 'jbbs/thread/read_thread_action'
@@ -31,55 +33,48 @@ module JBBS
     include TwoB::ThreadHandler
     
     def get_child(value)
-      Res.new(self, value.to_i)
+      TwoB::ResService.new(self, value.to_i)
     end
     
     def read(picker)
-      ReadThreadAction.new(self, picker).execute()
-    end
-    
-    def index_manager
-      TwoB::YAMLMarshaler.new(index_file, TwoB::Index.Empty)
+      JBBS::ReadThreadAction.new(self, picker).execute()
     end
     
     def cache_manager
-      JBBS::CacheManager.new(cache_source, get_dat_parser())
+      JBBS::CacheManager.new(cache_source, JBBS::DatParser.new)
     end
 
-    def cache_source
-      TextFile.new(cache_file, dat_encoding)
-    end
-    
-    def data_directory_path
-      board.data_directory_path
+    def index_manager
+      TwoB::YAMLMarshaler.new(index_file, TwoB::Index.Empty)
     end
     
     def original_url
       "http://#{host.name}/bbs/read.cgi/#{category.name}/#{board.number}/#{number}/"
     end
     
-    def get_dat_url(picker)
-      "http://#{host.name}#{get_dat_path(picker)}"
+    def dat_url
+      "http://#{host.name}#{get_dat_path(TwoB::Picker::All.instance)}"
     end
   
-    def dat_encoding
-      "EUC-JP-MS"
-    end
-    
     def get_dat_path(picker)
       "/bbs/rawmode.cgi/#{category.name}/#{board.number}/#{number}/#{picker}"
     end
+    private :get_dat_path
     
-    def load_new(picker)
-      get_new_input(picker).read()
+    def dat_encoding_name
+      "EUC-JP-MS"
+    end
+    
+    def dat_line_delimiter
+      "\n"
+    end
+    
+    def delta_request(index)
+      HTTPRequest.new(host.name, get_dat_path(index.delta_picker), {})
     end
 
-    def get_new_input(picker)
-      HTTPGetInput.new(HTTPRequest.new(host.name, get_dat_path(picker), {}))
-    end
-    
-    def get_dat_parser()
-      DatParser.new
+    def get_delta_parser(initial_number)
+      JBBS::DatParser.new
     end
     
     def system

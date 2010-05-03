@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 require 'twob'
-require 'twob/handler'
 
-module BBS2ch
-  class Res
+module TwoB
+  class ResService
     include TwoB::Handler
     
     def initialize(thread, number)
@@ -14,7 +13,7 @@ module BBS2ch
     attr_reader :thread, :number
     
     def system
-      thread.system
+      @thread.system
     end
     
     def execute(request, value)
@@ -25,7 +24,7 @@ module BBS2ch
     end
     
     def bookmark()
-      thread.update_bookmark_number(number)
+      @thread.update_bookmark_number(number)
       RedirectResponse.new("../")
     end
   end

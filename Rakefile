@@ -26,7 +26,7 @@ desc "rspecを実行する"
 Spec::Rake::SpecTask.new(:spec) do |t|
   t.ruby_opts = %w(-r rubygems)
   t.spec_files = FileList["spec/unit/**/*_spec.rb"]
-  t.spec_opts = %w(--format html:local/spec/unit.html --format progress --color)
+  t.spec_opts = %w(--format html:local/spec/unit.html --format nested --color)
   t.libs = %w[src lib spec/unit]
   t.rcov = ENV.include? "rcov"
   t.rcov_dir = "local/coverage"
@@ -34,3 +34,14 @@ Spec::Rake::SpecTask.new(:spec) do |t|
 end
 task :spec => :convert_all_view
 
+desc "機能テストを実行する"
+Spec::Rake::SpecTask.new(:fspec) do |t|
+  t.ruby_opts = %w(-r rubygems)
+  t.spec_files = FileList["spec/function/**/*_spec.rb"]
+  t.spec_opts = %w(--format html:local/spec/function.html --format nested --color)
+  t.libs = %w[src lib spec/unit spec/function]
+  t.rcov = ENV.include? "rcov"
+  t.rcov_dir = "local/coverage"
+  t.rcov_opts << %w(--exclude ^spec --include-file ^src)
+end
+task :fspec => :convert_all_view

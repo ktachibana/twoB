@@ -4,15 +4,6 @@ require 'yaml_marshaler'
 require 'io/source'
 
 module TwoB
-  # includeするクラスは以下のメソッドを提供すること
-  # * [number => Integer] スレッド番号
-  # * [original_url => String] スレッドをブラウザで通常表示するためのURL
-  # * [data_directory_path] Pathname データ保存用ディレクトリ(相対パス)
-  # * [get_dat_url(from => Integer) => String] datファイルのレス番号from以降の部分を取得するURLを返す
-  # * [dat_encoding => String] datファイルのエンコーディング(iconv用)
-  # * [get_dat_parser(from => Integer) => TwoB::DatParser] TwoB::DatParserの派生クラスのオブジェクトを返す
-  # * [system] configuration,output(view)メソッドを提供するオブジェクト
-  # * [read_counter => TwoB::ReadCounter] 
   module ThreadHandler
     include TwoB::Handler
     
@@ -32,9 +23,9 @@ module TwoB
     end
     
     def data_directory
-      system.configuration.data_directory + data_directory_path
+      system.configuration.data_directory + board.data_directory_path
     end
-    
+
     def cache_file
       data_directory + "#{number}.dat"
     end
@@ -47,8 +38,23 @@ module TwoB
       data_directory + "#{number}.option.yaml"
     end
     
-    def get_new(from)
-      get_dat_parser(from).parse(get_dat_source(from))
+    def delta_source(delta_bytes)
+      BytesSource.new(delta_bytes, Encoder.by_name(dat_encoding_name), dat_line_delimiter)
+    end
+
+    def load_delta(index)
+      delta_bytes = get_new_input(delta_request(index)).read()
+      dat_parser = get_delta_parser(index.last_res_number + 1)
+      delta_content = dat_parser.parse_delta(delta_source(delta_bytes))
+      TwoB::Delta.new(delta_content, delta_bytes, dat_parser.index)
+    end
+
+    def get_new_input(request)
+      HTTPGetInput.new(request)
+    end
+
+    def cache_source
+      TextFile.new(cache_file, dat_encoding_name)
     end
 
     def delete_cache(reload)

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'util'
+require 'util/view'
 
 module TwoB
   class ResAnchorView

@@ -12,14 +12,17 @@ class SpecResponse < SimpleDelegator
   def write_body(buffer)
     super(buffer)
     @buffer = buffer
-    @document = ThreadDocument.new(buffer.string)
   end
   
   def string
     @buffer.string
   end
   
-  def document
-    @document
+  def as_document
+    @document = Nokogiri::HTML(string)
+  end
+  
+  def as_thread
+    ThreadDocument.new(string)
   end
 end

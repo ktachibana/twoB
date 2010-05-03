@@ -25,7 +25,7 @@ module TwoB
     end
     
     def dat_url
-      @thread.get_dat_url(Picker::All.instance)
+      @thread.dat_url
     end
   
     def each_all_res
