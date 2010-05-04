@@ -4,17 +4,17 @@ require 'nokogiri'
 require 'io'
 require 'spec_system'
 require 'pp'
+require 'action'
 require 'bbs2ch/action'
 
 describe "栞機能" do
   include BBS2ch
+  include BBS2ch::Spec
   
   before do
     SpecSystem.clear_cache_dir
     @test_data_dir = Pathname.new("testData/2ch")
     @example_1to80 = BinaryFile.new(@test_data_dir + "example(1-80).dat")
-    @example_80to100 = BinaryFile.new(@test_data_dir + "example(81-100).dat")
-    @example_subject = TextFile.new(@test_data_dir + "example-subject.txt", "Windows-31J")
   end
   
   def valid_thread(thread)

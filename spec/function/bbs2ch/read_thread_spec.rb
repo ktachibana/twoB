@@ -4,10 +4,11 @@ require 'nokogiri'
 require 'io'
 require 'spec_system'
 require 'pp'
-require 'bbs2ch/action'
+require 'action'
 
 describe "2chのスレッドを読む" do
   include BBS2ch
+  include BBS2ch::Spec
   
   before do
     SpecSystem.clear_cache_dir
@@ -15,6 +16,7 @@ describe "2chのスレッドを読む" do
     @example_1to80 = BinaryFile.new(@test_data_dir + "example(1-80).dat")
     @example_80to100 = BinaryFile.new(@test_data_dir + "example(81-100).dat")
     @example_subject = TextFile.new(@test_data_dir + "example-subject.txt", "Windows-31J")
+    @board_dir = SpecSystem::SpecConfiguration.data_directory + "server.2ch.net" + "board"
   end
   
   def valid_thread(thread)
@@ -98,14 +100,18 @@ describe "2chのスレッドを読む" do
   end
   
   it "スレッドを読み込みで既読カウントが正しく更新される" do
+    view_thread_list(@example_subject)
+    board = @response.as_document
+    board.css(".body .count")[0].text.gsub(/\s+/, "").should == "0/80"
+
     view_thread(@example_1to80)
     view_thread_list(@example_subject)
+    board = @response.as_document
+    board.css(".body .count")[0].text.gsub(/\s+/, "").should == "80/80"
 
     view_thread(@example_1to80, "-10")
     view_thread_list(@example_subject)
-    
-    board = Nokogiri::XML(@response.string)
-    pending("error")
+    board = @response.as_document
     board.css(".body .count")[0].text.gsub(/\s+/, "").should == "80/80"
   end
     

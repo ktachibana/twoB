@@ -38,19 +38,19 @@ module TwoB
       data_directory + "#{number}.option.yaml"
     end
     
-    def delta_source(delta_bytes)
-      BytesSource.new(delta_bytes, Encoder.by_name(dat_encoding_name), dat_line_delimiter)
-    end
-
     def load_delta(index)
-      delta_bytes = get_new_input(delta_request(index)).read()
+      delta_bytes = system.get_delta_input(delta_request(index)).read()
       dat_parser = get_delta_parser(index.last_res_number + 1)
       delta_content = dat_parser.parse_delta(delta_source(delta_bytes))
       TwoB::Delta.new(delta_content, delta_bytes, dat_parser.index)
     end
 
-    def get_new_input(request)
+    def get_delta_input(request)
       HTTPGetInput.new(request)
+    end
+
+    def delta_source(delta_bytes)
+      BytesSource.new(delta_bytes, Encoder.by_name(dat_encoding_name), dat_line_delimiter)
     end
 
     def cache_source

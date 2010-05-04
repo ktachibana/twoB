@@ -4,10 +4,11 @@ require 'nokogiri'
 require 'io'
 require 'spec_system'
 require 'pp'
-require 'bbs2ch/action'
+require 'action'
 
 describe "2chのレスアンカーを表示する" do
   include BBS2ch
+  include BBS2ch::Spec
   
   before do
     SpecSystem.clear_cache_dir

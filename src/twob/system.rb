@@ -34,5 +34,13 @@ module TwoB
       else self
       end
     end
+    
+    def get_delta_input(request)
+      HTTPGetInput.new(request)
+    end
+    
+    def get_subject_source(request, encoder, line_delimiter)
+      HTTPGetSource.new(request, encoder, subject_line_delimiter)
+    end
   end
 end

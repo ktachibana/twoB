@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'encoder'
 require 'io/input'
 require 'io/source'

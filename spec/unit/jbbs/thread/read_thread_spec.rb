@@ -10,7 +10,8 @@ include JBBS
 
 describe ThreadService do
   before do
-    @thread = SpecSystem.new() / JBBS::Host::Name / "cat" / "012" / "345"
+    @system = SpecSystem.new
+    @thread = @system / JBBS::Host::Name / "cat" / "012" / "345"
   end
   
   it do
@@ -18,7 +19,7 @@ describe ThreadService do
   end
   
   it "readのexample" do
-    @thread.stub!(:get_new_input).and_return(BinaryFile.by_filename("testData/jbbs/jbbs.dat"))
+    @system.stub!(:get_delta_input).and_return(BinaryFile.by_filename("testData/jbbs/jbbs.dat"))
     
     view = @thread.read(Latest.new(50, true))
     

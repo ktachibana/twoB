@@ -19,7 +19,6 @@ module JBBS
     
     include TwoB::ReadCounter
     
-    
     include TwoB::BoardHandler
     
     def get_child(value)
@@ -30,11 +29,6 @@ module JBBS
       "http://#{host.name}/#{category.name}/#{number}/"
     end
     
-    def subject_source
-      request = HTTPRequest.new(host.name, "/#{category.name}/#{number}/subject.txt", {})
-      HTTPGetSource.new(request, subject_encoder, "\n")
-    end
-
     def subject_url
       original_url + "subject.txt"
     end
@@ -42,17 +36,25 @@ module JBBS
     def get_subject_parser()
       TwoB::SubjectParser.new(/^(\d+)\.cgi,(.+)\((\d+)\)$/)
     end
+    
+    def subject_path
+      "/#{category.name}/#{number}/subject.txt"
+    end
 
-    def subject_encoder
-      Encoder.by_name("EUC-JP-MS")
+    def subject_encoding
+      "EUC-JP-MS"
+    end
+    
+    def subject_line_delimiter
+      "\n"
     end
     
     def data_directory_path
-      Pathname.new(category.host.name) + category.name + number
+      Pathname.new(host.name) + category.name + number
     end
     
     def system
-      category.host.system
+      host.system
     end
   end
 end

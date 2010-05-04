@@ -7,8 +7,9 @@ describe BBS2ch::Board, "list_thread" do
   
   it "example" do
     FileUtils.rmtree("spec_cache")
-    @board = SpecSystem.new() / "pc12.2ch.net" / "tech"
-    @board.stub!(:subject_source).and_return(TextFile.by_filename("testData/2ch/subject.txt", "CP932"))
+    @system = SpecSystem.new
+    @board = @system / "pc12.2ch.net" / "tech"
+    @system.stub!(:get_subject_source).and_return(TextFile.by_filename("testData/2ch/subject.txt", "Windows-31J"))
     
     view = @board.list_thread
     view.should be_kind_of(BoardView)

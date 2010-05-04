@@ -3,34 +3,31 @@ require 'nokogiri'
 require 'io'
 require 'spec_system'
 require 'pp'
+require 'action'
 
 require 'jbbs/thread'
 
 describe "JBBSのスレッドを読む" do
   include JBBS
+  include TwoB::Spec
   
   def view_thread(delta_input)
-    @request = TwoB::Request.new("/jbbs.livedoor.jp/category/123/456/l50#firstNew")
-    @system = SpecSystem.new(@request)
-    JBBS::ThreadService.__send__(:define_method, :get_new_input) do |request|
-      delta_input
+    access("/jbbs.livedoor.jp/category/123/456/l50#firstNew") do |system|
+      system.stub!(:get_delta_input).and_return(delta_input)
     end
-    @system.process
-    @response = @system.response
+    valid_response
     @thread = @response.as_thread
   end
   
-  def valid_response
-    @response.status_code.should == 200
-    @response.content_type.should == "text/html; charset=UTF-8"
+  before do
+    SpecSystem.clear_cache_dir
+    @example_1to216 = BinaryFile.by_filename("testData/jbbs/example(1-216).dat")
+    @example_217to226 = BinaryFile.by_filename("testData/jbbs/example(217-226).dat")
+    @board_dir = SpecSystem::SpecConfiguration.data_directory + "jbbs.livedoor.jp" + "category" + "123"
   end
   
   it "キャッシュなしの初回読み込み" do
-    SpecSystem.clear_cache_dir
-    
-    view_thread(BinaryFile.by_filename("testData/jbbs/example(1-216).dat"))
-    
-    valid_response
+    view_thread(@example_1to216)
 
     thread = @response.as_thread
     thread.dat_link.attribute("href").text.should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/456/"
@@ -38,15 +35,13 @@ describe "JBBSのスレッドを読む" do
     thread[1].should be_exist
     thread[216].should be_new
     thread[217].should_not be_exist
-    created_cache = SpecSystem::SpecConfiguration.data_directory + "jbbs.livedoor.jp" + "category" + "123" + "456.dat"
+    created_cache = @board_dir + "456.dat"
     created_cache.size.should == 31178
   end
   
   it "追加読み込み" do
-    # TODO exampleの実行順序に依存しているので、順序を保障するか実行のし直しが必要
-    view_thread(BinaryFile.by_filename("testData/jbbs/example(217-226).dat"))
-
-    valid_response
+    view_thread(@example_1to216)
+    view_thread(@example_217to226)
 
     thread = @response.as_thread
     thread.dat_link.attribute("href").text.should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/456/"
@@ -60,10 +55,10 @@ describe "JBBSのスレッドを読む" do
   end
   
   it "追加読み込みしたが新着が無かった" do
+    view_thread(@example_1to216)
+    view_thread(@example_217to226)
     view_thread(StringInput.empty)
 
-    valid_response
-    
     thread = @response.as_thread
     thread.dat_link.attribute("href").text.should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/456/"
     thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
@@ -75,10 +70,9 @@ describe "JBBSのスレッドを読む" do
   end
   
   it "レスアンカー表示" do
-    @request = TwoB::Request.new("/jbbs.livedoor.jp/category/123/456/res_anchor", {"range"=> ["10-20"]})
-    @system = SpecSystem.new(@request)
-    @system.process
-    @response = @system.response
+    view_thread(@example_1to216)
+    access("/jbbs.livedoor.jp/category/123/456/res_anchor", "range"=> ["10-20"])
+
     valid_response
     anchor = @response.as_thread
     anchor[9].should_not be_exist
@@ -86,19 +80,17 @@ describe "JBBSのスレッドを読む" do
   end
   
   it "スレッドのキャッシュを削除" do
-    view_thread(BinaryFile.by_filename("testData/jbbs/example(1-216).dat"))
+    view_thread(@example_1to216)
     
-    board_dir = SpecSystem::SpecConfiguration.data_directory + "jbbs.livedoor.jp" + "category" + "123"
-    (board_dir + "456.dat").should be_exist
-    (board_dir + "456.index.yaml").should be_exist
-    @request = TwoB::Request.new("/jbbs.livedoor.jp/category/123/456/delete_cache")
-    @system = SpecSystem.new(@request)
-    @system.process
-    @response = @system.response
+    (@board_dir + "456.dat").should be_exist
+    (@board_dir + "456.index.yaml").should be_exist
+    
+    access("/jbbs.livedoor.jp/category/123/456/delete_cache")
+
     @response.status_code.should == 303
     @response.headers["Location"].should == "../"
-    (board_dir + "456.dat").should_not be_exist
-    (board_dir + "456.index.marshal").should_not be_exist
+    (@board_dir + "456.dat").should_not be_exist
+    (@board_dir + "456.index.marshal").should_not be_exist
   end
   
 end

@@ -15,7 +15,9 @@ module TwoB
     end
     
     def get_subjects()
-      get_subject_parser.parse(subject_source)
+      request = HTTPRequest.new(host.name, subject_path, {})
+      source = system.get_subject_source(request, Encoder.by_name(subject_encoding), subject_line_delimiter)
+      get_subject_parser.parse(source)
     end
     
     def index_file
