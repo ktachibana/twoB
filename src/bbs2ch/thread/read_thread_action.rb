@@ -11,23 +11,21 @@ module BBS2ch
       @picker = picker
       @index_manager = @thread_key.index_manager
       @cache_manager = @thread_key.cache_manager
-      @option_manager = @thread_key.option_manager
     end
     
     def execute
       index = @index_manager.load()
       delta = @thread_key.load_delta(index)
       cache = @cache_manager.load(cache_picker(delta, index), index)
-      option = @option_manager.load()
       
-      thread_content = TwoB::Thread.new(@thread_key, cache, delta, @picker, option)
+      thread_content = TwoB::Thread.new(@thread_key, cache, delta, @picker, index)
       
       @cache_manager.append(delta.bytes)
       
       index.update(delta)
       index.last_modified = Time.now
       @index_manager.save(index)
-      @thread_key.read_counter.update(@thread_key.number, thread_content.last_res_number)
+      @thread_key.read_counter.update(@thread_key.number, thread_content.last_res_number) unless delta.empty?
       
       TwoB::ThreadView.new(thread_content)
     end

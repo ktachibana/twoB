@@ -21,7 +21,7 @@ module JBBS
     
     include TwoB::BoardHandler
     
-    def get_child(value)
+    def /(value)
       JBBS::ThreadService.new(self, value)
     end
     

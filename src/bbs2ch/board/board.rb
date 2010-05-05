@@ -17,7 +17,7 @@ module BBS2ch
     
     include TwoB::BoardHandler
     
-    def get_child(value)
+    def /(value)
       BBS2ch::ThreadService.new(self, value)
     end
     

@@ -18,7 +18,7 @@ module TwoB
     
     def execute(request, value)
       case value
-      when /bookmark/
+      when /^bookmark$/
         bookmark()
       end
     end

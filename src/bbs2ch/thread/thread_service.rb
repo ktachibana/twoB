@@ -23,10 +23,6 @@ module BBS2ch
     
     include TwoB::ThreadHandler
     
-    def get_child(value)
-      TwoB::ResService.new(self, value.to_i)
-    end
-    
     def read(requested_picker)
       BBS2ch::ReadThreadAction.new(self, requested_picker).execute()
     end

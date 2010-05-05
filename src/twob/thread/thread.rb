@@ -5,16 +5,16 @@ require 'forwardable'
 
 module TwoB
   class Thread
-    def initialize(thread, cache, delta, picker, option)
+    def initialize(thread, cache, delta, picker, index)
       @thread = thread
       @cache = cache
       @delta = delta
       @picker = picker
-      @option = option
+      @index = index
     end
     
-    attr_reader :thread, :option
-  
+    attr_reader :thread, :index
+
     def title
       return @cache.title if @cache.title
       return @delta.title
@@ -66,17 +66,17 @@ module TwoB
         last_number
       end
     end
-  
+
     def has_new?
       !@delta.empty? || bookmarking?
     end
   
     def bookmarking?
-      !@option.bookmark_number.nil?
+      !@index.bookmark_number.nil?
     end
   
     def bookmark_number
-      @option.bookmark_number
+      @index.bookmark_number
     end
   
     def unread?(res)
@@ -92,11 +92,6 @@ module TwoB
     end
   end
   
-  ThreadOption = Struct.new(:bookmark_number)
-  def ThreadOption.empty
-    ThreadOption.new(nil)
-  end
-
   class Res
     extend Forwardable
     

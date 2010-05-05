@@ -27,11 +27,12 @@ module TwoB
       output(ErrorView.new(e))
     end
     
-    def get_child(value)
+    def /(value)
       case value
       when JBBS::Host::Name then JBBS::Host.new(self)
       when BBS2ch::Host.NamePattern then BBS2ch::Host.new(self, value)
-      else self
+      when "" then self
+      else super
       end
     end
     

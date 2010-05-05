@@ -10,16 +10,25 @@ module TwoB
     def execute(request, value)
       case value
       when /^delete_cache$/
-        delete_cache(request.param.has_key?("reload"))
+        delete_cache(request.has_param?("reload"))
       when /^delete_bookmark$/
         delete_bookmark()
       when /^res_anchor$/
-        res_anchor(TwoB::Pickers.get(request.param["range"][0]))
+        res_anchor(Pickers.get(request.get_param("range")))
       else
-        label_index = value.index("#")
-        picker_string = label_index ? value[0...label_index] : value
-        read(TwoB::Pickers.get(picker_string))
+        read(Pickers.get(value))
       end
+    end
+    
+    def action_map()
+      map(:delete_cache) { |request| [request.has_param?("reload")] }
+      map(:delete_bookmark)
+      map(:res_anchor) { |request| [Pickers.get(request.get_param("range"))] }
+      map() { |request, value| [Pickers.get(value)] }
+    end
+    
+    def /(value)
+      TwoB::ResService.new(self, value.to_i)
     end
     
     def data_directory
@@ -34,19 +43,11 @@ module TwoB
       data_directory + "#{number}.index.yaml"
     end
     
-    def option_file
-      data_directory + "#{number}.option.yaml"
-    end
-    
     def load_delta(index)
       delta_bytes = system.get_delta_input(delta_request(index)).read()
       dat_parser = get_delta_parser(index.last_res_number + 1)
       delta_content = dat_parser.parse_delta(delta_source(delta_bytes))
       TwoB::Delta.new(delta_content, delta_bytes, dat_parser.index)
-    end
-
-    def get_delta_input(request)
-      HTTPGetInput.new(request)
     end
 
     def delta_source(delta_bytes)
@@ -69,13 +70,9 @@ module TwoB
       RedirectResponse.new("./l50")
     end
     
-    def option_manager
-      TwoB::YAMLMarshaler.new(option_file, TwoB::ThreadOption.empty)
-    end
-
     def update_bookmark_number(bookmark_number)
-      option_manager.update do |option|
-        option.bookmark_number = bookmark_number
+      index_manager.update do |index|
+        index.bookmark_number = bookmark_number
       end
     end
 

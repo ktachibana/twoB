@@ -12,7 +12,7 @@ module JBBS
     
     attr_reader :host, :name
     
-    def get_child(value)
+    def /(value)
       BoardService.new(self, value)
     end
   end

@@ -99,7 +99,7 @@ describe "2chのスレッドを読む" do
     (@board_dir + "123.index.marshal").should_not be_exist
   end
   
-  it "スレッドを読み込みで既読カウントが正しく更新される" do
+  it "スレッドの読み込みで既読カウントが正しく更新される" do
     view_thread_list(@example_subject)
     board = @response.as_document
     board.css(".body .count")[0].text.gsub(/\s+/, "").should == "0/80"
@@ -109,7 +109,7 @@ describe "2chのスレッドを読む" do
     board = @response.as_document
     board.css(".body .count")[0].text.gsub(/\s+/, "").should == "80/80"
 
-    view_thread(@example_1to80, "-10")
+    view_thread(StringInput.empty, "-10")
     view_thread_list(@example_subject)
     board = @response.as_document
     board.css(".body .count")[0].text.gsub(/\s+/, "").should == "80/80"

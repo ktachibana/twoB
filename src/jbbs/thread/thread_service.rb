@@ -32,10 +32,6 @@ module JBBS
     
     include TwoB::ThreadHandler
     
-    def get_child(value)
-      TwoB::ResService.new(self, value.to_i)
-    end
-    
     def read(picker)
       JBBS::ReadThreadAction.new(self, picker).execute()
     end

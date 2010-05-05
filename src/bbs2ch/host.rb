@@ -16,7 +16,7 @@ module BBS2ch
     
     attr_reader :system, :name
     
-    def get_child(value)
+    def /(value)
       Board.new(self, value)
     end
   end

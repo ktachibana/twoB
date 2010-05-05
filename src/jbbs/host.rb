@@ -17,7 +17,7 @@ module JBBS
       Name
     end
     
-    def get_child(value)
+    def /(value)
       Category.new(self, value)
     end
   end

@@ -4,9 +4,10 @@ require 'marshaler'
 
 module TwoB
   class Index
-    def initialize(last_res_number, cache_file_size)
+    def initialize(last_res_number, cache_file_size, bookmark_number = nil)
       @last_res_number = last_res_number
       @cache_file_size = cache_file_size
+      @bookmark_number = bookmark_number
       @index = {}
     end
     
@@ -14,7 +15,7 @@ module TwoB
       self.new(0, 0)
     end
     
-    attr_accessor :last_res_number, :cache_file_size
+    attr_accessor :last_res_number, :cache_file_size, :bookmark_number
     
     def delta_picker
       TwoB::Picker::From.new(@last_res_number + 1)

@@ -11,6 +11,11 @@ describe TwoB::Handler do
     @system = TwoB::System.new(TwoB::Configuration.new(Pathname.new("2bcache")))
   end
 
+  it "対応するハンドラが無いときはエラー" do
+    lambda{ @system / "foo" }.should raise_error
+    lambda{ @system / "jbbs.livedoor.jp" / "category" / "123" / "12345" / "10" / "foo" }.should raise_error
+  end
+  
   it "get_child and execute" do
     category = @system / JBBS::Host::Name / "cat"
     category.should be_kind_of(JBBS::Category)
@@ -36,13 +41,10 @@ describe TwoB::Handler do
     thread.instance_variable_get(:@range).should == TwoB::Picker::FromTo.new(10..20)
   end
   
-  it "with #label" do
-    thread = @system / "jbbs.livedoor.jp" / "cat" / "123" / "12345"
-    def thread.read(range)
-      @range = range
-    end
-    thread.execute(nil, "l50#label")
-    thread.instance_variable_get(:@range).should == TwoB::Picker::Latest.new(50, true)
+  it "with #fragment" do
+    request = TwoB::Request.new("jbbs.livedoor.jp/cat/123/12345/l50#fragment")
+    request.path_info.should == "jbbs.livedoor.jp/cat/123/12345/l50"
+    request.fragment.should == "fragment"
   end
   
   it "get board" do
@@ -60,13 +62,5 @@ describe TwoB::Handler do
     res_anchor = @system / "jbbs.livedoor.jp" / "category" / "123" / "3456"
     view = res_anchor.res_anchor(TwoB::Picker::FromTo.new(10..20))
     view.should be_kind_of(ResAnchorView)
-  end
-  
-  describe "applyによって正しいメソッドが呼び出される" do
-    it "JBBS::ThreadService" do
-      thread = @system / "jbbs.livedoor.jp" / "cat" / "123" / "1234"
-      #thread.apply(nil, "")
-      # TODO
-    end
   end
 end
