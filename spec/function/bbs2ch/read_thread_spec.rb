@@ -4,7 +4,7 @@ require 'nokogiri'
 require 'io'
 require 'spec_system'
 require 'pp'
-require 'action'
+require 'bbs2ch/action'
 
 describe "2chのスレッドを読む" do
   include BBS2ch

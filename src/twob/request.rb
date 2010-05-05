@@ -7,12 +7,15 @@ module TwoB
     def initialize(path_info, param = {})
       @path_info = path_info
       @param = param
-      @path_info_uri = URI.parse(path_info)
+      @path_info_uri = URI.parse(path_info ? path_info : "")
     end
     
     def path_info
       @path_info_uri.path
     end
+    
+    attr_reader :path_info, :param
+    equality :@path_info, :@param
     
     def fragment
       @path_info_uri.fragment
@@ -25,8 +28,5 @@ module TwoB
     def get_param(key_name)
       @param[key_name][0]
     end
-
-    attr_reader :param
-    equality :@path_info, :@param
   end
 end
