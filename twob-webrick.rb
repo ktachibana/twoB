@@ -1,4 +1,4 @@
-#!/usr/bin/ruby -Isrc
+#!/usr/bin/ruby -Isrc -Ilib
 # -*- coding: utf-8 -*-
 
 require 'twob/system'
@@ -29,7 +29,7 @@ class WEBrickSystem < TwoB::System
   end
 end
 
-$configuration = TwoB::Configuration.new(Pathname.new("2bcache").expand_path)
+$configuration = TwoB::Configuration.new(Pathname.new("~/2bcache").expand_path)
 
 server = WEBrick::HTTPServer.new({:DocumentRoot => './', :Port => 8080})
 server.mount_proc("/twoB/test") do |request, response|

@@ -41,7 +41,7 @@ module TwoB
     end
     
     def get_subject_source(request, encoder, line_delimiter)
-      HTTPGetSource.new(request, encoder, subject_line_delimiter)
+      HTTPGetSource.new(request, encoder, line_delimiter)
     end
   end
 end

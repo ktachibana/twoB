@@ -14,7 +14,7 @@ module TwoB
       @path_info_uri.path
     end
     
-    attr_reader :path_info, :param
+    attr_reader :param
     equality :@path_info, :@param
     
     def fragment
