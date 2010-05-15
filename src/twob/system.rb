@@ -24,7 +24,7 @@ module TwoB
     end
     
     def handle_error(e)
-      output(ErrorView.new(e))
+      dump_error(ErrorView.new(e))
     end
     
     def /(value)

@@ -31,6 +31,10 @@ module TwoB
       @fcgi.out.print("\r\n")
       response.write_body(@fcgi.out)
     end
+
+    def dump_error(response)
+      output(response)
+    end
   end
 end
 

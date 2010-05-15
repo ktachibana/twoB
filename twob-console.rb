@@ -32,6 +32,10 @@ class ConsoleSystem < TwoB::System
     $stdout.puts("<!-- #{h response.headers.inspect} -->")
     response.write_body($stdout)
   end
+
+  def dump_error(response)
+    response.write_body($stderr)
+  end
 end
 
 system = ConsoleSystem.new(configuration, path_info, param)
