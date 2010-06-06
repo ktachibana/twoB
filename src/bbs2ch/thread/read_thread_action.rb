@@ -31,7 +31,7 @@ module BBS2ch
     end
     
     def cache_picker(delta, index)
-      @picker.concretize(last_res_number(delta, index)).limitation(index.last_res_number).ranges
+      @picker.concretize(last_res_number(delta, index), index.bookmark_number).limitation(index.last_res_number).ranges
     end
     
     def last_res_number(delta, index)

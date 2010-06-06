@@ -40,7 +40,7 @@ module TwoB
       ; _erbout.concat "</head>\n"
       ; _erbout.concat "<body onload=\"javascript: b2rPopup.startup();\">\n"
       ;  res_list.each{|res|
-      _erbout.concat "\t<div id=\"_"; _erbout.concat(( res.number ).to_s); _erbout.concat "\" class=\"res\" style=\""; _erbout.concat(( !res.visible? ? 'display: none;' : '' ).to_s); _erbout.concat "\">\n"
+      _erbout.concat "\t<div id=\"_"; _erbout.concat(( res.number ).to_s); _erbout.concat "\" class=\"res\">\n"
       ; _erbout.concat "\t\t<dl class=\""; _erbout.concat(( res.new? ? 'new' : '' ).to_s); _erbout.concat " "; _erbout.concat((h res.age? ? 'age' : '' ).to_s); _erbout.concat "\">\n"
       ; _erbout.concat "\t\t\t<dt class=\"header\">\n"
       ; _erbout.concat "\t\t\t\t<span class=\"number\">"; _erbout.concat(( res.number ).to_s); _erbout.concat "</span>\n"

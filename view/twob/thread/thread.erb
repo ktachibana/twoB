@@ -32,8 +32,8 @@
 		</ul>
 	</div>
 
-% thread.each_visible_res{|res|
-	<div id="_<%= res.number %>" class="res" style="<%= !res.visible? ? 'display: none;' : '' %>">
+% thread.each_res{|res|
+	<div id="_<%= res.number %>" class="res">
 		<dl class="<%= res.new? ? 'new' : '' %> <%=h res.age? ? 'age' : '' %>">
 			<dt class="header">
 				<span class="number"><%= res.number %></span>

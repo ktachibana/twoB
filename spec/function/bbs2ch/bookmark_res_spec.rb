@@ -23,6 +23,23 @@ describe "栞機能" do
     thread.title.should == "（　＾＾ω）ﾎﾏﾎﾏ6"
   end
   
+  it ">>80までを読み込んで>>50に栞" do
+    view_thread(@example_1to80)
+    valid_response
+    
+    bookmark_res(50)
+    @response.status_code.should == 303
+    index_file = @system.configuration.data_directory + "server.2ch.net/board/123.index.yaml"
+    index = YAML::load_file(index_file)
+    index.bookmark_number.should == 50
+    index.last_res_number.should == 80
+
+    view_thread(StringInput.empty)
+    @thread.res_ranges.should == [1..1, 31..80]
+    @thread[50].new?.should be_false
+    @thread[51].new?.should be_true
+  end
+
   it ">>80までを読み込んで>>10に栞" do
     view_thread(@example_1to80)
     valid_response
@@ -35,7 +52,8 @@ describe "栞機能" do
     index.last_res_number.should == 80
 
     view_thread(StringInput.empty)
-    @thread.res_ranges.should == [1..1, 11..80]
+    puts @response
+    @thread.res_ranges.should == [1..1, 10..80]
     @thread[11].new?.should be_true
   end
 end

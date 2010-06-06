@@ -76,8 +76,8 @@ module TwoB
     end
     
     module Concretizable
-      def concretize(max_count)
-        Composite.compose(*self.to_ranges(max_count))
+      def concretize(max_count, bookmark_number = nil)
+        Composite.compose(*self.to_ranges(max_count, bookmark_number))
       end
     end
   
@@ -91,20 +91,21 @@ module TwoB
     
       attr_reader :count, :include_1
     
-      def include?(number, max_count)
-        (@include_1 && number == 1) || (max_count - @count < number)
+      def include?(number, max_number)
+        (@include_1 && number == 1) || (max_number - @count < number)
       end
       
-      def to_ranges(max_count)
-        begin_number = [1, max_count - @count + 1].max
+      def to_ranges(max_number, bookmark_number)
+        begin_number = [1, max_number - @count + 1].max
+        begin_number = [begin_number, bookmark_number].min if bookmark_number
         if include_1
           if begin_number == 2
-            return [1..max_count]
+            return [1..max_number]
           else
-            return [1..1, begin_number..max_count]
+            return [1..1, begin_number..max_number]
           end
         else
-          return [begin_number..max_count]
+          return [begin_number..max_number]
         end
       end
       
@@ -125,7 +126,7 @@ module TwoB
         number_include?(number)
       end
       
-      def to_ranges(max_count)
+      def to_ranges(max_count, bookmark_number)
         [1..max_count]
       end
   
@@ -151,7 +152,7 @@ module TwoB
         number_include?(number)
       end
       
-      def to_ranges(max_count)
+      def to_ranges(max_count, bookmark_number)
         [number..number]
       end
   
@@ -181,7 +182,7 @@ module TwoB
         number_include?(number)
       end
       
-      def to_ranges(max_count)
+      def to_ranges(max_count, bookmark_number)
         [range]
       end
   
@@ -211,7 +212,7 @@ module TwoB
         number_include?(number)
       end
       
-      def to_ranges(max_count)
+      def to_ranges(max_count, bookmark_number)
         [from..max_count]
       end
   
@@ -241,7 +242,7 @@ module TwoB
         number_include?(number)
       end
       
-      def to_ranges(max_count)
+      def to_ranges(max_count, bookmark_number)
         [1..to]
       end
   

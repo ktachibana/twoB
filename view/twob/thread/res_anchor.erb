@@ -14,7 +14,7 @@
 </head>
 <body onload="javascript: b2rPopup.startup();">
 % res_list.each{|res|
-	<div id="_<%= res.number %>" class="res" style="<%= !res.visible? ? 'display: none;' : '' %>">
+	<div id="_<%= res.number %>" class="res">
 		<dl class="<%= res.new? ? 'new' : '' %> <%=h res.age? ? 'age' : '' %>">
 			<dt class="header">
 				<span class="number"><%= res.number %></span>

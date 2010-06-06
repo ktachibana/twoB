@@ -28,9 +28,9 @@ module TwoB
       @thread.dat_url
     end
   
-    def each_all_res
+    def each_res
       @cache.each_res do |res|
-        yield Res.new(res, unread?(res), picked?(res))
+        yield Res.new(res, unread?(res))
       end
       @delta.each_res do |res|
         yield Res.as_new(res)
@@ -41,18 +41,12 @@ module TwoB
       @picker.include?(res.number, res_count)
     end
 
-    def each_visible_res
-      each_all_res do |res|
-        yield res if res.visible?
-      end
-    end
-
     def visible_all?(anchor)
       visible_picker.include_range?(anchor.range)
     end
     
     def visible_picker
-      ranges = @picker.to_ranges(res_count)
+      ranges = @picker.to_ranges(res_count, bookmark_number)
       ranges << @delta.range unless @delta.empty?
       Picker::Composite.compose(*ranges)
     end
@@ -95,23 +89,21 @@ module TwoB
   class Res
     extend Forwardable
     
-    def initialize(dat_res, is_new, is_visible)
+    def initialize(dat_res, is_new)
       @dat_res = dat_res
       @is_new = is_new
-      @is_visible = is_visible
     end
     
     def self.as_new(dat_res)
-      self.new(dat_res, true, true)
+      self.new(dat_res, true)
     end
     
     def self.as_cache(dat_res)
-      self.new(dat_res, false, true)
+      self.new(dat_res, false)
     end
     
     def_delegators :@dat_res, :number, :name, :has_trip?, :trip, :mail, :age?, :date, :id, :body
 
     def new?() @is_new end
-    def visible?() @is_visible end
   end
 end
