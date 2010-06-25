@@ -21,7 +21,7 @@ describe ThreadService do
   it "readのexample" do
     @system.stub!(:get_delta_input).and_return(BinaryFile.by_filename("testData/jbbs/jbbs.dat"))
     
-    view = @thread.read(Latest.new(50, true))
+    view = @thread.read(Subscribe.new(50))
     
     view.thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
   end

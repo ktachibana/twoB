@@ -46,7 +46,7 @@ module TwoB
     end
     
     def visible_picker
-      ranges = @picker.to_ranges(res_count, bookmark_number)
+      ranges = @picker.to_ranges(@index.last_res_number, @delta.last_res_number, bookmark_number)
       ranges << @delta.range unless @delta.empty?
       Picker::Composite.compose(*ranges)
     end

@@ -14,7 +14,7 @@ describe "2chのスレッドを読む" do
     SpecSystem.clear_cache_dir
     @test_data_dir = Pathname.new("testData/2ch")
     @example_1to80 = BinaryFile.new(@test_data_dir + "example(1-80).dat")
-    @example_80to100 = BinaryFile.new(@test_data_dir + "example(81-100).dat")
+    @example_81to100 = BinaryFile.new(@test_data_dir + "example(81-100).dat")
     @example_subject = TextFile.new(@test_data_dir + "example-subject.txt", "Windows-31J")
     @board_dir = SpecSystem::SpecConfiguration.data_directory + "server.2ch.net" + "board"
   end
@@ -58,7 +58,7 @@ describe "2chのスレッドを読む" do
   
   it "追加読み込み" do
     view_thread(@example_1to80)
-    view_thread(@example_80to100)
+    view_thread(@example_81to100)
 
     valid_response
 
@@ -69,6 +69,25 @@ describe "2chのスレッドを読む" do
     thread[80].should_not be_new
     thread[81].should be_new
     thread[100].should be_new
+  end
+  
+  it "subscribe+5による初回読み込み" do
+    view_thread(@example_1to80, "subscribe+5")
+    valid_response
+
+    @response.as_thread.res_ranges.should == [1..80]
+  end
+  
+  it "subscribe+5による追加読み込み" do
+    view_thread(@example_1to80, "subscribe+5")
+    view_thread(@example_81to100, "subscribe+5")
+    valid_response
+    
+    thread = @response.as_thread
+    valid_thread(thread)
+    thread.res_ranges.should == [1..1, 76..100]
+    thread[80].new?.should be_false
+    thread[81].new?.should be_true
   end
   
   it "追加読み込みしたが新着が無かった" do

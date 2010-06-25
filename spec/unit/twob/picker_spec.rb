@@ -53,6 +53,20 @@ describe Pickers do
     end
   end
   
+  describe Subscribe do
+    it "subscribe+nがSubscribeのフォーマット" do
+      subscribe = Pickers.get("subscribe+5")
+      subscribe.class.should == Subscribe
+      subscribe.cache_count.should == 5
+    end
+
+    it "キャッシュ>>10まで、新着>>20までのとき" do
+      subscribe = Subscribe.new(5)
+      subscribe.to_ranges(10, 20).should == [1..1, 6..20]
+      subscribe.to_cache_ranges(10, 20).should == [1..1, 6..10]
+    end
+  end
+
   describe Latest do
     it "Latest pattern" do
       l50 = Pickers.get("l50")
@@ -68,25 +82,25 @@ describe Pickers do
     
     it "include_range?" do
       l10n = Latest.new(10, false)
-      l10n10 = l10n.concretize(10)
+      l10n10 = l10n.concretize(0, 10)
       l10n10.include_range?(1..1).should be_true
       l10n10.include_range?(1..2).should be_true
       l10n10.include_range?(2..2).should be_true
       l10n10.include_range?(1..11).should be_false
       
-      l10n11 = l10n.concretize(11)
+      l10n11 = l10n.concretize(0, 11)
       l10n11.include_range?(1..1).should be_false
       l10n11.include_range?(1..2).should be_false
   
       l10 = Latest.new(10, true)
-      l10_11 = l10.concretize(11)
+      l10_11 = l10.concretize(0, 11)
       l10_11.include_range?(1..1).should be_true
       l10_11.include_range?(1..2).should be_true
       
-      l10_10 = l10.concretize(10)
+      l10_10 = l10.concretize(0, 10)
       l10_10.include_range?(2..2).should be_true
       
-      l10_12 = l10.concretize(12)
+      l10_12 = l10.concretize(0, 12)
       l10_12.include_range?(1..1).should be_true
       l10_12.include_range?(1..2).should be_false
       l10_12.include_range?(1..3).should be_false
@@ -101,8 +115,8 @@ describe Pickers do
     end
     
     it "include_range?" do
-      All.instance.concretize(10).include_range?(1..10).should be_true
-      All.instance.concretize(10).include_range?(11..11).should be_false
+      All.instance.concretize(0, 10).include_range?(1..10).should be_true
+      All.instance.concretize(0, 10).include_range?(11..11).should be_false
     end
   end
   
@@ -112,8 +126,8 @@ describe Pickers do
     end
     
     it "include_range?" do
-      Only.new(10).concretize(10).include_range?(10..10).should be_true
-      Only.new(10).concretize(10).include_range?(9..10).should be_false
+      Only.new(10).concretize(0, 10).include_range?(10..10).should be_true
+      Only.new(10).concretize(0, 10).include_range?(9..10).should be_false
     end
   end
   
@@ -123,8 +137,8 @@ describe Pickers do
     end
     
     it " include_range?" do
-      FromTo.new(5..10).concretize(10).include_range?(5..10).should be_true
-      FromTo.new(5..10).concretize(10).include_range?(5..11).should be_false
+      FromTo.new(5..10).concretize(0, 10).include_range?(5..10).should be_true
+      FromTo.new(5..10).concretize(0, 10).include_range?(5..11).should be_false
     end
   end
   
@@ -134,8 +148,8 @@ describe Pickers do
     end
   
     it "include_range?" do
-      From.new(5).concretize(10).include_range?(5..10).should be_true
-      From.new(5).concretize(10).include_range?(5..11).should be_false
+      From.new(5).concretize(0, 10).include_range?(5..10).should be_true
+      From.new(5).concretize(0, 10).include_range?(5..11).should be_false
     end
   end
   
@@ -145,8 +159,8 @@ describe Pickers do
     end
   
     it "include_range?" do
-      To.new(10).concretize(10).include_range?(10..10).should be_true
-      To.new(10).concretize(10).include_range?(10..11).should be_false
+      To.new(10).concretize(0, 10).include_range?(10..10).should be_true
+      To.new(10).concretize(0, 10).include_range?(10..11).should be_false
     end
   end
   

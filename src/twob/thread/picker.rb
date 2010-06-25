@@ -4,6 +4,9 @@ require 'pattern_map'
 
 module TwoB
   Pickers = PatternMap.new
+  Pickers.map(/^subscribe\+(\d+)$/) do |match|
+    Picker::Subscribe.new(match[1].to_i)
+  end
   Pickers.map(/^l(\d+)(n)?$/) do |match|
     Picker::Latest.new(match[1].to_i, match[2].nil?)
   end
@@ -29,7 +32,7 @@ module TwoB
       def initialize(ranges)
         @ranges = ranges
       end
-      
+
       def self.compose(*ranges)
         results = []
         ranges.each do |range|
@@ -48,9 +51,9 @@ module TwoB
         end
         self.new(results)
       end
-      
+
       attr_reader :ranges
-      
+
       def include_range?(range)
         @ranges.any? do |r|
           r.include_range?(range)
@@ -76,11 +79,27 @@ module TwoB
     end
     
     module Concretizable
-      def concretize(max_count, bookmark_number = nil)
-        Composite.compose(*self.to_ranges(max_count, bookmark_number))
+      def to_cache_ranges(cached_number, max_number, bookmark_number = nil)
+        concretize(cached_number, max_number, bookmark_number).limitation(cached_number).ranges
+      end
+      def concretize(cached_number, max_number, bookmark_number = nil)
+        Composite.compose(*self.to_ranges(cached_number, max_number, bookmark_number))
       end
     end
-  
+
+    class Subscribe
+      include Concretizable
+      def initialize(cache_count)
+        @cache_count = cache_count
+      end
+      attr_reader :cache_count
+      
+      def to_ranges(cached_number, max_number, bookmark_number = nil)
+        base_number = bookmark_number ? bookmark_number : cached_number
+        [1..1, base_number - @cache_count + 1 .. max_number]
+      end
+    end
+
     class Latest
       include Concretizable
       
@@ -95,7 +114,7 @@ module TwoB
         (@include_1 && number == 1) || (max_number - @count < number)
       end
       
-      def to_ranges(max_number, bookmark_number)
+      def to_ranges(cached_number, max_number, bookmark_number)
         begin_number = [1, max_number - @count + 1].max
         begin_number = [begin_number, bookmark_number].min if bookmark_number
         if include_1
@@ -123,17 +142,13 @@ module TwoB
       include Concretizable
   
       def include?(number, max_count)
-        number_include?(number)
-      end
-      
-      def to_ranges(max_count, bookmark_number)
-        [1..max_count]
-      end
-  
-      def number_include?(number)
         true
       end
       
+      def to_ranges(cached_number, max_count, bookmark_number)
+        [1..max_count]
+      end
+  
       def to_s
         ""
       end
@@ -149,15 +164,11 @@ module TwoB
       attr_reader :number
     
       def include?(number, max_count)
-        number_include?(number)
+        number == @number
       end
       
-      def to_ranges(max_count, bookmark_number)
+      def to_ranges(cached_number, max_count, bookmark_number)
         [number..number]
-      end
-  
-      def number_include?(number)
-        number == @number
       end
       
       def ==(other)
@@ -179,17 +190,13 @@ module TwoB
       attr_reader :range
     
       def include?(number, max_count)
-        number_include?(number)
-      end
-      
-      def to_ranges(max_count, bookmark_number)
-        [range]
-      end
-  
-      def number_include?(number)
         @range.include?(number)
       end
       
+      def to_ranges(cached_number, max_count, bookmark_number)
+        [range]
+      end
+  
       def ==(other)
         self.range == other.range
       end
@@ -209,15 +216,11 @@ module TwoB
       attr_reader :from
     
       def include?(number, max_count)
-        number_include?(number)
+        @from <= number
       end
       
-      def to_ranges(max_count, bookmark_number)
+      def to_ranges(cached_number, max_count, bookmark_number)
         [from..max_count]
-      end
-  
-      def number_include?(number)
-        @from <= number
       end
   
       def ==(other)
@@ -239,15 +242,11 @@ module TwoB
       attr_reader :to
     
       def include?(number, max_count)
-        number_include?(number)
+        number <= @to
       end
       
-      def to_ranges(max_count, bookmark_number)
+      def to_ranges(cached_number, max_count, bookmark_number)
         [1..to]
-      end
-  
-      def number_include?(number)
-        number <= @to
       end
   
       def ==(other)

@@ -16,7 +16,7 @@ module BBS2ch
     def execute
       index = @index_manager.load()
       delta = @thread_key.load_delta(index)
-      cache = @cache_manager.load(cache_ranges(delta, index.bookmark_number), index)
+      cache = @cache_manager.load(@picker.to_cache_ranges(index.last_res_number, delta.last_res_number, index.bookmark_number), index)
       
       thread_content = TwoB::Thread.new(@thread_key, cache, delta, @picker, index)
       
@@ -28,10 +28,6 @@ module BBS2ch
       @thread_key.read_counter.update(@thread_key.number, thread_content.last_res_number) unless delta.empty?
       
       TwoB::ThreadView.new(thread_content)
-    end
-    
-    def cache_ranges(delta, bookmark_number)
-      @picker.concretize(delta.last_res_number, bookmark_number).limitation(delta.base_res_number).ranges
     end
   end
 end

@@ -11,8 +11,8 @@ describe "JBBSのスレッドを読む" do
   include JBBS
   include TwoB::Spec
   
-  def view_thread(delta_input)
-    access("/jbbs.livedoor.jp/category/123/456/l50#firstNew") do |system|
+  def view_thread(delta_input, picker = "l50")
+    access("/jbbs.livedoor.jp/category/123/456/#{picker}#firstNew") do |system|
       system.stub!(:get_delta_input).and_return(delta_input)
     end
     valid_response
@@ -54,6 +54,21 @@ describe "JBBSのスレッドを読む" do
     thread[227].should_not be_exist
   end
   
+  it "subscribe+5によるキャッシュなしの初回読み込み" do
+    view_thread(@example_1to216, "subscribe+5")
+    @response.as_thread.res_ranges.should == [1..216]
+  end
+  
+  it "subscribe+5による追加読み込み" do
+    view_thread(@example_1to216, "subscribe+5")
+    view_thread(@example_217to226, "subscribe+5")
+
+    thread = @response.as_thread
+    thread.res_ranges.should == [1..1, 212..226]
+    thread[216].new?.should be_false
+    thread[217].new?.should be_true
+  end
+
   it "追加読み込みしたが新着が無かった" do
     view_thread(@example_1to216)
     view_thread(@example_217to226)
