@@ -54,8 +54,8 @@ describe Pickers do
   end
   
   describe Subscribe do
-    it "subscribe+nがSubscribeのフォーマット" do
-      subscribe = Pickers.get("subscribe+5")
+    it "subscribeNがSubscribeのフォーマット" do
+      subscribe = Pickers.get("subscribe5")
       subscribe.class.should == Subscribe
       subscribe.cache_count.should == 5
     end

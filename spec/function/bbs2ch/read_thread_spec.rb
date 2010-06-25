@@ -71,16 +71,16 @@ describe "2chのスレッドを読む" do
     thread[100].should be_new
   end
   
-  it "subscribe+5による初回読み込み" do
-    view_thread(@example_1to80, "subscribe+5")
+  it "subscribe5による初回読み込み" do
+    view_thread(@example_1to80, "subscribe5")
     valid_response
 
     @response.as_thread.res_ranges.should == [1..80]
   end
   
-  it "subscribe+5による追加読み込み" do
-    view_thread(@example_1to80, "subscribe+5")
-    view_thread(@example_81to100, "subscribe+5")
+  it "subscribe5による追加読み込み" do
+    view_thread(@example_1to80, "subscribe5")
+    view_thread(@example_81to100, "subscribe5")
     valid_response
     
     thread = @response.as_thread

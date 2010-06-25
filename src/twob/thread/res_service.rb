@@ -25,7 +25,7 @@ module TwoB
     
     def bookmark()
       @thread.update_bookmark_number(number)
-      RedirectResponse.new("../l50")
+      RedirectResponse.new("../subscribe5")
     end
   end
 end

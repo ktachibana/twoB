@@ -4,7 +4,7 @@ require 'pattern_map'
 
 module TwoB
   Pickers = PatternMap.new
-  Pickers.map(/^subscribe\+(\d+)$/) do |match|
+  Pickers.map(/^subscribe(\d+)$/) do |match|
     Picker::Subscribe.new(match[1].to_i)
   end
   Pickers.map(/^l(\d+)(n)?$/) do |match|

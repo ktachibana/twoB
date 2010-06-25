@@ -67,7 +67,7 @@ module TwoB
     
     def delete_bookmark()
       update_bookmark_number(nil)
-      RedirectResponse.new("./l50")
+      RedirectResponse.new("./subscribe5")
     end
     
     def update_bookmark_number(bookmark_number)

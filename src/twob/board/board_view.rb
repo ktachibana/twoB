@@ -61,7 +61,7 @@ module TwoB
       _erbout.concat "\t\t<tr class=\""; _erbout.concat(( thread.read? ? 'read' : '' ).to_s); _erbout.concat " "; _erbout.concat(( thread.has_new? ? 'new' : '' ).to_s); _erbout.concat "\">\n"
       ; _erbout.concat "\t\t\t<td class=\"no\">"; _erbout.concat((h thread.order ).to_s); _erbout.concat "</td>\n"
       ; _erbout.concat "\t\t\t<td class=\"title\">\n"
-      ; _erbout.concat "\t\t\t\t<a class=\"thread_link\" href=\""; _erbout.concat(( thread.number ).to_s); _erbout.concat "/l50#firstNew\" target=\"_blank\">"; _erbout.concat((h thread.title ).to_s); _erbout.concat "</a>\n"
+      ; _erbout.concat "\t\t\t\t<a class=\"thread_link\" href=\""; _erbout.concat(( thread.number ).to_s); _erbout.concat "/subscribe5#firstNew\" target=\"_blank\">"; _erbout.concat((h thread.title ).to_s); _erbout.concat "</a>\n"
       ; _erbout.concat "\t\t\t</td>\n"
       ; _erbout.concat "\t\t\t<td class=\"count\">\n"
       ; _erbout.concat "\t\t\t\t"; _erbout.concat(( thread.read_count ).to_s); _erbout.concat " / "; _erbout.concat(( thread.res_count ).to_s)

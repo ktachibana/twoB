@@ -54,14 +54,14 @@ describe "JBBSのスレッドを読む" do
     thread[227].should_not be_exist
   end
   
-  it "subscribe+5によるキャッシュなしの初回読み込み" do
-    view_thread(@example_1to216, "subscribe+5")
+  it "subscribe5によるキャッシュなしの初回読み込み" do
+    view_thread(@example_1to216, "subscribe5")
     @response.as_thread.res_ranges.should == [1..216]
   end
   
-  it "subscribe+5による追加読み込み" do
-    view_thread(@example_1to216, "subscribe+5")
-    view_thread(@example_217to226, "subscribe+5")
+  it "subscribe5による追加読み込み" do
+    view_thread(@example_1to216, "subscribe5")
+    view_thread(@example_217to226, "subscribe5")
 
     thread = @response.as_thread
     thread.res_ranges.should == [1..1, 212..226]
