@@ -3,18 +3,15 @@ require 'encoder'
 
 module TwoB
   class Delta
-    def initialize(dat_content, bytes, index)
+    def initialize(dat_content, base_res_number, bytes, index)
       @dat_content = dat_content
+      @base_res_number = base_res_number
       @bytes = bytes
       @index = index
     end
     
-    attr_reader :bytes, :dat_content
+    attr_reader :dat_content, :base_res_number, :bytes, :index
     
-    def index
-      @index
-    end
-
     def title
       @dat_content.title
     end
@@ -33,8 +30,8 @@ module TwoB
       @dat_content.empty?
     end
     
-    def last_number
-      empty? ? nil : @dat_content.last_res_number
+    def last_res_number
+      @dat_content.empty? ? @base_res_number : @dat_content.last_res_number
     end
     
     def range

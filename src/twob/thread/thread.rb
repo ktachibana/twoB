@@ -56,9 +56,7 @@ module TwoB
     end
     
     def last_res_number
-      [@delta.last_number, @cache.last_number].find do |last_number|
-        last_number
-      end
+      @delta.last_res_number
     end
 
     def has_new?

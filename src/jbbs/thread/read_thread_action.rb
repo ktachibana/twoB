@@ -14,7 +14,7 @@ module JBBS
     def execute
       index = @index_manager.load()
       delta = @thread_key.load_delta(index)
-      cache = @cache_manager.load(cache_picker(delta.last_number, index), index)
+      cache = @cache_manager.load(cache_picker(delta, index), index)
       
       thread_content = TwoB::Thread.new(@thread_key, cache, delta, @picker, index)
       
@@ -28,13 +28,8 @@ module JBBS
       TwoB::ThreadView.new(thread_content)
     end
     
-    def cache_picker(delta_last_number, index)
-      @picker.concretize(last_res_number(delta_last_number, index.last_res_number), index.bookmark_number).limitation(index.last_res_number).ranges
+    def cache_picker(delta, index)
+      @picker.concretize(delta.last_res_number, index.bookmark_number).limitation(delta.base_res_number).ranges
     end
-    
-    def last_res_number(delta_last_number, index_last_number)
-      delta_last_number ? delta_last_number : index_last_number
-    end
-    
   end
 end

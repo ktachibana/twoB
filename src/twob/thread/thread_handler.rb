@@ -47,7 +47,7 @@ module TwoB
       delta_bytes = system.get_delta_input(delta_request(index)).read()
       dat_parser = get_delta_parser(index.last_res_number + 1)
       delta_content = dat_parser.parse_delta(delta_source(delta_bytes))
-      TwoB::Delta.new(delta_content, delta_bytes, dat_parser.index)
+      TwoB::Delta.new(delta_content, index.last_res_number, delta_bytes, dat_parser.index)
     end
 
     def delta_source(delta_bytes)
