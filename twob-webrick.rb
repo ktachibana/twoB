@@ -27,6 +27,10 @@ class WEBrickSystem < TwoB::System
     response.write_body(io)
     @response.body = io.string
   end
+
+  def dump_error(response)
+    output(response)
+  end
 end
 
 $configuration = TwoB::Configuration.new(Pathname.new("~/2bcache").expand_path)
