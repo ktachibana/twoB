@@ -23,8 +23,6 @@ class SpecSystem < TwoB::System
   end
   
   def handle_error(e)
-    $stderr.puts(e)
-    $stderr.puts("-" * 40)
     $stderr.puts(@buffer.string)
     $stderr.puts
     raise e
