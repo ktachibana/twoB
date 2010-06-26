@@ -3,14 +3,26 @@ require 'util/ranges'
 describe Ranges do
   it "接合するrangeは一つにまとめられる" do
     ranges = Ranges.union(1..2, 3..4, 10..20)
-    ranges.to_a.should == [1..4, 10..20]
+    ranges.should == [1..4, 10..20]
     ranges.empty?.should be_false
   end
 
   it "emptyなrangesも許容される" do
     ranges = Ranges.new
-    ranges.to_a.should == []
+    ranges.should == []
     ranges.empty?.should be_true
+  end
+  
+  it "union" do
+    pending
+    ranges = Ranges.union(1..3, 7..10, 4..6)
+    ranges.should == [1..10]
+  end
+  
+  it "union 2" do
+    pending
+    ranges = Ranges.union(7..10, 1..3, 4..6)
+    ranges.should == [1..10]
   end
 
   describe "limit" do

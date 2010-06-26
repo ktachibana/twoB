@@ -12,13 +12,7 @@ class Ranges < Array
   def union
     results = Ranges.new
     self.each do |range|
-      adjacent_index = nil
-      results.each_with_index do |result, index|
-        if range.adjacent_range?(result)
-          adjacent_index = index
-          break
-        end
-      end
+      adjacent_index = results.index{|r| r.adjacent_range?(range) }
       if adjacent_index
         results[adjacent_index] = results[adjacent_index].compose(range)
       else
@@ -27,7 +21,7 @@ class Ranges < Array
     end
     results
   end
-
+  
   def include_range?(range)
     self.any? do |r|
       r.include_range?(range)
