@@ -33,23 +33,18 @@ module TwoB
         yield Res.new(res, unread?(res))
       end
       @delta.each_res do |res|
-        yield Res.as_new(res)
+        yield Res.new(res, true)
       end
     end
     
-    def picked?(res)
-      @picker.include?(res.number, res_count)
-    end
-
     def visible_all?(anchor)
-      visible_picker.include_range?(anchor.range)
+      ranges.include_range?(anchor.range)
     end
     
-    def visible_picker
-      ranges = @picker.to_ranges(@index.last_res_number, @delta.last_res_number, bookmark_number)
-      ranges << @delta.range unless @delta.empty?
-      Picker::Composite.compose(*ranges)
+    def ranges
+      @picker.to_ranges(@index.last_res_number, @delta.last_res_number, bookmark_number)
     end
+    private :ranges
     
     def res_count
       @cache.res_count + @delta.res_count
@@ -90,14 +85,6 @@ module TwoB
     def initialize(dat_res, is_new)
       @dat_res = dat_res
       @is_new = is_new
-    end
-    
-    def self.as_new(dat_res)
-      self.new(dat_res, true)
-    end
-    
-    def self.as_cache(dat_res)
-      self.new(dat_res, false)
     end
     
     def_delegators :@dat_res, :number, :name, :has_trip?, :trip, :mail, :age?, :date, :id, :body

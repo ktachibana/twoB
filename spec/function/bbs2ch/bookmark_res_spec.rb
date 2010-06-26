@@ -35,7 +35,7 @@ describe "栞機能" do
     index.last_res_number.should == 80
 
     view_thread(StringInput.empty)
-    @thread.res_ranges.should == [1..1, 31..80]
+    @thread.res_ranges.should == [1..1, 46..80]
     @thread[50].new?.should be_false
     @thread[51].new?.should be_true
   end
@@ -53,7 +53,8 @@ describe "栞機能" do
 
     view_thread(StringInput.empty)
     puts @response
-    @thread.res_ranges.should == [1..1, 10..80]
+    @thread.res_ranges.should == [1..1, 6..80]
+    @thread[10].new?.should be_false
     @thread[11].new?.should be_true
   end
 end

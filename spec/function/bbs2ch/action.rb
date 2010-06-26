@@ -9,7 +9,7 @@ module BBS2ch::Spec
     end
   end
   
-  def view_thread(delta_input, picker_string = "l50")
+  def view_thread(delta_input, picker_string = "subscribe5")
     access("/server.2ch.net/board/123/#{picker_string}#firstNew") do |system|
       @system.stub!(:get_delta_input).and_return(delta_input)
     end

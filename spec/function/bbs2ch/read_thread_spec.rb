@@ -64,7 +64,7 @@ describe "2chのスレッドを読む" do
 
     thread = @response.as_thread
     valid_thread(thread)
-    thread.res_ranges.should == [1..1, 51..100]
+    thread.res_ranges.should == [1..1, 76..100]
     thread[1].should_not be_new
     thread[80].should_not be_new
     thread[81].should be_new
@@ -98,7 +98,7 @@ describe "2chのスレッドを読む" do
     
     thread = @response.as_thread
     valid_thread(thread)
-    thread.res_ranges.should == [1..1, 31..80]
+    thread.res_ranges.should == [1..1, 76..80]
   end
   
   it "スレッドのキャッシュを削除" do

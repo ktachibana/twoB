@@ -78,11 +78,11 @@ module TwoB
 
     def res_anchor(picker)
       index = index_manager.load
-      ranges = picker.concretize(index.last_res_number, index.last_res_number).ranges
+      ranges = picker.to_cache_ranges(index.last_res_number, index.last_res_number)
       cache = cache_manager.load(ranges, index)
       anchor_res = []
       cache.each_res do |res|
-        anchor_res << TwoB::Res.as_cache(res)
+        anchor_res << TwoB::Res.new(res, false)
       end
       TwoB::ResAnchorView.new(anchor_res)
     end
