@@ -30,7 +30,7 @@ module TwoB
   module Picker
     class Picker
       def to_cache_ranges(cached_number, max_number, bookmark_number = nil)
-        to_ranges(cached_number, max_number, bookmark_number).limitation(cached_number)
+        to_ranges(cached_number, max_number, bookmark_number).limit(cached_number)
       end
     end
 
@@ -44,7 +44,7 @@ module TwoB
 
       def to_ranges(cached_number, max_number, bookmark_number = nil)
         base_number = bookmark_number ? bookmark_number : cached_number
-        Ranges.new(1..1, base_number - @cache_count + 1 .. max_number)
+        Ranges.union(1..1, base_number - @cache_count + 1 .. max_number)
       end
       
       def to_s
@@ -62,16 +62,10 @@ module TwoB
       end
 
       def to_ranges(cached_number, max_number, bookmark_number = nil)
-        begin_number = [1, max_number - @count + 1].max
-        if include_1
-          if begin_number == 2
-            return Ranges.new(1..max_number)
-          else
-            return Ranges.new(1..1, begin_number..max_number)
-          end
-        else
-          return Ranges.new(begin_number..max_number)
-        end
+        ranges = Ranges.new
+        ranges << (1..1) if include_1
+        ranges << ([1, max_number - @count + 1].max .. max_number)
+        ranges.union
       end
 
       def to_s

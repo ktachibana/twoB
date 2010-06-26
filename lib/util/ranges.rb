@@ -2,8 +2,16 @@ require 'util/range'
 
 class Ranges < Array
   def initialize(*ranges)
-    results = []
-    ranges.each do |range|
+    super(ranges)
+  end
+  
+  def self.union(*ranges)
+    new(*ranges).union
+  end
+  
+  def union
+    results = Ranges.new
+    self.each do |range|
       adjacent_index = nil
       results.each_with_index do |result, index|
         if range.adjacent_range?(result)
@@ -17,7 +25,7 @@ class Ranges < Array
         results << range.dup
       end
     end
-    super(results)
+    results
   end
 
   def include_range?(range)
@@ -26,7 +34,7 @@ class Ranges < Array
     end
   end
 
-  def limitation(max)
+  def limit(max)
     results = self.collect { |range|
       range.first .. [range.last, max].min
     }.select { |range|
