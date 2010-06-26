@@ -23,7 +23,6 @@ class SpecSystem < TwoB::System
   end
   
   def handle_error(e)
-    super
     $stderr.puts(@buffer.string)
     $stderr.puts
   end
