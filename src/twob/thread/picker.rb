@@ -63,13 +63,13 @@ module TwoB
 
       def to_ranges(cached_number, max_number, bookmark_number = nil)
         ranges = Ranges.new
-        ranges << (1..1) if include_1
+        ranges << (1..1) if @include_1
         ranges << ([1, max_number - @count + 1].max .. max_number)
         ranges.union
       end
 
       def to_s
-        "l#{count}" + (include_1? ? "" : "n")
+        "l#{count}" + (@include_1 ? "" : "n")
       end
     end
 
