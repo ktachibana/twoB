@@ -33,6 +33,10 @@ module TwoB
       end
     end
     
+    def to_hash
+      @index
+    end
+    
     def has?(number)
       @index.has_key?(number)
     end

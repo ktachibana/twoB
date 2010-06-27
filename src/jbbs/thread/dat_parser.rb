@@ -8,7 +8,7 @@ module JBBS
       
     end
     
-    def parse_line(values)
+    def parse_line(values, &block)
       number = values[0].to_i
       name_string = values.fetch(1, "")
       name_match = TRIP_PATTERN.match(name_string)
@@ -19,7 +19,9 @@ module JBBS
       body_text = values.fetch(4, "")
       id = values.fetch(6, "")
       @thread_title = values.fetch(5, "") if number == 1
-      @res_list << Line.new(number, name, trip, mail, date, id, parse_body(body_text))
+      line = Line.new(number, name, trip, mail, date, id, parse_body(body_text))
+      @res_list << line if block.nil? || block.call(line)
+      line
     end
   end
 end

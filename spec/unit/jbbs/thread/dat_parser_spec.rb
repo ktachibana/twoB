@@ -100,8 +100,10 @@ EOS
 
 EOS
     source = StringSource.new(dat_string)
-    parts = [Dat::Part.new(1, 0, 1), Dat::Part.new(3, dat_string.index("3<>"), 4)]
-    parser.parse_parts(source, parts)
+    index = {}
+    (1..5).each{|i| index[i] = dat_string.index("#{i}<>") }
+
+    parser.parse_cache(source, index, [1..1, 3..4])
     res_list = parser.get_dat_content.res_list
     res_list.collect{|res| res.name }.should == ["one", "three", "four"]
   end
@@ -109,8 +111,7 @@ EOS
   it "ファイルの実物から部分的parse" do
     parser = JBBS::DatParser.new
     source = TextFile.new("testData/jbbs/jbbs.dat", "euc-jp")
-    parts = [Dat::Part.new(1, 0, 1), Dat::Part.new(100, 0x3773, 150)]
-    parser.parse_parts(source, parts)
+    parser.parse_cache(source, {1 => 0, 100 => 0x3773}, [1..1, 100..150])
     res_list = parser.get_dat_content.res_list
     res_list.size.should == 52
     res_list[1].number.should == 100

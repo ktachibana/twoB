@@ -17,7 +17,7 @@ module BBS2ch
     
     def load(ranges, index)
       begin
-        Cache.new(dat_parser.parse_with_index(cache_file, index, ranges))
+        Cache.new(dat_parser.parse_cache(cache_file, index.to_hash, ranges))
       rescue Errno::ENOENT
         return Cache::Empty
       end      

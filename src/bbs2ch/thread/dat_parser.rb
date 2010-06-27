@@ -19,9 +19,7 @@ module BBS2ch
       @number = part.number_from
     end
     
-    def parse_line(values)
-      line = {:number => @number, :name => "", :trip => nil, :mail => "", :date => "", :id => nil, :be => nil, :body => []}
-      
+    def parse_line(values, &block)
       name_string = values.fetch(0, "")
       name_match = TRIP_PATTERN.match(name_string)
       name = name_match ? name_match[1] : name_string
@@ -34,8 +32,10 @@ module BBS2ch
       be = date_match ? date_match[5] : nil
       body_text = values.fetch(3, "").lstrip
       self.thread_title = values.fetch(4, "") if @number == 1
-      self.res_list << BBS2ch::DatLine.new(@number, name, trip, mail, date, id, be, parse_body(body_text))
+      line = BBS2ch::DatLine.new(@number, name, trip, mail, date, id, be, parse_body(body_text))
+      @res_list << line if block.nil? || block.call(line)
       @number += 1
+      line
     end
   end
 end

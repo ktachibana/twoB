@@ -19,7 +19,7 @@ module JBBS
     
     def load(ranges, index)
       begin
-        return Cache.new(@dat_parser.parse_with_index(@cache_file, index, ranges))
+        return Cache.new(@dat_parser.parse_cache(@cache_file, index.to_hash, ranges))
       rescue Errno::ENOENT
         return Cache::Empty
       end

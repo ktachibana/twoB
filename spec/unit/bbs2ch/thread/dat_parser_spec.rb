@@ -17,11 +17,11 @@ describe BBS2ch::DatParser do
       res.body.to_s.should =~ /\Aフォルダビューのウイジットの大きさを変更しようとしたら、/
     end
     
-    it "部分的parse" do
+    it "インデックスによる部分的parse" do
       include TwoB::Dat
       source = TextFile.new("testData/2ch/2ch_with_id.dat", "CP932")
       parser = BBS2ch::DatParser.new
-      dat = parser.parse_parts(source, [Part.new(1, 0, 1), Part.new(100, 0x419c, 150)])
+      dat = parser.parse_cache(source, {1 => 0, 100 => 0x419c}, [1..1, 100..150])
       dat.res_list.size.should == 52
       dat.res_list[0].number.should == 1
       dat.res_list[0].date.should == "2008/01/07(月) 14:10:06"
