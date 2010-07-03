@@ -28,7 +28,7 @@ describe ThreadBuilder do
       @builder.load_delta
       thread = @builder.result
       thread.last_res_number.should == 100
-      thread.title.should == "（　＾＾ω）ﾎﾏﾎﾏ6"
+      thread.to_a.count.should == 20
     end
 
     it "フィルタ付きload_delta" do
