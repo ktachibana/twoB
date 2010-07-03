@@ -18,6 +18,10 @@ module TwoB
         Content.new(title, res_list)
       end
       
+      def has_title?
+        @title && !@title.empty?
+      end
+      
       def each_res
         @res_list.each do |res|
           yield res

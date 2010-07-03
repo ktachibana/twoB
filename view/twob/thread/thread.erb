@@ -32,7 +32,7 @@
 		</ul>
 	</div>
 
-% thread.each_res{|res|
+% thread.each{|res|
 	<div id="_<%= res.number %>" class="res">
 		<dl class="<%= res.new? ? 'new' : '' %> <%=h res.age? ? 'age' : '' %>">
 			<dt class="header">

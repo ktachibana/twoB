@@ -18,6 +18,10 @@ module TwoB
       @dat_content.title
     end
     
+    def has_title?
+      @dat_content.has_title?
+    end
+    
     def each_res
       @dat_content.each_res do |res|
         yield res

@@ -5,6 +5,8 @@ require 'forwardable'
 
 module TwoB
   class Thread
+    include Enumerable
+    
     def initialize(thread, cache, delta, picker, index)
       @thread = thread
       @cache = cache
@@ -16,7 +18,7 @@ module TwoB
     attr_reader :thread, :index
 
     def title
-      return @cache.title if @cache.title
+      return @cache.title if @cache.has_title?
       return @delta.title
     end
   
@@ -36,6 +38,7 @@ module TwoB
         yield Res.new(res, true)
       end
     end
+    alias :each :each_res
     
     def visible_all?(anchor)
       ranges.include_range?(anchor.range)
@@ -51,7 +54,7 @@ module TwoB
     end
     
     def last_res_number
-      @delta.last_res_number
+      @delta.empty? ? @cache.last_number : @delta.last_res_number
     end
 
     def has_new?

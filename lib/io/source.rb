@@ -9,17 +9,17 @@ class IOReader
     @io = io
     @encoder = encoder
   end
-  
+
   def seek(offset)
     @io.seek(offset)
   end
-  
+
   def each(rs = $/)
     each_with_offset(rs) do |line, line_offset|
       yield line
     end
   end
-  
+
   def each_with_offset(rs = $/)
     offset = 0
     @io.each(rs) do |line|
@@ -36,7 +36,7 @@ class InputReader
     @encoder = encoder
     @line_delimiter = line_delimiter
   end
-  
+
   def each(rs = $/)
     each_with_offset(rs) do |line, line_offset|
       yield line
@@ -59,24 +59,23 @@ class InputReader
       end
       buf = buf[current .. -1]
     end
-    
+
     yield(@encoder.encode(buf), offset)
   end
 end
 
 class InputSource
   include Enumerable
-  
   def initialize(input, encoder, line_delimiter)
     @input = input
     @encoder = encoder
     @line_delimiter = line_delimiter
   end
-  
+
   def open
     yield InputReader.new(@input, @encoder, @line_delimiter)
   end
-  
+
   def each(rs = @line_delimiter)
     open do |reader|
       reader.each do |line|
@@ -86,22 +85,21 @@ class InputSource
   end
 end
 
-
 class BytesSource
   include Enumerable
-  
+  attr_reader :bytes
   def initialize(bytes, encoder, line_delimiter)
     @bytes = bytes
     @line_delimiter = line_delimiter
     @encoder = encoder
   end
-  
+
   def open
     StringIO.open(@bytes) do |io|
       yield IOReader.new(io, @encoder)
     end
   end
-  
+
   def each(rs = @line_delimiter)
     open do |reader|
       reader.each(rs) do |line|

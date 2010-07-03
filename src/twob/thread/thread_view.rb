@@ -58,7 +58,7 @@ module TwoB
       _erbout.concat "\t\t</ul>\n"
       ; _erbout.concat "\t</div>\n"
       ; _erbout.concat "\n"
-      ;  thread.each_res{|res|
+      ;  thread.each{|res|
       _erbout.concat "\t<div id=\"_"; _erbout.concat(( res.number ).to_s); _erbout.concat "\" class=\"res\">\n"
       ; _erbout.concat "\t\t<dl class=\""; _erbout.concat(( res.new? ? 'new' : '' ).to_s); _erbout.concat " "; _erbout.concat((h res.age? ? 'age' : '' ).to_s); _erbout.concat "\">\n"
       ; _erbout.concat "\t\t\t<dt class=\"header\">\n"

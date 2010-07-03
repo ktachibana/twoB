@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 require 'twob/thread/dat/dat_content'
 
 module TwoB
   module Dat
     Part = Struct.new(:number_from, :offset_from, :number_to)
+    TRIP_PATTERN = /\A([^<]*)(<\/b>\s*◆(\S+)\s*<b>)?\z/
     class DatParser
-      TRIP_PATTERN = /\A([^<]*)(<\/b>\s*◆(\S+)\s*<b>)?\z/
       def initialize()
         @thread_title = nil
         @res_list = []
@@ -42,7 +43,7 @@ module TwoB
           ranges.each do |range|
             next unless index.has_key?(range.begin)
             part = Part.new(range.begin, index[range.begin], range.end)
-            
+
             self.on_start_part(part)
             parse_part(reader, part) do |values|
               self.parse_line(values)
@@ -51,7 +52,7 @@ module TwoB
         end
         self.get_dat_content
       end
-      
+
       def parse_part(reader, part, &to_res_block)
         reader.seek(part.offset_from)
         parse(reader) do |values|
@@ -59,7 +60,7 @@ module TwoB
           break if res.number >= part.number_to
         end
       end
-      
+
       def parse(reader)
         reader.each do |line|
           next if line.empty?

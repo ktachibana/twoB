@@ -6,7 +6,6 @@ require 'io/source'
 module TwoB
   module ThreadHandler
     include TwoB::Handler
-    
     def execute(request, value)
       case value
       when /^delete_cache$/
@@ -19,18 +18,18 @@ module TwoB
         read(Pickers.get(value))
       end
     end
-    
+
     def action_map()
       map(:delete_cache) { |request| [request.has_param?("reload")] }
       map(:delete_bookmark)
       map(:res_anchor) { |request| [Pickers.get(request.get_param("range"))] }
       map() { |request, value| [Pickers.get(value)] }
     end
-    
+
     def /(value)
       TwoB::ResService.new(self, value.to_i)
     end
-    
+
     def data_directory
       system.configuration.data_directory + board.data_directory_path
     end
@@ -38,19 +37,24 @@ module TwoB
     def cache_file
       data_directory + "#{number}.dat"
     end
-    
+
     def index_file
       data_directory + "#{number}.index.yaml"
     end
-    
+
     def load_delta(index)
-      delta_bytes = system.get_delta_input(delta_request(index)).read()
       dat_parser = get_delta_parser(index.last_res_number + 1)
-      delta_content = dat_parser.parse_delta(delta_source(delta_bytes))
-      TwoB::Delta.new(delta_content, index.last_res_number, delta_bytes, dat_parser.index)
+      bytes_source = delta_source_from(index)
+      delta_content = dat_parser.parse_delta(bytes_source)
+      TwoB::Delta.new(delta_content, index.last_res_number, bytes_source.bytes, dat_parser.index)
     end
 
-    def delta_source(delta_bytes)
+    def delta_source_from(metadata)
+      delta_source(delta_request(metadata))
+    end
+
+    def delta_source(request)
+      delta_bytes = system.get_delta_input(request).read()
       BytesSource.new(delta_bytes, Encoder.by_name(dat_encoding_name), dat_line_delimiter)
     end
 
@@ -64,12 +68,12 @@ module TwoB
       read_counter.delete(number)
       RedirectResponse.new(reload ? "./" : "../")
     end
-    
+
     def delete_bookmark()
       update_bookmark_number(nil)
       RedirectResponse.new("./subscribe5")
     end
-    
+
     def update_bookmark_number(bookmark_number)
       index_manager.update do |index|
         index.bookmark_number = bookmark_number
