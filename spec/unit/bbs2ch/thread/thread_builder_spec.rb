@@ -14,7 +14,7 @@ describe ThreadBuilder do
     @factory.should_receive(:delta_source_from).and_return{ BytesSource.new(File.read("testData/2ch/example(81-100).dat"), Encoder.by_name("windows-31j", "?"), "\n") }
     @key = mock(:key)
     @picker = mock(:picker)
-    @builder = BBS2ch::ThreadBuilder.new(@factory, @key, @picker, @index)
+    @builder = BBS2ch::ThreadBuilder.new(@factory, @key, @picker)
   end
 
   it "load_cache" do

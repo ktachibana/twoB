@@ -4,8 +4,8 @@ require 'twob/thread/delta'
 
 module BBS2ch
   class ThreadBuilder
-    def initialize(factory, thread_key, picker, index)
-      @factory, @thread_key, @picker, @index = factory, thread_key, picker, index
+    def initialize(factory, thread_key, picker)
+      @factory, @thread_key, @picker = factory, thread_key, picker
       @index = factory.load_index
       @cache_builder = factory.dat_builder
       @cache_source = factory.cache_source
