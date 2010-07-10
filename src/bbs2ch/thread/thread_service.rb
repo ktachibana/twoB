@@ -2,6 +2,7 @@
 require 'bbs2ch/thread/read_thread_action'
 require 'bbs2ch/thread/cache_file'
 require 'bbs2ch/thread/index'
+require 'bbs2ch/thread/dat_builder'
 require 'time'
 require 'yaml_marshaler'
 require 'io'
@@ -27,8 +28,16 @@ module BBS2ch
       BBS2ch::ReadThreadAction.new(self, requested_picker).execute()
     end
     
+    def dat_builder
+      BBS2ch::DatBuilder.new
+    end
+    
     def cache_manager
       BBS2ch::CacheFile.new(cache_source, BBS2ch::DatParser.new)
+    end
+    
+    def load_index
+      index_manager.load
     end
     
     def index_manager
@@ -66,6 +75,15 @@ module BBS2ch
     
     def system
       host.system
+    end
+    
+    def update(delta, index, time)
+      return if delta.empty?
+      cache_manager.append(delta.bytes)
+      index.update(delta)
+      index.last_modified = time
+      index_manager.save(index)
+      read_counter.update(@number, delta.last_res_number)
     end
     
     def read_counter

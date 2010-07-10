@@ -46,9 +46,10 @@ module TwoB
         Ranges.union(1..1, base_number - @cache_count + 1 .. max_number)
       end
 
-      def build_thread
+      def build_thread(builder)
         base_number = builder.bookmark_number ? builder.bookmark_number : builder.cached_number
-        builder.load_cache(1..1, base_number - @cache_count + 1 .. builder.cached_number)
+        ranges = Ranges.union(1..1, base_number - @cache_count + 1 .. builder.cached_number)
+        builder.load_cache(*ranges.limit_range(1..builder.cached_number))
         builder.load_delta
         builder.update
       end
@@ -73,9 +74,9 @@ module TwoB
         ranges.union
       end
 
-      def build_thread
+      def build_thread(builder)
         delta = builder.load_delta
-        ranges = []
+        ranges = Ranges.new
         ranges << (1..1) if @include_1
         ranges << (delta.last_res_number - @count + 1 .. builder.cached_number)
         builder.load_cache(*ranges)
@@ -92,7 +93,7 @@ module TwoB
         Ranges.new(1..max_count)
       end
 
-      def build_thread
+      def build_thread(builder)
         build.load_cache(1..builder.cached_number)
         build.load_delta
       end
@@ -113,14 +114,14 @@ module TwoB
         Ranges.new(number..number)
       end
 
-      def build_thread
+      def build_thread(builder)
         builder.load_cache(@number..@number)
         builder.load_delta do |res|
           res.number == @number
         end
       end
       
-      def build_anchor
+      def build_anchor(builder)
         builder.load_cache(@number..@number)
       end
 
@@ -140,14 +141,14 @@ module TwoB
         Ranges.new(range)
       end
 
-      def build_thread
+      def build_thread(builder)
         builder.load_cache(@range)
         builder.load_delta do |res|
           @range.include?(res.number)
         end
       end
       
-      def build_anchor
+      def build_anchor(builder)
         builder.load_cache(@range)
       end
 
@@ -163,7 +164,7 @@ module TwoB
         @from = from
       end
 
-      def build_thread
+      def build_thread(builder)
         builder.load_cache(@from..builder.cached_number)
         builder.load_delta do |res|
           @from <= res.number
@@ -190,7 +191,7 @@ module TwoB
         Ranges.new(1..to)
       end
 
-      def build_thread
+      def build_thread(builder)
         builder.load_cache(1..@to)
         builder.load_delta do |res|
           res.number <= @to

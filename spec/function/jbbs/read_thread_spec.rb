@@ -11,7 +11,7 @@ describe "JBBSのスレッドを読む" do
   include JBBS
   include TwoB::Spec
   
-  def view_thread(delta_input, picker = "l50")
+  def view_thread(delta_input, picker = "subscribe5")
     access("/jbbs.livedoor.jp/category/123/456/#{picker}#firstNew") do |system|
       system.stub!(:get_delta_input).and_return(delta_input)
     end
@@ -46,12 +46,11 @@ describe "JBBSのスレッドを読む" do
     thread = @response.as_thread
     thread.dat_link.attribute("href").text.should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/456/"
     thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
+    thread.res_ranges.should == [1..1, 212..226]
     thread[1].should_not be_new
-    thread[176].should_not be_exist
-    thread[177].should_not be_new
+    thread[216].should_not be_new
     thread[217].should be_new
     thread[226].should be_new
-    thread[227].should_not be_exist
   end
   
   it "subscribe5によるキャッシュなしの初回読み込み" do
@@ -77,11 +76,10 @@ describe "JBBSのスレッドを読む" do
     thread = @response.as_thread
     thread.dat_link.attribute("href").text.should == "http://jbbs.livedoor.jp/bbs/rawmode.cgi/category/123/456/"
     thread.title.should == "鶉の羽の下（管理運営・意見・要望など）の7.5"
+    thread.res_ranges.should == [1..1, 222..226]
     thread[1].should_not be_new
-    thread[176].should_not be_exist
-    thread[177].should_not be_new
+    thread[222].should_not be_new
     thread[226].should_not be_new
-    thread[227].should_not be_exist
   end
   
   it "レスアンカー表示" do

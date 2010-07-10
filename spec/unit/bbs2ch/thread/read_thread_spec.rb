@@ -19,9 +19,11 @@ describe ThreadService do
   end
   
   it "read" do
+    @thread.cache_file.should_not be_exist
     @system.stub!(:get_delta_input).and_return(BinaryFile.by_filename("testData/2ch/example(1-80).dat"))
     
-    view = @thread.read(Latest.new(50, true))
+    view = @thread.read(Subscribe.new(5))
+    @thread.cache_file.should be_exist
     
     view.thread.title.should == "（　＾＾ω）ﾎﾏﾎﾏ6"
     

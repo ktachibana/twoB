@@ -4,11 +4,11 @@ class Ranges < Array
   def initialize(*ranges)
     super(ranges)
   end
-  
+
   def self.union(*ranges)
     new(*ranges).union
   end
-  
+
   def union
     results = Ranges.new
     self.each do |range|
@@ -21,11 +21,20 @@ class Ranges < Array
     end
     results
   end
-  
+
   def include_range?(range)
     self.any? do |r|
       r.include_range?(range)
     end
+  end
+
+  def limit_range(limit_range)
+    results = collect { |range|
+      [range.first, limit_range.first].max .. [range.last, limit_range.last].min
+    }.select { |range|
+      range.first <= range.last
+    }
+    self.class.new(*results)
   end
 
   def limit(max)
