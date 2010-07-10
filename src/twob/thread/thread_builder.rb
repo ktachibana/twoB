@@ -2,7 +2,7 @@
 require 'twob/thread/cache'
 require 'twob/thread/delta'
 
-module BBS2ch
+module TwoB
   class ThreadBuilder
     def initialize(factory, thread_key, picker)
       @factory, @thread_key, @picker = factory, thread_key, picker

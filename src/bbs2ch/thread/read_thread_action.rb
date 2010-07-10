@@ -13,7 +13,7 @@ module BBS2ch
     end
     
     def execute
-      builder = ThreadBuilder.new(@thread_key, @thread_key, @picker)
+      builder = TwoB::ThreadBuilder.new(@thread_key, @thread_key, @picker)
       @picker.build_thread(builder)
       
       TwoB::ThreadView.new(builder.result)

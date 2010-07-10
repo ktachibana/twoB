@@ -12,20 +12,9 @@ module JBBS
     end
 
     def execute
-      metadata = @metadata_manager.load()
-      delta = @thread_key.load_delta(metadata)
-      cache = @cache_manager.load(@picker.to_cache_ranges(metadata.last_res_number, delta.last_res_number, metadata.bookmark_number), metadata)
-      
-      thread_content = TwoB::Thread.new(@thread_key, cache, delta, @picker, metadata)
-      
-      @cache_manager.append(delta.bytes)
-      
-      metadata.update(delta)
-      
-      @metadata_manager.save(metadata)
-      @thread_key.read_counter.update(@thread_key.number, thread_content.last_res_number) unless delta.empty?
-
-      TwoB::ThreadView.new(thread_content)
+      builder = TwoB::ThreadBuilder.new(@thread_key, @thread_key, @picker)
+      @picker.build_thread(builder)
+      TwoB::ThreadView.new(builder.result)
     end
   end
 end

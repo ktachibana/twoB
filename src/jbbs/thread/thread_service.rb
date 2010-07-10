@@ -36,8 +36,16 @@ module JBBS
       JBBS::ReadThreadAction.new(self, picker).execute()
     end
     
+    def dat_builder
+      JBBS::DatBuilder.new
+    end
+
     def cache_manager
       JBBS::CacheManager.new(cache_source, JBBS::DatParser.new)
+    end
+    
+    def load_metadata
+      metadata_manager.load
     end
 
     def metadata_manager
@@ -75,6 +83,14 @@ module JBBS
     
     def system
       host.system
+    end
+    
+    def update(delta, metadata, time)
+      return if delta.empty?
+      cache_manager.append(delta.bytes)
+      metadata.update(delta)
+      metadata_manager.save(metadata)
+      read_counter.update(@number, delta.last_res_number)
     end
     
     def read_counter
