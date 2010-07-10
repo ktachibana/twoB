@@ -6,11 +6,11 @@ module BBS2ch
   class ThreadBuilder
     def initialize(factory, thread_key, picker)
       @factory, @thread_key, @picker = factory, thread_key, picker
-      @index = factory.load_index
+      @metadata = factory.load_metadata
       @cache_builder = factory.dat_builder
       @cache_source = factory.cache_source
       @delta_builder = factory.dat_builder
-      @delta_source = factory.delta_source_from(@index)
+      @delta_source = factory.delta_source_from(@metadata)
       @delta_index = {}
       @cache = TwoB::Cache::Empty
       @delta = TwoB::Delta.new(TwoB::Dat::Content::Empty, 0, [], {})
@@ -18,11 +18,11 @@ module BBS2ch
     end
 
     def cached_number
-      @index.last_res_number
+      @metadata.last_res_number
     end
 
     def bookmark_number
-      @index.bookmark_number
+      @metadata.bookmark_number
     end
 
     def load_cache(*ranges)
@@ -40,7 +40,7 @@ module BBS2ch
 
     def load_cache_from(reader, range)
       @cache_builder.start(range.first)
-      reader.seek(@index[range.first])
+      reader.seek(@metadata[range.first])
       reader.each do |line|
         next if line.empty?
         @cache_builder.build(line.chomp.split("<>")) do |res|
@@ -53,22 +53,22 @@ module BBS2ch
 
     def load_delta(&filter)
       @delta_source.open do |reader|
-        @delta_builder.start(@index.last_res_number + 1)
+        @delta_builder.start(@metadata.last_res_number + 1)
         reader.each_with_offset do |line, offset|
           next if line.empty?
           res = @delta_builder.build(line.chomp.split("<>"), &filter)
           @delta_index[res.number] = offset
         end
       end
-      @delta = TwoB::Delta.new(@delta_builder.result, @index.last_res_number, @delta_source.bytes, @delta_index)
+      @delta = TwoB::Delta.new(@delta_builder.result, @metadata.last_res_number, @delta_source.bytes, @delta_index)
     end
 
     def update
-      @factory.update(@delta, @index, @update_time)
+      @factory.update(@delta, @metadata, @update_time)
     end
 
     def result
-      TwoB::Thread.new(@thread_key, @cache, @delta, @picker, @index)
+      TwoB::Thread.new(@thread_key, @cache, @delta, @picker, @metadata)
     end
   end
 end

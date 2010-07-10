@@ -7,15 +7,15 @@ module TwoB
   class Thread
     include Enumerable
     
-    def initialize(thread, cache, delta, picker, index)
+    def initialize(thread, cache, delta, picker, metadata)
       @thread = thread
       @cache = cache
       @delta = delta
       @picker = picker
-      @index = index
+      @metadata = metadata
     end
     
-    attr_reader :thread, :index
+    attr_reader :thread, :metadata
 
     def title
       return @cache.title if @cache.has_title?
@@ -45,7 +45,7 @@ module TwoB
     end
     
     def ranges
-      @picker.to_ranges(@index.last_res_number, @delta.last_res_number, bookmark_number)
+      @picker.to_ranges(@metadata.last_res_number, @delta.last_res_number, bookmark_number)
     end
     private :ranges
     
@@ -62,11 +62,11 @@ module TwoB
     end
   
     def bookmarking?
-      !@index.bookmark_number.nil?
+      !@metadata.bookmark_number.nil?
     end
   
     def bookmark_number
-      @index.bookmark_number
+      @metadata.bookmark_number
     end
   
     def unread?(res)

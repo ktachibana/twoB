@@ -9,7 +9,6 @@ module BBS2ch
     def initialize(thread_key, picker)
       @thread_key = thread_key
       @picker = picker
-      @index_manager = @thread_key.index_manager
       @cache_manager = @thread_key.cache_manager
     end
     

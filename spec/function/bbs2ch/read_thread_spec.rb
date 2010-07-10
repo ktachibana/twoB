@@ -47,7 +47,7 @@ describe "2chのスレッドを読む" do
     created_cache = @board_dir + "123.dat"
     created_cache.size.should == 24832
     
-    created_index = @board_dir + "123.index.yaml"
+    created_index = @board_dir + "123.yaml"
     index = YAML::load(File.read(created_index))
     index.cache_file_size.should == 24832
     index[1].should == 0
@@ -105,7 +105,7 @@ describe "2chのスレッドを読む" do
     view_thread(@example_1to80)
 
     (@board_dir + "123.dat").should be_exist
-    (@board_dir + "123.index.yaml").should be_exist
+    (@board_dir + "123.yaml").should be_exist
 
     @request = TwoB::Request.new("/server.2ch.net/board/123/delete_cache")
     @system = SpecSystem.new(@request)

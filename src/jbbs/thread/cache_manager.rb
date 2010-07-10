@@ -17,9 +17,9 @@ module JBBS
       @cache_file.size
     end
     
-    def load(ranges, index)
+    def load(ranges, metadata)
       begin
-        return Cache.new(@dat_parser.parse_cache(@cache_file, index.to_hash, ranges))
+        return Cache.new(@dat_parser.parse_cache(@cache_file, metadata.index, ranges))
       rescue Errno::ENOENT
         return Cache::Empty
       end

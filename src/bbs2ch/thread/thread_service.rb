@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'bbs2ch/thread/read_thread_action'
 require 'bbs2ch/thread/cache_file'
-require 'bbs2ch/thread/index'
+require 'bbs2ch/thread/metadata'
 require 'bbs2ch/thread/dat_builder'
 require 'time'
 require 'yaml_marshaler'
@@ -36,12 +36,12 @@ module BBS2ch
       BBS2ch::CacheFile.new(cache_source, BBS2ch::DatParser.new)
     end
     
-    def load_index
-      index_manager.load
+    def load_metadata
+      metadata_manager.load
     end
     
-    def index_manager
-      TwoB::YAMLMarshaler.new(index_file, BBS2ch::Index.empty)
+    def metadata_manager
+      TwoB::YAMLMarshaler.new(metadata_file, BBS2ch::Metadata.empty)
     end
     
     def original_url
@@ -65,8 +65,8 @@ module BBS2ch
       "\n"
     end
     
-    def delta_request(index)
-      HTTPRequest.new(host.name, dat_path, index.dat_header)
+    def delta_request(metadata)
+      HTTPRequest.new(host.name, dat_path, metadata.dat_header)
     end
     
     def get_delta_parser(initial_number)
@@ -77,12 +77,12 @@ module BBS2ch
       host.system
     end
     
-    def update(delta, index, time)
+    def update(delta, metadata, time)
       return if delta.empty?
       cache_manager.append(delta.bytes)
-      index.update(delta)
-      index.last_modified = time
-      index_manager.save(index)
+      metadata.update(delta)
+      metadata.last_modified = time
+      metadata_manager.save(metadata)
       read_counter.update(@number, delta.last_res_number)
     end
     

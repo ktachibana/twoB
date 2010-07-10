@@ -40,8 +40,8 @@ module JBBS
       JBBS::CacheManager.new(cache_source, JBBS::DatParser.new)
     end
 
-    def index_manager
-      TwoB::YAMLMarshaler.new(index_file, TwoB::Index.Empty)
+    def metadata_manager
+      TwoB::YAMLMarshaler.new(metadata_file, TwoB::Metadata.Empty)
     end
     
     def original_url
@@ -65,8 +65,8 @@ module JBBS
       "\n"
     end
     
-    def delta_request(index)
-      HTTPRequest.new(host.name, get_dat_path(index.delta_picker), {})
+    def delta_request(metadata)
+      HTTPRequest.new(host.name, get_dat_path(metadata.delta_picker), {})
     end
 
     def get_delta_parser(initial_number)

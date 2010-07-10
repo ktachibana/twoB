@@ -38,15 +38,15 @@ module TwoB
       data_directory + "#{number}.dat"
     end
 
-    def index_file
-      data_directory + "#{number}.index.yaml"
+    def metadata_file
+      data_directory + "#{number}.yaml"
     end
 
-    def load_delta(index)
-      dat_parser = get_delta_parser(index.last_res_number + 1)
-      bytes_source = delta_source_from(index)
+    def load_delta(metadata)
+      dat_parser = get_delta_parser(metadata.last_res_number + 1)
+      bytes_source = delta_source_from(metadata)
       delta_content = dat_parser.parse_delta(bytes_source)
-      TwoB::Delta.new(delta_content, index.last_res_number, bytes_source.bytes, dat_parser.index)
+      TwoB::Delta.new(delta_content, metadata.last_res_number, bytes_source.bytes, dat_parser.index)
     end
 
     def delta_source_from(metadata)
@@ -64,7 +64,7 @@ module TwoB
 
     def delete_cache(reload)
       cache_manager.delete()
-      index_manager.delete()
+      metadata_manager.delete()
       read_counter.delete(number)
       RedirectResponse.new(reload ? "./" : "../")
     end
@@ -75,15 +75,15 @@ module TwoB
     end
 
     def update_bookmark_number(bookmark_number)
-      index_manager.update do |index|
-        index.bookmark_number = bookmark_number
+      metadata_manager.update do |metadata|
+        metadata.bookmark_number = bookmark_number
       end
     end
 
     def res_anchor(picker)
-      index = index_manager.load
-      ranges = picker.to_cache_ranges(index.last_res_number, index.last_res_number)
-      cache = cache_manager.load(ranges, index)
+      metadata = metadata_manager.load
+      ranges = picker.to_cache_ranges(metadata.last_res_number, metadata.last_res_number)
+      cache = cache_manager.load(ranges, metadata)
       anchor_res = []
       cache.each_res do |res|
         anchor_res << TwoB::Res.new(res, false)

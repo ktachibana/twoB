@@ -96,7 +96,7 @@ describe "JBBSのスレッドを読む" do
     view_thread(@example_1to216)
     
     (@board_dir + "456.dat").should be_exist
-    (@board_dir + "456.index.yaml").should be_exist
+    (@board_dir + "456.yaml").should be_exist
     
     access("/jbbs.livedoor.jp/category/123/456/delete_cache")
 

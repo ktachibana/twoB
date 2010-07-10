@@ -20,12 +20,12 @@ module TwoB
       get_subject_parser.parse(source)
     end
     
-    def index_file
-      data_directory + data_directory_path + "index.yaml"
+    def metadata_file
+      data_directory + data_directory_path + "board.yaml"
     end
     
-    def index_manager
-      TwoB::YAMLMarshaler.new(index_file, Hash.new)
+    def metadata_manager
+      TwoB::YAMLMarshaler.new(metadata_file, Hash.new)
     end
     
     def data_directory
@@ -35,7 +35,7 @@ module TwoB
     def list_thread()
       board = BoardInfo.new(original_url)
       subjects = get_subjects()
-      index_map = index_manager.load()
+      index_map = metadata_manager.load()
       threads = subjects.collect do |subject|
         TwoB::ThreadSubject.new(subject, index_map.fetch(subject.number, 0))
       end

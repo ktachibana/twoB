@@ -9,7 +9,7 @@ describe ThreadBuilder do
   before do
     @factory = mock(:factory)
     @factory.should_receive(:dat_builder).twice.and_return{ BBS2ch::DatBuilder.new }
-    @factory.should_receive(:load_index).and_return(YAML::load_file("testData/2ch/example(1-80).dat.index"))
+    @factory.should_receive(:load_metadata).and_return{ YAML::load_file("testData/2ch/example(1-80).dat.metadata") }
     @factory.should_receive(:cache_source).and_return{ TextFile.by_filename("testData/2ch/example(1-80).dat", "windows-31j") }
     @factory.should_receive(:delta_source_from).and_return{ BytesSource.new(File.read("testData/2ch/example(81-100).dat"), Encoder.by_name("windows-31j", "?"), "\n") }
     @key = mock(:key)

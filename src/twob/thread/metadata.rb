@@ -1,23 +1,48 @@
 # -*- coding: utf-8 -*-
+require 'twob/thread'
+require 'marshaler'
 
 module TwoB
   class Metadata
-    def initialize
-      @cache_byte_size = 0
-      @last_res_number = 0
+    def initialize(last_res_number, cache_file_size, bookmark_number = nil)
+      @last_res_number = last_res_number
+      @cache_file_size = cache_file_size
+      @bookmark_number = bookmark_number
       @index = {}
-      @title = ""
     end
-    
+
+    def self.Empty
+      self.new(0, 0)
+    end
+
+    attr_accessor :last_res_number, :cache_file_size, :bookmark_number, :index
+
     def delta_picker
-      Picker::From.new(@last_res_number + 1)
+      TwoB::Picker::From.new(@last_res_number + 1)
     end
-    
-    def append_index(delta_index)
+
+    def update(delta)
+      append(delta.index)
+      @last_res_number = delta.last_res_number
+      @cache_file_size += delta.bytes.size
+    end
+
+    def append(delta_index)
       delta_index.each do |number, source_offset|
         @index[number] = @cache_file_size + source_offset
       end
     end
-    
+
+    def has?(number)
+      @index.has_key?(number)
+    end
+
+    def [](res_number)
+      @index[res_number]
+    end
+
+    def []=(res_number, offset)
+      @index[res_number] = offset
+    end
   end
 end

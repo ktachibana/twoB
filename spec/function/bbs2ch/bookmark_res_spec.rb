@@ -29,10 +29,10 @@ describe "栞機能" do
     
     bookmark_res(50)
     @response.status_code.should == 303
-    index_file = @system.configuration.data_directory + "server.2ch.net/board/123.index.yaml"
-    index = YAML::load_file(index_file)
-    index.bookmark_number.should == 50
-    index.last_res_number.should == 80
+    metadata_file = @system.configuration.data_directory + "server.2ch.net/board/123.yaml"
+    metadata = YAML::load_file(metadata_file)
+    metadata.bookmark_number.should == 50
+    metadata.last_res_number.should == 80
 
     view_thread(StringInput.empty)
     @thread.res_ranges.should == [1..1, 46..80]
@@ -46,13 +46,12 @@ describe "栞機能" do
     
     bookmark_res(10)
     @response.status_code.should == 303
-    index_file = @system.configuration.data_directory + "server.2ch.net/board/123.index.yaml"
-    index = YAML::load_file(index_file)
-    index.bookmark_number.should == 10
-    index.last_res_number.should == 80
+    metadata_file = @system.configuration.data_directory + "server.2ch.net/board/123.yaml"
+    metadata = YAML::load_file(metadata_file)
+    metadata.bookmark_number.should == 10
+    metadata.last_res_number.should == 80
 
     view_thread(StringInput.empty)
-    puts @response
     @thread.res_ranges.should == [1..1, 6..80]
     @thread[10].new?.should be_false
     @thread[11].new?.should be_true

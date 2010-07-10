@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-require 'twob/thread/index'
+require 'twob/thread/metadata'
 
 module BBS2ch
-  class Index < TwoB::Index
+  class Metadata < TwoB::Metadata
     def initialize(last_res_number, cache_file_size, last_modified)
       super(last_res_number, cache_file_size)
       @last_modified = last_modified
