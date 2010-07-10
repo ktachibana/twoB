@@ -4,7 +4,6 @@ require 'twob/thread/thread_handler'
 require 'twob/thread/res_service'
 require 'jbbs/thread/thread_key'
 require 'jbbs/thread/cache_manager'
-require 'jbbs/thread/read_thread_action'
 require 'io'
 require 'yaml_marshaler'
 
@@ -31,10 +30,6 @@ module JBBS
     
     
     include TwoB::ThreadHandler
-    
-    def read(picker)
-      JBBS::ReadThreadAction.new(self, picker).execute()
-    end
     
     def dat_builder
       JBBS::DatBuilder.new

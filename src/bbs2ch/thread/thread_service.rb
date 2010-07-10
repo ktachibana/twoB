@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-require 'bbs2ch/thread/read_thread_action'
 require 'bbs2ch/thread/cache_file'
 require 'bbs2ch/thread/metadata'
 require 'bbs2ch/thread/dat_builder'
@@ -23,10 +22,6 @@ module BBS2ch
     
     
     include TwoB::ThreadHandler
-    
-    def read(requested_picker)
-      BBS2ch::ReadThreadAction.new(self, requested_picker).execute()
-    end
     
     def dat_builder
       BBS2ch::DatBuilder.new

@@ -34,6 +34,13 @@ module TwoB
       system.configuration.data_directory + board.data_directory_path
     end
 
+    def read(requested_picker)
+      builder = TwoB::ThreadBuilder.new(self, self, requested_picker)
+      requested_picker.build_thread(builder)
+
+      TwoB::ThreadView.new(builder.result)
+    end
+
     def cache_file
       data_directory + "#{number}.dat"
     end
