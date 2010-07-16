@@ -5,7 +5,7 @@ require 'twob/thread/dat/dat_body_parser'
 
 module BBS2ch
   DATE_PATTERN = /\A(.*?)( ID:(\S+))?( BE:(.*))?\z/
-  TRIP_PATTERN = /\A([^<]*)(<\/b>\s*◆(\S+)\s*<b>)?\z/
+  TRIP_PATTERN = /\A([^<]*)( <\/b>\s*◆(\S+)\s*<b>)?\z/
 
   class DatBuilder
     include TwoB::Dat

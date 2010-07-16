@@ -28,7 +28,7 @@ module BBS2ch
     end
     
     def cache_manager
-      BBS2ch::CacheFile.new(cache_source, BBS2ch::DatParser.new)
+      cache_source
     end
     
     def load_metadata
@@ -62,10 +62,6 @@ module BBS2ch
     
     def delta_request(metadata)
       HTTPRequest.new(host.name, dat_path, metadata.dat_header)
-    end
-    
-    def get_delta_parser(initial_number)
-      BBS2ch::DatParser.new(initial_number)
     end
     
     def system

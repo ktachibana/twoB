@@ -36,7 +36,7 @@ module JBBS
     end
 
     def cache_manager
-      JBBS::CacheManager.new(cache_source, JBBS::DatParser.new)
+      JBBS::CacheManager.new(cache_source)
     end
     
     def load_metadata
@@ -72,10 +72,6 @@ module JBBS
       HTTPRequest.new(host.name, get_dat_path(metadata.delta_picker), {})
     end
 
-    def get_delta_parser(initial_number)
-      JBBS::DatParser.new
-    end
-    
     def system
       host.system
     end

@@ -6,23 +6,14 @@ module JBBS
   class CacheManager
     include TwoB
     
-    def initialize(cache_file, dat_parser)
+    def initialize(cache_file)
       @cache_file = cache_file
-      @dat_parser = dat_parser
     end
     
-    attr_reader :cache_file, :dat_parser
+    attr_reader :cache_file
     
     def file_size
       @cache_file.size
-    end
-    
-    def load(ranges, metadata)
-      begin
-        return Cache.new(@dat_parser.parse_cache(@cache_file, metadata.index, ranges))
-      rescue Errno::ENOENT
-        return Cache::Empty
-      end
     end
     
     def append(delta_bytes)

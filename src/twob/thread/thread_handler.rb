@@ -87,15 +87,10 @@ module TwoB
       end
     end
 
-    def res_anchor(picker)
-      metadata = metadata_manager.load
-      ranges = picker.to_cache_ranges(metadata.last_res_number, metadata.last_res_number)
-      cache = cache_manager.load(ranges, metadata)
-      anchor_res = []
-      cache.each_res do |res|
-        anchor_res << TwoB::Res.new(res, false)
-      end
-      TwoB::ResAnchorView.new(anchor_res)
+    def res_anchor(requested_picker)
+      builder = TwoB::ThreadBuilder.new(self, self, requested_picker)
+      requested_picker.build_anchor(builder)
+      TwoB::ResAnchorView.new(builder.result.to_a)
     end
   end
 end

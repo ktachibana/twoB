@@ -29,6 +29,12 @@ module TwoB
     def dat_url
       @thread.dat_url
     end
+    
+    def [](number)
+      find do |res|
+        res.number == number
+      end
+    end
   
     def each_res
       @cache.each_res do |res|
