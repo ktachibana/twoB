@@ -120,7 +120,7 @@ module TwoB
           res.number == @number
         end
       end
-      
+
       def build_anchor(builder)
         builder.load_cache(@number..@number)
       end
@@ -147,7 +147,7 @@ module TwoB
           @range.include?(res.number)
         end
       end
-      
+
       def build_anchor(builder)
         builder.load_cache(@range)
       end

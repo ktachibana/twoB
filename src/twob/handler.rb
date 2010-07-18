@@ -14,7 +14,7 @@ module TwoB
         execute(request, path_info)
       end
     end
-    
+
     def /(value)
       raise "#{value}に対応する対応する子ハンドラがありません"
     end

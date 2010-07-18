@@ -6,10 +6,11 @@ class Factory
   def initialize(filename)
     @file = BytesSource.new(File.read(filename), Encoder.by_name("windows-31j"), "\n")
   end
+
   def dat_builder
     BBS2ch::DatBuilder.new
   end
-  
+
   def delta_source_from(metadata)
     @file
   end

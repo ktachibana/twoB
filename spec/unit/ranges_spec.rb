@@ -52,7 +52,7 @@ describe Ranges do
       @ranges.limit_range(1..200).should == [1..1, 100..200]
       @ranges.limit_range(2..199).should == [100..199]
     end
-    
+
     it "反転" do
       Ranges.new(1..0, 200..100).limit_range(1..200).should == []
       Ranges.new(1..10, 100..200).limit_range(200..1).should == []

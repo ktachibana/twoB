@@ -6,7 +6,7 @@ module Rake
   class FileList
     def mapping(&convert_block)
       FileMapping.new(self) do |source|
-          convert_block[source]
+        convert_block[source]
       end
     end
   end
@@ -17,7 +17,7 @@ module Rake
         self[source] = to_object_block[source]
       end
     end
-    
+
     alias :each_mapping :each_pair
     alias :sources :keys
     alias :objects :values

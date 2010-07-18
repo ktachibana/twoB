@@ -6,15 +6,15 @@ class Range
   def adjacent?(other)
     Range.new(self.first - 1, self.last + 1, self.exclude_end?).include?(other)
   end
-  
+
   def adjacent_range?(other)
     self.adjacent?(other.first) || other.adjacent?(self.first)
   end
-  
+
   def last_include_end
     last - (exclude_end? ? 1 : 0)
   end
-  
+
   def compose(other)
     ranges = [self, other]
     new_first = ranges.min do |a, b|

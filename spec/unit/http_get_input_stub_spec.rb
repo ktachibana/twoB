@@ -12,7 +12,7 @@ describe HTTPGetInputStub do
     @request = HTTPRequest.new(host, path, headers)
     @http = HTTPGetInputStub.new(@request)
   end
-  
+
   it "requestを格納できる" do
     @http.request.should be_equal(@request)
   end
@@ -24,8 +24,8 @@ describe HTTPGetInputStub do
     @http.each_read do |data|
       result << data
     end
-    
+
     result.should == "<html></html>"
   end
-  
+
 end

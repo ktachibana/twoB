@@ -7,7 +7,7 @@ module BBS2ch
       super(number, name, trip, mail, date, id, body)
       @be = be
     end
-    
+
     attr_reader :be
   end
 end

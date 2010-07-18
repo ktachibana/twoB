@@ -6,7 +6,7 @@ module TwoB::Spec
     @response.status_code.should == 200
     @response.content_type.should == "text/html; charset=UTF-8"
   end
-  
+
   def access(path, param = {}, &block)
     @request = TwoB::Request.new(path, param)
     @system = SpecSystem.new(@request)

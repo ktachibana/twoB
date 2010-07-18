@@ -5,6 +5,7 @@ require 'io/http/http_request'
 require 'io/input'
 require 'encoder'
 require 'net/http'
+
 Net::HTTP.version_1_2
 
 class HTTPGetSource < InputSource
@@ -16,11 +17,10 @@ end
 class HTTPGetInput
   include Input
   include Net
-    
   def initialize(request)
     @request = request
   end
-  
+
   def each_read
     HTTP.start(@request.host) do |http|
       http.request_get(@request.path, @request.headers) do |response|

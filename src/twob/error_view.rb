@@ -3,7 +3,6 @@ require 'util'
 
 class ErrorView
   include ViewUtil
-
   def initialize(error)
     @error = error
   end
@@ -13,11 +12,11 @@ class ErrorView
   def status_code
     500
   end
-  
+
   def content_type
     "text/plain; charset=UTF-8"
   end
-  
+
   def headers
     {"Content-Type" => content_type}
   end

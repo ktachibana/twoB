@@ -12,13 +12,13 @@ module TwoB
         @id = id
         @body = body
       end
-      
+
       attr_reader :number, :name, :trip, :mail, :date, :id, :body
-      
+
       def has_trip?
         !trip.nil?
       end
-  
+
       def age?()
         !mail.include?("sage")
       end

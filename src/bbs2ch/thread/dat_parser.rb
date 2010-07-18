@@ -6,19 +6,18 @@ require 'bbs2ch/thread/dat_line'
 module BBS2ch
   class DatParser < TwoB::Dat::DatParser
     include TwoB::Dat
-    
+
     # ex. "2008/08/18(月) 10:10:53 ID:sgrp3MC1 BE:1086480184-2BP(0)"
     DATE_PATTERN = /\A(.*?)( ID:(\S+))?( BE:(.*))?\z/
-    
     def initialize(initial_number = 1)
       super()
       @number = initial_number
     end
-    
+
     def on_start_part(part)
       @number = part.number_from
     end
-    
+
     def parse_line(values, &block)
       name_string = values.fetch(0, "")
       name_match = TRIP_PATTERN.match(name_string)

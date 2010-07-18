@@ -7,31 +7,30 @@ require 'yaml_marshaler'
 module TwoB
   module BoardHandler
     include Handler
-    
+
     BoardInfo = Struct.new(:url)
-    
     def execute(request, value)
       list_thread()
     end
-    
+
     def get_subjects()
       request = HTTPRequest.new(host.name, subject_path, {})
       source = system.get_subject_source(request, Encoder.by_name(subject_encoding), subject_line_delimiter)
       get_subject_parser.parse(source)
     end
-    
+
     def metadata_file
       data_directory + data_directory_path + "board.yaml"
     end
-    
+
     def metadata_manager
       TwoB::YAMLMarshaler.new(metadata_file, Hash.new)
     end
-    
+
     def data_directory
       system.configuration.data_directory
     end
-    
+
     def list_thread()
       board = BoardInfo.new(original_url)
       subjects = get_subjects()

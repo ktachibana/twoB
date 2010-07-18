@@ -6,7 +6,6 @@ module TwoB
     URL_PATTERN = /(http|ttp|tp)(:\/\/[0-9a-zA-Z_\!-\&\+\-\.\/\:\;\=\?\@\[-\`\{-\~]+)/
     ANCHOR_PATTERN = /(<a .*?>)?((&gt;)?&gt;(\d+)(\-\d+)?)(<\/a>)?/
     BREAK_LINE_PATTERN = %r|<br( /)?>|
-  
     def parse_body(body_str)
       builder = ItemBuilder.new(body_str)
       builder.mark_pattern(ANCHOR_PATTERN) do |match|
@@ -25,12 +24,11 @@ module TwoB
 
     class ItemBuilder
       BodyItem = Struct.new(:body, :range)
-      
       def initialize(body_str)
         @body_str = body_str
         @marked_items = []
       end
-      
+
       def mark_pattern(pattern, &to_item)
         i = 0
         while match = pattern.match(@body_str[i..-1])
@@ -40,10 +38,10 @@ module TwoB
           i = i + match.end(0)
         end
       end
-      
+
       def build(&to_default_item)
         items = @marked_items.sort{|a, b| a.range.begin <=> b.range.begin }
-        
+
         result = []
         i = 0
         items.each do |item|

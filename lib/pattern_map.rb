@@ -2,7 +2,6 @@
 
 class PatternMap
   Pattern = Struct.new(:pattern, :create)
-
   def initialize
     @patterns = []
   end

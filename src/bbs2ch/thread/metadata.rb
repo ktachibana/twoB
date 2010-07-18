@@ -7,17 +7,17 @@ module BBS2ch
       super(last_res_number, cache_file_size)
       @last_modified = last_modified
     end
-    
+
     def self.empty()
       new(0, 0, nil)
     end
-    
+
     attr_accessor :last_modified
-    
+
     def empty?
       @last_modified.nil?
     end
-    
+
     def dat_header
       header = {}
       return header if empty?

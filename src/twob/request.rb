@@ -9,22 +9,22 @@ module TwoB
       @param = param
       @path_info_uri = URI.parse(path_info ? path_info : "")
     end
-    
+
     def path_info
       @path_info_uri.path
     end
-    
+
     attr_reader :param
     equality :@path_info, :@param
-    
+
     def fragment
       @path_info_uri.fragment
     end
-    
+
     def has_param?(key_name)
       @param.has_key?(key_name)
     end
-    
+
     def get_param(key_name)
       @param[key_name][0]
     end

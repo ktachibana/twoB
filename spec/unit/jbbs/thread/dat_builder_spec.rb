@@ -4,7 +4,7 @@ module JBBS
   describe DatBuilder do
     before do
       @values =
-       ["1",
+      ["1",
         "凜　</b> ◆Wpuzura65A<b>",
         "",
         "2008/04/12(土) 01:36:13",
@@ -13,7 +13,7 @@ module JBBS
         "YL0bGuuo0"]
       @builder = JBBS::DatBuilder.new
     end
-    
+
     it "build" do
       @builder.start(1)
       @builder.build(@values)
@@ -23,7 +23,7 @@ module JBBS
       dat.res_list.first.name.should == "凜　"
       dat.res_list.first.trip.should == "Wpuzura65A"
     end
-    
+
     it ">>10から>>14まで読み込み、フィルターで>>11-13のみを結果に含める" do
       @builder.start(10)
       (10..14).each do |i|

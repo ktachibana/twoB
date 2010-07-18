@@ -9,20 +9,20 @@ require 'bbs2ch/action'
 describe "2chのレスアンカーを表示する" do
   include BBS2ch
   include BBS2ch::Spec
-  
+
   before do
     SpecSystem.clear_cache_dir
   end
-  
+
   def valid_response
     @response.status_code.should == 200
     @response.content_type.should == "text/html; charset=UTF-8"
   end
-  
+
   it "1-3表示" do
     view_thread(BinaryFile.by_filename("testData/2ch/example(1-80).dat"))
     view_res_anchor("1-3")
-    
+
     valid_response
 
     thread = @response.as_thread

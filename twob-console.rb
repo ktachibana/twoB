@@ -24,9 +24,9 @@ class ConsoleSystem < TwoB::System
     @param = param
     @request = TwoB::Request.new(@path_info, @param)
   end
-  
+
   attr_reader :request
-  
+
   def output(response)
     $stdout.puts("<!-- Status: #{response.status_code} -->")
     $stdout.puts("<!-- #{h response.headers.inspect} -->")

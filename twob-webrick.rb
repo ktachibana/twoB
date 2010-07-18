@@ -15,7 +15,7 @@ class WEBrickSystem < TwoB::System
     @request = TwoB::Request.new(webrick_request.path_info, CGI.parse(webrick_request.query_string ? webrick_request.query_string : ""))
     @response = webrick_response
   end
-  
+
   attr_reader :request
 
   def output(response)

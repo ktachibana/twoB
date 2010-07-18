@@ -24,7 +24,7 @@ describe Pickers do
       subscribe.to_s.should == "subscribe10"
       subscribe.should == Subscribe.new(10)
     end
-    
+
     it "subscribeNがSubscribeのフォーマット" do
       subscribe = Pickers.get("subscribe5")
       subscribe.class.should == Subscribe

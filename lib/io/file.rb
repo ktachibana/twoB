@@ -5,16 +5,15 @@ require 'io/source'
 
 class BinaryFile
   include Input
-  
   def initialize(path, block_size = 1024)
     @path = path
     @block_size = block_size
   end
-  
+
   def self.by_filename(filename, blocksize = 1024)
     new(Pathname.new(filename), blocksize)
   end
-  
+
   def each_read
     @path.open("rb") do |io|
       buf = " " * @block_size
@@ -36,7 +35,7 @@ class BinaryFile
       @path.size
     end
   end
-  
+
   def delete
     maybe_noentry do
       @path.delete
@@ -55,17 +54,16 @@ end
 
 class TextFile < BinaryFile
   include Enumerable
-
   def initialize(path, encoding)
     super(path)
     @path = path
     @encoder = Encoder.by_name(encoding)
   end
-  
+
   def self.by_filename(filename, encoding)
     self.new(Pathname.new(filename), encoding)
   end
-  
+
   attr_reader :path, :encoder, :offset
 
   def open

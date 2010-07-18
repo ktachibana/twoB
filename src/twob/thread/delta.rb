@@ -21,7 +21,7 @@ module TwoB
         yield res
       end
     end
-    
+
     def bytes_size
       @bytes.length
     end

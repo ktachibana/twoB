@@ -13,61 +13,60 @@ module BBS2ch
       @board = board
       @number = number
     end
-    
+
     attr_reader :board, :number
-    
+
     def host
       @board.host
     end
-    
-    
+
     include TwoB::ThreadHandler
-    
+
     def dat_builder
       BBS2ch::DatBuilder.new
     end
-    
+
     def cache_manager
       cache_source
     end
-    
+
     def load_metadata
       metadata_manager.load
     end
-    
+
     def metadata_manager
       TwoB::YAMLMarshaler.new(metadata_file, BBS2ch::Metadata.empty)
     end
-    
+
     def original_url
       "http://#{host.name}/test/read.cgi/#{board.id}/#{number}/"
     end
-    
+
     def dat_url
       "http://#{host.name}#{dat_path}"
     end
-    
+
     def dat_path
       "/#{board.id}/dat/#{number}.dat"
     end
     private :dat_path
-    
+
     def dat_encoding_name
       "Windows-31J"
     end
-    
+
     def dat_line_delimiter
       "\n"
     end
-    
+
     def delta_request(metadata)
       HTTPRequest.new(host.name, dat_path, metadata.dat_header)
     end
-    
+
     def system
       host.system
     end
-    
+
     def update(delta, metadata, time)
       return if delta.empty?
       cache_manager.append(delta.bytes)
@@ -76,7 +75,7 @@ module BBS2ch
       metadata_manager.save(metadata)
       read_counter.update(@number, delta.last_res_number)
     end
-    
+
     def read_counter
       board
     end

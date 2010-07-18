@@ -4,7 +4,6 @@ require 'util/view'
 module TwoB
   class BoardView
     include ViewUtil
-  
     def initialize(board, threads)
       @board = board
       @threads = threads
@@ -12,24 +11,24 @@ module TwoB
 
     attr_reader :board
     attr_reader :threads
-  
+
     def status_code
       200
     end
-    
+
     def content_type
       "application/xhtml+xml; charset=UTF-8"
     end
-    
+
     def headers
       {"Content-Type" => content_type}
     end
-  
+
     def write_body(_erbout)
       def _erbout.concat(str)
         self << str
       end
-  
+
       _erbout.concat "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
       ; _erbout.concat "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
       ; _erbout.concat "<head>\n"
@@ -58,24 +57,24 @@ module TwoB
       ; _erbout.concat "\t</thead>\n"
       ; _erbout.concat "\t<tbody class=\"body\">\n"
       ; 	threads.each{|thread|
-      _erbout.concat "\t\t<tr class=\""; _erbout.concat(( thread.read? ? 'read' : '' ).to_s); _erbout.concat " "; _erbout.concat(( thread.has_new? ? 'new' : '' ).to_s); _erbout.concat "\">\n"
-      ; _erbout.concat "\t\t\t<td class=\"no\">"; _erbout.concat((h thread.order ).to_s); _erbout.concat "</td>\n"
-      ; _erbout.concat "\t\t\t<td class=\"title\">\n"
-      ; _erbout.concat "\t\t\t\t<a class=\"thread_link\" href=\""; _erbout.concat(( thread.number ).to_s); _erbout.concat "/subscribe5#firstNew\" target=\"_blank\">"; _erbout.concat((h thread.title ).to_s); _erbout.concat "</a>\n"
-      ; _erbout.concat "\t\t\t</td>\n"
-      ; _erbout.concat "\t\t\t<td class=\"count\">\n"
-      ; _erbout.concat "\t\t\t\t"; _erbout.concat(( thread.read_count ).to_s); _erbout.concat " / "; _erbout.concat(( thread.res_count ).to_s)
-      if thread.has_new?
-      _erbout.concat "\t\t\t\t("; _erbout.concat(( thread.new_count ).to_s); _erbout.concat ")\n"
-      ; 		end
-      _erbout.concat "\t\t\t</td>\n"
-      ; _erbout.concat "\t\t\t<td class=\"delete_cache\">\n"
-      ; 		if thread.read?
-      _erbout.concat "\t\t\t<a class=\"delete_cache\" href=\""; _erbout.concat(( thread.number ).to_s); _erbout.concat "/delete_cache\">D</a>\n"
-      ; 		end
-      _erbout.concat "\t\t\t</td>\n"
-      ; _erbout.concat "\t\t</tr>\n"
-      ; 	}
+        _erbout.concat "\t\t<tr class=\""; _erbout.concat(( thread.read? ? 'read' : '' ).to_s); _erbout.concat " "; _erbout.concat(( thread.has_new? ? 'new' : '' ).to_s); _erbout.concat "\">\n"
+        ; _erbout.concat "\t\t\t<td class=\"no\">"; _erbout.concat((h thread.order ).to_s); _erbout.concat "</td>\n"
+        ; _erbout.concat "\t\t\t<td class=\"title\">\n"
+        ; _erbout.concat "\t\t\t\t<a class=\"thread_link\" href=\""; _erbout.concat(( thread.number ).to_s); _erbout.concat "/subscribe5#firstNew\" target=\"_blank\">"; _erbout.concat((h thread.title ).to_s); _erbout.concat "</a>\n"
+        ; _erbout.concat "\t\t\t</td>\n"
+        ; _erbout.concat "\t\t\t<td class=\"count\">\n"
+        ; _erbout.concat "\t\t\t\t"; _erbout.concat(( thread.read_count ).to_s); _erbout.concat " / "; _erbout.concat(( thread.res_count ).to_s)
+        if thread.has_new?
+          _erbout.concat "\t\t\t\t("; _erbout.concat(( thread.new_count ).to_s); _erbout.concat ")\n"
+          ; 		end
+        _erbout.concat "\t\t\t</td>\n"
+        ; _erbout.concat "\t\t\t<td class=\"delete_cache\">\n"
+        ; 		if thread.read?
+          _erbout.concat "\t\t\t<a class=\"delete_cache\" href=\""; _erbout.concat(( thread.number ).to_s); _erbout.concat "/delete_cache\">D</a>\n"
+          ; 		end
+        _erbout.concat "\t\t\t</td>\n"
+        ; _erbout.concat "\t\t</tr>\n"
+        ; 	}
       _erbout.concat "\t</tbody>\n"
       ; _erbout.concat "</table>\n"
       ; _erbout.concat "</body>\n"

@@ -6,17 +6,17 @@ module JBBS
       @board = board
       @number = number
     end
-    
+
     attr_reader :board, :number
-    
+
     def system
       host.system
     end
-    
+
     def category
       board.category
     end
-    
+
     def host
       category.host
     end

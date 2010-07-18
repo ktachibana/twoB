@@ -8,7 +8,7 @@ module TwoB
         board_metadata[thread_number] = read_count
       end
     end
-    
+
     def delete(thread_number)
       metadata_manager.update do |board_metadata|
         board_metadata.delete(thread_number)

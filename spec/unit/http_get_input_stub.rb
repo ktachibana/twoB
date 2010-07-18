@@ -8,7 +8,7 @@ class HTTPGetInputStub
   end
   attr :request
   attr_accessor :response_source
-  
+
   def each_read
     @response_source.each do |line|
       yield line

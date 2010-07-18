@@ -6,13 +6,12 @@ require 'twob/error_view'
 module TwoB
   class System
     include Handler
-    
     def initialize(configuration)
       @configuration = configuration
     end
-    
+
     attr_reader :configuration
-    
+
     def process
       begin
         response = apply(request, request.path_info)
@@ -22,11 +21,11 @@ module TwoB
         output(response)
       end
     end
-    
+
     def handle_error(e)
       dump_error(ErrorView.new(e))
     end
-    
+
     def /(value)
       case value
       when JBBS::Host::Name then JBBS::Host.new(self)
@@ -35,11 +34,11 @@ module TwoB
       else super
       end
     end
-    
+
     def get_delta_input(request)
       HTTPGetInput.new(request)
     end
-    
+
     def get_subject_source(request, encoder, line_delimiter)
       HTTPGetSource.new(request, encoder, line_delimiter)
     end

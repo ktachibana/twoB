@@ -20,9 +20,9 @@ module TwoB
       query = @fcgi.env["QUERY_STRING"]
       @request = TwoB::Request.new(path_info, CGI.parse(query ? query : ""))
     end
-    
+
     attr_reader :request
-    
+
     def output(response)
       @fcgi.out.print("Status: #{response.status_code}\r\n")
       response.headers.each do |key, value|
@@ -37,7 +37,6 @@ module TwoB
     end
   end
 end
-
 
 configuration = TwoB::Configuration.new(Pathname.new("2bcache").expand_path)
 

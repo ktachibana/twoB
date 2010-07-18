@@ -9,7 +9,7 @@ describe JBBS::BoardService do
     @category = JBBS::Category.new(@host, "cat")
     @board = JBBS::BoardService.new(@category, "012")
   end
-  
+
   it do
     @board.original_url.should == "http://jbbs.livedoor.jp/cat/012/"
     @board.subject_url.should == "http://jbbs.livedoor.jp/cat/012/subject.txt"

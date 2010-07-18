@@ -10,6 +10,5 @@ require 'twob/redirect_response'
 require 'twob/request'
 require 'twob/response'
 require 'twob/system'
-
 require 'bbs2ch'
 require 'jbbs'

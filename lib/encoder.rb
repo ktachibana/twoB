@@ -5,12 +5,12 @@ class Encoder
     def name
       "Literal"
     end
-    
+
     def self.encode(string_bytes)
       string_bytes
     end
   end
-  
+
   def initialize(name, converter, alt_char = "?")
     @name = name
     @converter = converter
@@ -20,7 +20,7 @@ class Encoder
   def self.by_name(encoding_name, alt_char = "?")
     new(encoding_name, Iconv.new("UTF-8", encoding_name), alt_char)
   end
-  
+
   def name
     @name
   end

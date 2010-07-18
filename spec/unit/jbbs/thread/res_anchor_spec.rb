@@ -14,7 +14,7 @@ describe "ResAnchor" do
     @board = JBBS::BoardService.new(@category, "012")
     @thread = JBBS::ThreadService.new(@board, "345")
   end
-  
+
   it ">>50を参照する" do
     view = @thread.res_anchor(TwoB::Picker::Only.new(50))
     view.should be_kind_of(ResAnchorView)

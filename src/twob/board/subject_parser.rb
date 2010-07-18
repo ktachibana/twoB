@@ -5,7 +5,7 @@ module TwoB
     def initialize(line_pattern)
       @line_pattern = line_pattern
     end
-    
+
     def parse(source)
       result = []
       source.each_with_index do |line, index|
