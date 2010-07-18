@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 # -*- coding: utf-8 -*-
 require 'erb'
+require 'pathname'
 
 module ERB2View
   module_function
@@ -41,7 +42,9 @@ module ERB2View
 
   def convert(input_file, output_file)
     File.open(input_file) do |input|
-      File.open(output_file, "w") do |output|
+      output_path = Pathname.new(output_file)
+      output_path.parent.mkpath
+      output_path.open("w") do |output|
         convert_io(input, output)
       end
     end

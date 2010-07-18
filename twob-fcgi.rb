@@ -1,4 +1,4 @@
-#!/usr/bin/ruby -Isrc -Ilib -rubygems
+#!/usr/bin/ruby -Isrc -Ilib -Iview/src -rubygems
 # -*- coding: utf-8 -*-
 
 $KCODE = "utf8"
