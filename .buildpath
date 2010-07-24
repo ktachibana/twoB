@@ -5,5 +5,6 @@
 	<buildpathentry kind="src" path="lib"/>
 	<buildpathentry kind="src" path="spec/unit"/>
 	<buildpathentry kind="src" path="spec/function"/>
+	<buildpathentry kind="src" path="view/src"/>
 	<buildpathentry kind="con" path="org.eclipse.dltk.launching.INTERPRETER_CONTAINER"/>
 </buildpath>
