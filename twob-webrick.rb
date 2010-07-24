@@ -12,7 +12,9 @@ require 'pathname'
 class WEBrickSystem < TwoB::System
   def initialize(configuration, webrick_request, webrick_response)
     super(configuration)
-    @request = TwoB::Request.new(webrick_request.path_info, CGI.parse(webrick_request.query_string ? webrick_request.query_string : ""))
+    param = CGI.parse(webrick_request.query_string ? webrick_request.query_string : "")
+    script_name = webrick_request.script_name
+    @request = TwoB::Request.new(webrick_request.path_info, param, script_name)
     @response = webrick_response
   end
 

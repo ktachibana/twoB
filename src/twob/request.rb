@@ -4,18 +4,19 @@ require 'uri'
 
 module TwoB
   class Request
-    def initialize(path_info, param = {})
+    def initialize(path_info, param = {}, script_name = "/twoB/script.rb")
       @path_info = path_info
       @param = param
       @path_info_uri = URI.parse(path_info ? path_info : "")
+      @script_name = script_name
     end
 
     def path_info
       @path_info_uri.path
     end
 
-    attr_reader :param
-    equality :@path_info, :@param
+    attr_reader :param, :script_name
+    equality :@path_info, :@param, :@script_name
 
     def fragment
       @path_info_uri.fragment

@@ -18,7 +18,9 @@ module TwoB
       @fcgi = fcgi
       path_info = @fcgi.env["PATH_INFO"]
       query = @fcgi.env["QUERY_STRING"]
-      @request = TwoB::Request.new(path_info, CGI.parse(query ? query : ""))
+      param = CGI.parse(query ? query : "")
+      script_name = fcgi.env["SCRIPT_NAME"]
+      @request = TwoB::Request.new(path_info, param, script_name)
     end
 
     attr_reader :request

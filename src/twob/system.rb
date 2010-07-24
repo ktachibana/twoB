@@ -1,7 +1,8 @@
-require 'twob/handler'
 require 'bbs2ch/host'
 require 'jbbs/host'
 require 'twob/error_view'
+require 'twob/handler'
+require 'util/enum'
 
 module TwoB
   class System
@@ -26,6 +27,13 @@ module TwoB
       dump_error(ErrorView.new(e))
     end
 
+    def execute(request, value)
+      case value
+      when "show"
+        show(request.script_name, request.get_param("url"))
+      end
+    end
+
     def /(value)
       case value
       when JBBS::Host::Name then JBBS::Host.new(self)
@@ -33,6 +41,14 @@ module TwoB
       when "" then self
       else super
       end
+    end
+
+    def show(script_name, url)
+      path = [JBBS::Host, BBS2ch::Host].find_not_nil do |host|
+        host.get_path(url)
+      end
+      raise "#{url}を処理することができません" unless path
+      RedirectResponse.new(script_name + path)
     end
 
     def get_delta_input(request)

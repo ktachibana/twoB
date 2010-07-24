@@ -94,8 +94,8 @@ module TwoB
       end
 
       def build_thread(builder)
-        build.load_cache(1..builder.cached_number)
-        build.load_delta
+        builder.load_cache(1..builder.cached_number)
+        builder.load_delta
       end
 
       def to_s
