@@ -5,7 +5,7 @@ require 'io'
 
 include BBS2ch
 
-describe ThreadBuilder do
+describe TwoB::ThreadBuilder do
   before do
     @factory = mock(:factory)
     @factory.should_receive(:dat_builder).twice.and_return{ BBS2ch::DatBuilder.new }
