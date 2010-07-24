@@ -15,6 +15,7 @@ describe "2chのスレッドを読む" do
     @test_data_dir = Pathname.new("testData/2ch")
     @example_1to80 = BinaryFile.new(@test_data_dir + "example(1-80).dat")
     @example_81to100 = BinaryFile.new(@test_data_dir + "example(81-100).dat")
+    @example_short = BinaryFile.new(@test_data_dir + "2ch_with_id_short.dat")
     @example_subject = TextFile.new(@test_data_dir + "example-subject.txt", "Windows-31J")
     @board_dir = SpecSystem::SpecConfiguration.data_directory + "server.2ch.net" + "board"
   end
@@ -76,6 +77,14 @@ describe "2chのスレッドを読む" do
     valid_response
 
     @response.as_thread.res_ranges.should == [1..80]
+  end
+
+  it "キャッシュの範囲外をLatestで指定" do
+    view_thread(@example_short)
+    view_thread(StringInput.empty, "l50")
+    valid_response
+
+    @response.as_thread.res_ranges.should == [1..7]
   end
 
   it "subscribe5による追加読み込み" do

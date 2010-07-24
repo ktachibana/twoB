@@ -49,7 +49,7 @@ module TwoB
       def build_thread(builder)
         base_number = builder.bookmark_number ? builder.bookmark_number : builder.cached_number
         ranges = Ranges.union(1..1, base_number - @cache_count + 1 .. builder.cached_number)
-        builder.load_cache(*ranges.limit_range(1..builder.cached_number))
+        builder.load_cache(*ranges)
         builder.load_delta
         builder.update
       end

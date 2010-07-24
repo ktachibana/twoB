@@ -26,7 +26,7 @@ module TwoB
     def load_cache(*ranges)
       begin
         @cache_source.open do |reader|
-          ranges.each do |range|
+          Ranges.new(*ranges).limit_range(1..cached_number).each do |range|
             load_cache_from(reader, range)
           end
         end
