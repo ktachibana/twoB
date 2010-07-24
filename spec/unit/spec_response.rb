@@ -19,7 +19,7 @@ class SpecResponse < SimpleDelegator
   end
 
   def as_document
-    @document = Nokogiri::HTML(string)
+    Nokogiri::HTML(string)
   end
 
   def as_thread

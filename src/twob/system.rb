@@ -1,6 +1,7 @@
 require 'bbs2ch/host'
 require 'jbbs/host'
 require 'twob/error_view'
+require 'twob/start_page_view'
 require 'twob/handler'
 require 'util/enum'
 
@@ -31,6 +32,8 @@ module TwoB
       case value
       when "show"
         show(request.script_name, request.get_param("url"))
+      when ""
+        start_page(request)
       end
     end
 
@@ -41,6 +44,10 @@ module TwoB
       when "" then self
       else super
       end
+    end
+
+    def start_page(request)
+      StartPageView.new(request)
     end
 
     def show(script_name, url)

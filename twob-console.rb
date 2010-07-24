@@ -18,11 +18,11 @@ configuration = TwoB::Configuration.new(Pathname.new("2bcache").expand_path)
 
 class ConsoleSystem < TwoB::System
   include ViewUtil
-  def initialize(configuration, path_info, param, script_name = "/twoB/script.rb")
+  def initialize(configuration, path_info, param)
     super(configuration)
     @path_info = path_info
     @param = param
-    @request = TwoB::Request.new(@path_info, @param, script_name)
+    @request = TwoB::Request.new(@path_info, @param, ENV)
   end
 
   attr_reader :request

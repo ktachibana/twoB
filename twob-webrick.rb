@@ -14,7 +14,7 @@ class WEBrickSystem < TwoB::System
     super(configuration)
     param = CGI.parse(webrick_request.query_string ? webrick_request.query_string : "")
     script_name = webrick_request.script_name
-    @request = TwoB::Request.new(webrick_request.path_info, param, script_name)
+    @request = TwoB::Request.new(webrick_request.path_info, param, webrick_request.meta_vars)
     @response = webrick_response
   end
 

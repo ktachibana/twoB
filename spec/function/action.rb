@@ -7,8 +7,8 @@ module TwoB::Spec
     @response.content_type.should == "text/html; charset=UTF-8"
   end
 
-  def access(path, param = {}, script_name = "/twoB/script.rb", &block)
-    @request = TwoB::Request.new(path, param, script_name)
+  def access(path, param = {}, env = {"SCRIPT_NAME" => "/twoB/script.rb", "REQUEST_URI" => "http://192.168.0.6/twoB/script.rb" + path}, &block)
+    @request = TwoB::Request.new(path, param, env)
     @system = SpecSystem.new(@request)
     block.call(@system) if block
     @system.process

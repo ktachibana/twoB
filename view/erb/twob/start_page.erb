@@ -1,0 +1,25 @@
+<%#@ module_name: TwoB %>
+<%#@ class_name: StartPageView %>
+<%#@ param: request %>
+<%#@ content_type: application/xhtml+xml; charset=UTF-8 %>
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<title>twoB</title>
+	<link rel="stylesheet" type="text/css" href="/twoB/web/style.css" />
+</head>
+
+<body>
+  <p>
+    Bookmarklet: <a class="bookmarklet" href="javascript:location.href='<%= request.request_script %>/show?url='+encodeURI(location.href)">twoBで表示</a>
+  </p>
+  <form action="<%= request.script_name %>/show" method="get">
+    URL: <input type="text" name="url"/>
+    <input type="submit" value="twoBで表示"/>
+  </form>
+</body>
+</html>
