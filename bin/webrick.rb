@@ -38,7 +38,7 @@ end
 $configuration = TwoB::Configuration.new(Pathname.new("~/2bcache").expand_path)
 
 server = WEBrick::HTTPServer.new({:DocumentRoot => './', :Port => 8080})
-server.mount_proc("/twoB/test") do |request, response|
+server.mount_proc("/twoB/action") do |request, response|
   system = WEBrickSystem.new($configuration, request, response)
   system.process
 end
