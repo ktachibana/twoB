@@ -22,7 +22,7 @@ class ConsoleSystem < TwoB::System
     super(configuration)
     @path_info = path_info
     @param = param
-    @request = TwoB::Request.new(@path_info, @param, ENV)
+    @request = TwoB::Request.new(@path_info, @param, {"SCRIPT_NAME" => "/twoB/script.rb", "REQUEST_URI" => "http://localhost/twoB/script.rb" + path_info})
   end
 
   attr_reader :request

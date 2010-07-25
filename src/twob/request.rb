@@ -4,7 +4,7 @@ require 'uri'
 
 module TwoB
   class Request
-    def initialize(path_info, param = {}, env = {"SCRIPT_NAME" => "/twoB/script.rb", "REQUEST_URI" => "http://192.168.0.6/twoB/script.rb" + path_info})
+    def initialize(path_info, param = {}, env = {})
       @path_info = path_info
       @param = param
       @path_info_uri = URI.parse(path_info ? path_info : "")
