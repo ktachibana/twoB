@@ -30,7 +30,7 @@ class ConsoleFrontend
     env = {"SCRIPT_NAME" => "/twoB/action", "REQUEST_URI" => "http://localhost/twoB/action" + path_info}
     request = TwoB::Request.new(path_info, param, env)
 
-    TwoB::Application.new(self.new, request).process
+    TwoB::Application.new(self.new, request).main
   end
 end
 

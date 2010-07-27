@@ -9,7 +9,7 @@ module TwoB
       @request = request
     end
 
-    def process
+    def main
       begin
         response = root_handler.apply(@request, @request.path_info)
       rescue Exception => e

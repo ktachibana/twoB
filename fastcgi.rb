@@ -21,7 +21,7 @@ module TwoB
         query = fcgi.env["QUERY_STRING"]
         param = CGI.parse(query || "")
         request = TwoB::Request.new(path_info, param, fcgi.env)
-        TwoB::Application.new(self.new(fcgi), request).process
+        TwoB::Application.new(self.new(fcgi), request).main
 
         fcgi.finish
       end

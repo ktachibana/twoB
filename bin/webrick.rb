@@ -18,7 +18,7 @@ class WEBrickFrontend
     server.mount_proc("/twoB/action") do |webrick_request, webrick_response|
       param = CGI.parse(webrick_request.query_string || "")
       request = TwoB::Request.new(webrick_request.path_info, param, webrick_request.meta_vars)
-      TwoB::Application.new(self.new(webrick_response), request).process
+      TwoB::Application.new(self.new(webrick_response), request).main
     end
 
     [:INT, :TERM].each do |signal|
