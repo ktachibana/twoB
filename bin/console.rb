@@ -14,7 +14,7 @@ param = ARGV.empty? ? {} : CGI.parse(ARGV.shift)
 
 raise("missing path_info") unless path_info
 
-configuration = TwoB::Configuration.new(Pathname.new("2bcache").expand_path)
+configuration = TwoB::Configuration.new(Pathname.new("local/console_cache").expand_path)
 
 class ConsoleSystem < TwoB::System
   include ViewUtil
