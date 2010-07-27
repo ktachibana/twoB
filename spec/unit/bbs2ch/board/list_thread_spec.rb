@@ -6,7 +6,7 @@ describe BBS2ch::Board, "list_thread" do
   include TwoB
 
   it "example" do
-    FileUtils.rmtree("spec_cache")
+    SpecSystem.clear_cache_dir
     @system = SpecSystem.new
     @board = @system / "pc12.2ch.net" / "tech"
     @system.stub!(:get_subject_source).and_return(TextFile.by_filename("testData/2ch/subject.txt", "Windows-31J"))
