@@ -3,27 +3,33 @@
 
 $KCODE = "utf8"
 
-require 'twob/system'
-require 'twob/configuration'
+require 'twob/application'
 require 'twob/request'
+require 'twob/error_view'
 require 'fcgi'
 require 'cgi'
-require 'pathname'
-require 'twob/error_view'
 
 module TwoB
-  class FCGISystem < System
-    def initialize(configuration, fcgi)
-      super(configuration)
+  class FastCGIFrontend
+    def initialize(fcgi)
       @fcgi = fcgi
-      path_info = @fcgi.env["PATH_INFO"]
-      query = @fcgi.env["QUERY_STRING"]
-      param = CGI.parse(query ? query : "")
-      script_name = fcgi.env["SCRIPT_NAME"]
-      @request = TwoB::Request.new(path_info, param, fcgi.env)
     end
 
-    attr_reader :request
+    def self.process
+      FCGI.each do |fcgi|
+        path_info = fcgi.env["PATH_INFO"]
+        query = fcgi.env["QUERY_STRING"]
+        param = CGI.parse(query || "")
+        request = TwoB::Request.new(path_info, param, fcgi.env)
+        TwoB::Application.new(self.new(fcgi), request).process
+
+        fcgi.finish
+      end
+    end
+
+    def data_directory
+      "2bcache"
+    end
 
     def output(response)
       @fcgi.out.print("Status: #{response.status_code}\r\n")
@@ -34,17 +40,10 @@ module TwoB
       response.write_body(@fcgi.out)
     end
 
-    def dump_error(response)
-      output(response)
+    def handle_error(e)
+      output(ErrorView.new(e))
     end
   end
 end
 
-configuration = TwoB::Configuration.new(Pathname.new("2bcache").expand_path)
-
-FCGI.each do |fcgi|
-  system = TwoB::FCGISystem.new(configuration, fcgi)
-  system.process
-  fcgi.finish
-end
-
+TwoB::FastCGIFrontend.process

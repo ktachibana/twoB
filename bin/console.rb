@@ -1,31 +1,17 @@
 #!/usr/bin/ruby -Isrc -Ilib -Iview/src -rubygems
 # -*- coding: utf-8 -*-
 
-require 'twob/system'
+require 'twob/application'
 require 'twob/request'
-require 'twob/configuration'
-require 'util'
-require 'pathname'
+require 'util/view'
 require 'optparse'
 require 'cgi'
 
-path_info = ARGV.shift
-param = ARGV.empty? ? {} : CGI.parse(ARGV.shift)
-
-raise("missing path_info") unless path_info
-
-configuration = TwoB::Configuration.new(Pathname.new("local/console_cache").expand_path)
-
-class ConsoleSystem < TwoB::System
+class ConsoleFrontend
   include ViewUtil
-  def initialize(configuration, path_info, param)
-    super(configuration)
-    @path_info = path_info
-    @param = param
-    @request = TwoB::Request.new(@path_info, @param, {"SCRIPT_NAME" => "/twoB/action", "REQUEST_URI" => "http://localhost/twoB/action" + path_info})
+  def data_directory
+    "local/console_cache"
   end
-
-  attr_reader :request
 
   def output(response)
     $stdout.puts("<!-- Status: #{response.status_code} -->")
@@ -33,10 +19,19 @@ class ConsoleSystem < TwoB::System
     response.write_body($stdout)
   end
 
-  def dump_error(response)
-    response.write_body($stderr)
+  def handle_error(e)
+    raise e
+  end
+
+  def self.process
+    path_info = ARGV.shift
+    param = ARGV.empty? ? {} : CGI.parse(ARGV.shift)
+    raise("missing path_info") unless path_info
+    env = {"SCRIPT_NAME" => "/twoB/action", "REQUEST_URI" => "http://localhost/twoB/action" + path_info}
+    request = TwoB::Request.new(path_info, param, env)
+
+    TwoB::Application.new(self.new, request).process
   end
 end
 
-system = ConsoleSystem.new(configuration, path_info, param)
-system.process
+ConsoleFrontend.process

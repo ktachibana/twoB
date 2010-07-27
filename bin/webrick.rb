@@ -1,49 +1,49 @@
 #!/usr/bin/ruby -Isrc -Ilib -Iview/src -rubygems
 # -*- coding: utf-8 -*-
 
-require 'twob/system'
-require 'twob/configuration'
+require 'twob/application'
 require 'twob/request'
-require 'stringio'
+require 'twob/error_view'
 require 'webrick'
 require 'cgi'
-require 'pathname'
+require 'stringio'
 
-class WEBrickSystem < TwoB::System
-  def initialize(configuration, webrick_request, webrick_response)
-    super(configuration)
-    param = CGI.parse(webrick_request.query_string ? webrick_request.query_string : "")
-    script_name = webrick_request.script_name
-    @request = TwoB::Request.new(webrick_request.path_info, param, webrick_request.meta_vars)
-    @response = webrick_response
+class WEBrickFrontend
+  def initialize(webrick_response)
+    @webrick_response = webrick_response
+  end
+  
+  def self.process
+    server = WEBrick::HTTPServer.new({:DocumentRoot => './', :Port => 8080})
+    server.mount_proc("/twoB/action") do |webrick_request, webrick_response|
+      param = CGI.parse(webrick_request.query_string || "")
+      request = TwoB::Request.new(webrick_request.path_info, param, webrick_request.meta_vars)
+      TwoB::Application.new(self.new(webrick_response), request).process
+    end
+
+    [:INT, :TERM].each do |signal|
+      trap(signal){ server.stop }
+    end
+    server.start
   end
 
-  attr_reader :request
+  def data_directory
+    "2bcache"
+  end
 
   def output(response)
-    @response.status = response.status_code
+    @webrick_response.status = response.status_code
     response.headers.each do |key, value|
-      @response[key] = value
+      @webrick_response[key] = value
     end
     io = StringIO.new
     response.write_body(io)
-    @response.body = io.string
+    @webrick_response.body = io.string
   end
 
-  def dump_error(response)
-    output(response)
+  def handle_error(e)
+    output(ErrorView.new(e))
   end
 end
 
-$configuration = TwoB::Configuration.new(Pathname.new("2bcache").expand_path)
-
-server = WEBrick::HTTPServer.new({:DocumentRoot => './', :Port => 8080})
-server.mount_proc("/twoB/action") do |request, response|
-  system = WEBrickSystem.new($configuration, request, response)
-  system.process
-end
-[:INT, :TERM].each do |signal|
-  trap(signal){ server.stop }
-end
-
-server.start
+WEBrickFrontend.process
