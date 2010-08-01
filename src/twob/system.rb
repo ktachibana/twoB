@@ -4,29 +4,19 @@ require 'twob/error_view'
 require 'twob/start_page_view'
 require 'twob/handler'
 require 'util/enum'
+require 'forwardable'
 
 module TwoB
   class System
+    extend Forwardable
     include Handler
-    def initialize(configuration)
+    def initialize(configuration, backend)
       @configuration = configuration
+      @backend = backend
     end
 
     attr_reader :configuration
-
-    def process
-      begin
-        response = apply(request, request.path_info)
-      rescue Exception => e
-        handle_error(e)
-      else
-        output(response)
-      end
-    end
-
-    def handle_error(e)
-      dump_error(ErrorView.new(e))
-    end
+    def_delegators(:@backend, :get_delta_input, :get_subject_source)
 
     def execute(request, value)
       case value
@@ -56,14 +46,6 @@ module TwoB
       end
       raise "#{url}を処理することができません" unless path
       RedirectResponse.new(script_name + path)
-    end
-
-    def get_delta_input(request)
-      HTTPGetInput.new(request)
-    end
-
-    def get_subject_source(request, encoder, line_delimiter)
-      HTTPGetSource.new(request, encoder, line_delimiter)
     end
   end
 end

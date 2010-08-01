@@ -7,7 +7,7 @@ module TwoB
     def initialize(path_info, param = {}, env = {})
       @path_info = path_info
       @param = param
-      @path_info_uri = URI.parse(path_info ? path_info : "")
+      @path_info_uri = URI.parse(path_info || "")
       @script_name = env["SCRIPT_NAME"]
       @request_uri = env["REQUEST_URI"]
     end

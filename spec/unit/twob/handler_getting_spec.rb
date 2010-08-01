@@ -5,19 +5,18 @@ require 'twob/configuration'
 require 'jbbs/thread/thread_service'
 require 'jbbs/board/board_service'
 require 'delegate'
+require 'spec_context'
 
 describe TwoB::Handler do
-  before do
-    @system = TwoB::System.new(TwoB::Configuration.new(Pathname.new("2bcache")))
-  end
+  include TwoB::Spec
 
   it "対応するハンドラが無いときはエラー" do
-    lambda{ @system / "foo" }.should raise_error
-    lambda{ @system / "jbbs.livedoor.jp" / "category" / "123" / "12345" / "10" / "foo" }.should raise_error
+    lambda{ root / "foo" }.should raise_error
+    lambda{ root / "jbbs.livedoor.jp" / "category" / "123" / "12345" / "10" / "foo" }.should raise_error
   end
 
   it "get_child and execute" do
-    category = @system / JBBS::Host::Name / "cat"
+    category = root / JBBS::Host::Name / "cat"
     category.should be_kind_of(JBBS::Category)
     category.host.name.should == JBBS::Host::Name
     category.name.should == "cat"
@@ -49,18 +48,18 @@ describe TwoB::Handler do
   end
 
   it "get board" do
-    board = @system / "jbbs.livedoor.jp" / "cat" / "11223"
+    board = root / "jbbs.livedoor.jp" / "cat" / "11223"
     board.original_url.should == "http://jbbs.livedoor.jp/cat/11223/"
     board.subject_url.should == "http://jbbs.livedoor.jp/cat/11223/subject.txt"
   end
 
   it "get thread" do
-    thread = @system / "jbbs.livedoor.jp" / "category" / "123" / "12345"
+    thread = root / "jbbs.livedoor.jp" / "category" / "123" / "12345"
     thread.should be_kind_of(JBBS::ThreadService)
   end
 
   it "get res anchor" do
-    res_anchor = @system / "jbbs.livedoor.jp" / "category" / "123" / "3456"
+    res_anchor = root / "jbbs.livedoor.jp" / "category" / "123" / "3456"
     view = res_anchor.res_anchor(TwoB::Picker::FromTo.new(10..20))
     view.should be_kind_of(ResAnchorView)
   end

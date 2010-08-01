@@ -1,15 +1,18 @@
 require 'twob/board'
-require 'spec_system'
+require 'spec_context'
 require 'io/file'
+require 'bbs2ch'
 
-describe BBS2ch::Board, "list_thread" do
+describe BBS2ch::Board do
   include TwoB
+  include TwoB::Spec
+  include BBS2ch
 
-  it "example" do
-    SpecSystem.clear_cache_dir
-    @system = SpecSystem.new
-    @board = @system / "pc12.2ch.net" / "tech"
-    @system.stub!(:get_subject_source).and_return(TextFile.by_filename("testData/2ch/subject.txt", "Windows-31J"))
+  it "list_thread" do
+    clear_cache_dir
+    backend = TwoB::Spec::SpecBackend.new
+    backend.stub!(:get_subject_source).and_return{ TextFile.by_filename("testData/2ch/subject.txt", "Windows-31J") }
+    @board = Board.new(Host.new(System.new(configuration, backend), "pc12.2ch.net"), "tech")
 
     view = @board.list_thread
     view.should be_kind_of(BoardView)

@@ -2,22 +2,23 @@
 require 'bbs2ch'
 require 'nokogiri'
 require 'io'
-require 'spec_system'
+require 'spec_context'
 require 'pp'
 require 'bbs2ch/action'
 
 describe "2chのスレッドを読む" do
+  include TwoB::Spec
   include BBS2ch
   include BBS2ch::Spec
 
   before do
-    SpecSystem.clear_cache_dir
+    clear_cache_dir
     @test_data_dir = Pathname.new("testData/2ch")
     @example_1to80 = BinaryFile.new(@test_data_dir + "example(1-80).dat")
     @example_81to100 = BinaryFile.new(@test_data_dir + "example(81-100).dat")
     @example_short = BinaryFile.new(@test_data_dir + "2ch_with_id_short.dat")
     @example_subject = TextFile.new(@test_data_dir + "example-subject.txt", "Windows-31J")
-    @board_dir = SpecSystem::SpecConfiguration.data_directory + "server.2ch.net" + "board"
+    @board_dir = data_path + "server.2ch.net" + "board"
   end
 
   def valid_thread(thread)
@@ -116,11 +117,8 @@ describe "2chのスレッドを読む" do
     (@board_dir + "123.dat").should be_exist
     (@board_dir + "123.yaml").should be_exist
 
-    @request = TwoB::Request.new("/server.2ch.net/board/123/delete_cache")
-    @system = SpecSystem.new(@request)
-    @system.process
+    access("/server.2ch.net/board/123/delete_cache")
 
-    @response = @system.response
     @response.status_code.should == 303
     @response.headers["Location"].should == "../"
     (@board_dir + "123.dat").should_not be_exist

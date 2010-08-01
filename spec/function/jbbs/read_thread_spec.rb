@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'nokogiri'
 require 'io'
-require 'spec_system'
+require 'spec_context'
 require 'pp'
 require 'action'
 require 'jbbs/thread'
@@ -9,19 +9,20 @@ require 'jbbs/thread'
 describe "JBBSのスレッドを読む" do
   include JBBS
   include TwoB::Spec
+
   def view_thread(delta_input, picker = "subscribe5")
-    access("/jbbs.livedoor.jp/category/123/456/#{picker}#firstNew") do |system|
-      system.stub!(:get_delta_input).and_return(delta_input)
+    access("/jbbs.livedoor.jp/category/123/456/#{picker}#firstNew") do |backend|
+      backend.stub!(:get_delta_input).and_return(delta_input)
     end
     valid_response
     @thread = @response.as_thread
   end
 
   before do
-    SpecSystem.clear_cache_dir
+    clear_cache_dir
     @example_1to216 = BinaryFile.by_filename("testData/jbbs/example(1-216).dat")
     @example_217to226 = BinaryFile.by_filename("testData/jbbs/example(217-226).dat")
-    @board_dir = SpecSystem::SpecConfiguration.data_directory + "jbbs.livedoor.jp" + "category" + "123"
+    @board_dir = data_path + "jbbs.livedoor.jp" + "category" + "123"
   end
 
   it "キャッシュなしの初回読み込み" do

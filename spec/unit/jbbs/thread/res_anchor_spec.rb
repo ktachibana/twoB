@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
-require 'pathname'
-require 'spec_system'
-require 'io/source'
+require 'spec_context'
 require 'twob/request'
 require 'twob/thread'
+require 'twob/thread/picker'
+require 'twob/thread/res_anchor_view'
 
 describe "ResAnchor" do
+  include TwoB::Spec
+
   before do
-    @path_info = "/jbbs.livedoor.jp/cat/012/345/res_anchor"
-    @system = SpecSystem.new()
-    @host = JBBS::Host.new(@system)
-    @category = JBBS::Category.new(@host, "cat")
-    @board = JBBS::BoardService.new(@category, "012")
-    @thread = JBBS::ThreadService.new(@board, "345")
+    @thread = root / "jbbs.livedoor.jp" / "cat" / "012" / "345"
   end
 
   it ">>50を参照する" do

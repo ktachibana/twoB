@@ -2,21 +2,15 @@
 require 'bbs2ch'
 require 'nokogiri'
 require 'io'
-require 'spec_system'
-require 'pp'
 require 'bbs2ch/action'
 
 describe "2chのレスアンカーを表示する" do
+  include TwoB::Spec
   include BBS2ch
   include BBS2ch::Spec
 
   before do
-    SpecSystem.clear_cache_dir
-  end
-
-  def valid_response
-    @response.status_code.should == 200
-    @response.content_type.should == "text/html; charset=UTF-8"
+    clear_cache_dir
   end
 
   it "1-3表示" do

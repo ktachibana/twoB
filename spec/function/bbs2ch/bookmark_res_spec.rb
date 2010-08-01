@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'bbs2ch'
-require 'nokogiri'
 require 'io'
-require 'spec_system'
-require 'pp'
+require 'spec_context'
 require 'action'
 require 'bbs2ch/action'
 require 'yaml'
@@ -11,9 +9,10 @@ require 'yaml'
 describe "栞機能" do
   include BBS2ch
   include BBS2ch::Spec
+  include TwoB::Spec
 
   before do
-    SpecSystem.clear_cache_dir
+    clear_cache_dir
     @test_data_dir = Pathname.new("testData/2ch")
     @example_1to80 = BinaryFile.new(@test_data_dir + "example(1-80).dat")
   end
@@ -29,7 +28,7 @@ describe "栞機能" do
 
     bookmark_res(50)
     @response.status_code.should == 303
-    metadata_file = @system.configuration.data_directory + "server.2ch.net/board/123.yaml"
+    metadata_file = data_path + "server.2ch.net/board/123.yaml"
     metadata = YAML::load_file(metadata_file)
     metadata.bookmark_number.should == 50
     metadata.last_res_number.should == 80
@@ -46,7 +45,7 @@ describe "栞機能" do
 
     bookmark_res(10)
     @response.status_code.should == 303
-    metadata_file = @system.configuration.data_directory + "server.2ch.net/board/123.yaml"
+    metadata_file = data_path + "server.2ch.net/board/123.yaml"
     metadata = YAML::load_file(metadata_file)
     metadata.bookmark_number.should == 10
     metadata.last_res_number.should == 80
