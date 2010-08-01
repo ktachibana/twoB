@@ -28,7 +28,7 @@ module TwoB
     end
 
     def data_directory
-      "2bcache"
+      "data"
     end
 
     def output(response)

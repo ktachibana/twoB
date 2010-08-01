@@ -10,7 +10,7 @@ require 'cgi'
 class ConsoleFrontend
   include ViewUtil
   def data_directory
-    "local/console_cache"
+    "data"
   end
 
   def output(response)

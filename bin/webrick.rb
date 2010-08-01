@@ -12,7 +12,7 @@ class WEBrickFrontend
   def initialize(webrick_response)
     @webrick_response = webrick_response
   end
-  
+
   def self.process
     server = WEBrick::HTTPServer.new({:DocumentRoot => './', :Port => 8080})
     server.mount_proc("/twoB/action") do |webrick_request, webrick_response|
@@ -28,7 +28,7 @@ class WEBrickFrontend
   end
 
   def data_directory
-    "2bcache"
+    "data"
   end
 
   def output(response)
