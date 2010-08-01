@@ -47,4 +47,4 @@ Spec::Rake::SpecTask.new(:fspec) do |t|
   t.rcov_dir = "local/coverage"
   t.rcov_opts << %w(--exclude ^spec --include-file ^src)
 end
-task :fspec => :convert_all_view
+task :fspec => [:convert_all_view, :spec]
