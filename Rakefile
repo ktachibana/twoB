@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+$VERBOSE = nil
 require 'rubygems'
 require 'tools/rake_util'
 require 'spec/rake/spectask'
