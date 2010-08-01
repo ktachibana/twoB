@@ -18,9 +18,10 @@ module TwoB
     def self.process
       FCGI.each do |fcgi|
         path_info = fcgi.env["PATH_INFO"]
-        query = fcgi.env["QUERY_STRING"]
-        param = CGI.parse(query || "")
-        request = TwoB::Request.new(path_info, param, fcgi.env)
+        param = CGI.parse(fcgi.env["QUERY_STRING"] || "")
+        env = fcgi.env
+        request = TwoB::Request.new(path_info, param, env)
+
         TwoB::Application.new(self.new(fcgi), request).main
 
         fcgi.finish
