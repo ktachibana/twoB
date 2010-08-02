@@ -22,7 +22,7 @@ class HTTPGetInput
   end
 
   def each_read
-    HTTP.start(@request.host) do |http|
+    HTTP.start(@request.host, @request.port) do |http|
       http.request_get(@request.path, @request.headers) do |response|
         response.read_body do |data|
           yield data
