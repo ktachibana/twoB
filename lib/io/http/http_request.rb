@@ -2,11 +2,12 @@
 require 'equality'
 
 class HTTPRequest
-  def initialize(host, path, headers)
+  def initialize(host, port, path, headers)
     @host = host
+    @port = port
     @path = path
     @headers = headers
   end
-  attr_reader :host, :path, :headers
-  equality :@host, :@path, :@headers
+  attr_reader :host, :port, :path, :headers
+  equality :@host, :@port, :@path, :@headers
 end
