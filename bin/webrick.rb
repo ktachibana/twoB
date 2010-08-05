@@ -18,18 +18,13 @@ class WEBrickFrontend
     server.mount_proc("/twoB/action") do |webrick_request, webrick_response|
       param = CGI.parse(webrick_request.query_string || "")
       request = TwoB::Request.new(webrick_request.path_info, param, webrick_request.meta_vars)
-
-      self.new(webrick_response).get_application(request).main
+      TwoB::Application.new(self.new(webrick_response), request).main
     end
 
     [:INT, :TERM].each do |signal|
       trap(signal){ server.stop }
     end
     server.start
-  end
-
-  def get_application(request)
-    TwoB::Application.new(self, request)
   end
 
   def data_directory
@@ -51,6 +46,4 @@ class WEBrickFrontend
   end
 end
 
-if $0 == __FILE__
-  WEBrickFrontend.process
-end
+WEBrickFrontend.process

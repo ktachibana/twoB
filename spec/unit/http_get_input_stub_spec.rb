@@ -7,10 +7,9 @@ require 'http_get_input_stub'
 describe HTTPGetInputStub do
   before do
     host = "www.spec-validation.com"
-    port = 80
     path = "/construct"
     headers = {}
-    @request = HTTPRequest.new(host, port, path, headers)
+    @request = HTTPRequest.new(host, path, headers)
     @http = HTTPGetInputStub.new(@request)
   end
 
