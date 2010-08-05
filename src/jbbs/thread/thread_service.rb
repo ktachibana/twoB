@@ -66,7 +66,7 @@ module JBBS
     end
 
     def delta_request(metadata)
-      HTTPRequest.new(host.name, 80, get_dat_path(metadata.delta_picker), {})
+      HTTPRequest.new(host.name, get_dat_path(metadata.delta_picker), {})
     end
 
     def system
