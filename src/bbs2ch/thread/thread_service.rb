@@ -60,7 +60,7 @@ module BBS2ch
     end
 
     def delta_request(metadata)
-      HTTPRequest.new(host.name, dat_path, metadata.dat_header)
+      HTTPRequest.new(host.name, 80, dat_path, metadata.dat_header)
     end
 
     def system
