@@ -37,7 +37,7 @@
 		<dl class="<%= res.new? ? 'new' : '' %> <%=h res.age? ? 'age' : '' %>">
 			<dt class="header">
 				<span class="number"><%= res.number %></span>
-				<span class="name"><%= res.name %><% if res.has_trip? then %> <span class="trip">◆<%=h res.trip %></span><% end %></span>
+				<span class="name"><%=h res.name %><% if res.has_trip? then %> <span class="trip">◆<%=h res.trip %></span><% end %></span>
 				[<span class="mail"><%=h res.mail %></span>]
 				Date:<span class="date"><%=h res.date %></span>
 				ID:<span class="id"><%=h res.id %></span>
