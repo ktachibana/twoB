@@ -24,6 +24,7 @@ class HTTPGetInput
   def each_read
     HTTP.start(@request.host, @request.port) do |http|
       http.request_get(@request.path, @request.headers) do |response|
+        raise ProtocolError, "StatusCode:#{response.code} - #{response.message}, request:#{@request.inspect}" if response.code =~ /[45]../
         response.read_body do |data|
           yield data
         end

@@ -73,7 +73,7 @@ module TwoB
       cache_manager.delete()
       metadata_manager.delete()
       read_counter.delete(number)
-      RedirectResponse.new(reload ? "./" : "../")
+      RedirectResponse.new(reload ? "./subscribe5#firstNew" : "../")
     end
 
     def delete_bookmark()
