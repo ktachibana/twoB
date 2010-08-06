@@ -21,15 +21,15 @@
 		<ul class="menu">
 			<li><a href="../">スレッド一覧</a></li>
 			<li><a href="./">全件表示</a></li>
-			<li><a href="./subscribe5">新着</a></li>
+			<li><a href="./subscribe5">続きを購読</a></li>
 			<li><a href="#firstNew">新着に移動</a></li>
-			<li><a href="./delete_cache?reload">キャッシュを再読み込み</a></li>
-			<li><a href="<%=h thread.original_url %>l50" target="_blank">ブラウザ表示</a></li>
-			<li><a id="view_dat_file" href="<%=h thread.dat_url %>" target="_blank">datファイル表示</a></li>
+			<li><a href="./delete_cache?reload=subscribe5#firstNew">キャッシュを再読み込み</a></li>
 % if thread.bookmarking?
 			<li><a href="delete_bookmark">ブックマークを削除</a></li>
 % end
-		</ul>
+			<li><a href="<%=h thread.original_url %>l50" target="_blank">ブラウザ表示</a></li>
+			<li><a id="view_dat_file" href="<%=h thread.dat_url %>" target="_blank">datファイル表示</a></li>
+	</UL>
 	</div>
 
 % thread.each{|res|

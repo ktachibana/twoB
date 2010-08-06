@@ -9,7 +9,7 @@ module TwoB
     def execute(request, value)
       case value
       when /^delete_cache$/
-        delete_cache(request.has_param?("reload"))
+        delete_cache(request.get("reload"))
       when /^delete_bookmark$/
         delete_bookmark()
       when /^res_anchor$/
@@ -20,7 +20,7 @@ module TwoB
     end
 
     def action_map()
-      map(:delete_cache) { |request| [request.has_param?("reload")] }
+      map(:delete_cache) { |request| [request.get("reload")] }
       map(:delete_bookmark)
       map(:res_anchor) { |request| [Pickers.get(request.get_param("range"))] }
       map() { |request, value| [Pickers.get(value)] }
@@ -73,7 +73,7 @@ module TwoB
       cache_manager.delete()
       metadata_manager.delete()
       read_counter.delete(number)
-      RedirectResponse.new(reload ? "./subscribe5#firstNew" : "../")
+      RedirectResponse.new(reload ? "./#{reload}" : "../")
     end
 
     def delete_bookmark()
