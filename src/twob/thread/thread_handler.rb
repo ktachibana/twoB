@@ -19,13 +19,6 @@ module TwoB
       end
     end
 
-    def action_map()
-      map(:delete_cache) { |request| [request.get("reload")] }
-      map(:delete_bookmark)
-      map(:res_anchor) { |request| [Pickers.get(request.get_param("range"))] }
-      map() { |request, value| [Pickers.get(value)] }
-    end
-
     def /(value)
       TwoB::ResService.new(self, value.to_i)
     end
