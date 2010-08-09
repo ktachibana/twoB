@@ -12,7 +12,7 @@ describe BBS2ch::Board do
     clear_cache_dir
     backend = TwoB::Spec::SpecBackend.new
     backend.stub!(:get_subject_source).and_return{ TextFile.by_filename("testData/2ch/subject.txt", "Windows-31J") }
-    @board = Board.new(Host.new(System.new(configuration, backend), "pc12.2ch.net"), "tech")
+    @board = Board.new(Host.new(RootHandler.new(configuration, backend), "pc12.2ch.net"), "tech")
 
     view = @board.list_thread
     view.should be_kind_of(BoardView)

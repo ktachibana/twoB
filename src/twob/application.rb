@@ -1,4 +1,4 @@
-require 'twob/system'
+require 'twob/root_handler'
 require 'twob/backend'
 require 'twob/configuration'
 require 'pathname'
@@ -22,7 +22,7 @@ module TwoB
     end
 
     def root_handler
-      TwoB::System.new(self.configuration, @backend)
+      TwoB::RootHandler.new(self.configuration, @backend)
     end
 
     def configuration

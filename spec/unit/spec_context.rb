@@ -16,7 +16,7 @@ module TwoB
     end
 
     def root
-      TwoB::System.new(configuration, SpecBackend.new)
+      TwoB::RootHandler.new(configuration, SpecBackend.new)
     end
 
     def configuration

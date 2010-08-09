@@ -7,7 +7,7 @@ require 'util/enum'
 require 'forwardable'
 
 module TwoB
-  class System
+  class RootHandler
     extend Forwardable
     include Handler
     def initialize(configuration, backend)
