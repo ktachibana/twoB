@@ -13,7 +13,7 @@ module TwoB
       when /^delete_bookmark$/
         delete_bookmark()
       when /^res_anchor$/
-        res_anchor(Pickers.get(request.get_param("range")))
+        res_anchor(Pickers.get(request.get_param("picker")))
       else
         read(Pickers.get(value))
       end

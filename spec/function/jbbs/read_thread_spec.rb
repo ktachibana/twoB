@@ -83,7 +83,7 @@ describe "JBBSのスレッドを読む" do
 
   it "レスアンカー表示" do
     view_thread(@example_1to216)
-    access("/jbbs.livedoor.jp/category/123/456/res_anchor", "range"=> ["10-20"])
+    access("/jbbs.livedoor.jp/category/123/456/res_anchor", "picker"=> ["10-20"])
 
     valid_response
     anchor = @response.as_thread

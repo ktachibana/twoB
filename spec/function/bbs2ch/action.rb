@@ -16,7 +16,7 @@ module BBS2ch::Spec
   end
 
   def view_res_anchor(picker_string)
-    access("/server.2ch.net/board/123/res_anchor", "range" => [picker_string])
+    access("/server.2ch.net/board/123/res_anchor", "picker" => [picker_string])
 
     @thread = @response.as_thread
   end
