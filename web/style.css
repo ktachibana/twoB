@@ -2,6 +2,11 @@ body {
 	margin: 0.5em;
 }
 
+div {
+	margin: 0;
+	padding: 0;
+}
+
 .flow {
 	text-align: right;
 	position: fixed;

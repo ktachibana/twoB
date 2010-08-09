@@ -98,7 +98,7 @@ b2rPopup.resPopup = {
 	
 	
 	remote: function(popup, top_id, bottom_id){
-		popup.load("res_anchor?range=" + top_id + "-" + bottom_id);
+		popup.load("./res_anchor?range=" + top_id + "-" + bottom_id + " div[class=thread_body]");
 	},
 	
 	

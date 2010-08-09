@@ -61,6 +61,6 @@ describe TwoB::Handler do
   it "get res anchor" do
     res_anchor = root / "jbbs.livedoor.jp" / "category" / "123" / "3456"
     view = res_anchor.res_anchor(TwoB::Picker::FromTo.new(10..20))
-    view.should be_kind_of(ResAnchorView)
+    view.should be_kind_of(ThreadView)
   end
 end

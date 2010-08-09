@@ -32,18 +32,19 @@
 	</UL>
 	</div>
 
+	<div class="thread_body">
 % thread.each{|res|
-	<div id="_<%= res.number %>" class="res">
-		<dl class="<%= res.new? ? 'new' : '' %> <%=h res.age? ? 'age' : '' %>">
-			<dt class="header">
-				<span class="number"><%= res.number %></span>
-				<span class="name"><%=h res.name %><% if res.has_trip? then %> <span class="trip">◆<%=h res.trip %></span><% end %></span>
-				[<span class="mail"><%=h res.mail %></span>]
-				Date:<span class="date"><%=h res.date %></span>
-				ID:<span class="id"><%=h res.id %></span>
-				<span class="bookmark">[<a href="<%= res.number %>/bookmark">栞</a>]</span>
-			</dt>
-			<dd class="body">
+		<div id="_<%= res.number %>" class="res">
+			<dl class="<%= res.new? ? 'new' : '' %> <%=h res.age? ? 'age' : '' %>">
+				<dt class="header">
+					<span class="number"><%= res.number %></span>
+					<span class="name"><%=h res.name %><% if res.has_trip? then %> <span class="trip">◆<%=h res.trip %></span><% end %></span>
+					[<span class="mail"><%=h res.mail %></span>]
+					Date:<span class="date"><%=h res.date %></span>
+					ID:<span class="id"><%=h res.id %></span>
+					<span class="bookmark">[<a href="<%= res.number %>/bookmark">栞</a>]</span>
+				</dt>
+				<dd class="body">
 %	res.body.each{|body|
 %		case body.body_type
 %		when :anchor
@@ -57,12 +58,13 @@
 %		end
 % 	}
 
-			</dd>
-		</dl>
-	</div>
+				</dd>
+			</dl>
+		</div>
 %	if thread.read_number == res.number
-	<hr id="firstNew" />
+		<hr id="firstNew" />
 %	end
 % }
+	</div>
 </body>
 </html>

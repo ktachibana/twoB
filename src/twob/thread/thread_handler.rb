@@ -90,7 +90,7 @@ module TwoB
     def res_anchor(requested_picker)
       builder = TwoB::ThreadBuilder.new(self, self, requested_picker)
       requested_picker.build_anchor(builder)
-      TwoB::ResAnchorView.new(builder.result.to_a)
+      TwoB::ThreadView.new(builder.result)
     end
   end
 end
