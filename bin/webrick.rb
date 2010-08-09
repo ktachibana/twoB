@@ -14,7 +14,7 @@ class WEBrickFrontend
   end
 
   def self.process
-    server = WEBrick::HTTPServer.new({:DocumentRoot => './', :Port => 8080})
+    server = WEBrick::HTTPServer.new({:DocumentRoot => './web', :Port => 8080})
     server.mount_proc("/twoB/action") do |webrick_request, webrick_response|
       param = CGI.parse(webrick_request.query_string || "")
       request = TwoB::Request.new(webrick_request.path_info, param, webrick_request.meta_vars)
