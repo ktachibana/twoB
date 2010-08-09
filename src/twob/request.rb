@@ -32,6 +32,7 @@ module TwoB
     end
 
     def get_param(key_name)
+      return nil unless has_param?(key_name)
       @param[key_name][0]
     end
   end

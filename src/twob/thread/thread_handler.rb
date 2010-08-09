@@ -9,7 +9,7 @@ module TwoB
     def execute(request, value)
       case value
       when /^delete_cache$/
-        delete_cache(request.get("reload"))
+        delete_cache(request.get_param("reload"))
       when /^delete_bookmark$/
         delete_bookmark()
       when /^res_anchor$/
