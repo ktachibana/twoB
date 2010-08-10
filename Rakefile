@@ -27,6 +27,7 @@ end
 
 desc "rspecを実行する"
 Spec::Rake::SpecTask.new(:spec) do |t|
+  t.fail_on_error = false
   t.ruby_opts = %w(-r rubygems)
   t.spec_files = FileList["spec/unit/**/*_spec.rb"]
   t.spec_opts = %w(--format html:local/spec/unit.html --format nested --color)
@@ -39,6 +40,7 @@ task :spec => :convert_all_view
 
 desc "機能テストを実行する"
 Spec::Rake::SpecTask.new(:fspec) do |t|
+  t.fail_on_error = false
   t.ruby_opts = %w(-r rubygems)
   t.spec_files = FileList["spec/function/**/*_spec.rb"]
   t.spec_opts = %w(--format html:local/spec/function.html --format nested --color)
