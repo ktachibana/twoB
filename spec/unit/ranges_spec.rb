@@ -13,18 +13,6 @@ describe Ranges do
     ranges.empty?.should be_true
   end
 
-  it "union" do
-    pending
-    ranges = Ranges.union(1..3, 7..10, 4..6)
-    ranges.should == [1..10]
-  end
-
-  it "union 2" do
-    pending
-    ranges = Ranges.union(7..10, 1..3, 4..6)
-    ranges.should == [1..10]
-  end
-
   describe "limit" do
     before do
       @ranges = Ranges.union(1..1, 100..200)

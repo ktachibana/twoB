@@ -9,6 +9,11 @@ class Ranges < Array
     new(*ranges).union
   end
 
+  # 機能不十分：以下のコードはパスしない。
+  # ranges = Ranges.union(1..3, 7..10, 4..6)
+  # ranges.should == [1..10]
+  # ranges = Ranges.union(7..10, 1..3, 4..6)
+  # ranges.should == [1..10]
   def union
     results = Ranges.new
     self.each do |range|
