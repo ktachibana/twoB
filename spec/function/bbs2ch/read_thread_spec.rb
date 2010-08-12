@@ -67,10 +67,20 @@ describe "2chのスレッドを読む" do
     thread = @response.as_thread
     valid_thread(thread)
     thread.res_ranges.should == [1..1, 76..100]
+    thread.border.should == 80
     thread[1].should_not be_new
     thread[80].should_not be_new
     thread[81].should be_new
     thread[100].should be_new
+  end
+
+  it "レス番号指定による読み込み" do
+    view_thread(@example_1to80)
+    view_thread(StringInput.empty, "1")
+    valid_response
+    thread = @response.as_thread
+    thread.res_ranges.should == [1..1]
+    thread.border.should be_nil
   end
 
   it "subscribe5による初回読み込み" do

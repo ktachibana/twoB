@@ -2,6 +2,7 @@
 require 'twob'
 require 'twob/thread/thread_handler'
 require 'twob/thread/res_service'
+require 'jbbs/thread/metadata'
 require 'jbbs/thread/thread_key'
 require 'jbbs/thread/cache_manager'
 require 'io'
@@ -41,7 +42,7 @@ module JBBS
     end
 
     def metadata_manager
-      TwoB::YAMLMarshaler.new(metadata_file, TwoB::Metadata.Empty)
+      TwoB::YAMLMarshaler.new(metadata_file, JBBS::Metadata.empty)
     end
 
     def original_url

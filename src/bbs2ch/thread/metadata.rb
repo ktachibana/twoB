@@ -8,7 +8,7 @@ module BBS2ch
       @last_modified = last_modified
     end
 
-    def self.empty()
+    def self.empty
       new(0, 0, nil)
     end
 

@@ -19,6 +19,11 @@ class ThreadDocument
     !@document.css(".new").empty?
   end
 
+  def border
+    return nil unless @document.css("#firstNew")
+    @document.css("#firstNew").first.previous_element["id"].delete("_").to_i
+  end
+
   def [](n)
     Res.new(@document.css("\#_#{n}"), n)
   end

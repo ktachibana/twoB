@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-require 'twob/thread'
-require 'marshaler'
 
 module TwoB
   class Metadata
@@ -11,20 +9,12 @@ module TwoB
       @index = {}
     end
 
-    def self.Empty
-      self.new(0, 0)
-    end
-
     attr_accessor :last_res_number, :cache_file_size, :bookmark_number, :index
-
-    def delta_picker
-      TwoB::Picker::From.new(@last_res_number + 1)
-    end
 
     def update(delta)
       append(delta.index)
       @last_res_number = delta.last_res_number
-      @cache_file_size += delta.bytes.size
+      @cache_file_size += delta.bytes_size
     end
 
     def append(delta_index)
