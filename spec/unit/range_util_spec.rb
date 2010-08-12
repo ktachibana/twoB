@@ -14,4 +14,6 @@ describe Range do
 
   it "compose" do
     (1..3).compose(4..6).should == (1..6)
-    (4..6).compose(1..3).should == (1..6)  endend
+    (4..6).compose(1..3).should == (1..6)
+  end
+end
