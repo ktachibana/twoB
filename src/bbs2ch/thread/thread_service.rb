@@ -70,9 +70,9 @@ module BBS2ch
     def update(delta, metadata, time)
       return if delta.empty?
       cache_manager.append(delta.bytes)
-      metadata.update(delta)
-      metadata.last_modified = time
-      metadata_manager.save(metadata)
+      new_metadata = metadata.update(delta)
+      new_metadata.last_modified = time
+      metadata_manager.save(new_metadata)
       read_counter.update(@number, delta.last_res_number)
     end
 

@@ -20,8 +20,9 @@ class ThreadDocument
   end
 
   def border
-    return nil unless @document.css("#firstNew")
-    @document.css("#firstNew").first.previous_element["id"].delete("_").to_i
+    firstNew = @document.css("#firstNew").first
+    return nil unless firstNew
+    firstNew.previous_element["id"].delete("_").to_i
   end
 
   def [](n)

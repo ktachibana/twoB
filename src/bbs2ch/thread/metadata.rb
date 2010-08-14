@@ -3,17 +3,17 @@ require 'twob/thread/metadata'
 
 module BBS2ch
   class Metadata < TwoB::Metadata
-    def initialize(last_res_number, cache_file_size, last_modified)
-      super(last_res_number, cache_file_size)
+    def initialize(last_res_number, cache_file_size, bookmark_number, last_modified)
+      super(last_res_number, cache_file_size, bookmark_number)
       @last_modified = last_modified
     end
 
     def self.empty
-      new(0, 0, nil)
+      new(0, 0, nil, nil)
     end
 
     attr_accessor :last_modified
-
+    
     def empty?
       @last_modified.nil?
     end

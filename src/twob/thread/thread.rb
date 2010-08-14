@@ -83,7 +83,7 @@ module TwoB
     end
 
     def read_number
-      bookmarking? ? bookmark_number : @cache.last_number
+      bookmarking? ? bookmark_number : @metadata.last_res_number
     end
   end
 

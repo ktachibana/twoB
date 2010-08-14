@@ -2,7 +2,7 @@
 
 module TwoB
   class Metadata
-    def initialize(last_res_number, cache_file_size, bookmark_number = nil)
+    def initialize(last_res_number, cache_file_size, bookmark_number)
       @last_res_number = last_res_number
       @cache_file_size = cache_file_size
       @bookmark_number = bookmark_number
@@ -12,6 +12,12 @@ module TwoB
     attr_accessor :last_res_number, :cache_file_size, :bookmark_number, :index
 
     def update(delta)
+      result = self.dup
+      result.update!(delta)
+      result
+    end
+
+    def update!(delta)
       append(delta.index)
       @last_res_number = delta.last_res_number
       @cache_file_size += delta.bytes_size

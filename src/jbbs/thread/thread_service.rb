@@ -77,8 +77,8 @@ module JBBS
     def update(delta, metadata, time)
       return if delta.empty?
       cache_manager.append(delta.bytes)
-      metadata.update(delta)
-      metadata_manager.save(metadata)
+      new_metadata = metadata.update(delta)
+      metadata_manager.save(new_metadata)
       read_counter.update(@number, delta.last_res_number)
     end
 
