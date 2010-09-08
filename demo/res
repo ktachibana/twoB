@@ -1,0 +1,29 @@
+#!/usr/bin/ruby
+# -*- coding: utf-8 -*-
+require 'pathname'
+
+line_limit = ARGV.shift.to_i
+line_limit = 1000 if line_limit == 0
+
+orig_dat_file = Pathname.new("web/demo/hibari.2ch.net/tech/dat/1187527909.orig")
+
+dat_file = orig_dat_file.dirname + (orig_dat_file.basename(".orig").to_s + ".dat")
+
+line_count = 0
+dat_file.open("w") do |out|
+  orig_dat_file.each_line do |line|
+    out.print(line)
+    line_count += 1
+    break if line_count == line_limit
+  end
+end
+
+
+orig_subject_file = orig_dat_file.dirname.parent + "subject.orig"
+subject_file = orig_subject_file.dirname + (orig_subject_file.basename(".orig").to_s + ".txt")
+subject_file.open("w") do |out|
+  orig_subject_file.each_line do |line|
+    line.sub!(/\((\d+)\)/, "(#{line_count})") if line.match(/^1187527909/)
+    out.print(line)
+  end
+end
