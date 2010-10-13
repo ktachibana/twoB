@@ -1,5 +1,6 @@
 require 'twob/handler'
 require 'jbbs/category'
+require 'pattern_map'
 
 module JBBS
   class Host
@@ -12,9 +13,16 @@ module JBBS
 
     attr_reader :system
 
+    JBBSPath = PatternMap.new
+    JBBSPath.map(%r[http\://jbbs\.livedoor\.jp/bbs/read\.cgi/(\w+)/(\w+)/(\w+)/(.*)]) do |match|
+      "/jbbs.livedoor.jp/#{match[1]}/#{match[2]}/#{match[3]}/#{match[4]}#firstNew"
+    end
+    JBBSPath.map(%r[http\://jbbs\.livedoor\.jp/(\w+)/(\w+)/]) do |match|
+      "/jbbs.livedoor.jp/#{match[1]}/#{match[2]}/"
+    end
+
     def self.get_path(url)
-      match = %r|http\://jbbs\.livedoor\.jp/bbs/read\.cgi/(\w+)/(\w+)/(\w+)/(.*)|.match(url)
-      match ? "/jbbs.livedoor.jp/#{match[1]}/#{match[2]}/#{match[3]}/#{match[4]}#firstNew" : nil
+      JBBSPath.get(url)
     end
 
     def name

@@ -13,7 +13,10 @@ describe PatternMap do
 
     FooMap.get("foooo").should == ["foooo", nil]
     FooMap.get("foo", 10).should == ["foo", 10]
-    lambda{ FooMap.get("faa") }.should raise_error(RuntimeError)
+    FooMap.get("faa").should be_nil
+    
+    FooMap.if_any_matched { raise "error!" }
+    lambda{ FooMap.get("faa") }.should raise_error(RuntimeError, "error!")
   end
 end
 
@@ -117,6 +120,6 @@ describe Pickers do
   end
 
   it "Illegal format" do
-    lambda { Pickers.get("foo") }.should raise_error(RuntimeError)
+    lambda { Pickers.get("foo") }.should raise_error(RuntimeError, /Illegal picker format : foo/)
   end
 end
