@@ -20,8 +20,8 @@ module TwoB
   Pickers.map(/^(\d+)-(\d+)$/) do |match|
     Picker::FromTo.new(match[1].to_i..match[2].to_i)
   end
-  Pickers.map(/^(\d+)\-$/) do |match|
-    Picker::From.new(match[1].to_i)
+  Pickers.map(/^(\d+)(n)?\-$/) do |match|
+    Picker::From.new(match[1].to_i, match[2].nil?)
   end
   Pickers.map(/^\-(\d+)$/) do |match|
     Picker::To.new(match[1].to_i)
@@ -161,25 +161,32 @@ module TwoB
     end
 
     class From < Picker
-      attr_reader :from
-      equality :@from
-      def initialize(from)
+      attr_reader :from, :include_1
+      equality :@from, :@include_1
+      def initialize(from, include_1 = true)
         @from = from
+        @include_1 = include_1
       end
 
       def build_thread(builder)
-        builder.load_cache(@from..builder.cached_number)
+        ranges = Ranges.new
+        ranges << (1..1) if @include_1
+        ranges << (@from .. builder.cached_number)
+        builder.load_cache(*ranges.union)
         builder.load_delta do |res|
-          @from <= res.number
+          (@include_1 && res.number == 1) || @from <= res.number
         end
       end
 
       def to_ranges(cached_number, max_count, bookmark_number = nil)
-        Ranges.new(from..max_count)
+        result = Ranges.new
+        result << (1..1) if @include_1
+        result << (@from..max_count)
+        result.union
       end
 
       def to_s
-        "#{from}-"
+        "#{from}#{include_1 ? '' : 'n'}-"
       end
     end
 

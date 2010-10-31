@@ -66,6 +66,22 @@ describe "JBBSのスレッドを読む" do
     thread[216].new?.should be_false
     thread[217].new?.should be_true
   end
+  
+  it "50-による読み込みでは>>1が含まれる" do
+    view_thread(@example_1to216, "50-")
+    @thread.res_ranges.should == [1..1, 50..216]
+  end
+
+  it "50n-による読み込みでは>>1は含まれない" do
+    view_thread(@example_1to216, "50n-")
+    @thread.res_ranges.should == [50..216]
+  end
+
+  it "50n-による読み込みでは>>1は含まれない(全部キャッシュの場合)" do
+    view_thread(@example_1to216, "subscribe5")
+    view_thread(StringInput.empty, "50n-")
+    @thread.res_ranges.should == [50..216]
+  end
 
   it "追加読み込みしたが新着が無かった" do
     view_thread(@example_1to216)
