@@ -1,4 +1,4 @@
-#!/usr/bin/ruby -Isrc -Ilib -Iview/src -rubygems
+#!/usr/bin/ruby -Ilib -Iview/src -rubygems
 # -*- coding: utf-8 -*-
 
 require 'twob/application'

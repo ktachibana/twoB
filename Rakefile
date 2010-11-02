@@ -3,7 +3,7 @@ $VERBOSE = nil
 require 'rubygems'
 require 'tools/rake_util'
 require 'spec/rake/spectask'
-$LOAD_PATH << "src" << "lib"
+$LOAD_PATH << "lib"
 $LOAD_PATH << "spec/unit"
 
 converter = "bin/erb2view.rb"
@@ -31,10 +31,10 @@ Spec::Rake::SpecTask.new(:spec) do |t|
   t.ruby_opts = %w(-r rubygems)
   t.spec_files = FileList["spec/unit/**/*_spec.rb"]
   t.spec_opts = %w(--format html:local/spec/unit.html --format nested --color)
-  t.libs = %w[src lib view/src spec/unit]
+  t.libs = %w[lib view/src spec/unit]
   t.rcov = ENV.include? "rcov"
   t.rcov_dir = "local/coverage"
-  t.rcov_opts << %w(--exclude ^spec --include-file ^src)
+  t.rcov_opts << %w(--exclude ^spec --include-file ^lib)
 end
 task :spec => :convert_all_view
 
@@ -44,9 +44,9 @@ Spec::Rake::SpecTask.new(:fspec) do |t|
   t.ruby_opts = %w(-r rubygems)
   t.spec_files = FileList["spec/function/**/*_spec.rb"]
   t.spec_opts = %w(--format html:local/spec/function.html --format nested --color)
-  t.libs = %w[src lib view/src spec/unit spec/function]
+  t.libs = %w[lib view/src spec/unit spec/function]
   t.rcov = ENV.include? "rcov"
   t.rcov_dir = "local/coverage"
-  t.rcov_opts << %w(--exclude ^spec --include-file ^src)
+  t.rcov_opts << %w(--exclude ^spec --include-file ^lib)
 end
 task :fspec => [:convert_all_view, :spec]
