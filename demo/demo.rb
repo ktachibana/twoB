@@ -1,4 +1,4 @@
-#!/usr/bin/ruby -Isrc -Ilib -Iview/src -rubygems -rbin/webrick
+#!/usr/bin/ruby -Ilib -Iview/lib -rubygems -rbin/webrick
 # -*- coding: utf-8 -*-
 
 class DemoContext < WEBrickFrontend

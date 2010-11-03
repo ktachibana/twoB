@@ -1,4 +1,4 @@
-#!/usr/bin/ruby -Ilib -Iview/src -rubygems
+#!/usr/bin/ruby -Ilib -Iview/lib -rubygems
 # -*- coding: utf-8 -*-
 
 require 'twob/application'
@@ -10,7 +10,7 @@ require 'cgi'
 class ConsoleFrontend
   include ViewUtil
   def data_directory
-    "data"
+    "local/data"
   end
 
   def output(response)

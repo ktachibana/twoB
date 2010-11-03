@@ -1,16 +1,39 @@
 # -*- coding: utf-8 -*-
 $VERBOSE = nil
 require 'rubygems'
-require 'tools/rake_util'
 require 'spec/rake/spectask'
+
 $LOAD_PATH << "lib"
 $LOAD_PATH << "spec/unit"
 
 converter = "bin/erb2view.rb"
 template = "bin/view_template.erb"
 
+module Rake
+  # 既存のFileListクラスにmappingメソッドを追加
+  class FileList
+    def mapping(&convert_block)
+      FileMapping.new(self) do |source|
+        convert_block[source]
+      end
+    end
+  end
+
+  class FileMapping < Hash
+    def initialize(sources, &to_object_block)
+      sources.each do |source|
+        self[source] = to_object_block[source]
+      end
+    end
+
+    alias :each_mapping :each_pair
+    alias :sources :keys
+    alias :objects :values
+  end
+end
+
 view_file_mapping = FileList["view/erb/**/*.erb"].mapping do |erb_file|
-  erb_file.pathmap("%{^view/erb,view/src}X_view.rb")
+  erb_file.pathmap("%{^view/erb,view/lib}X_view.rb")
 end
 
 task :default => :spec
@@ -31,7 +54,7 @@ Spec::Rake::SpecTask.new(:spec) do |t|
   t.ruby_opts = %w(-r rubygems)
   t.spec_files = FileList["spec/unit/**/*_spec.rb"]
   t.spec_opts = %w(--format html:local/spec/unit.html --format nested --color)
-  t.libs = %w[lib view/src spec/unit]
+  t.libs = %w[lib view/lib spec/unit]
   t.rcov = ENV.include? "rcov"
   t.rcov_dir = "local/coverage"
   t.rcov_opts << %w(--exclude ^spec --include-file ^lib)
@@ -44,9 +67,32 @@ Spec::Rake::SpecTask.new(:fspec) do |t|
   t.ruby_opts = %w(-r rubygems)
   t.spec_files = FileList["spec/function/**/*_spec.rb"]
   t.spec_opts = %w(--format html:local/spec/function.html --format nested --color)
-  t.libs = %w[lib view/src spec/unit spec/function]
+  t.libs = %w[lib view/lib spec/unit spec/function]
   t.rcov = ENV.include? "rcov"
   t.rcov_dir = "local/coverage"
   t.rcov_opts << %w(--exclude ^spec --include-file ^lib)
 end
 task :fspec => [:convert_all_view, :spec]
+
+module Rake
+  # 既存のFileListクラスにmappingメソッドを追加
+  class FileList
+    def mapping(&convert_block)
+      FileMapping.new(self) do |source|
+        convert_block[source]
+      end
+    end
+  end
+
+  class FileMapping < Hash
+    def initialize(sources, &to_object_block)
+      sources.each do |source|
+        self[source] = to_object_block[source]
+      end
+    end
+
+    alias :each_mapping :each_pair
+    alias :sources :keys
+    alias :objects :values
+  end
+end

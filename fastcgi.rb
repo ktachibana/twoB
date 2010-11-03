@@ -1,4 +1,4 @@
-#!/usr/bin/ruby -Isrc -Ilib -Iview/src -rubygems
+#!/usr/bin/ruby -Ilib -Iview/lib -rubygems
 # -*- coding: utf-8 -*-
 
 $KCODE = "utf8"
@@ -29,7 +29,7 @@ module TwoB
     end
 
     def data_directory
-      "data"
+      "local/data"
     end
 
     def output(response)

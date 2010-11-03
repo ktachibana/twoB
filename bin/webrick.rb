@@ -1,4 +1,4 @@
-#!/usr/bin/ruby -Isrc -Ilib -Iview/src -rubygems
+#!/usr/bin/ruby -Ilib -Iview/lib -rubygems
 # -*- coding: utf-8 -*-
 
 require 'twob/application'
@@ -33,7 +33,7 @@ class WEBrickFrontend
   end
 
   def data_directory
-    "data"
+    "local/data"
   end
 
   def output(response)
