@@ -4,30 +4,30 @@ require 'util/view'
 module TwoB
   class StartPageView
     include ViewUtil
-  
+
     def initialize(request)
       @request = request
     end
 
     attr_reader :request
-  
+
     def status_code
       200
     end
-    
+
     def content_type
       "text/html; charset=UTF-8"
     end
-    
+
     def headers
       {"Content-Type" => content_type}
     end
-  
+
     def write_body(_erbout)
       def _erbout.concat(str)
         self << str
       end
-  
+
       _erbout.concat "<html>\n"
       ; _erbout.concat "<head>\n"
       ; _erbout.concat "\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n"

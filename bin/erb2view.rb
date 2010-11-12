@@ -5,7 +5,7 @@ require 'pathname'
 
 module ERB2View
   module_function
-  
+
   def convert_io(input, output)
     erb_source = ""
     class_name = ""
@@ -35,9 +35,7 @@ module ERB2View
     src = ERB.new(erb_source, nil, "%>").src
     src.sub!(/_erbout = ''; /, "")
 
-    script = File.read("bin/view_template.erb")
-
-    output.puts(ERB.new(script, nil, "%").result(binding))
+    output.puts(ERB.new(VIEW_ERB_SOURCE, nil, "%").result(binding))
   end
 
   def convert(input_file, output_file)
@@ -49,8 +47,52 @@ module ERB2View
       end
     end
   end
+
+  VIEW_ERB_SOURCE = <<EOS
+# -*- coding: utf-8 -*-
+require 'util/view'
+
+module <%= module_name %>
+  class <%= class_name %>
+    include ViewUtil
+
+    def initialize(<%= params.join(", ") %>)
+% params.each do |param|
+      @<%= param %> = <%= param %>
+% end
+    end
+
+% params.each do |param|
+    attr_reader :<%= param %>
+% end
+
+    def status_code
+      200
+    end
+
+    def content_type
+      "<%= content_type %>"
+    end
+
+    def headers
+      {"Content-Type" => content_type}
+    end
+
+    def write_body(_erbout)
+      def _erbout.concat(str)
+        self << str
+      end
+
+% src.each_line do |line|
+      <%= line.strip %>
+% end
+    end
+  end
+end
+EOS
 end
 
 if __FILE__ == $0
   ERB2View.convert_io($<, $>)
 end
+

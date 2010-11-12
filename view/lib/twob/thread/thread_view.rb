@@ -4,30 +4,30 @@ require 'util/view'
 module TwoB
   class ThreadView
     include ViewUtil
-  
+
     def initialize(thread)
       @thread = thread
     end
 
     attr_reader :thread
-  
+
     def status_code
       200
     end
-    
+
     def content_type
       "text/html; charset=UTF-8"
     end
-    
+
     def headers
       {"Content-Type" => content_type}
     end
-  
+
     def write_body(_erbout)
       def _erbout.concat(str)
         self << str
       end
-  
+
       _erbout.concat "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n"
       ; _erbout.concat "<html>\n"
       ; _erbout.concat "<head>\n"

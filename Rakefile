@@ -7,7 +7,6 @@ $LOAD_PATH << "lib"
 $LOAD_PATH << "spec/unit" << "spec/lib"
 
 converter = "bin/erb2view.rb"
-template = "bin/view_template.erb"
 
 module Rake
   # 既存のFileListクラスにmappingメソッドを追加
@@ -42,7 +41,7 @@ desc "view/*.erbを全てViewクラスのコードに変換する"
 task :convert_all_view => view_file_mapping.objects
 
 view_file_mapping.each_mapping do |erb_file, view_rb_file|
-  file view_rb_file => [erb_file, converter, template] do |t|
+  file view_rb_file => [erb_file, converter] do |t|
     require converter
     ERB2View::convert(erb_file, view_rb_file)
   end
