@@ -6,7 +6,7 @@ require 'spec/rake/spectask'
 $LOAD_PATH << "lib"
 $LOAD_PATH << "spec/unit" << "spec/lib"
 
-converter = "bin/erb2view.rb"
+converter = "tool/erb2view.rb"
 
 module Rake
   # 既存のFileListクラスにmappingメソッドを追加
