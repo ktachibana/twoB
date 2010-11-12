@@ -61,6 +61,7 @@ module TwoB
         end
       end
       @delta = TwoB::Delta.new(@delta_builder.result, @metadata.last_res_number, delta_source.bytes, delta_index)
+      @delta
     end
 
     def update
