@@ -14,8 +14,8 @@ describe PatternMap do
     FooMap.get("foooo").should == ["foooo", nil]
     FooMap.get("foo", 10).should == ["foo", 10]
     FooMap.get("faa").should be_nil
-    
-    FooMap.if_any_matched { raise "error!" }
+
+    FooMap.unmatched { raise "error!" }
     lambda{ FooMap.get("faa") }.should raise_error(RuntimeError, "error!")
   end
 end

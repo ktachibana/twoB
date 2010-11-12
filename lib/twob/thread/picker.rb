@@ -26,7 +26,7 @@ module TwoB
   Pickers.map(/^\-(\d+)$/) do |match|
     Picker::To.new(match[1].to_i)
   end
-  Pickers.if_any_matched do |picker_str|
+  Pickers.unmatched do |picker_str|
     raise "Illegal picker format : #{picker_str}"
   end
 
