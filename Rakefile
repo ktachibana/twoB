@@ -56,7 +56,7 @@ Spec::Rake::SpecTask.new(:spec) do |t|
   t.libs = %w[lib view/lib spec/unit spec/lib]
   t.rcov = ENV.include? "rcov"
   t.rcov_dir = "local/coverage"
-  t.rcov_opts << %w(--exclude ^spec --include-file ^lib)
+  t.rcov_opts << %w(--exclude ^spec --exclude /var/lib/gems --exclude /usr/local/lib --include-file ^lib)
 end
 task :spec => :convert_all_view
 
