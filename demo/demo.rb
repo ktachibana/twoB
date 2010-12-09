@@ -1,14 +1,17 @@
 #!/usr/bin/ruby -Ilib -Iview/lib -rubygems -rtwoB-webrick
 # -*- coding: utf-8 -*-
+require 'io/http'
+require 'twob'
 
-class DemoContext < WEBrickFrontend
-  def get_application(request)
-    TwoB::Application.new(self, request, self)
+class DemoFrontend < WEBrickFrontend
+  def create_application(request)
+    TwoB::Application.new(self, request, DemoBackend.new)
   end
 
-  def get_delta_input(request)
+class DemoBackend < TwoB::Backend
+  def get_bytes(request)
     demo_request = HTTPRequest.new("localhost", 8080, "/demo/" + request.host + request.path, request.headers)
-    HTTPGetInput.new(demo_request)
+    HTTPGetInput.new(demo_request).read()
   end
 
   def get_subject_source(request, encoder, line_delimiter)
@@ -21,4 +24,4 @@ class DemoContext < WEBrickFrontend
   end
 end
 
-DemoContext.process
+DemoFrontend.process

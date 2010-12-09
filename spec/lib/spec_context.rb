@@ -52,19 +52,11 @@ module TwoB
         @request = request
         TwoB::Application.new(self, @request, backend).main
       end
-
-      def get_delta_input(request)
-        @backend.get_delta_input(request)
-      end
-
-      def get_subject_source(request, encoder, line_delimiter)
-        @backend.get_subject_source(request, encoder, line_delimiter)
-      end
     end
 
     class SpecBackend
-      def get_delta_input(request)
-        raise "delta_inputのスタブが設定されていません"
+      def get_bytes(request)
+        raise "get_bytesのスタブが設定されていません"
       end
 
       def get_subject_source(request, encoder, line_delimiter)

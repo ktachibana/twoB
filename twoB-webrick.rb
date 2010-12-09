@@ -19,7 +19,7 @@ class WEBrickFrontend
       param = CGI.parse(webrick_request.query_string || "")
       request = TwoB::Request.new(webrick_request.path_info, param, webrick_request.meta_vars)
 
-      self.new(webrick_response).get_application(request).main
+      self.new(webrick_response).create_application(request).main
     end
 
     [:INT, :TERM].each do |signal|
@@ -28,7 +28,7 @@ class WEBrickFrontend
     server.start
   end
 
-  def get_application(request)
+  def create_application(request)
     TwoB::Application.new(self, request)
   end
 

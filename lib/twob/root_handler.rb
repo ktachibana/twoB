@@ -16,7 +16,7 @@ module TwoB
     end
 
     attr_reader :configuration
-    def_delegators(:@backend, :get_delta_input, :get_subject_source)
+    def_delegators(:@backend, :get_bytes, :get_subject_source)
 
     def execute(request, value)
       case value

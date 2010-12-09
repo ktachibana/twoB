@@ -12,7 +12,7 @@ describe "JBBSのスレッドを読む" do
 
   def view_thread(delta_input, picker = "subscribe5")
     access("/jbbs.livedoor.jp/category/123/456/#{picker}#firstNew") do |backend|
-      backend.stub!(:get_delta_input).and_return(delta_input)
+      backend.stub!(:get_bytes).and_return(delta_input.read)
     end
     valid_response
     @thread = @response.as_thread

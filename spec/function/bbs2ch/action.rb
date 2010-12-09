@@ -10,7 +10,7 @@ module BBS2ch::Spec
 
   def view_thread(delta_input, picker_string = "subscribe5")
     access("/server.2ch.net/board/123/#{picker_string}#firstNew") do |backend|
-      backend.stub!(:get_delta_input).and_return(delta_input)
+      backend.stub!(:get_bytes).and_return(delta_input.read)
     end
     @thread = @response.as_thread
   end

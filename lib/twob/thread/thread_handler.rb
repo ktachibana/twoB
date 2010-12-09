@@ -54,7 +54,7 @@ module TwoB
     end
 
     def delta_source(request)
-      delta_bytes = system.get_delta_input(request).read()
+      delta_bytes = system.get_bytes(request)
       BytesSource.new(delta_bytes, Encoder.by_name(dat_encoding_name), dat_line_delimiter)
     end
 
