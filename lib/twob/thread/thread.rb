@@ -34,6 +34,32 @@ module TwoB
       end
     end
 
+    class Template
+      def initialize
+        @map = {}
+      end
+      def apply(klass, &block)
+        @map[klass] = block
+      end
+      def do_apply(object)
+        @map[klass].call(object) if @map.has_key?(klass)
+      end
+    end
+
+    def each_item
+      template = Template.new
+      yield template
+
+      @cache.each_res do |res|
+        template.do_apply(Res.new(res, unread?(res)))
+      end
+      return if @delta.empty?
+      yield :border
+      @delta.each_res do |res|
+        yield Res.new(res, true)
+      end
+    end
+
     def each_res
       @cache.each_res do |res|
         yield Res.new(res, unread?(res))
