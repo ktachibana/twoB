@@ -34,7 +34,7 @@
 
 	<div class="thread_body">
 % thread.each_item do |item|
-%   item.case(TwoB::Res) do |res|
+%   item.match(:res) do |res|
 		<div id="_<%= res.number %>" class="res">
 			<dl class="<%= res.new? ? 'new' : '' %> <%=h res.age? ? 'age' : '' %>">
 				<dt class="header">
@@ -63,10 +63,10 @@
 			</dl>
 		</div>
 %   end
-%   item.gap do |gap|
-		<a href="#{gap.nextRes.number - 50}-"></a>
+%   item.match(:gap) do |gap|
+		<a href="#{gap.nextRes.number - 50}-">もっと表示</a>
 %   end
-%   item.border do |border|
+%   item.match(:border) do
 		<hr id="firstNew" />
 %   end
 % end

@@ -10,13 +10,13 @@ describe TwoB::ThreadBuilder do
     @factory = mock(:factory)
     @factory.should_receive(:dat_builder).twice.and_return{ BBS2ch::DatBuilder.new }
     @factory.should_receive(:load_metadata).and_return{ YAML::load_file("testData/2ch/example(1-80).dat.metadata") }
-    @factory.should_receive(:cache_source).and_return{ TextFile.by_filename("testData/2ch/example(1-80).dat", "windows-31j") }
     @key = mock(:key)
     @picker = mock(:picker)
     @builder = TwoB::ThreadBuilder.new(@factory, @key, @picker)
   end
 
   it "load_cache" do
+    @factory.should_receive(:cache_source).and_return{ TextFile.by_filename("testData/2ch/example(1-80).dat", "windows-31j") }
     @builder.load_cache(1..1, 30..50)
     thread = @builder.result
     thread.last_res_number.should == 50

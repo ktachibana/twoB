@@ -34,29 +34,29 @@ module TwoB
       end
     end
 
-    class Template
+    class Templates
       def initialize
-        @map = {}
+        @templates = {}
       end
-      def apply(klass, &block)
-        @map[klass] = block
+      def match(key, &template)
+        @templates[key] = template
       end
-      def do_apply(object)
-        @map[klass].call(object) if @map.has_key?(klass)
+      def do_apply(key, *object)
+        @templates[key].call(*object) if @templates.include?(key)
       end
     end
 
     def each_item
-      template = Template.new
-      yield template
+      templates = Templates.new
+      yield templates
 
       @cache.each_res do |res|
-        template.do_apply(Res.new(res, unread?(res)))
+        templates.do_apply(:res, Res.new(res, unread?(res)))
       end
       return if @delta.empty?
-      yield :border
+      templates.do_apply(:border)
       @delta.each_res do |res|
-        yield Res.new(res, true)
+        templates.do_apply(:res, Res.new(res, true))
       end
     end
 

@@ -59,7 +59,8 @@ module TwoB
       ; _erbout.concat "\t</div>\n"
       ; _erbout.concat "\n"
       ; _erbout.concat "\t<div class=\"thread_body\">\n"
-      ;  thread.each{|res|
+      ;  thread.each_item do |item|
+      item.match(:res) do |res|
       _erbout.concat "\t\t<div id=\"_"; _erbout.concat(( res.number ).to_s); _erbout.concat "\" class=\"res\">\n"
       ; _erbout.concat "\t\t\t<dl class=\""; _erbout.concat(( res.new? ? 'new' : '' ).to_s); _erbout.concat " "; _erbout.concat((h res.age? ? 'age' : '' ).to_s); _erbout.concat "\">\n"
       ; _erbout.concat "\t\t\t\t<dt class=\"header\">\n"
@@ -71,7 +72,7 @@ module TwoB
       ; _erbout.concat "\t\t\t\t\t<span class=\"bookmark\">[<a href=\""; _erbout.concat(( res.number ).to_s); _erbout.concat "/bookmark\">\346\240\236</a>]</span>\n"
       ; _erbout.concat "\t\t\t\t</dt>\n"
       ; _erbout.concat "\t\t\t\t<dd class=\"body\">\n"
-      ; 	res.body.each{|body|
+      ;      res.body.each do |body|
       case body.body_type
       when :anchor
       ; _erbout.concat "<a href=\"#_"; _erbout.concat(( body.top_id ).to_s); _erbout.concat "\" class=\"anchor\" onmouseover=\"b2rPopup.resPopup.mouseOver(event, "; _erbout.concat(( body.top_id ).to_s); _erbout.concat ", "; _erbout.concat(( body.bottom_id ).to_s); _erbout.concat ", "; _erbout.concat(( thread.visible_all?(body) ? "b2rPopup.resPopup.local" : "b2rPopup.resPopup.remote" ).to_s); _erbout.concat ");\">"; _erbout.concat((h body ).to_s); _erbout.concat "</a>";
@@ -79,18 +80,22 @@ module TwoB
       ; _erbout.concat "<a href=\""; _erbout.concat((h body.url ).to_s); _erbout.concat "\" class=\""; _erbout.concat(( body.link_type ).to_s); _erbout.concat "\" target=\"_blank\">"; _erbout.concat((h body ).to_s); _erbout.concat "</a>";
       when :break_line
       ; _erbout.concat "<br/>\n"
-      ; 		else
+      ;          else
       ; _erbout.concat(( body ).to_s);
       end
-      }
+      end
       _erbout.concat "\n"
       ; _erbout.concat "\t\t\t\t</dd>\n"
       ; _erbout.concat "\t\t\t</dl>\n"
       ; _erbout.concat "\t\t</div>\n"
-      ; 	if thread.read_number == res.number
+      ;    end
+      item.match(:gap) do |gap|
+      _erbout.concat "\t\t<a href=\"\#{gap.nextRes.number - 50}-\">\343\202\202\343\201\243\343\201\250\350\241\250\347\244\272</a>\n"
+      ;    end
+      item.match(:border) do
       _erbout.concat "\t\t<hr id=\"firstNew\" />\n"
-      ; 	end
-      }
+      ;    end
+      end
       _erbout.concat "\t</div>\n"
       ; _erbout.concat "</body>\n"
       ; _erbout.concat "</html>\n"

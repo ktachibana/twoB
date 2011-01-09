@@ -8,7 +8,6 @@ module TwoB
       @factory, @thread_key, @picker = factory, thread_key, picker
       @metadata = factory.load_metadata
       @cache_builder = factory.dat_builder
-      @cache_source = factory.cache_source
       @delta_builder = factory.dat_builder
       @cache = TwoB::Cache::Empty
       @delta = TwoB::Delta.new(TwoB::Dat::Content::Empty, 0, [], {})
@@ -25,7 +24,8 @@ module TwoB
 
     def load_cache(*ranges)
       begin
-        @cache_source.open do |reader|
+        cache_source = @factory.cache_source
+        cache_source.open do |reader|
           Ranges.new(*ranges).limit_range(1..cached_number).each do |range|
             load_cache_from(reader, range)
           end
