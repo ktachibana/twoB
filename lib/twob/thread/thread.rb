@@ -17,7 +17,7 @@ module TwoB
     attr_reader :thread, :metadata
 
     def title
-      @cache.has_title? ? @cache.title : @delta.title
+      (@cache.has_title? ? @cache : @delta).title
     end
 
     def original_url
