@@ -90,7 +90,7 @@ module TwoB
       ; _erbout.concat "\t\t</div>\n"
       ;    end
       item.match(:gap) do |gap|
-      _erbout.concat "\t\t<a href=\"\#{gap.nextRes.number - 50}-\">\343\202\202\343\201\243\343\201\250\350\241\250\347\244\272</a>\n"
+      _erbout.concat "\t\t<a class=\"gap\" href=\""; _erbout.concat(( gap.shrink_last(50) ).to_s); _erbout.concat "-\">\343\202\202\343\201\243\343\201\250\350\241\250\347\244\272</a>\n"
       ;    end
       item.match(:border) do
       _erbout.concat "\t\t<hr id=\"firstNew\" />\n"

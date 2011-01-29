@@ -64,7 +64,7 @@
 		</div>
 %   end
 %   item.match(:gap) do |gap|
-		<a href="#{gap.nextRes.number - 50}-">もっと表示</a>
+		<a class="gap" href="<%= gap.shrink_last(50) %>-">もっと表示</a>
 %   end
 %   item.match(:border) do
 		<hr id="firstNew" />

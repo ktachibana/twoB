@@ -6,18 +6,19 @@ require 'forwardable'
 module TwoB
   class Thread
     include Enumerable
-    def initialize(thread, cache, delta, picker, metadata)
+    def initialize(thread, caches, delta, picker, metadata)
       @thread = thread
-      @cache = cache
+      @caches = caches
       @delta = delta
       @picker = picker
       @metadata = metadata
     end
 
-    attr_reader :thread, :metadata
+    attr_reader :thread, :caches, :delta, :metadata
 
     def title
-      (@cache.has_title? ? @cache : @delta).title
+      @caches.each{|cache| return cache.title if cache.has_title? }
+      @delta.title
     end
 
     def original_url
@@ -38,11 +39,24 @@ module TwoB
       def initialize
         @templates = {}
       end
+
       def match(key, &template)
         @templates[key] = template
       end
+
       def do_apply(key, *object)
         @templates[key].call(*object) if @templates.include?(key)
+      end
+    end
+
+    class Gap
+      def initialize(prev_range, next_range)
+        @prev_range, @next_range = prev_range, next_range
+      end
+
+      def shrink_last(size)
+        shurinked = @next_range.first - size
+        (shurinked > @prev_range.last+1) ? shurinked : @prev_range.first
       end
     end
 
@@ -50,8 +64,14 @@ module TwoB
       templates = Templates.new
       yield templates
 
-      @cache.each_res do |res|
-        templates.do_apply(:res, Res.new(res, unread?(res)))
+      @caches.each_with_index do |cache, index|
+        cache.each_res do |res|
+          templates.do_apply(:res, Res.new(res, unread?(res)))
+        end
+        if index < (@caches.length - 1)
+          next_cache = @caches[index+1]
+          templates.do_apply(:gap, Gap.new(cache.range, next_cache.range))
+        end
       end
       return if @delta.empty?
       templates.do_apply(:border)
@@ -61,8 +81,10 @@ module TwoB
     end
 
     def each_res
-      @cache.each_res do |res|
-        yield Res.new(res, unread?(res))
+      @caches.each do |cache|
+        cache.each_res do |res|
+          yield Res.new(res, unread?(res))
+        end
       end
       @delta.each_res do |res|
         yield Res.new(res, true)
@@ -80,11 +102,11 @@ module TwoB
     private :ranges
 
     def res_count
-      @cache.res_count + @delta.res_count
+      @caches.sum{|cache| cache.res_count } + delta.res_count
     end
 
     def last_res_number
-      @delta.empty? ? @cache.last_number : @delta.last_res_number
+      @delta.empty? ? @caches.last.last_res_number : @delta.last_res_number
     end
 
     def has_new?
@@ -109,6 +131,21 @@ module TwoB
 
     def read_number
       bookmarking? ? bookmark_number : @metadata.last_res_number
+    end
+  end
+
+  #= レスの>>1-50とかの並び。>>1とか一個しかなくても並び
+  class ResSequence
+    def initialize(res_seq, is_new)
+      @res_seq = res_seq
+      @is_new = is_new
+    end
+
+    attr_reader :res_seq
+
+    # このレス群は新着？
+    def new?
+      @is_new
     end
   end
 

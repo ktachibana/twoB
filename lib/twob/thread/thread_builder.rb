@@ -6,9 +6,10 @@ module TwoB
   class ThreadBuilder
     def initialize(factory, thread_key, picker)
       @factory, @thread_key, @picker = factory, thread_key, picker
-      @metadata = factory.load_metadata
-      @cache_builder = factory.dat_builder
-      @delta_builder = factory.dat_builder
+
+      @metadata = @factory.load_metadata
+      @caches = []
+      @delta_builder = @factory.dat_builder
       @cache = TwoB::Cache::Empty
       @delta = TwoB::Delta.new(TwoB::Dat::Content::Empty, 0, [], {})
       @update_time = Time.now
@@ -27,27 +28,28 @@ module TwoB
         cache_source = @factory.cache_source
         cache_source.open do |reader|
           Ranges.new(*ranges).limit_range(1..cached_number).each do |range|
-            load_cache_from(reader, range)
+            @caches << load_cache_sequence(reader, range)
           end
         end
       rescue Errno::ENOENT
         # do nothing
       end
-      @cache = TwoB::Cache.new(@cache_builder.result)
     end
 
-    def load_cache_from(reader, range)
-      @cache_builder.start(range.first)
+    def load_cache_sequence(reader, range)
+      cache_builder = @factory.dat_builder
+      cache_builder.start(range.first)
       reader.seek(@metadata[range.first])
       reader.each do |line|
         next if line.empty?
-        @cache_builder.build(line.chomp.split("<>")) do |res|
-          return unless range.include?(res.number)
+        cache_builder.build(line.chomp.split("<>")) do |res|
+          return cache_builder.result unless range.include?(res.number)
           true
         end
       end
+      cache_builder.result
     end
-    private :load_cache_from
+    private :load_cache_sequence
 
     def load_delta(&filter)
       delta_source = @factory.delta_source_from(@metadata)
@@ -69,7 +71,7 @@ module TwoB
     end
 
     def result
-      TwoB::Thread.new(@thread_key, @cache, @delta, @picker, @metadata)
+      TwoB::Thread.new(@thread_key, @caches, @delta, @picker, @metadata)
     end
   end
 end

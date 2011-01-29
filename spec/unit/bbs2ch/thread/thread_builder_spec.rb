@@ -8,23 +8,27 @@ include BBS2ch
 describe TwoB::ThreadBuilder do
   before do
     @factory = mock(:factory)
-    @factory.should_receive(:dat_builder).twice.and_return{ BBS2ch::DatBuilder.new }
+    @factory.stub!(:dat_builder).and_return{ BBS2ch::DatBuilder.new }
     @factory.should_receive(:load_metadata).and_return{ YAML::load_file("testData/2ch/example(1-80).dat.metadata") }
     @key = mock(:key)
     @picker = mock(:picker)
     @builder = TwoB::ThreadBuilder.new(@factory, @key, @picker)
   end
 
-  it "load_cache" do
+  it "二つに分離した範囲のキャッシュを読み込める" do
     @factory.should_receive(:cache_source).and_return{ TextFile.by_filename("testData/2ch/example(1-80).dat", "windows-31j") }
     @builder.load_cache(1..1, 30..50)
     thread = @builder.result
     thread.last_res_number.should == 50
     res = thread.to_a
     res.count.should == 22
+    thread.title.should == "（　＾＾ω）ﾎﾏﾎﾏ6"
     thread[1].date.should == "2008/08/17(日) 15:30:19"
     thread[30].date.should == "2008/08/21(木) 22:39:34"
     thread[50].date.should == "2008/08/23(土) 15:11:47"
+
+    thread.caches.size.should == 2
+    thread.delta.should be_empty
   end
 
   describe "delta" do

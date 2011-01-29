@@ -50,6 +50,8 @@ describe "JBBSのスレッドを読む" do
     thread[216].should_not be_new
     thread[217].should be_new
     thread[226].should be_new
+    
+    thread.document.css(".gap").attribute("href").text.should == "162-"
   end
 
   it "subscribe5によるキャッシュなしの初回読み込み" do
