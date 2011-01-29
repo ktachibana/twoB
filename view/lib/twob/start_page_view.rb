@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'util/view'
+require 'view_util'
 
 module TwoB
   class StartPageView

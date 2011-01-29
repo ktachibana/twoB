@@ -50,7 +50,7 @@ module ERB2View
 
   VIEW_ERB_SOURCE = <<EOS
 # -*- coding: utf-8 -*-
-require 'util/view'
+require 'view_util'
 
 module <%= module_name %>
   class <%= class_name %>

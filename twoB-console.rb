@@ -3,7 +3,7 @@
 
 require 'twob/application'
 require 'twob/request'
-require 'util/view'
+require 'view_util'
 require 'optparse'
 require 'cgi'
 

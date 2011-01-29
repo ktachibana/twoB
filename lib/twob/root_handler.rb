@@ -3,7 +3,7 @@ require 'jbbs/host'
 require 'twob/error_view'
 require 'twob/start_page_view'
 require 'twob/handler'
-require 'util/enum'
+require 'view_util'
 require 'forwardable'
 
 module TwoB
