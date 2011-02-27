@@ -71,7 +71,7 @@ Spec::Rake::SpecTask.new(:fspec) do |t|
   t.rcov_dir = "local/coverage"
   t.rcov_opts << %w(--exclude ^spec --include-file ^lib)
 end
-task :fspec => [:convert_all_view, :spec]
+task :fspec => [:convert_all_view]
 
 module Rake
   # 既存のFileListクラスにmappingメソッドを追加
