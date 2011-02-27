@@ -7,6 +7,7 @@ class DemoFrontend < WEBrickFrontend
   def create_application(request)
     TwoB::Application.new(self, request, DemoBackend.new)
   end
+end
 
 class DemoBackend < TwoB::Backend
   def get_bytes(request)
