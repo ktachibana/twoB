@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-require 'twob/thread'
+require 'twob/board'
 require 'jbbs/thread'
 require 'forwardable'
 
