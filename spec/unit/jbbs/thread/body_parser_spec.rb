@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'spec'
-require 'twob/thread/dat'
+require 'jbbs/thread'
 
 describe TwoB::Dat, "body parser" do
   include TwoB::Dat

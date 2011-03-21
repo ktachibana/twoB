@@ -1,6 +1,5 @@
-require 'twob/handler'
-require 'bbs2ch/board/board'
-require 'pattern_map'
+require 'framework/handler'
+require 'bbs2ch/board'
 
 module BBS2ch
   class Host

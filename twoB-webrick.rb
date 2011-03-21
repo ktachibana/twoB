@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 require 'twob/application'
-require 'twob/request'
-require 'twob/error_view'
+require 'framework/request'
+require 'framework/error_view'
 require 'webrick'
 require 'cgi'
 require 'stringio'

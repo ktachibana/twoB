@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-require 'twob/thread/dat/dat_body'
-require 'jbbs/thread/dat_parser'
+require 'twob/dat'
+require 'jbbs/dat_parser'
 
 include TwoB
 include Dat

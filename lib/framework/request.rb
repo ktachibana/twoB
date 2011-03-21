@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'equality'
+require 'util'
 require 'uri'
 
 module TwoB

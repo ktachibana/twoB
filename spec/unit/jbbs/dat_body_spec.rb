@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'twob/thread/dat'
+require 'twob/dat'
 
 describe "dat_body objects" do
   def anchor(range)

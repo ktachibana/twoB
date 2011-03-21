@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'spec'
-require 'io/source'
-require 'io/http/http_request'
+require 'io'
 require 'http_get_input_stub'
 
 describe HTTPGetInputStub do

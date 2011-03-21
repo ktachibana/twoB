@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'jbbs/thread/thread_service'
+require 'jbbs/thread'
 require 'jbbs/host'
 require 'spec_context'
 

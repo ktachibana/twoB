@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-require 'bbs2ch'
 require 'io'
 require 'spec_context'
 require 'action'

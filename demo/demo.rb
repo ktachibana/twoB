@@ -1,6 +1,6 @@
 #!/usr/bin/ruby -Ilib -Iview/lib -rubygems -rtwoB-webrick
 # -*- coding: utf-8 -*-
-require 'io/http'
+require 'io'
 require 'twob'
 
 class DemoFrontend < WEBrickFrontend

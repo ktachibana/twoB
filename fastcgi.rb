@@ -4,8 +4,8 @@
 $KCODE = "utf8"
 
 require 'twob/application'
-require 'twob/request'
-require 'twob/error_view'
+require 'framework/request'
+require 'framework/error_view'
 require 'fcgi'
 require 'cgi'
 

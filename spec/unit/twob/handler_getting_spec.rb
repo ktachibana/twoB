@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'twob/handler'
-require 'twob/root_handler'
-require 'twob/configuration'
-require 'jbbs/thread/thread_service'
-require 'jbbs/board/board_service'
+require 'twob'
 require 'delegate'
 require 'spec_context'
 

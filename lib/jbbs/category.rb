@@ -1,5 +1,5 @@
-require 'twob/handler'
-require 'jbbs/board/board_service'
+require 'framework/handler'
+require 'jbbs/board'
 
 module JBBS
   class Category

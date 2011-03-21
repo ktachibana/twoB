@@ -1,6 +1,5 @@
-require 'twob/handler'
+require 'framework/handler'
 require 'jbbs/category'
-require 'pattern_map'
 
 module JBBS
   class Host

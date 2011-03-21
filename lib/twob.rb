@@ -1,14 +1,6 @@
 # -*- coding: utf-8 -*-
 
-require 'twob/board'
-require 'twob/thread'
-require 'twob/configuration'
-require 'twob/error_view'
-require 'twob/handler'
-require 'twob/read_counter'
-require 'twob/redirect_response'
-require 'twob/request'
-require 'twob/response'
-require 'twob/root_handler'
-require 'bbs2ch'
-require 'jbbs'
+require 'framework/all'
+require 'twob/all'
+require 'bbs2ch/all'
+require 'jbbs/all'

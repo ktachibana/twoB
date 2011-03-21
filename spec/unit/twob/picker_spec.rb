@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'spec'
-require 'pattern_map'
-require 'twob/thread/picker'
+require 'twob/picker'
 
 include TwoB
 include TwoB::Picker

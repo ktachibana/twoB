@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'bbs2ch'
+require 'bbs2ch/all'
 require 'nokogiri'
 require 'io'
 require 'spec_context'

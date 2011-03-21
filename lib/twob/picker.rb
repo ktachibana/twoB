@@ -1,7 +1,5 @@
 require 'singleton'
 require 'util'
-require 'pattern_map'
-require 'equality'
 
 module TwoB
   Pickers = PatternMap.new

@@ -1,5 +1,5 @@
-require 'bbs2ch/thread/dat_builder'
-require 'io/file'
+require 'bbs2ch/thread'
+require 'io'
 
 module BBS2ch
   describe DatBuilder do

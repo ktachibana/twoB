@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-require 'io/source'
-require 'jbbs/thread/dat_parser'
+require 'io'
+require 'jbbs/dat_parser'
 
 describe '管理者削除などにより、行が消失する場合がある' do
   it '行が抜けて、最終レス番が全レス数とずれている' do

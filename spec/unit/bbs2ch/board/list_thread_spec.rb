@@ -1,7 +1,7 @@
 require 'twob/board'
 require 'spec_context'
-require 'io/file'
-require 'bbs2ch'
+require 'io'
+require 'bbs2ch/all'
 
 describe BBS2ch::Board do
   include TwoB

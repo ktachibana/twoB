@@ -1,4 +1,4 @@
-require 'jbbs/thread/dat_builder'
+require 'jbbs/thread'
 
 module JBBS
   describe DatBuilder do

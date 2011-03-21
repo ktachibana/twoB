@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 require 'twob/application'
-require 'twob/request'
+require 'framework/request'
 require 'view_util'
 require 'optparse'
 require 'cgi'

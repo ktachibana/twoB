@@ -1,4 +1,4 @@
-require 'io/http'
+require 'io'
 
 module TwoB
   class Backend

@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'spec_context'
-require 'twob/request'
-require 'twob/thread'
-require 'twob/thread/picker'
+require 'twob/picker'
 
 describe "ResAnchor" do
   include TwoB::Spec

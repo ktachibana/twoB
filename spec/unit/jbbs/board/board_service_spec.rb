@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'jbbs/board/board_service'
+require 'jbbs/board'
 require 'spec_context'
 
 describe JBBS::BoardService do
