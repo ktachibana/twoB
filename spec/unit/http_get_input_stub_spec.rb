@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-require 'spec'
 require 'io'
 require 'http_get_input_stub'
 

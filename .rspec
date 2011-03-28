@@ -1,0 +1,5 @@
+--color
+-Ilib
+-Iview/lib
+-Ispec/lib
+-Ispec/function

@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 $VERBOSE = nil
 require 'rubygems'
-require 'spec/rake/spectask'
-
-$LOAD_PATH << "lib"
-$LOAD_PATH << "spec/unit" << "spec/lib"
+require 'rspec/core/rake_task'
 
 converter = "tool/erb2view.rb"
 
@@ -48,28 +45,20 @@ view_file_mapping.each_mapping do |erb_file, view_rb_file|
 end
 
 desc "rspecを実行する"
-Spec::Rake::SpecTask.new(:spec) do |t|
+RSpec::Core::RakeTask.new(:spec) do |t|
   t.fail_on_error = false
   t.ruby_opts = %w(-r rubygems)
-  t.spec_files = FileList["spec/unit/**/*_spec.rb"]
-  t.spec_opts = %w(--format html:local/spec/unit.html --format nested --color)
-  t.libs = %w[lib view/lib spec/unit spec/lib]
-  t.rcov = ENV.include? "rcov"
-  t.rcov_dir = "local/coverage"
-  t.rcov_opts << %w(--exclude ^spec --exclude /var/lib/gems --exclude /usr/local/lib --include-file ^lib)
+  t.pattern = "spec/unit/**/*_spec.rb"
+  t.rspec_opts = %w(--format documentation --color)
 end
 task :spec => :convert_all_view
 
 desc "機能テストを実行する"
-Spec::Rake::SpecTask.new(:fspec) do |t|
+RSpec::Core::RakeTask.new(:fspec) do |t|
   t.fail_on_error = false
   t.ruby_opts = %w(-r rubygems)
-  t.spec_files = FileList["spec/function/**/*_spec.rb"]
-  t.spec_opts = %w(--format html:local/spec/function.html --format nested --color)
-  t.libs = %w[lib view/lib spec/unit spec/function spec/lib]
-  t.rcov = ENV.include? "rcov"
-  t.rcov_dir = "local/coverage"
-  t.rcov_opts << %w(--exclude ^spec --include-file ^lib)
+  t.pattern = "spec/function/**/*_spec.rb"
+  t.rspec_opts = %w(--format documentation --color)
 end
 task :fspec => [:convert_all_view]
 

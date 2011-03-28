@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-require 'spec'
 require 'jbbs/thread'
 
 describe TwoB::Dat, "body parser" do

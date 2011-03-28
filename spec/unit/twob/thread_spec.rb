@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-require 'spec'
 require 'twob/thread'
 
 include TwoB
