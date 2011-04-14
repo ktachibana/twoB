@@ -215,8 +215,7 @@ b2rPopup.imagePopup = {
 		image.style.borderStyle = "none";
 		image.src = targetNode.href;
 		image.onclick = function(aEvent){
-			var targetNode = aEvent.originalTarget;
-			targetNode.style.width = (targetNode.style.width == "") ? "120px" : "";
+			image.style.width = (image.style.width == "") ? "120px" : "";
 		}
 		popup.appendChild(image);
 
