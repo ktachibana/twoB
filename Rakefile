@@ -22,9 +22,9 @@ module Rake
       end
     end
 
-    alias :each_mapping :each_pair
-    alias :sources :keys
-    alias :objects :values
+    alias each_mapping each_pair
+    alias sources keys
+    alias objects values
   end
 end
 
@@ -79,8 +79,8 @@ module Rake
       end
     end
 
-    alias :each_mapping :each_pair
-    alias :sources :keys
-    alias :objects :values
+    alias each_mapping each_pair
+    alias sources keys
+    alias objects values
   end
 end
